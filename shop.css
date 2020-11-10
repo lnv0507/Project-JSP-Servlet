@@ -1,4 +1,4 @@
- .container {
+ .container_1 {
      margin: 0px auto;
      width: 100%;
      height: 100px;
@@ -6,18 +6,18 @@
      padding: 10px;
  }
  
- .container a {
+ .container_1 a {
      text-decoration: none;
      color: black;
  }
  
- .container .menu ul {
+ .container_1 .menu ul {
      list-style: none;
      background-color: #ffffff;
      color: black;
  }
  
- .container .menu ul li {
+ .container_1 .menu ul li {
      z-index: 99999;
      display: inline-block;
      text-align: center;
@@ -29,12 +29,12 @@
      position: relative;
  }
  
- .container {
+ .container_1 {
      display: flex;
      flex-direction: column;
  }
  
- .container .menu ul li:hover {
+ .container_1 .menu ul li:hover {
      border: 1px solid #FAB702;
      background-color: #FAB702;
      color: white;
@@ -50,7 +50,7 @@
      background-color: #ffffff;
  }
  
- .container .menu ul li:hover .sub_menu {
+ .container_1 .menu ul li:hover .sub_menu {
      display: block;
      color: black;
      position: absolute;
