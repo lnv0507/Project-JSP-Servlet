@@ -96,48 +96,15 @@
         color: white;
     }
     
-    div.header-banner-item ul h5 {
+    div.header-banner-item ul h5 a {
         cursor: pointer;
-        font-size: 15px;
+        font-size: 20px;
         list-style: none;
         color: white;
     }
     
-    div.header-banner-item ul h5:hover {
+    div.header-banner-item ul h5 a:hover {
         color: #FAB702;
-    }
-    
-    div.header-banner-item ul:hover .login-form {
-        display: block;
-    }
-    
-    div.header-banner .login-form {
-        display: none;
-        list-style: none;
-        position: absolute;
-        color: #000000;
-        top: 40px;
-        z-index: 9999;
-        background-color: #111;
-        width: 150px;
-    }
-    
-    div.header-banner .login-form a {
-        text-decoration: none;
-    }
-    
-    div.header-banner .login-form a li {
-        font-size: 20px;
-        padding: 10px;
-    }
-    
-    div.header-banner .login-form .login li {
-        border-top: solid 0.001px white;
-    }
-    
-    div.header-banner .login-form a li:hover {
-        background-color: #FAB702;
-        color: #000;
     }
     /* ================================================== */
     /*  header	*/
@@ -232,8 +199,12 @@
         outline: none;
     }
     
+    .search:hover {
+        color: #555;
+    }
+    
     .input-text::placeholder {
-        color: #1a8b49;
+        color: #FAB702;
         font-size: 20px;
     }
     
