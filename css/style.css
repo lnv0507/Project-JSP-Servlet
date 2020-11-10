@@ -199,8 +199,12 @@
         outline: none;
     }
     
+    .search:hover {
+        color: #555;
+    }
+    
     .input-text::placeholder {
-        color: #1a8b49;
+        color: #FAB702;
         font-size: 20px;
     }
     
