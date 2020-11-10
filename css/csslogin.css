@@ -46,7 +46,8 @@ a {
     height: 100%;
     position: absolute;
     padding: 90px 70px 50px 70px;
-    background: rgba(40, 57, 101, .9);
+    background: rgb(27, 27, 27);
+    opacity: .9;
 }
 
 .login-html .sign-in-htm,
@@ -85,7 +86,7 @@ a {
 .login-html .sign-in:checked+.tab,
 .login-html .sign-up:checked+.tab {
     color: #fff;
-    border-color: #1161ee;
+    border-color: #FAB702;
 }
 
 .login-form {
@@ -126,7 +127,7 @@ a {
 }
 
 .login-form .group .button {
-    background: #1161ee;
+    background: #FAB702;
 }
 
 .login-form .group label .icon {
@@ -166,7 +167,7 @@ a {
 }
 
 .login-form .group .check:checked+label .icon {
-    background: #1161ee;
+    background: #FAB702;
 }
 
 .login-form .group .check:checked+label .icon:before {

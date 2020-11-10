@@ -199,8 +199,12 @@
         outline: none;
     }
     
+    .search:hover {
+        color: #555;
+    }
+    
     .input-text::placeholder {
-        color: #1a8b49;
+        color: #FAB702;
         font-size: 20px;
     }
     
@@ -565,7 +569,7 @@
     footer {
         background: #111;
         color: #ccc;
-        padding: 80px 0 0 0;
+        padding: 50px 0 0 0;
     }
     
     footer h3,
@@ -3389,7 +3393,7 @@
     }
     
     .container-4 .de-team-list {
-        width: 24.9%;
+        width: 33.3%;
         float: left;
         position: relative;
     }

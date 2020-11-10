@@ -106,34 +106,36 @@
             text-align: left;
             font-size: 10px;
             text-transform: lowercase;
-            border-bottom: 0px solid;
+            border-bottom: 0px solid #ffffff;
             position: absolute;
             background-color: #ffffff;
         }
         
-        .number {
+        .number_1 {
             text-decoration: none;
             color: black;
             text-align: center;
         }
         
-        .number a {
+        .number_1 a {
             text-decoration: none;
             color: black;
         }
         
-        .number li {
+        .number_1 li {
             list-style: none;
             background-color: white;
             color: black;
             border-radius: 200px;
+            padding-top: 15px;
         }
         
-        .number li:hover {
+        .number_1 li:hover {
             background-color: #FAB702;
+            padding-top: 15px;
         }
         
-        .number ul li {
+        .number_1 ul li {
             z-index: 99999;
             display: inline-block;
             text-align: center;
