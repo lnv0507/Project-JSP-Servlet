@@ -46,6 +46,9 @@
     <link rel="stylesheet" href="rs-plugin/css/settings.css" type="text/css">
     <link rel="stylesheet" href="css/rev-settings.css" type="text/css">
 
+    <!-- login css -->
+    <link rel="stylesheet" href="css/csslogin.css">
+
 </head>
 
 <body id="homepage">
@@ -59,15 +62,7 @@
             </div>
             <div class="header-banner-item">
                 <ul>
-                    <h5>Tài Khoản</h5>
-                    <div class="login-form">
-                        <a href="register.html" class="register">
-                            <li>Đăng Ký</li>
-                        </a>
-                        <a href="login.html" class="login">
-                            <li>Đăng Nhập</li>
-                        </a>
-                    </div>
+                    <h5><a href="login.html"><i class="fa fa-user"></i></a></h5>
                 </ul>
             </div>
         </div>
@@ -143,67 +138,60 @@
         <!-- subheader close -->
 
         <!-- content begin -->
-        <div class="filter">xư
-            <div class="background">
-
-                <div class="backg_form">
-                    <form method="" action="">
-                        <h3>Sign In</h3>
-                        <input class="input_login ip" placeholder="username or email" type="" name="emailLogin" id="email"> </br>
-                        <span id="emailloc"></span></br>
-                        <input class="input_login ip" placeholder="password" type="password" name="pass" id="password"> </br>
-                        <span id="passwordloc"></span></br>
-                        <button type="submit" value="SIGN IN" onclick="signIn()"> Sign In </button>
-                        <div>
-                            <p>Or login with</p>
+        <div class="login-wrap">
+            <div class="login-html">
+                <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+                <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+                <div class="login-form">
+                    <div class="sign-in-htm">
+                        <div class="group">
+                            <label for="user" class="label">Username</label>
+                            <input id="user" type="text" class="input">
                         </div>
-                        <div class="icon">
-                            <a href="#">
-                                <i style="color: blue;" class="fab fa-facebook"></i>
-                            </a>
-                            <a href="#">
-                                <i style="color: red;" class=" fab fa-google"></i>
-                            </a>
-
+                        <div class="group">
+                            <label for="pass" class="label">Password</label>
+                            <input id="pass" type="password" class="input" data-type="password">
                         </div>
-                        <div class="footer ">
-                            <p>Sign Up</p>
+                        <div class="group">
+                            <input id="check" type="checkbox" class="check" checked>
+                            <label for="check"><span class="icon"></span> Keep me Signed in</label>
                         </div>
-                    </form>
+                        <div class="group">
+                            <input type="submit" class="button" value="Sign In">
+                        </div>
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                            <a href="#forgot">Forgot Password?</a>
+                        </div>
+                    </div>
+                    <div class="sign-up-htm">
+                        <div class="group">
+                            <label for="user" class="label">Username</label>
+                            <input id="user" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Password</label>
+                            <input id="pass" type="password" class="input" data-type="password">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Repeat Password</label>
+                            <input id="pass" type="password" class="input" data-type="password">
+                        </div>
+                        <div class="group">
+                            <label for="pass" class="label">Email Address</label>
+                            <input id="pass" type="text" class="input">
+                        </div>
+                        <div class="group">
+                            <input type="submit" class="button" value="Sign Up">
+                        </div>
+                        <div class="hr"></div>
+                        <div class="foot-lnk">
+                            <label for="tab-1">Already Member?</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <script>
-            function signIn() {
-                var email = document.getElementById("email");
-                var password = document.getElementById("password");
-                if (email.value == "") {
-                    document.getElementById("emailloc").innerHTML = "  <img src='/Icons/Icons/alert_red.gif'/> Not enter your email";
-                    document.getElementById("emailloc").style.color = "red";
-                    email.style.border = "solid 5px red";
-                    status = false;
-
-                } else {
-                    document.getElementById("emailloc").innerHTML = "  <img src='/Icons/Icons/alert_green.gif'> enter your email ok";
-                    document.getElementById("emailloc").style.color = "green";
-                    email.style.border = "solid 5px green";
-                    status = true;
-                }
-                if (password.value == "") {
-                    document.getElementById("passwordloc").innerHTML = " <img src='/Icons/Icons/alert_red.gif'/> Not enter your password";
-                    document.getElementById("passwordloc").style.color = "red";
-                    password.style.border = "solid 5px red";
-                    status = false;
-
-                } else {
-                    document.getElementById("passwordloc").innerHTML = "  <img src='/Icons/Icons/alert_green.gif'> enter your passwrod ok";
-                    document.getElementById("passwordloc").style.color = "green";
-                    password.style.border = "solid 5px green";
-                    status = true;
-                }
-            }
-        </script>
-
         <!-- footer begin -->
         <footer>
             <div class="container">
@@ -265,7 +253,9 @@
         </footer>
         <!-- footer close -->
     </div>
-    </div>
+
+
+   
 
     <!-- style switcher
 ================================================== -->
