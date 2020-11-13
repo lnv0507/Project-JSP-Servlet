@@ -892,6 +892,7 @@
         .products {
             padding: 0;
             list-style: none;
+            height: 500px;
         }
         
         .products li {
@@ -1160,13 +1161,14 @@
             -moz-border-radius: 0;
             -webkit-border-radius: 0;
             padding: 3px;
-            padding-left: 30px;
-            padding-right: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
             text-transform: uppercase;
             display: inline-block;
-            text-align: center;
+            text-align: left;
             letter-spacing: 2px;
             text-decoration: none;
+            width: 200px;
         }
         
         .btn-line,
@@ -2689,6 +2691,10 @@
         }
         
         .col-md-3 {
+            margin-right: -1px;
+        }
+        
+        .col-md-3 .product {
             margin-right: -1px;
         }
         /* ======================================== */

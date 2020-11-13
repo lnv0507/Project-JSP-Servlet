@@ -229,21 +229,21 @@ img {
     transform: scale(1);
 }
 
-img {
+.sale img {
     max-width: 100%;
     height: auto;
 }
 
-img {
+.sale img {
     border: 0;
     vertical-align: top;
 }
 
-img {
+.sale img {
     vertical-align: middle;
 }
 
-img {
+.sale img {
     border: 0;
 }
 
