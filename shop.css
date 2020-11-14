@@ -247,6 +247,10 @@ img {
     border: 0;
 }
 
+.product-detail-right h5 {
+    padding: 30px;
+}
+
 .sub_menu li {
     width: 250px;
     text-align: left;
