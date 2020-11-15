@@ -3805,6 +3805,7 @@ design for 768px
                 height: auto;
                 background: #000000;
                 padding: 15px 0 15px 0;
+                /* padding-bottom: 80px; */
             }
             header.fixed {
                 display: block;
@@ -3874,10 +3875,21 @@ design for 768px
                 margin: 0;
                 padding: 0;
             }
+            header nav #mainmenu {
+                position: static;
+                right: 0;
+            }
+            #menu-bar li {
+                position: relative;
+            }
+            #menu-bar li .search {
+                display: none;
+            }
             #mainmenu a {
                 text-align: left;
                 padding-top: 10px !important;
                 padding-bottom: 10px !important;
+                color: white;
             }
             #mainmenu a:hover {
                 background: #111 !important;
@@ -3897,9 +3909,6 @@ design for 768px
             }
             #mainmenu li a:after {
                 display: none;
-            }
-            #mainmenu li:last-child {
-                margin-bottom: 30px;
             }
             #mainmenu li ul {
                 border-top: solid 1px #333;
@@ -4025,8 +4034,8 @@ design for 320px
         
         @media only screen and (max-width: 767px) {
             .container {
-                padding-left: 30px;
-                padding-right: 30px;
+                padding-left: 50px;
+                padding-right: 50px;
             }
             .feature-box-image,
             .pricing-box {
