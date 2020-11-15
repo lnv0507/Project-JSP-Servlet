@@ -42,4 +42,13 @@ function signIn() {
     } else {
         email.style.border = 'solid 1px green';
     }
+
+
+}
+document.getElementById('check').onclick = function(e) {
+    if (check.checked) {
+        return true;
+    } else {
+        alert('Bạn Có Muốn Lưu Đăng Nhập')
+    }
 }
