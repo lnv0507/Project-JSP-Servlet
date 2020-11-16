@@ -1,3 +1,11 @@
+$(document).ready(function() {
+    $('.search').hover(function() {
+        $('#input-search').fadeToggle(300);
+        $('#mainmenu').toggle(1000);
+    });
+});
+
+
 // function search() {
 //     let search = document.getElementsByClassName('search');
 
@@ -16,13 +24,6 @@
 //         document.getElementById('mainmenu').style.display = 'block';
 //     }
 // }
-$(document).ready(function() {
-    $('.search').hover(function() {
-        $('#input-search').fadeToggle(300);
-        $('#mainmenu').toggle(1000);
-    });
-});
-
 function signIn() {
     let name = document.getElementById('user');
     let pass = document.getElementById('pass');
