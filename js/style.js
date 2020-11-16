@@ -1,30 +1,30 @@
-$(document).ready(function() {
-    $('.search').hover(function() {
-        $('#input-search').fadeToggle(300);
-        $('#mainmenu').toggle(1000);
-    });
-});
+function search() {
+    let search = document.getElementsByClassName('search');
 
+    if (search) {
+        document.getElementById('input-search').style.display = 'block';
+        document.getElementById('mainmenu').style.display = 'none';
+    }
 
-// function search() {
-//     let search = document.getElementsByClassName('search');
-
-//     if (search) {
-//         document.getElementById('input-search').style.display = 'block';
-//         document.getElementById('mainmenu').style.display = 'none';
-//     }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+}
+>>>>>>> parent of f51553a... Merge branch 'new_branch' of https://github.com/lamnguyen-github/webshop into new_branch
+>>>>>>> 42c267285061a0dd211ab91c3e08a6f4179374fc
 
-// }
+function searchOut() {
+    let search = document.getElementsByClassName('search');
+    if (search) {
+        document.getElementById('input-search').style.display = 'none';
+        document.getElementById('mainmenu').style.display = 'block';
+    }
+<<<<<<< HEAD
+}
 
-// function searchOut() {
-//     let search = document.getElementsByClassName('search');
-//     if (search) {
-//         document.getElementById('input-search').style.display = 'none';
-//         document.getElementById('mainmenu').style.display = 'block';
-//     }
-// }
 function signIn() {
     let name = document.getElementById('user');
     let pass = document.getElementById('pass');
@@ -59,6 +59,7 @@ document.getElementById('check').onclick = function(e) {
     } else {
         alert('Bạn Có Muốn Lưu Đăng Nhập')
     }
+<<<<<<< HEAD
 }
 
 // function menubar() {
@@ -79,3 +80,12 @@ function searchOut() {
     }
 }
 >>>>>>> parent of c9bdcb1... update
+<<<<<<< HEAD
+=======
+=======
+}
+>>>>>>> parent of f51553a... Merge branch 'new_branch' of https://github.com/lamnguyen-github/webshop into new_branch
+=======
+}
+>>>>>>> parent of c9bdcb1... update
+>>>>>>> 42c267285061a0dd211ab91c3e08a6f4179374fc
