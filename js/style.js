@@ -1,20 +1,14 @@
-function search() {
-    let search = document.getElementsByClassName('search');
+// function search() {
+//     let search = document.getElementsByClassName('search');
 
-    if (search) {
-        document.getElementById('input-search').style.display = 'block';
-        document.getElementById('mainmenu').style.display = 'none';
-    }
+//     if (search) {
+//         document.getElementById('input-search').style.display = 'block';
+//         document.getElementById('mainmenu').style.display = 'none';
+//     }
+// }
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
-}
->>>>>>> parent of f51553a... Merge branch 'new_branch' of https://github.com/lamnguyen-github/webshop into new_branch
->>>>>>> 42c267285061a0dd211ab91c3e08a6f4179374fc
+
 
 function searchOut() {
     let search = document.getElementsByClassName('search');
@@ -22,7 +16,6 @@ function searchOut() {
         document.getElementById('input-search').style.display = 'none';
         document.getElementById('mainmenu').style.display = 'block';
     }
-<<<<<<< HEAD
 }
 
 function signIn() {
@@ -59,7 +52,6 @@ document.getElementById('check').onclick = function(e) {
     } else {
         alert('Bạn Có Muốn Lưu Đăng Nhập')
     }
-<<<<<<< HEAD
 }
 
 // function menubar() {
@@ -71,21 +63,10 @@ document.getElementById('check').onclick = function(e) {
 //         hover.style.display = 'none';
 //     }
 // }
-=======
-function searchOut() {
-    let search = document.getElementsByClassName('search');
-    if (search) {
-        document.getElementById('input-search').style.display = 'none';
-        document.getElementById('mainmenu').style.display = 'block';
-    }
-}
->>>>>>> parent of c9bdcb1... update
-<<<<<<< HEAD
-=======
-=======
-}
->>>>>>> parent of f51553a... Merge branch 'new_branch' of https://github.com/lamnguyen-github/webshop into new_branch
-=======
-}
->>>>>>> parent of c9bdcb1... update
->>>>>>> 42c267285061a0dd211ab91c3e08a6f4179374fc
+// function searchOut() {
+//     let search = document.getElementsByClassName('search');
+//     if (search) {
+//         document.getElementById('input-search').style.display = 'none';
+//         document.getElementById('mainmenu').style.display = 'block';
+//     }
+// }
