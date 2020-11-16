@@ -1,0 +1,73 @@
+.profile {
+    display: flex;
+    margin: 20px 0 40px 0;
+}
+
+.profile-account {
+    flex: 2;
+    padding: 20px;
+    padding-left: 60px;
+}
+
+.profile-infor {
+    flex: 8;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+form table .infor td {
+    padding: 10px;
+}
+
+input[type=text] {
+    width: 500px;
+}
+
+input[type=date] {
+    width: 500px;
+}
+
+input[type=button] {
+    width: 80px;
+    height: 30px;
+    background-color: #fab703;
+    color: #f5f5f5;
+    outline: none;
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
+}
+
+.account-item {
+    padding: 5px;
+}
+
+.account-user {
+    padding: 10px;
+}
+
+.profile-account i {
+    font-size: 30px;
+}
+
+.account-user i {
+    font-size: 20px;
+}
+
+.account-user:nth-child(1) i {
+    color: rgb(255, 193, 7);
+}
+
+.account-user:nth-child(2) i {
+    color: rgb(68, 181, 255);
+}
+
+.account-user:nth-child(3) i {
+    color: rgb(238, 77, 45);
+}

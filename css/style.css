@@ -913,6 +913,7 @@
         .de_light .product img {
             padding: 0;
             border: solid 1px #ddd;
+            background-color: #fff;
         }
         /* ================================================== */
         /* contact form */
@@ -3805,7 +3806,6 @@ design for 768px
                 height: auto;
                 background: #000000;
                 padding: 15px 0 15px 0;
-                /* padding-bottom: 80px; */
             }
             header.fixed {
                 display: block;
@@ -3875,21 +3875,10 @@ design for 768px
                 margin: 0;
                 padding: 0;
             }
-            header nav #mainmenu {
-                position: static;
-                right: 0;
-            }
-            #menu-bar li {
-                position: relative;
-            }
-            #menu-bar li .search {
-                display: none;
-            }
             #mainmenu a {
                 text-align: left;
                 padding-top: 10px !important;
                 padding-bottom: 10px !important;
-                color: white;
             }
             #mainmenu a:hover {
                 background: #111 !important;
@@ -3909,6 +3898,9 @@ design for 768px
             }
             #mainmenu li a:after {
                 display: none;
+            }
+            #mainmenu li:last-child {
+                margin-bottom: 30px;
             }
             #mainmenu li ul {
                 border-top: solid 1px #333;
@@ -4034,8 +4026,8 @@ design for 320px
         
         @media only screen and (max-width: 767px) {
             .container {
-                padding-left: 50px;
-                padding-right: 50px;
+                padding-left: 30px;
+                padding-right: 30px;
             }
             .feature-box-image,
             .pricing-box {
@@ -4094,11 +4086,3 @@ design for 320px
                 }
             }
         }
-        /* Lo Gin ADMIN */
-        /*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
-        /* reset */

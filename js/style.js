@@ -14,6 +14,7 @@ $(document).ready(function() {
 //         document.getElementById('mainmenu').style.display = 'none';
 //     }
 
+<<<<<<< HEAD
 
 // }
 
@@ -69,3 +70,12 @@ document.getElementById('check').onclick = function(e) {
 //         hover.style.display = 'none';
 //     }
 // }
+=======
+function searchOut() {
+    let search = document.getElementsByClassName('search');
+    if (search) {
+        document.getElementById('input-search').style.display = 'none';
+        document.getElementById('mainmenu').style.display = 'block';
+    }
+}
+>>>>>>> parent of c9bdcb1... update
