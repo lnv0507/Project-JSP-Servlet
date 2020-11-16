@@ -23,7 +23,6 @@ function searchOut() {
         document.getElementById('mainmenu').style.display = 'block';
     }
 <<<<<<< HEAD
-<<<<<<< HEAD
 }
 
 function signIn() {
@@ -90,6 +89,3 @@ function searchOut() {
 }
 >>>>>>> parent of c9bdcb1... update
 >>>>>>> 42c267285061a0dd211ab91c3e08a6f4179374fc
-=======
-}
->>>>>>> parent of c9bdcb1... update
