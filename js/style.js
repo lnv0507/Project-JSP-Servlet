@@ -1,21 +1,27 @@
-function search() {
-    let search = document.getElementsByClassName('search');
+// function search() {
+//     let search = document.getElementsByClassName('search');
 
-    if (search) {
-        document.getElementById('input-search').style.display = 'block';
-        document.getElementById('mainmenu').style.display = 'none';
-    }
+//     if (search) {
+//         document.getElementById('input-search').style.display = 'block';
+//         document.getElementById('mainmenu').style.display = 'none';
+//     }
 
 
-}
+// }
 
-function searchOut() {
-    let search = document.getElementsByClassName('search');
-    if (search) {
-        document.getElementById('input-search').style.display = 'none';
-        document.getElementById('mainmenu').style.display = 'block';
-    }
-}
+// function searchOut() {
+//     let search = document.getElementsByClassName('search');
+//     if (search) {
+//         document.getElementById('input-search').style.display = 'none';
+//         document.getElementById('mainmenu').style.display = 'block';
+//     }
+// }
+$(document).ready(function() {
+    $('.search').hover(function() {
+        $('#input-search').fadeToggle(300);
+        $('#mainmenu').toggle(1000);
+    });
+});
 
 function signIn() {
     let name = document.getElementById('user');
@@ -52,3 +58,13 @@ document.getElementById('check').onclick = function(e) {
         alert('Bạn Có Muốn Lưu Đăng Nhập')
     }
 }
+
+// function menubar() {
+
+//     let hover = document.getElementById('menu-item');
+//     if (hover.style.display === 'none') {
+//         hover.style.display = 'block';
+//     } else {
+//         hover.style.display = 'none';
+//     }
+// }

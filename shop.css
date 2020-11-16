@@ -298,6 +298,11 @@ img {
     box-sizing: inherit;
 }
 
+#menu-item li {
+    border: solid 1px #FAB702;
+    border-radius: 20px;
+}
+
 .sale {
     background-color: green;
     transition: transform .2s;
