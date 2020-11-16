@@ -19,6 +19,7 @@ function searchOut() {
         document.getElementById('input-search').style.display = 'none';
         document.getElementById('mainmenu').style.display = 'block';
     }
+<<<<<<< HEAD
 }
 
 function signIn() {
@@ -79,3 +80,6 @@ function searchOut() {
 =======
 }
 >>>>>>> parent of f51553a... Merge branch 'new_branch' of https://github.com/lamnguyen-github/webshop into new_branch
+=======
+}
+>>>>>>> parent of c9bdcb1... update
