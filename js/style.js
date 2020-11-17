@@ -5,10 +5,10 @@
 //         document.getElementById('input-search').style.display = 'block';
 //         document.getElementById('mainmenu').style.display = 'none';
 //     }
+
+
+
 // }
-
-
-
 
 // function searchOut() {
 //     let search = document.getElementsByClassName('search');
@@ -17,6 +17,7 @@
 //         document.getElementById('mainmenu').style.display = 'block';
 //     }
 // }
+
 
 function signIn() {
     let name = document.getElementById('user');
@@ -52,10 +53,23 @@ document.getElementById('check').onclick = function(e) {
     } else {
         alert('Bạn Có Muốn Lưu Đăng Nhập')
     }
+
 }
+
 $(document).ready(function() {
     $('.search').hover(function() {
         $('#input-search').fadeToggle(300);
         $('#mainmenu').toggle(1000);
     });
 });
+
+
+// function menubar() {
+
+//     let hover = document.getElementById('menu-item');
+//     if (hover.style.display === 'none') {
+//         hover.style.display = 'block';
+//     } else {
+//         hover.style.display = 'none';
+//     }
+// }
