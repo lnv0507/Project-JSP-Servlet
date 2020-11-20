@@ -261,6 +261,14 @@ img {
     background-color: #ffffff;
 }
 
+.product-grid h5 {
+    text-align: center;
+}
+
+.product-grid a {
+    text-decoration: none;
+}
+
 .number {
     text-decoration: none;
     color: black;
