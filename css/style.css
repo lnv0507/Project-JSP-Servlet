@@ -1127,6 +1127,16 @@
             margin-top: 20px;
             margin-bottom: 30px;
         }
+        
+        .fv-content .small-border {
+            height: 3px;
+            width: 120px;
+            background: #FAB702;
+            display: block;
+            margin: 0;
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
         /* breadcrumb */
         /* ------------------------------ */
         

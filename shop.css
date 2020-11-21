@@ -251,6 +251,10 @@ img {
     padding: 30px;
 }
 
+.single p {
+    font-size: 18px;
+}
+
 .sub_menu li {
     width: 250px;
     text-align: left;
