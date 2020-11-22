@@ -255,6 +255,14 @@ img {
     font-size: 18px;
 }
 
+.social .fa {
+    color: #FAB702;
+}
+
+.social .fa :hover {
+    color: rgb(145, 105, 105);
+}
+
 .sub_menu li {
     width: 250px;
     text-align: left;
