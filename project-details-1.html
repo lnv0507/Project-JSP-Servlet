@@ -101,7 +101,7 @@
 
                                 <ul id="menu-bar">
                                     <li>
-                                        <p id="search">
+                                        <p class="search">
                                             <i onmouseout="searchOut()" onmouseover="search()" class="fa fa-search">
                                                     <input placeholder="Tìm Kiếm..." style="display: none;" id="input-search" type="text" class="input-text">
                                                 </i>
@@ -254,88 +254,7 @@
 
     <!-- style switcher
 ================================================== -->
-    <script src="js/switcher.html "></script>
-    <script src="detail/js/switcher.html "></script>
-    <script src="detail/js/jquery-3.3.1.min.js "></script>
-    <script src="detail/js/jquery.cycle.js "></script>
-    <script src="detail/js/owl.carousel.min.js "></script>
-    <script src="detail/js/smoothproducts.min.js "></script>
-    <script>
-        $("#sliderShuffle ").cycle({
-            next: '#next',
-            prev: '#prev'
-        });
-
-        $('.owl-carousel').owlCarousel({
-            items: 4,
-            loop: true,
-            margin: 15,
-            autoplay: true,
-            autoplayTimeout: 3000, //3 Second
-            nav: true,
-            responsiveClass: true,
-            responsive: {
-                0: {
-                    items: 1,
-                    nav: true
-                },
-                600: {
-                    items: 3,
-                    nav: true
-                },
-                1000: {
-                    items: 4,
-                    nav: true
-                }
-            }
-
-        });
-
-        $(function() {
-            $(".topbar ul li ").click(function() {
-                $(".topbar ul li ").not(this).find("ul ").slideUp();
-                $(this).find("ul ").slideToggle();
-            });
-            $(".topbar ul li ul li, productCategories ul li .megamenu ").click(function(e) {
-                e.stopPropagation();
-            });
-            $(".productCategories ul li ").click(function() {
-                $(".productCategories ul li ").not(this).find(".megamenu ").hide();
-                $(this).find(".megamenu ").toggle();
-            });
-            $(".otherInfoBody ").hide();
-            $(".otherInfoHandle ").click(function() {
-                $(".otherInfoBody ").slideToggle();
-            });
-            $(".signBtn ").click(function() {
-                $("body ").css("overflow ", "hidden ");
-                $(".loginBox ").slideDown();
-            });
-            $(".closeBtn ").click(function() {
-                $("body ").css("overflow ", "visible ");
-                $(".loginBox ").slideUp();
-            });
-            $(".productViewBtn ").click(function(e) {
-                e.preventDefault();
-                $("body ").css("overflow ", "hidden ");
-                $(".productViewBox ").slideDown();
-            });
-            $(".productViewBox-closeBtn ").click(function() {
-                $("body ").css("overflow ", "visible ");
-                $(".productViewBox ").slideUp();
-            });
-
-            $(".sp-wrap ").smoothproducts();
-        });
-        //------------------------
-        $(document).ready(function() {
-            $('#search').hover(function() {
-                $('#input-search').fadeToggle(500);
-                $('#mainmenu').toggle(1000);
-            });
-        });
-        //-----------------------
-    </script>
+    <script src="js/switcher.html"></script>
 
 
     <!-- <div id="switcher">
