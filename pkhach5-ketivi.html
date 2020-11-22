@@ -1080,6 +1080,7 @@
     <script src="detail/js/owl.carousel.min.js "></script>
     <script src="detail/js/smoothproducts.min.js "></script>
     <script>
+        //danh sach nam ngang
         $("#sliderShuffle ").cycle({
             next: '#next',
             prev: '#prev'
@@ -1109,7 +1110,7 @@
             }
 
         });
-
+        // ---------------------------------JQUERY CHO SẢN PHẨM----------------------
         $(function() {
             $(".topbar ul li ").click(function() {
                 $(".topbar ul li ").not(this).find("ul ").slideUp();
@@ -1125,6 +1126,17 @@
             $(".otherInfoBody ").hide();
             $(".otherInfoHandle ").click(function() {
                 $(".otherInfoBody ").slideToggle();
+
+                // $(".otherInfoHandle ").text(function(i, oldText) {
+                //     return oldText === 'XEM NHIỀU HƠN' ? 'XEM ÍT HƠN' : oldText;
+                // });
+                var $text = $('.otherInfoHandle');
+                if ($text.text() == 'XEM NHIỀU HƠN') {
+                    $('.otherInfoHandle').text('XEM ÍT HƠN');
+                } else if ($text.text() == 'XEM ÍT HƠN') {
+                    $('.otherInfoHandle').text('XEM NHIỀU HƠN');
+                }
+
             });
             $(".signBtn ").click(function() {
                 $("body ").css("overflow ", "hidden ");
@@ -1143,11 +1155,18 @@
                 $("body ").css("overflow ", "visible ");
                 $(".productViewBox ").slideUp();
             });
-
             $(".sp-wrap ").smoothproducts();
         });
+        //-----------------------------------------------------------------------
+        //JQUERY IN SEARCH----------------------------------------
+        $(document).ready(function() {
+            $('.search').hover(function() {
+                $('#input-search').fadeToggle(500);
+                $('#mainmenu').toggle(1000);
+            });
+        });
+        //-----------------------------------
     </script>
-
 
     <!-- <div id="switcher ">
     <span class="custom-close "></span>
