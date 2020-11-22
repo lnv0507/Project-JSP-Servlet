@@ -15,7 +15,28 @@
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .checked {
+            color: orange;
+        }
+    </style>
 
+
+
+
+
+
+
+
+
+
+
+    <!--  -->
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="stylesheet" type="text/css" href="detail/css/style.css">
     <link rel="stylesheet" type="text/css" href="detail/css/owl.carousel.min.css">
@@ -92,13 +113,9 @@
 
                                 </li>
                                 <li><a href="projects.html">Dự Án</a></li>
-                                <li><a href="services.html">Dịch Vụ</a>
-                                    <ul>
-                                        <li><a href="service-1.html">Residential Design</a></li>
-                                        <li><a href="service-2.html">Hospitaly Design</a></li>
-                                        <li><a href="service-3.html">Office Design</a></li>
-                                        <li><a href="service-4.html">Commercial Design</a></li>
-                                    </ul>
+                                <li>
+                                    <a href="tintuc.html">Tin tức</a>
+
                                 </li>
                                 <li><a href="about.html">Về Chúng Tôi</a></li>
                                 <li><a href="shop.html">Sản Phẩm</a></li>
@@ -233,232 +250,270 @@ Chất lượng gỗ tốt với khả năng chịu lực, chịu ẩm mốc và
                         <!-- Other Information end -->
 
 
-                    </div>
 
-
-                </div>
-                <!-- Product Detail Page End -->
-                <!-- Popular Store Start -->
-
-                <!-- Popular Store End -->
-
-
-                <!-- Greatest Offer News Start -->
-                <div class="news " style="background-color: white;">
-                    <div class="container ">
-                        <h3>Những sản phẩm liên quan </h3>
-                        <div class="owl-carousel ">
-                            <div class="item "><img src="images/shop/tqa16.jpg "></div>
-                            <div class="item "><img src="images/shop/tqa5.jpg  "></div>
-                            <div class="item "><img src="images/shop/tqa2.jpg "></div>
-                            <div class="item "><img src="images/shop/tqa3.jpg "></div>
-                            <div class="item "><img src="images/shop/tqa4.jpg "></div>
-                              <div class="item "><img src="images/shop/tqa6.jpg "></div>
-                            <div class="item "><img src="images/shop/tqa7.jpg "></div> 
-                             <div class="item "><img src="images/shop/tqa8.jpg "></div>
-                            <div class="item "><img src="images/shop/tqa9.jpg "></div> 
-                            
                         </div>
-                    </div>
-                </div>
-                    <div class="support " style="padding-left: 250px;">
-                    <div class="container ">
-                        <a href="# ">
-                            <img src="images/icon1.png ">
-                            <h5>Chuyển phát nhanh</h5>
-                        </a>
-                        <a href="# ">
-                            <img src="images/icon2.png ">
-                            <h5>   Hỗ trợ 24 giờ</h5>
-                        </a>
-                        <a href="# ">
-                            <img src="images/icon3.png ">
-                            <h5>Phương thức thanh toán dễ dàng</h5>
-                        </a>
-                      
-                    
-                </div>
+                        <!-- Product Detail Page End -->
+                        <!-- Popular Store Start -->
 
 
-               
-            </div>
+                    </div >
+                     <div style="margin: 0 auto;width: 960px;">
+                         <span  onmouseover="starmark(this)" onclick="starmark(this)" id="1one" style="font-size:40px;cursor:pointer;"  class="fa fa-star checked"></span>
+                                <span onmouseover="starmark(this)" onclick="starmark(this)" id="2one" style="font-size:40px;cursor:pointer;" class="fa fa-star "></span>
+                                <span onmouseover="starmark(this)" onclick="starmark(this)" id="3one" style="font-size:40px;cursor:pointer;" class="fa fa-star "></span>
+                                <span onmouseover="starmark(this)" onclick="starmark(this)" id="4one" style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
+                                <span onmouseover="starmark(this)" onclick="starmark(this)" id="5one" style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
+                                <br/>
+                                <textarea style="margin-top:5px;" class="form-control" rows="3" id="comment" placeholder="nhận xét của bạn"></textarea>
+
+                                <button onclick="result()" type="button" style="margin-top:10px;margin-left:5px;" class="btn btn-lg btn-success">gửi</button>
+
+                                <script>
+                                    var count;
+
+                                    function starmark(item) {
+                                        count = item.id[0];
+                                        sessionStorage.starRating = count;
+                                        var subid = item.id.substring(1);
+                                        for (var i = 0; i < 5; i++) {
+                                            if (i < count) {
+                                                document.getElementById((i + 1) + subid).style.color = "orange";
+                                            } else {
+                                                document.getElementById((i + 1) + subid).style.color = "black";
+                                            }
 
 
-              
-                </div>
-                <!-- Greatest Offer News End -->
-                   <div class="support " >
-                    
-               
-            </div>
+                                        }
 
+                                    }
 
-              
-              
-
-
-
-
-
-
-
-
-
-
-
-
-                <!-- section close -->
-
-
-                <!-- footer begin -->
-
-                <!-- footer close -->
-            
-            <!-- footer begin -->
-       
-                <footer>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <img src="images/logo.png" class="logo-small" alt=""><br> Xin chào! Chắc hẳn AnhEm Clothing còn là một cái tên khá mới đối với nhiều người, sau đây là một số thông tin giúp bạn có thể hiểu rõ hơn về đơn vị của chúng tôi:
-                                AnhEm Clothing được thành lập vào ngày 17-7-2020, cửa hàng được đặt tại thành phố Hồ Chí Minh, với 4 thành viên sáng lập. Đây là đơn vị chuyên cung cấp các mặt hàng thời trang chính hãng có tên tuổi trên toàn thế giới giúp
-                                cho bạn luôn có một phong cách hiện đại, thời thượng và luôn an tâm về chất lượng mà sản phẩm mang lại.
+                                    function result() {
+                                        //Rating : Count
+                                        //Review : Comment(id)
+                                        alert("Rating : " + count + "\nReview : " + document.getElementById("comment").value);
+                                    }
+                                </script>
                             </div>
+                            <!-- Popular Store End -->
 
-                            <div class="col-md-4">
-                                <div class="widget widget_recent_post">
-                                    <h3>Tin Tức Khách Hàng</h3>
-                                    <ul>
-                                        <li><a href="#">5 Điều Hoàn Hảo</a></li>
-                                        <li><a href="#">Làm Tốt Sản Phẩm Cho Khách Hàng</a></li>
-                                        <li><a href="#">Liên Hệ Chúng Tôi</a></li>
-                                        <li><a href="#">Có 0 Năm Kinh Nghiệm Nhưng Sản Phẩm Luôn Chất Lượng</a></li>
-                                        <li><a href="#">Web Chuyên Bán Nội Thất Sang Chảnh</a></li>
-                                    </ul>
+
+                            <!-- Greatest Offer News Start -->
+                            <div class="news " style="background-color: white;">
+                                <div class="container ">
+                                    <h3>Những sản phẩm liên quan </h3>
+                                    <div class="owl-carousel ">
+                                        <div class="item "><img src="images/shop/tqa16.jpg "></div>
+                                        <div class="item "><img src="images/shop/tqa5.jpg  "></div>
+                                        <div class="item "><img src="images/shop/tqa2.jpg "></div>
+                                        <div class="item "><img src="images/shop/tqa3.jpg "></div>
+                                        <div class="item "><img src="images/shop/tqa4.jpg "></div>
+                                        <div class="item "><img src="images/shop/tqa6.jpg "></div>
+                                        <div class="item "><img src="images/shop/tqa7.jpg "></div>
+                                        <div class="item "><img src="images/shop/tqa8.jpg "></div>
+                                        <div class="item "><img src="images/shop/tqa9.jpg "></div>
+
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="col-md-4">
-                                <h3>Liên Hệ</h3>
-                                <div class="widget widget-address">
-                                    <address>
+                            <div class="support " style="padding-left: 250px;">
+                                <div class="container ">
+                                    <a href="# ">
+                                        <img src="images/icon1.png ">
+                                        <h5>Chuyển phát nhanh</h5>
+                                    </a>
+                                    <a href="# ">
+                                        <img src="images/icon2.png ">
+                                        <h5> Hỗ trợ 24 giờ</h5>
+                                    </a>
+                                    <a href="# ">
+                                        <img src="images/icon3.png ">
+                                        <h5>Phương thức thanh toán dễ dàng</h5>
+                                    </a>
+
+
+                                </div>
+
+
+
+                            </div>
+
+
+
+                        </div>
+                        <!-- Greatest Offer News End -->
+                        <div class="support ">
+
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!-- section close -->
+
+
+                        <!-- footer begin -->
+
+                        <!-- footer close -->
+
+                        <!-- footer begin -->
+
+                        <footer>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <img src="images/logo.png" class="logo-small" alt=""><br> Xin chào! Chắc hẳn AnhEm Clothing còn là một cái tên khá mới đối với nhiều người, sau đây là một số thông tin giúp bạn có thể hiểu rõ hơn về đơn vị của chúng
+                                        tôi: AnhEm Clothing được thành lập vào ngày 17-7-2020, cửa hàng được đặt tại thành phố Hồ Chí Minh, với 4 thành viên sáng lập. Đây là đơn vị chuyên cung cấp các mặt hàng thời trang chính hãng có tên tuổi trên toàn
+                                        thế giới giúp cho bạn luôn có một phong cách hiện đại, thời thượng và luôn an tâm về chất lượng mà sản phẩm mang lại.
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="widget widget_recent_post">
+                                            <h3>Tin Tức Khách Hàng</h3>
+                                            <ul>
+                                                <li><a href="#">5 Điều Hoàn Hảo</a></li>
+                                                <li><a href="#">Làm Tốt Sản Phẩm Cho Khách Hàng</a></li>
+                                                <li><a href="#">Liên Hệ Chúng Tôi</a></li>
+                                                <li><a href="#">Có 0 Năm Kinh Nghiệm Nhưng Sản Phẩm Luôn Chất Lượng</a></li>
+                                                <li><a href="#">Web Chuyên Bán Nội Thất Sang Chảnh</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <h3>Liên Hệ</h3>
+                                        <div class="widget widget-address">
+                                            <address>
                                 <span>Đại Học Nông Lâm</span>
                                 <span><strong>SĐT:</strong>(84) 937 983 205</span>
                                 <span><strong>SLH:</strong>(84) 937 983 205</span>
                                 <span><strong>Email:</strong><a href="18130121@st.hcmuaf.edu.vn">lamdilinh.nguyen@gmail.com</a></span>
                                 <span><strong>Web:</strong><a href="#">http://anhemclothing.ga/</a></span>
                                 </address>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="subfooter">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                &copy; Copyright 2020
-                            </div>
-                            <div class="col-md-6 text-right">
-                                <div class="social-icons">
-                                    <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
-                                    <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
-                                    <a href="#"><i class="fa fa-rss fa-lg"></i></a>
-                                    <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
-                                    <a href="#"><i class="fa fa-skype fa-lg"></i></a>
-                                    <a href="#"><i class="fa fa-dribbble fa-lg"></i></a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+
+                            <div class="subfooter">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            &copy; Copyright 2020
+                                        </div>
+                                        <div class="col-md-6 text-right">
+                                            <div class="social-icons">
+                                                <a href="#"><i class="fa fa-facebook fa-lg"></i></a>
+                                                <a href="#"><i class="fa fa-twitter fa-lg"></i></a>
+                                                <a href="#"><i class="fa fa-rss fa-lg"></i></a>
+                                                <a href="#"><i class="fa fa-google-plus fa-lg"></i></a>
+                                                <a href="#"><i class="fa fa-skype fa-lg"></i></a>
+                                                <a href="#"><i class="fa fa-dribbble fa-lg"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </footer>
+
+                        <!-- footer close -->
                     </div>
-                </div>
 
-                </footer>
-
-                <!-- footer close -->
-            </div>
-
-            <!-- style switcher
+                    <!-- style switcher
 ================================================== -->
-            <script src="detail/js/switcher.html "></script>
-            <script src="detail/js/jquery-3.3.1.min.js "></script>
-            <script src="detail/js/jquery.cycle.js "></script>
-            <script src="detail/js/owl.carousel.min.js "></script>
-            <script src="detail/js/smoothproducts.min.js "></script>
-            <script>
-                $("#sliderShuffle ").cycle({
-                    next: '#next',
-                    prev: '#prev'
-                });
+                    <script src="detail/js/switcher.html "></script>
+                    <script src="detail/js/jquery-3.3.1.min.js "></script>
+                    <script src="detail/js/jquery.cycle.js "></script>
+                    <script src="detail/js/owl.carousel.min.js "></script>
+                    <script src="detail/js/smoothproducts.min.js "></script>
+                    <script>
+                        $("#sliderShuffle ").cycle({
+                            next: '#next',
+                            prev: '#prev'
+                        });
 
-                $('.owl-carousel').owlCarousel({
-                    items: 4,
-                    loop: true,
-                    margin: 15,
-                    autoplay: true,
-                    autoplayTimeout: 3000, //3 Second
-                    nav: true,
-                    responsiveClass: true,
-                    responsive: {
-                        0: {
-                            items: 1,
-                            nav: true
-                        },
-                        600: {
-                            items: 3,
-                            nav: true
-                        },
-                        1000: {
+                        $('.owl-carousel').owlCarousel({
                             items: 4,
-                            nav: true
-                        }
-                    }
+                            loop: true,
+                            margin: 15,
+                            autoplay: true,
+                            autoplayTimeout: 3000, //3 Second
+                            nav: true,
+                            responsiveClass: true,
+                            responsive: {
+                                0: {
+                                    items: 1,
+                                    nav: true
+                                },
+                                600: {
+                                    items: 3,
+                                    nav: true
+                                },
+                                1000: {
+                                    items: 4,
+                                    nav: true
+                                }
+                            }
 
-                });
+                        });
 
-                $(function() {
-                    $(".topbar ul li ").click(function() {
-                        $(".topbar ul li ").not(this).find("ul ").slideUp();
-                        $(this).find("ul ").slideToggle();
-                    });
-                    $(".topbar ul li ul li, productCategories ul li .megamenu ").click(function(e) {
-                        e.stopPropagation();
-                    });
-                    $(".productCategories ul li ").click(function() {
-                        $(".productCategories ul li ").not(this).find(".megamenu ").hide();
-                        $(this).find(".megamenu ").toggle();
-                    });
-                    $(".otherInfoBody ").hide();
-                    $(".otherInfoHandle ").click(function() {
-                        $(".otherInfoBody ").slideToggle();
-                    });
-                    $(".signBtn ").click(function() {
-                        $("body ").css("overflow ", "hidden ");
-                        $(".loginBox ").slideDown();
-                    });
-                    $(".closeBtn ").click(function() {
-                        $("body ").css("overflow ", "visible ");
-                        $(".loginBox ").slideUp();
-                    });
-                    $(".productViewBtn ").click(function(e) {
-                        e.preventDefault();
-                        $("body ").css("overflow ", "hidden ");
-                        $(".productViewBox ").slideDown();
-                    });
-                    $(".productViewBox-closeBtn ").click(function() {
-                        $("body ").css("overflow ", "visible ");
-                        $(".productViewBox ").slideUp();
-                    });
+                        $(function() {
+                            $(".topbar ul li ").click(function() {
+                                $(".topbar ul li ").not(this).find("ul ").slideUp();
+                                $(this).find("ul ").slideToggle();
+                            });
+                            $(".topbar ul li ul li, productCategories ul li .megamenu ").click(function(e) {
+                                e.stopPropagation();
+                            });
+                            $(".productCategories ul li ").click(function() {
+                                $(".productCategories ul li ").not(this).find(".megamenu ").hide();
+                                $(this).find(".megamenu ").toggle();
+                            });
+                            $(".otherInfoBody ").hide();
+                            $(".otherInfoHandle ").click(function() {
+                                $(".otherInfoBody ").slideToggle();
+                            });
+                            $(".signBtn ").click(function() {
+                                $("body ").css("overflow ", "hidden ");
+                                $(".loginBox ").slideDown();
+                            });
+                            $(".closeBtn ").click(function() {
+                                $("body ").css("overflow ", "visible ");
+                                $(".loginBox ").slideUp();
+                            });
+                            $(".productViewBtn ").click(function(e) {
+                                e.preventDefault();
+                                $("body ").css("overflow ", "hidden ");
+                                $(".productViewBox ").slideDown();
+                            });
+                            $(".productViewBox-closeBtn ").click(function() {
+                                $("body ").css("overflow ", "visible ");
+                                $(".productViewBox ").slideUp();
+                            });
 
-                    $(".sp-wrap ").smoothproducts();
-                });
-            </script>
-            <!-- <div class="sp-lightbox" data-currenteq="1" style="display: block;">
+                            $(".sp-wrap ").smoothproducts();
+                        });
+                    </script>
+                    <!-- <div class="sp-lightbox" data-currenteq="1" style="display: block;">
             <a href="#" id="sp-prev" style="opacity: 1;"></a>
             <a href="#" id="sp-next" style="opacity: 0.1;"></a><img src="images/shop/giuong5.jpg" style=""></div> -->
 
 
-            <!-- <div id="switcher ">
+                    <!-- <div id="switcher ">
         <span class="custom-close "></span>
         <span class="custom-show "></span>
 
@@ -498,30 +553,30 @@ Chất lượng gỗ tốt với khả năng chịu lực, chịu ẩm mốc và
         </ul>
     </div> -->
 
-            <!-- Javascript Files
+                    <!-- Javascript Files
 ================================================== -->
-            <script src="js/style.js "></script>
-            <script src="js/jquery.min.js "></script>
-            <script src="js/jpreLoader.js "></script>
-            <script src="js/bootstrap.min.js "></script>
-            <script src="js/jquery.isotope.min.js "></script>
-            <script src="js/easing.js "></script>
-            <script src="js/jquery.flexslider-min.js "></script>
-            <script src="js/jquery.scrollto.js "></script>
-            <script src="js/owl.carousel.js "></script>
-            <script src="js/jquery.countTo.js "></script>
-            <script src="js/classie.js "></script>
-            <script src="js/video.resize.js "></script>
-            <script src="js/validation.js "></script>
-            <script src="js/wow.min.js "></script>
-            <script src="js/jquery.magnific-popup.min.js "></script>
-            <script src="js/enquire.min.js "></script>
-            <script src="js/designesia.js "></script>
-            <script src="demo/demo.js "></script>
+                    <script src="js/style.js "></script>
+                    <script src="js/jquery.min.js "></script>
+                    <script src="js/jpreLoader.js "></script>
+                    <script src="js/bootstrap.min.js "></script>
+                    <script src="js/jquery.isotope.min.js "></script>
+                    <script src="js/easing.js "></script>
+                    <script src="js/jquery.flexslider-min.js "></script>
+                    <script src="js/jquery.scrollto.js "></script>
+                    <script src="js/owl.carousel.js "></script>
+                    <script src="js/jquery.countTo.js "></script>
+                    <script src="js/classie.js "></script>
+                    <script src="js/video.resize.js "></script>
+                    <script src="js/validation.js "></script>
+                    <script src="js/wow.min.js "></script>
+                    <script src="js/jquery.magnific-popup.min.js "></script>
+                    <script src="js/enquire.min.js "></script>
+                    <script src="js/designesia.js "></script>
+                    <script src="demo/demo.js "></script>
 
-            <!-- SLIDER REVOLUTION SCRIPTS  -->
-            <script type="text/javascript " src="rs-plugin/js/jquery.themepunch.plugins.min.js "></script>
-            <script type="text/javascript " src="rs-plugin/js/jquery.themepunch.revolution.min.js "></script>
+                    <!-- SLIDER REVOLUTION SCRIPTS  -->
+                    <script type="text/javascript " src="rs-plugin/js/jquery.themepunch.plugins.min.js "></script>
+                    <script type="text/javascript " src="rs-plugin/js/jquery.themepunch.revolution.min.js "></script>
 
 
 
