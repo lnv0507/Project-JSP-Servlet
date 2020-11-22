@@ -3885,10 +3885,21 @@ design for 768px
                 margin: 0;
                 padding: 0;
             }
+            header nav #mainmenu {
+                position: static;
+                right: 0;
+            }
+            #menu-bar li {
+                position: relative;
+            }
+            #menu-bar li .search {
+                display: none;
+            }
             #mainmenu a {
                 text-align: left;
                 padding-top: 10px !important;
                 padding-bottom: 10px !important;
+                color: white;
             }
             #mainmenu a:hover {
                 background: #111 !important;
@@ -4022,8 +4033,8 @@ design for 480px
         
         @media only screen and (min-width: 480px) and (max-width: 767px) {
             .container {
-                padding-left: 30px;
-                padding-right: 30px;
+                padding-left: 50px;
+                padding-right: 50px;
             }
             .feature-box-image,
             .pricing-box {
