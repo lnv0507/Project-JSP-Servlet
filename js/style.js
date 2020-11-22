@@ -47,21 +47,21 @@ function signIn() {
 
 
 }
-document.getElementById('check').onclick = function(e) {
-    if (check.checked) {
-        return true;
-    } else {
-        alert('Bạn Có Muốn Lưu Đăng Nhập')
-    }
+// document.getElementById('check').onclick = function(e) {
+//     if (check.checked) {
+//         return true;
+//     } else {
+//         alert('Bạn Có Muốn Lưu Đăng Nhập')
+//     }
 
-}
+// }
 
-$(document).ready(function() {
-    $('.search').hover(function() {
-        $('#input-search').fadeToggle(300);
-        $('#mainmenu').toggle(1000);
-    });
-});
+// $(document).ready(function() {
+//     $('.search').hover(function() {
+//         $('#input-search').fadeToggle(300);
+//         $('#mainmenu').toggle(1000);
+//     });
+// });
 
 
 // function menubar() {
