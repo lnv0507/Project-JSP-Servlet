@@ -6,7 +6,7 @@
  * Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php).
  * 2013/02/17
  **/
-$.scrollTo = $.fn.scrollTo = function(x, y, options){
+$.scrollTo = $.fn.scrollTo = function(x, y, options) {
     if (!(this instanceof $)) return $.fn.scrollTo.apply($('html, body'), arguments);
 
     options = $.extend({}, {
@@ -22,7 +22,7 @@ $.scrollTo = $.fn.scrollTo = function(x, y, options){
         }
     }, options);
 
-    return this.each(function(){
+    return this.each(function() {
         var elem = $(this);
         elem.stop().animate({
             scrollLeft: !isNaN(Number(x)) ? x : $(y).offset().left + options.gap.x,
