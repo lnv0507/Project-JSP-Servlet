@@ -108,7 +108,7 @@
 
                                 <ul id="menu-bar">
                                     <li>
-                                        <p class="search">
+                                        <p id="search">
                                             <i onmouseout="searchOut()" onmouseover="search()" class="fa fa-search">
                                                     <input placeholder="Tìm Kiếm..." style="display: none;" id="input-search" type="text" class="input-text">
                                                 </i>
@@ -393,6 +393,14 @@
             });
 
             $(".sp-wrap ").smoothproducts();
+        });
+
+        //---------------------
+        $(document).ready(function() {
+            $('#search').hover(function() {
+                $('#input-search').fadeToggle(300);
+                $('#mainmenu').toggle(1000);
+            });
         });
     </script>
 

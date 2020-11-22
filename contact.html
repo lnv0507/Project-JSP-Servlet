@@ -100,7 +100,7 @@
 
                                 <ul id="menu-bar">
                                     <li>
-                                        <p class="search">
+                                        <p id="search">
                                             <i onmouseout="searchOut()" onmouseover="search()" class="fa fa-search">
                                                     <input placeholder="Tìm Kiếm..." style="display: none;" id="input-search" type="text" class="input-text">
                                                 </i>
@@ -289,7 +289,7 @@
     <script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.search').hover(function() {
+            $('#search').hover(function() {
                 $('#input-search').fadeToggle(300);
                 $('#mainmenu').toggle(1000);
             });

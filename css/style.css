@@ -199,7 +199,7 @@
             outline: none;
         }
         
-        .search:hover {
+        #search:hover {
             color: #555;
         }
         
@@ -951,7 +951,7 @@
         #contact_form input[type=text],
         #contact_form textarea,
         #contact_form input[type=email],
-        #search {
+        #search2 {
             padding: 10px;
             margin-bottom: 20px;
             color: #fff;
@@ -964,7 +964,7 @@
         .de_light #contact_form input[type=text],
         .de_light #contact_form textarea,
         .de_light #contact_form input[type=email],
-        .de_light #search {
+        .de_light #search2 {
             border: solid 1px #ddd;
             background: #f5f5f5;
             color: #333;
