@@ -3895,6 +3895,9 @@ design for 768px
             #menu-bar li #search {
                 display: none;
             }
+            #menu-bar li .cart {
+                display: none;
+            }
             #mainmenu a {
                 text-align: left;
                 padding-top: 10px !important;
