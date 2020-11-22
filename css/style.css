@@ -3892,7 +3892,7 @@ design for 768px
             #menu-bar li {
                 position: relative;
             }
-            #menu-bar li .search {
+            #menu-bar li #search {
                 display: none;
             }
             #mainmenu a {
