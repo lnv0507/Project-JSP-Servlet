@@ -6,6 +6,14 @@
     padding: 10px;
 }
 
+.owl-next {
+    outline: none;
+}
+
+.owl-prev {
+    outline: none;
+}
+
 .product a {
     text-decoration: none;
     color: black;
