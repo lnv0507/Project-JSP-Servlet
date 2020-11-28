@@ -44,8 +44,7 @@
     <!-- revolution slider -->
     <link rel="stylesheet" href="rs-plugin/css/settings.css" type="text/css">
     <link rel="stylesheet" href="css/rev-settings.css" type="text/css">
-    <link rel="stylesheet/less" type="text/css" href="css/style.less" />
-    <script src="//cdn.jsdelivr.net/npm/less"></script>
+
 </head>
 
 <body id="homepage">
@@ -157,67 +156,9 @@
                     </style>
                 </div><br />
             </div>
-            <div>
-                <div class="headder">
-                    <h1>Hòm Thư Hỗ Trợ</h1>
-                    <div class="header_bg " id="fullname">
-                        <div class="headder_1">
-                            <h4>Họ Và Tên* </h4>
-                        </div>
-                        <div class="headder_2">
-                            <input type="text" placeholder="Enter Your Name" id="name">
-                        </div>
-                    </div>
-                    <div class="badao">
-                        <div class="header_bg" id="email">
-                            <div class="headder_4" style="width: 220px;">
-                                <h4>Email* </h4>
-                            </div>
-                            <div class="headder_5">
-                                <input type="text" placeholder="Enter Your EMail" id="emailInput">
-                            </div>
-                        </div>
-                        <div class="header_bg" id="phone">
-                            <div class="headder_4" style="width: 220px;">
-                                <h4>Số Điện Thoại </h4>
-                            </div>
-                            <div class=" headder_5 ">
-                                <input type="text " placeholder="Enter Your Number Phone " id="phoneInput">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="header_bg ">
-                        <div class="headder_1 ">
-                            <h4>Dịch Vụ*</h4>
-                        </div>
-                        <div class="headder_2 ">
-                            <select class="headder_2 "> 
-                            <optgroup label="Hỗ Trợ " value="chau_a ">
-                                <option name="chau_luc[] " value="1 " hidden>Xem Thêm</option>
-                                <option value="2 ">Thiết Kế</option>
-                                <option value="3 ">Sản Phẩm Lỗi</option>
-                                <option value="">Hỗ Trợ Liên Hệ Tôi </option>
-                            </optgroup>
-                          
-                        </select>
-                        </div>
-                    </div>
-                    <div class="header_bg ">
-                        <div>
-                            <div class="headder_1 ">
-                                <p>Nhắn Tin </p>
-                            </div>
-                            <div class="headder_3 ">
-                                <input type="text " placeholder="Enter Để Viết Hỗ Trợ ">
-                            </div>
-                        </div>
 
-                    </div>
-                    <button id="submit" onclick="submit()">Gửi</button>
-                </div>
-            </div>
             <!-- footer begin -->
-            <footer id="footer">
+            <footer>
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
@@ -353,36 +294,6 @@
                 $('#mainmenu').toggle(1000);
             });
         });
-
-        function submit() {
-            var fullname = document.getElementById("fullname");
-            var email = document.getElementById("email");
-            var phone = document.getElementById("phone");
-            if (document.getElementById("name").value == "") {
-                fullname.style.border = "solid 5px red";
-                status = false;
-
-            } else {
-                fullname.style.border = "solid 5px green";
-                status = true;
-            }
-            if (document.getElementById("emailInput").value == "") {
-                email.style.border = "solid 5px red";
-                status = false;
-
-            } else {
-                email.style.border = "solid 5px green";
-                status = true;
-            }
-            if (document.getElementById("phoneInput").value == "") {
-                phone.style.border = "solid 5px red";
-                status = false;
-
-            } else {
-                phone.style.border = "solid 5px green";
-                status = true;
-            }
-        }
     </script>
 
 </body>
