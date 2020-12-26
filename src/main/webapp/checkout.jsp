@@ -200,7 +200,7 @@
             </div>
             <!-- Product View Box / Quick Product View End -->
             <!-- footer begin -->
-           <%@include file="footer.jsp"%>
+            <%@include file="footer.jsp" %>
             <!-- footer close -->
 
         </div>
@@ -314,10 +314,8 @@
             });
         });
     </script>
-    </div>
+</div>
 
-    <!-- Mirrored from www.themenesia.com/themeforest/archi-light/shop.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:09:50 GMT -->
-
-</html>
+<!-- Mirrored from www.themenesia.com/themeforest/archi-light/shop.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:09:50 GMT -->
 
 </html>
