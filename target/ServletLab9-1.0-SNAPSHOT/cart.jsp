@@ -232,7 +232,7 @@
                                     </li>
 
                                     <li><a href="about.jsp">Về Chúng Tôi</a></li>
-                                    <li><a href="shop.jsp">Sản Phẩm</a></li>
+                                    <li><a href="products.jsp">Sản Phẩm</a></li>
                                     <li><a href="contact.jsp">Liên Hệ</a></li>
 
                                 </ul>
@@ -349,7 +349,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td><a href="shop.jsp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
+                                    <td><a href="products.jsp" class="btn btn-warning"><i class="fa fa-angle-left"></i> Tiếp tục mua hàng</a>
                                     </td>
                                     <td colspan="2" class="hidden-xs"> </td>
                                     <td class="hidden-xs text-center"><strong>Tổng tiền 500.000 đ</strong>

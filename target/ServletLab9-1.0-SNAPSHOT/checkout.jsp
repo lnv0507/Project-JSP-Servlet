@@ -99,7 +99,7 @@
 
                                 </li>
                                 <li><a href="about.jsp">Về Chúng Tôi</a></li>
-                                <li><a href="shop.jsp">Sản Phẩm</a></li>
+                                <li><a href="products.jsp">Sản Phẩm</a></li>
                                 <li><a href="contact.jsp">Liên Hệ</a></li>
 
                             </ul>
@@ -141,10 +141,10 @@
                         <ul class="crumb">
                             <li><a href="index-2.jsp">Trang Chủ</a></li>
                             <li class="sep">/</li>
-                            <li><a style="color: aliceblue;" href="shop.jsp">Sản Phẩm</a></li>
+                            <li><a style="color: aliceblue;" href="products.jsp">Sản Phẩm</a></li>
                             <li class="sep">/</li>
 
-                            <li><a style="color: aliceblue;" href="shop.jsp">ĐƠN HÀNG CỦA BẠN</a></li>
+                            <li><a style="color: aliceblue;" href="products.jsp">ĐƠN HÀNG CỦA BẠN</a></li>
 
 
 
@@ -486,7 +486,7 @@
         </script>
 </body>
 
-<!-- Mirrored from www.themenesia.com/themeforest/archi-light/shop.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:09:50 GMT -->
+<!-- Mirrored from www.themenesia.com/themeforest/archi-light/products.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:09:50 GMT -->
 
 </html>
 
