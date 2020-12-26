@@ -169,55 +169,33 @@
                             <div data-index="0 " class="slick-slide slick-active slick-current " tabindex="-1 " aria-hidden="false " style="outline: none; width: 145px;float: left; ">
                                 <div>
                                     <div class="qNnW6aqnuALd3o_gNDcqn Div-ln5jk2-0 UcezA " display="flex " tabindex="-1 " style="width: 100%; display: inline-block; ">
-                                        <a href="pkhach1-sopha.jsp">
-                                            <div class="ImageShimmer__ImagePlaceHolderWrapper-sc-1uc61-0 dbRlxn " overflow="auto " height="80px "><img class="Img-sc-1au8jwx-0 iaHwKP " width="80px " src="https://www.hometown.in/media/cms/icon/Sofas.png
+                                        <a href="pbep1-xenhabep.jsp">
+                                            <div class="ImageShimmer__ImagePlaceHolderWrapper-sc-1uc61-0 dbRlxn " overflow="auto " height="80px "><img class="Img-sc-1au8jwx-0 iaHwKP " width="80px " src="https://www.hometown.in/media/cms/icon/Dining-Tables.png
             " alt="Giường " height="auto " display="block "></div><label class="Label-sc-1anmpe5-0 gpDkZH " display="block " font-size="0.875rem " font-style="normal " font-family="regular " type="note " color="textDark "><font style="vertical-align: inherit;
-            "><font style="vertical-align: inherit;padding-left: 15px;">So pha</font></font></label></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-index="2 " class="slick-slide slick-active " tabindex="-1 " aria-hidden="false " style="outline: none; width: 145px;float: left; ">
-                                <div>
-                                    <div class="qNnW6aqnuALd3o_gNDcqn Div-ln5jk2-0 UcezA " display="flex " tabindex="-1 " style="width: 100%; display: inline-block; ">
-                                        <a href="pkhach2-giasach.jsp">
-                                            <div class="ImageShimmer__ImagePlaceHolderWrapper-sc-1uc61-0 dbRlxn " overflow="auto " height="80px "><img class="Img-sc-1au8jwx-0 iaHwKP " width="80px " src="https://www.hometown.in/media/cms/icon/Storage-Cabinets.png
-            " alt="Bàn đầu giường " height="auto " display="block "></div><label class="Label-sc-1anmpe5-0 gpDkZH " display="block " font-size="0.875rem " font-style="normal " font-family="regular " type="note " color="textDark "><font style="vertical-align: inherit;
-            "><font style="vertical-align: inherit; padding-left: 15px;">Giá sách</font></font></label></a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div data-index="2 " class="slick-slide slick-active " tabindex="-1 " aria-hidden="false " style="outline: none; width: 145px;float: left; ">
-                                <div>
-                                    <div class="qNnW6aqnuALd3o_gNDcqn Div-ln5jk2-0 UcezA " display="flex " tabindex="-1 " style="width: 100%; display: inline-block; ">
-                                        <a href="pkhach3-ghetua.jsp">
-                                            <div class="ImageShimmer__ImagePlaceHolderWrapper-sc-1uc61-0 dbRlxn " overflow="auto " height="80px "><img class="Img-sc-1au8jwx-0 iaHwKP " width="80px " src="https://www.hometown.in/media/cms/icon/recliners.png
-            " alt="Bàn đầu giường " height="auto " display="block "></div><label class="Label-sc-1anmpe5-0 gpDkZH " display="block " font-size="0.875rem " font-style="normal " font-family="regular " type="note " color="textDark "><font style="vertical-align: inherit;
-            "><font style="vertical-align: inherit; padding-left: 15px;">Ghế tựa</font></font></label></a>
+            "><font style="vertical-align: inherit; ">Xe nhà bếp</font></font></label></a>
                                     </div>
                                 </div>
                             </div>
                             <div data-index="1 " class="slick-slide slick-active " tabindex="-1 " aria-hidden="false " style="outline: none; width: 145px;float: left; ">
                                 <div>
                                     <div class="qNnW6aqnuALd3o_gNDcqn Div-ln5jk2-0 UcezA " display="flex " tabindex="-1 " style="width: 100%; display: inline-block; ">
-                                        <a href="pkhach4-bankhach.jsp">
-                                            <div class="ImageShimmer__ImagePlaceHolderWrapper-sc-1uc61-0 dbRlxn " overflow="auto " height="80px "><img class="Img-sc-1au8jwx-0 iaHwKP " width="80px " src="https://www.hometown.in/media/cms/icon/Center-Tables.png
+                                        <a href="pbep2-tubep.jsp">
+                                            <div class="ImageShimmer__ImagePlaceHolderWrapper-sc-1uc61-0 dbRlxn " overflow="auto " height="80px "><img class="Img-sc-1au8jwx-0 iaHwKP " width="80px " src="https://www.hometown.in/media/cms/hometownnew/banner/storage-sideboard.png
             " alt="Tủ quần áo " height="auto " display="block "></div><label class="Lael-sc-1anmpe5-0 gpDkZH " display="block " font-size="0.875rem " font-style="normal " font-family="regular " type="note " color="textDark "><font style="vertical-align: inherit;
-            "><font style="vertical-align: inherit;padding-left: -5px; ">Bàn phòng khách</font></font></label></a>
+            "><font style="vertical-align: inherit; ">Tủ bếp </font></font></label></a>
                                     </div>
                                 </div>
                             </div>
                             <div data-index="2 " class="slick-slide slick-active " tabindex="-1 " aria-hidden="false " style="outline: none; width: 145px;float: left; ">
                                 <div>
                                     <div class="qNnW6aqnuALd3o_gNDcqn Div-ln5jk2-0 UcezA " display="flex " tabindex="-1 " style="width: 100%; display: inline-block; ">
-                                        <a href="pkhach5-ketivi.jsp">
-                                            <div class="ImageShimmer__ImagePlaceHolderWrapper-sc-1uc61-0 dbRlxn " overflow="auto " height="80px "><img class="Img-sc-1au8jwx-0 iaHwKP " width="80px " src="https://www.hometown.in/media/cms/icon/Tv-Units.png
+                                        <a href="pbep3-bodoan.jsp">
+                                            <div class="ImageShimmer__ImagePlaceHolderWrapper-sc-1uc61-0 dbRlxn " overflow="auto " height="80px "><img class="Img-sc-1au8jwx-0 iaHwKP " width="80px " src="https://www.hometown.in/media/cms/banner/20150513/Cutlery-Sets.png
             " alt="Bàn đầu giường " height="auto " display="block "></div><label class="Label-sc-1anmpe5-0 gpDkZH " display="block " font-size="0.875rem " font-style="normal " font-family="regular " type="note " color="textDark "><font style="vertical-align: inherit;
-            "><font style="vertical-align: inherit; padding-left: 15px;"> Kệ ti vi</font></font></label></a>
+            "><font style="vertical-align: inherit; ">Bộ đồ ăn </font></font></label></a>
                                     </div>
                                 </div>
                             </div>
-
-
 
                         </div>
                     </div>
@@ -242,13 +220,13 @@
                         <div class="widget widget_category">
                             <h4>DANH MỤC SẢN PHẨM</h4>
                             <ul class="product">
-                                <li class="active wow fadeIn" ><a href="shop.jsp">Tất cả <i class="fa fa-angle-right" style="padding-top:5px ;"></i>    </a></li>
-                                <li class="wow fadeIn" ><a href="pngu.jsp"> Nội thất phòng ngủ   <i class="fa fa-angle-right" style="padding-top:5px ;"></i>     </a></li>
-                                <li class="wow fadeIn" ><a href="pkhach.jsp">Nội thất phòng khách    <i class="fa fa-angle-right" style="padding-top:5px ;"></i>     </a></li>
-                                <li class="wow fadeIn" ><a href="pbep.jsp">Nội thất phòng ăn     <i class="fa fa-angle-right" style="padding-top:5px ;"></i>       </a></li>
+                                <li><a href="shop.jsp">Tất cả <i class="fa fa-angle-right" style="padding-top:5px ;"></i>    </a></li>
+                                <li><a href="pngu.jsp"> Nội thất phòng ngủ   <i class="fa fa-angle-right" style="padding-top:5px ;"></i>     </a></li>
+                                <li><a href="pkhach.jsp">Nội thất phòng khách    <i class="fa fa-angle-right" style="padding-top:5px ;"></i>     </a></li>
+                                <li><a href="products-2.jsp">Nội thất phòng ăn     <i class="fa fa-angle-right" style="padding-top:5px ;"></i>       </a></li>
 
-                                <li class="wow fadeIn" ><a href="ptreem.jsp">nội thất trẻ em  <i class="fa fa-angle-right" style="padding-top:5px ;"></i>      </a></li>
-                                <li class="wow fadeIn" ><a href="trangtri.jsp">Đồ trang trí<i class="fa fa-angle-right" style="padding-top:5px ;"></i>  </a></li>
+                                <li><a href="ptreem.jsp">nội thất trẻ em  <i class="fa fa-angle-right" style="padding-top:5px ;"></i>      </a></li>
+                                <li><a href="trangtri.jsp">Đồ trang trí<i class="fa fa-angle-right" style="padding-top:5px ;"></i>  </a></li>
                             </ul>
                         </div>
 
@@ -354,7 +332,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
 
                                             </h3>
                                             <div class="price  ">1.500.000 đ</div>
-                                            <!-- <div class="price discount "><span>2.000.000 đ</span>1.236.000 đ</div> -->
+                                            <!-- <div class="price discount "><span>$100</span>1.236.000 đ</div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -458,7 +436,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title "><a href="pkhach-sopha.jsp">Bàn Trang Điểm T563</a></h3>
-                                            <div class="price ">4.500.000đ</div>
+                                            <div class="price ">$140</div>
                                         </div>
                                     </div>
                                 </div>
@@ -482,7 +460,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                             <h3 class="title ">
                                                 <a href="giuong.jsp ">Giường G01</a>
                                             </h3>
-                                            <div class="price ">2.000.000 đ</div>
+                                            <div class="price ">$100</div>
                                         </div>
                                     </div>
                                 </div>
@@ -509,7 +487,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title "><a href="# ">Giường G03</a></h3>
-                                            <div class="price ">2.000.000 đ</div>
+                                            <div class="price ">$100</div>
                                         </div>
                                     </div>
                                 </div>
@@ -581,7 +559,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                            <div class="price ">2.000.000 đ</div>
+                                            <div class="price ">$100</div>
                                         </div>
                                     </div>
                                 </div>
@@ -604,7 +582,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                            <div class="price ">2.000.000 đ</div>
+                                            <div class="price ">$100</div>
                                         </div>
                                     </div>
                                 </div>
@@ -625,7 +603,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title "><a href="# ">Tủ quần áo MDF 4 cánh QA33</a></h3>
-                                            <div class="price ">4.500.000đ</div>
+                                            <div class="price ">$140</div>
                                         </div>
                                     </div>
                                 </div>
@@ -647,7 +625,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                            <div class="price ">2.000.000 đ</div>
+                                            <div class="price ">$100</div>
                                         </div>
                                     </div>
                                 </div>
@@ -672,7 +650,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                            <div class="price ">2.000.000 đ</div>
+                                            <div class="price ">$100</div>
                                         </div>
                                     </div>
                                 </div>
@@ -695,7 +673,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title "><a href="# ">Tủ quần áo MDF QA32</a></h3>
-                                            <div class="price ">2.000.000 đ</div>
+                                            <div class="price ">$100</div>
                                         </div>
                                     </div>
                                 </div>
@@ -812,7 +790,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                            <div class="price ">2.000.000 đ</div>
+                                            <div class="price ">$100</div>
                                         </div>
                                     </div>
                                 </div>
@@ -867,7 +845,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                             </div>
                                             <div class="product-content ">
                                                 <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                                <div class="price ">2.000.000 đ</div>
+                                                <div class="price ">$100</div>
                                             </div>
                                         </div>
                                     </div>
@@ -890,7 +868,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                             </div>
                                             <div class="product-content ">
                                                 <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                                <div class="price ">2.000.000 đ</div>
+                                                <div class="price ">$100</div>
                                             </div>
                                         </div>
                                     </div>
@@ -911,7 +889,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                             </div>
                                             <div class="product-content ">
                                                 <h3 class="title "><a href="# ">Tủ quần áo MDF 4 cánh QA33</a></h3>
-                                                <div class="price ">4.500.000đ</div>
+                                                <div class="price ">$140</div>
                                             </div>
                                         </div>
                                     </div>
@@ -933,7 +911,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                             </div>
                                             <div class="product-content ">
                                                 <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                                <div class="price ">2.000.000 đ</div>
+                                                <div class="price ">$100</div>
                                             </div>
                                         </div>
                                     </div>
@@ -958,7 +936,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                             </div>
                                             <div class="product-content ">
                                                 <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                                <div class="price ">2.000.000 đ</div>
+                                                <div class="price ">$100</div>
                                             </div>
                                         </div>
                                     </div>
@@ -981,7 +959,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                             </div>
                                             <div class="product-content ">
                                                 <h3 class="title "><a href="# ">Tủ quần áo MDF QA32</a></h3>
-                                                <div class="price ">2.000.000 đ</div>
+                                                <div class="price ">$100</div>
                                             </div>
                                         </div>
                                     </div>
@@ -1076,7 +1054,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                             </div>
                                             <div class="product-content ">
                                                 <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                                <div class="price ">2.000.000 đ</div>
+                                                <div class="price ">$100</div>
                                             </div>
                                         </div>
                                         <h3 style="border-bottom: none;padding-right: 30px;font-size: 17px; " class="otherInfoHandle ">XEM ÍT HƠN</h3>
@@ -1126,7 +1104,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                     </div>
                                     <div class="product-content ">
                                         <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                        <div class="price ">2.000.000 đ</div>
+                                        <div class="price ">$100</div>
                                     </div>
                                 </div>
                             </div>
@@ -1148,7 +1126,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                     </div>
                                     <div class="product-content ">
                                         <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                        <div class="price ">2.000.000 đ</div>
+                                        <div class="price ">$100</div>
                                     </div>
                                 </div>
                             </div>
@@ -1170,7 +1148,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                     </div>
                                     <div class="product-content ">
                                         <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                        <div class="price ">2.000.000 đ</div>
+                                        <div class="price ">$100</div>
                                     </div>
                                 </div>
                             </div>
@@ -1192,7 +1170,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                     </div>
                                     <div class="product-content ">
                                         <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                        <div class="price ">2.000.000 đ</div>
+                                        <div class="price ">$100</div>
                                     </div>
                                 </div>
                             </div>
@@ -1214,7 +1192,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                     </div>
                                     <div class="product-content ">
                                         <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                        <div class="price ">2.000.000 đ</div>
+                                        <div class="price ">$100</div>
                                     </div>
                                 </div>
                             </div>
@@ -1236,7 +1214,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                     </div>
                                     <div class="product-content ">
                                         <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                        <div class="price ">2.000.000 đ</div>
+                                        <div class="price ">$100</div>
                                     </div>
                                 </div>
                             </div>
