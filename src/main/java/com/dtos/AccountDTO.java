@@ -3,7 +3,7 @@ package com.dtos;
 public class AccountDTO {
     private String idAccount;
     private String tenAccount;
-    private int soDienThoai;
+    private String soDienThoai;
     private String diaChi;
     private String email;
     private String chucVu;
@@ -20,7 +20,7 @@ public class AccountDTO {
         this.passWord = passWord;
     }
 
-    public AccountDTO(String idAccount, String tenAccount, int soDienThoai, String diaChi, String email, String chucVu, String passWord) {
+    public AccountDTO(String idAccount, String tenAccount, String soDienThoai, String diaChi, String email, String chucVu, String passWord) {
         this.idAccount = idAccount;
         this.tenAccount = tenAccount;
         this.soDienThoai = soDienThoai;
@@ -49,11 +49,11 @@ public class AccountDTO {
         this.tenAccount = tenAccount;
     }
 
-    public int getSoDienThoai() {
+    public String getSoDienThoai() {
         return soDienThoai;
     }
 
-    public void setSoDienThoai(int soDienThoai) {
+    public void setSoDienThoai(String soDienThoai) {
         this.soDienThoai = soDienThoai;
     }
 

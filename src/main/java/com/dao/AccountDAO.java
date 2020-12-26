@@ -26,7 +26,7 @@ public class AccountDAO {
                     String diaChi = rs.getString("DIACHI");
                     String email = rs.getString("EMAIL");
                     String chucVu = rs.getString("CHUCVU");
-                    acDTO = new AccountDTO(userId, fullName,  Integer.parseInt(soDienThoai), diaChi, email, chucVu, passWord);
+                    acDTO = new AccountDTO(userId, fullName,  soDienThoai, diaChi, email, chucVu, passWord);
                 }
             }
         } catch (Exception e){
@@ -57,7 +57,7 @@ public class AccountDAO {
                 pst = cn.prepareStatement(sql);
                 pst.setString(1, account.getIdAccount());
                 pst.setString(2, account.getTenAccount());
-                pst.setInt(3, account.getSoDienThoai());
+                pst.setString(3, account.getSoDienThoai());
                 pst.setString(4, account.getDiaChi());
                 pst.setString(5, account.getEmail());
                 pst.setString(6, account.getChucVu());

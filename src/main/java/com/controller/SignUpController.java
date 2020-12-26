@@ -44,7 +44,7 @@ public class SignUpController extends HttpServlet {
                 check = false;
             }
             if(check){
-                AccountDTO accDTO = new AccountDTO(username,tenAccount,Integer.parseInt(soDienThoai),diaChi, email,chucVu, pass) ;
+                AccountDTO accDTO = new AccountDTO(username,tenAccount,soDienThoai,diaChi, email,chucVu, pass);
                 accDAO.signUp(accDTO);
                 url = SUCCESS;
             }
