@@ -292,7 +292,7 @@
 
             <br>
             <div class="container ">
-                <a href="products-2.jsp" style="text-decoration: none;">
+                <a href="pbep.jsp" style="text-decoration: none;">
                     <h4 style="text-align: center; font-weight: bolder; ">Nội thất phòng ăn </h4>
                     <div class="separator" style="margin-top: -12px;"><span><i class="fa fa-circle"></i></span></div>
                 </a>
