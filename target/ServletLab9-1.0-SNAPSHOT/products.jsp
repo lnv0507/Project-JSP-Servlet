@@ -98,6 +98,8 @@
                                     <a href="tintuc.jsp">Tin tức</a>
 
                                 </li>
+
+                                </li>
                                 <li><a href="about.jsp">Về Chúng Tôi</a></li>
                                 <li><a href="shop.jsp">Sản Phẩm</a></li>
                                 <li><a href="contact.jsp">Liên Hệ</a></li>
@@ -144,11 +146,11 @@
                             <li><a style="color: aliceblue;" href="shop.jsp"> Sản Phẩm</a></li>
                             <li class="sep">/</li>
                             <li>
-                                <a style="color: aliceblue;" href="pngu.jsp">phòng ngủ </a>
+                                <a style="color: aliceblue;" href="products-2.jsp">Phòng bếp </a>
                             </li>
                             <li class="sep">/</li>
                             <li>
-                                <a style="color: aliceblue;" href="pngu4-bantrangdiem.jsp">bàn trang điểm</a>
+                                <a style="color: aliceblue;" href="products.jsp">Bộ bàn ăn </a>
                             </li>
 
 
@@ -177,7 +179,6 @@
 
 
 
-
         </div>
 
 
@@ -188,8 +189,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan.jpg ">
                             </a>
                             <span class="product-trend-label ">Trend</span>
                             <ul class="social ">
@@ -209,8 +210,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem02.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem02.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan1.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan1.jpg ">
                             </a>
                             <!-- <span class="product-trend-label ">Trend</span> -->
                             <span class="product-discount-label ">-20%</span>
@@ -234,8 +235,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem03.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem03.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan10.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan10.jpg ">
                             </a>
                             <span class="product-trend-label ">Trend</span>
                             <span class="product-discount-label ">-20%</span>
@@ -257,8 +258,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem04.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem04.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan11.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan11.jpg ">
                             </a>
                             <span class="product-trend-label ">Trend</span>
                             <span class="product-discount-label ">-20%</span>
@@ -280,8 +281,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem05.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem05.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan12.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan12.jpg ">
                             </a>
                             <!-- <span class="product-trend-label ">Trend</span> -->
                             <span class="product-discount-label ">-20%</span>
@@ -303,8 +304,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem06.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem06.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan13.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan13.jpg ">
                             </a>
                             <span class="product-trend-label ">Trend</span>
                             <span class="product-discount-label ">-20%</span>
@@ -326,8 +327,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem07.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem07.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan14.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan14.jpg ">
                             </a>
                             <span class="product-trend-label ">Trend</span>
                             <span class="product-discount-label ">-20%</span>
@@ -349,8 +350,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem08.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem08.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan15.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan15.jpg ">
                             </a>
                             <span class="product-trend-label ">Trend</span>
                             <span class="product-discount-label ">-20%</span>
@@ -372,8 +373,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem09.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem09.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan16.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan16.jpg ">
                             </a>
                             <!-- <span class="product-trend-label ">Trend</span> -->
                             <span class="product-discount-label ">-20%</span>
@@ -397,8 +398,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem10.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem10.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan17.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan17.jpg ">
                             </a>
                             <span class="product-trend-label ">Trend</span>
                             <span class="product-discount-label ">-20%</span>
@@ -420,8 +421,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem11.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem11.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan18.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan18.jpg ">
                             </a>
                             <span class="product-trend-label ">Trend</span>
                             <span class="product-discount-label ">-20%</span>
@@ -443,8 +444,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem12.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem12.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan19.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan19.jpg ">
                             </a>
                             <span class="product-trend-label ">Trend</span>
                             <span class="product-discount-label ">-20%</span>
@@ -465,8 +466,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem13.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem13.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan20.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan20.jpg ">
                             </a>
                             <!-- <span class="product-trend-label ">Mới</span> -->
 
@@ -479,7 +480,7 @@
                         </div>
                         <div class="product-content ">
                             <h3 class="title "><a href="# ">Giường G04</a></h3>
-                            <div class="price ">$140</div>
+                            <div class="price ">$200</div>
                         </div>
                     </div>
                 </div>
@@ -488,8 +489,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem14.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem14.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan2.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan2.jpg ">
                             </a>
                             <span class="product-trend-label ">Mới</span>
 
@@ -502,7 +503,7 @@
                         </div>
                         <div class="product-content ">
                             <h3 class="title "><a href="# ">Giường G025</a></h3>
-                            <div class="price ">$140</div>
+                            <div class="price ">$200</div>
                         </div>
                     </div>
                 </div>
@@ -510,8 +511,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem01.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem01.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan3.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan3.jpg ">
                             </a>
                             <!-- <span class="product-trend-label ">Mới</span> -->
 
@@ -524,7 +525,7 @@
                         </div>
                         <div class="product-content ">
                             <h3 class="title "><a href="# ">Giường G04</a></h3>
-                            <div class="price ">$140</div>
+                            <div class="price ">$200</div>
                         </div>
                     </div>
                 </div>
@@ -533,8 +534,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem15.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem15.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan4.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan4.jpg ">
                             </a>
                             <span class="product-trend-label ">Mới</span>
 
@@ -547,7 +548,7 @@
                         </div>
                         <div class="product-content ">
                             <h3 class="title "><a href="# ">Giường G025</a></h3>
-                            <div class="price ">$140</div>
+                            <div class="price ">$200</div>
                         </div>
                     </div>
                 </div>
@@ -555,8 +556,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem17.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem17.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan5.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan5.jpg ">
                             </a>
                             <!-- <span class="product-trend-label ">Mới</span> -->
 
@@ -569,7 +570,7 @@
                         </div>
                         <div class="product-content ">
                             <h3 class="title "><a href="# ">Giường G04</a></h3>
-                            <div class="price ">$140</div>
+                            <div class="price ">$200</div>
                         </div>
                     </div>
                 </div>
@@ -578,8 +579,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="# ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem18.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem18.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan6.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan6.jpg ">
                             </a>
                             <span class="product-trend-label ">Mới</span>
 
@@ -592,7 +593,7 @@
                         </div>
                         <div class="product-content ">
                             <h3 class="title "><a href="# ">Giường G025</a></h3>
-                            <div class="price ">$140</div>
+                            <div class="price ">$200</div>
                         </div>
                     </div>
                 </div>
@@ -601,8 +602,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="giuong.jsp ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem16.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem16.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan21.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan21.jpg ">
                             </a>
                             <span class="product-trend-label ">Mới</span>
 
@@ -615,7 +616,7 @@
                         </div>
                         <div class="product-content ">
                             <h3 class="title "><a href="# ">Giường G026</a></h3>
-                            <div class="price ">$140</div>
+                            <div class="price ">$200</div>
                         </div>
                     </div>
                 </div>
@@ -624,8 +625,8 @@
                     <div class="product-grid ">
                         <div class="product-image ">
                             <a href="giuong.jsp ">
-                                <img class="pic-1 " src="images/shop/bantrangdiem19.jpg ">
-                                <img class="pic-2 " src="images/shop/bantrangdiem19.jpg ">
+                                <img class="pic-1 " src="images/shop/bobanan7.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan7.jpg ">
                             </a>
                             <span class="product-trend-label ">Mới</span>
 
@@ -638,10 +639,102 @@
                         </div>
                         <div class="product-content ">
                             <h3 class="title "><a href="# ">Giường G06</a></h3>
-                            <div class="price ">$140</div>
+                            <div class="price ">$200</div>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-3 col-sm-6 ">
+                    <div class="product-grid ">
+                        <div class="product-image ">
+                            <a href="giuong.jsp ">
+                                <img class="pic-1 " src="images/shop/bobanan8.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan8.jpg ">
+                            </a>
+                            <span class="product-trend-label ">Mới</span>
+
+                            <ul class="social ">
+                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
+                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
+                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
+                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product-content ">
+                            <h3 class="title "><a href="# ">Giường G06</a></h3>
+                            <div class="price ">$200</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 ">
+                    <div class="product-grid ">
+                        <div class="product-image ">
+                            <a href="giuong.jsp ">
+                                <img class="pic-1 " src="images/shop/bobanan9.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan9.jpg ">
+                            </a>
+                            <span class="product-trend-label ">Mới</span>
+
+                            <ul class="social ">
+                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
+                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
+                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
+                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product-content ">
+                            <h3 class="title "><a href="# ">Giường G06</a></h3>
+                            <div class="price ">$200</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 ">
+                    <div class="product-grid ">
+                        <div class="product-image ">
+                            <a href="giuong.jsp ">
+                                <img class="pic-1 " src="images/shop/bobanan22.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan22.jpg ">
+                            </a>
+                            <span class="product-trend-label ">Mới</span>
+
+                            <ul class="social ">
+                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
+                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
+                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
+                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product-content ">
+                            <h3 class="title "><a href="# ">Giường G06</a></h3>
+                            <div class="price ">$200</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 ">
+                    <div class="product-grid ">
+                        <div class="product-image ">
+                            <a href="giuong.jsp ">
+                                <img class="pic-1 " src="images/shop/bobanan23.jpg ">
+                                <img class="pic-2 " src="images/shop/bobanan23.jpg ">
+                            </a>
+                            <span class="product-trend-label ">Mới</span>
+
+                            <ul class="social ">
+                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
+                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
+                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
+                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="product-content ">
+                            <h3 class="title "><a href="# ">Giường G06</a></h3>
+                            <div class="price ">$200</div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
 
 
 
@@ -659,14 +752,127 @@
                 <h3 style="border-bottom: none;padding: 0px;font-size: 17px; " class="otherInfoHandle ">XEM NHIỀU HƠN</h3>
                 <div class="otherInfoBody ">
 
-
+                    <div class="col-md-3 col-sm-6 ">
+                        <div class="product-grid ">
+                            <div class="product-image ">
+                                <a href="# ">
+                                    <img class="pic-1 " src="images/shop/bobanan11.jpg ">
+                                    <img class="pic-2 " src="images/shop/bobanan11.jpg ">
+                                </a>
+                                <span class="product-trend-label ">Trend</span>
+                                <span class="product-discount-label ">-20%</span>
+                                <ul class="social ">
+                                    <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
+                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
+                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
+                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product-content ">
+                                <h3 class="title "><a href="# ">Giường ngủ GN236</a></h3>
+                                <div class="price discount "><span>$17.00</span> $13.60</div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="col-md-3 col-sm-6 ">
                         <div class="product-grid ">
                             <div class="product-image ">
                                 <a href="# ">
-                                    <img class="pic-1 " src="images/shop/bantrangdiem09.jpg ">
-                                    <img class="pic-2 " src="images/shop/bantrangdiem09.jpg ">
+                                    <img class="pic-1 " src="images/shop/bobanan12.jpg ">
+                                    <img class="pic-2 " src="images/shop/bobanan12.jpg ">
+                                </a>
+                                <!-- <span class="product-trend-label ">Trend</span> -->
+                                <span class="product-discount-label ">-20%</span>
+                                <ul class="social ">
+                                    <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
+                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
+                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
+                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product-content ">
+                                <h3 class="title "><a href="# ">Giường ngủ GN01</a></h3>
+                                <div class="price discount "><span>$17.00</span> $13.60</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 ">
+                        <div class="product-grid ">
+                            <div class="product-image ">
+                                <a href="# ">
+                                    <img class="pic-1 " src="images/shop/bobanan13.jpg ">
+                                    <img class="pic-2 " src="images/shop/bobanan13.jpg ">
+                                </a>
+                                <span class="product-trend-label ">Trend</span>
+                                <span class="product-discount-label ">-20%</span>
+                                <ul class="social ">
+                                    <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
+                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
+                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
+                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product-content ">
+                                <h3 class="title "><a href="# ">Giường ngủ GN59</a></h3>
+                                <div class="price discount "><span>$17.00</span> $13.60</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 ">
+                        <div class="product-grid ">
+                            <div class="product-image ">
+                                <a href="# ">
+                                    <img class="pic-1 " src="images/shop/bobanan14.jpg ">
+                                    <img class="pic-2 " src="images/shop/bobanan14.jpg ">
+                                </a>
+                                <span class="product-trend-label ">Trend</span>
+                                <span class="product-discount-label ">-20%</span>
+                                <ul class="social ">
+                                    <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
+                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
+                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
+                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product-content ">
+                                <h3 class="title "><a href="# ">Giường ngủ GN45</a></h3>
+                                <div class="price discount "><span>$17.00</span> $13.60</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 ">
+                        <div class="product-grid ">
+                            <div class="product-image ">
+                                <a href="# ">
+                                    <img class="pic-1 " src="images/shop/bobanan15.jpg ">
+                                    <img class="pic-2 " src="images/shop/bobanan15.jpg ">
+                                </a>
+                                <span class="product-trend-label ">Trend</span>
+                                <span class="product-discount-label ">-20%</span>
+                                <ul class="social ">
+                                    <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
+                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
+                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
+                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product-content ">
+                                <h3 class="title "><a href="# ">Women's Button Top</a></h3>
+                                <div class="price discount "><span>$17.00</span> $13.60</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 ">
+                        <div class="product-grid ">
+                            <div class="product-image ">
+                                <a href="# ">
+                                    <img class="pic-1 " src="images/shop/bobanan16.jpg ">
+                                    <img class="pic-2 " src="images/shop/bobanan16.jpg ">
                                 </a>
                                 <!-- <span class="product-trend-label ">Trend</span> -->
                                 <span class="product-discount-label ">-20%</span>
@@ -690,8 +896,8 @@
                         <div class="product-grid ">
                             <div class="product-image ">
                                 <a href="# ">
-                                    <img class="pic-1 " src="images/shop/bantrangdiem10.jpg ">
-                                    <img class="pic-2 " src="images/shop/bantrangdiem10.jpg ">
+                                    <img class="pic-1 " src="images/shop/bobanan17.jpg ">
+                                    <img class="pic-2 " src="images/shop/bobanan17.jpg ">
                                 </a>
                                 <span class="product-trend-label ">Trend</span>
                                 <span class="product-discount-label ">-20%</span>
@@ -713,8 +919,8 @@
                         <div class="product-grid ">
                             <div class="product-image ">
                                 <a href="# ">
-                                    <img class="pic-1 " src="images/shop/bantrangdiem11.jpg ">
-                                    <img class="pic-2 " src="images/shop/bantrangdiem11.jpg ">
+                                    <img class="pic-1 " src="images/shop/bobanan18.jpg ">
+                                    <img class="pic-2 " src="images/shop/bobanan18.jpg ">
                                 </a>
                                 <span class="product-trend-label ">Trend</span>
                                 <span class="product-discount-label ">-20%</span>
@@ -736,8 +942,8 @@
                         <div class="product-grid ">
                             <div class="product-image ">
                                 <a href="# ">
-                                    <img class="pic-1 " src="images/shop/bantrangdiem12.jpg ">
-                                    <img class="pic-2 " src="images/shop/bantrangdiem12.jpg ">
+                                    <img class="pic-1 " src="images/shop/bobanan19.jpg ">
+                                    <img class="pic-2 " src="images/shop/bobanan19.jpg ">
                                 </a>
                                 <span class="product-trend-label ">Trend</span>
                                 <span class="product-discount-label ">-20%</span>
@@ -758,8 +964,8 @@
                         <div class="product-grid ">
                             <div class="product-image ">
                                 <a href="# ">
-                                    <img class="pic-1 " src="images/shop/bantrangdiem13.jpg ">
-                                    <img class="pic-2 " src="images/shop/bantrangdiem13.jpg ">
+                                    <img class="pic-1 " src="images/shop/bobanan20.jpg ">
+                                    <img class="pic-2 " src="images/shop/bobanan20.jpg ">
                                 </a>
                                 <!-- <span class="product-trend-label ">Mới</span> -->
 
@@ -772,7 +978,7 @@
                             </div>
                             <div class="product-content ">
                                 <h3 class="title "><a href="# ">Giường G04</a></h3>
-                                <div class="price ">$140</div>
+                                <div class="price ">$200</div>
                             </div>
                         </div>
                     </div>
@@ -781,8 +987,8 @@
                         <div class="product-grid ">
                             <div class="product-image ">
                                 <a href="# ">
-                                    <img class="pic-1 " src="images/shop/bantrangdiem14.jpg ">
-                                    <img class="pic-2 " src="images/shop/bantrangdiem14.jpg ">
+                                    <img class="pic-1 " src="images/shop/bobanan2.jpg ">
+                                    <img class="pic-2 " src="images/shop/bobanan2.jpg ">
                                 </a>
                                 <span class="product-trend-label ">Mới</span>
 
@@ -795,7 +1001,7 @@
                             </div>
                             <div class="product-content ">
                                 <h3 class="title "><a href="# ">Giường G025</a></h3>
-                                <div class="price ">$140</div>
+                                <div class="price ">$200</div>
                             </div>
                         </div>
                     </div>
@@ -803,8 +1009,8 @@
                         <div class="product-grid ">
                             <div class="product-image ">
                                 <a href="# ">
-                                    <img class="pic-1 " src="images/shop/ban-phan-trang-diem02.jpg ">
-                                    <img class="pic-2 " src="images/shop/bantrangdiem02.jpg ">
+                                    <img class="pic-1 " src="images/shop/bobanan3.jpg ">
+                                    <img class="pic-2 " src="images/shop/bobanan3.jpg ">
                                 </a>
                                 <!-- <span class="product-trend-label ">Mới</span> -->
 
@@ -817,10 +1023,57 @@
                             </div>
                             <div class="product-content ">
                                 <h3 class="title "><a href="# ">Giường G04</a></h3>
-                                <div class="price ">$140</div>
+                                <div class="price ">$200</div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-md-3 col-sm-6 ">
+                        <div class="product-grid ">
+                            <div class="product-image ">
+                                <a href="# ">
+                                    <img class="pic-1 " src="images/shop/bobanan4.jpg ">
+                                    <img class="pic-2 " src="images/shop/bobanan4.jpg ">
+                                </a>
+                                <span class="product-trend-label ">Mới</span>
+
+                                <ul class="social ">
+                                    <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
+                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
+                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
+                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product-content ">
+                                <h3 class="title "><a href="# ">Giường G025</a></h3>
+                                <div class="price ">$200</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 ">
+                        <div class="product-grid ">
+                            <div class="product-image ">
+                                <a href="# ">
+                                    <img class="pic-1 " src="images/shop/bobanan5.jpg ">
+                                    <img class="pic-2 " src="images/shop/bobanan5.jpg ">
+                                </a>
+                                <!-- <span class="product-trend-label ">Mới</span> -->
+
+                                <ul class="social ">
+                                    <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
+                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
+                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
+                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product-content ">
+                                <h3 class="title "><a href="# ">Giường G04</a></h3>
+                                <div class="price ">$200</div>
+                            </div>
+                        </div>
+                    </div>
+
+
 
 
                 </div>
@@ -832,154 +1085,68 @@
 
 
 
-        <div class="phobien ">
-            <!-- Greatest Offer News Start -->
-            <div class="news " style="background-color: white; ">
-                <div class="container ">
-                    <h4 style="text-align: center; font-weight: bolder; ">SẢN PHẨM BÁN CHẠY NHẤT TRONG DANH MỤC NÀY</h4>
-                    <div class="owl-carousel ">
+        <div class="row " style="margin: 0px;">
+            <h4 style="text-align: center; font-weight: bolder; ">MUA SẮM THEO THIẾT KẾ </h4>
+            <br><br>
+            <ul class="products " style="text-align: left ;height: 270px;">
+                <li class="col-md-2 product ">
 
-                        <div class="item ">
-                            <div class="product-grid ">
-                                <div class="product-image ">
-                                    <a href="giuong.jsp ">
-                                        <img class="pic-1 " src="images/shop/bantrangdiem03.jpg ">
-                                        <img class="pic-2 " src="images/shop/bantrangdiem03.jpg ">
-                                    </a>
-                                    <span class="product-trend-label ">Mới</span>
+                    <img src="images/shop/bobanan.jpg " class="img-responsive " alt=" ">
+                    <h5>Giường nền</h5>
 
-                                    <ul class="social ">
-                                        <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-content ">
-                                    <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                    <div class="price ">$140</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <div class="product-grid ">
-                                <div class="product-image ">
-                                    <a href="giuong.jsp ">
-                                        <img class="pic-1 " src="images/shop/bantrangdiem15.jpg ">
-                                        <img class="pic-2 " src="images/shop/bantrangdiem15.jpg ">
-                                    </a>
-                                    <span class="product-trend-label ">Mới</span>
 
-                                    <ul class="social ">
-                                        <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-content ">
-                                    <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                    <div class="price ">$140</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <div class="product-grid ">
-                                <div class="product-image ">
-                                    <a href="giuong.jsp ">
-                                        <img class="pic-1 " src="images/shop/bantrangdiem02.jpg ">
-                                        <img class="pic-2 " src="images/shop/bantrangdiem02.jpg ">
-                                    </a>
-                                    <span class="product-trend-label ">Mới</span>
 
-                                    <ul class="social ">
-                                        <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-content ">
-                                    <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                    <div class="price ">$140</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <div class="product-grid ">
-                                <div class="product-image ">
-                                    <a href="giuong.jsp ">
-                                        <img class="pic-1 " src="images/shop/bantrangdiem07.jpg ">
-                                        <img class="pic-2 " src="images/shop/bantrangdiem07.jpg ">
-                                    </a>
-                                    <span class="product-trend-label ">Mới</span>
+                </li>
 
-                                    <ul class="social ">
-                                        <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-content ">
-                                    <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                    <div class="price ">$140</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <div class="product-grid ">
-                                <div class="product-image ">
-                                    <a href="giuong.jsp ">
-                                        <img class="pic-1 " src="images/shop/bantrangdiem06.jpg ">
-                                        <img class="pic-2 " src="images/shop/bantrangdiem06.jpg ">
-                                    </a>
-                                    <span class="product-trend-label ">Mới</span>
+                <li class="col-md-2 product ">
+                    <img src="images/shop/bodoan2.jpg " class="img-responsive " alt=" ">
 
-                                    <ul class="social ">
-                                        <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-content ">
-                                    <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                    <div class="price ">$140</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item ">
-                            <div class="product-grid ">
-                                <div class="product-image ">
-                                    <a href="giuong.jsp ">
-                                        <img class="pic-1 " src="images/shop/bantrangdiem08.jpg ">
-                                        <img class="pic-2 " src="images/shop/bantrangdiem08.jpg ">
-                                    </a>
-                                    <span class="product-trend-label ">Mới</span>
+                    <h5>Giường lưu trữ </h5>
 
-                                    <ul class="social ">
-                                        <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-content ">
-                                    <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                    <div class="price ">$140</div>
-                                </div>
-                            </div>
-                        </div>
 
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="support ">
+                </li>
+
+
+                <li class="col-md-2 product ">
+                    <img src="images/shop/bobanan11.jpg " class="img-responsive " alt=" ">
+                    <h5>Giường ban ngày</h5>
+
+                </li>
+
+                <li class="col-md-2 product ">
+
+                    <img src="images/shop/bodoan3.jpg " class="img-responsive " alt=" ">
+                    <h5>Giường đa năng</h5>
+
+                </li>
+
+                <li class="col-md-2 product ">
+                    <img src="images/shop/bobanan4.jpg " class="img-responsive " alt=" ">
+                    <h5>Giường tầng</h5>
+
+                </li>
+
+
+                <li class="col-md-2 product ">
+                    <img src="images/shop/bodoan14.jpg " class="img-responsive " alt=" ">
+                    <h5>Giường sang trọng</h5>
+
+                </li>
+
+
+
+
+
+
+            </ul>
 
 
         </div>
+
+
+
+
+
 
 
 
@@ -1143,8 +1310,6 @@
         });
         //-----------------------------------
     </script>
-
-
     <!-- <div id="switcher ">
     <span class="custom-close "></span>
     <span class="custom-show "></span>
@@ -1213,6 +1378,5 @@
 
 <!-- Mirrored from www.themenesia.com/themeforest/archi-light/shop.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:09:50 GMT -->
 
-</jsp>
+</html>
 
-</jsp>
