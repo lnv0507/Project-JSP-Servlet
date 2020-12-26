@@ -97,7 +97,7 @@
 
                                 </li>
                                 <li><a href="about.jsp">Về Chúng Tôi</a></li>
-                                <li><a href="shop.jsp">Sản Phẩm</a></li>
+                                <li><a href="products.jsp">Sản Phẩm</a></li>
                                 <li><a href="contact.jsp">Liên Hệ</a></li>
 
                             </ul>
@@ -141,7 +141,7 @@
                                 <li><a href="index-2.jsp">Trang Chủ</a></li>
                                 <li class="sep">/</li>
                                 <li>
-                                    <a style="color: aliceblue;" href="shop.jsp">Hồ Sơ Cá Nhân</a></li>
+                                    <a style="color: aliceblue;" href="products.jsp">Hồ Sơ Cá Nhân</a></li>
 
 
 

@@ -86,7 +86,7 @@
                                 <li><a href="projects.jsp">Thiết kế</a></li>
                                 <li><a href="tintuc.jsp">Tin tức</a></li>
                                 <li><a href="about.jsp">Về Chúng Tôi</a></li>
-                                <li><a href="shop.jsp">Sản Phẩm</a></li>
+                                <li><a href="products.jsp">Sản Phẩm</a></li>
                                 <li><a href="contact.jsp">Liên Hệ</a></li>
 
                             </ul>

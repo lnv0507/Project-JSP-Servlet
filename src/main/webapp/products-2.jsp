@@ -97,7 +97,7 @@
 
                                 </li>
                                 <li><a href="about.jsp">Về Chúng Tôi</a></li>
-                                <li><a href="shop.jsp">Sản Phẩm</a></li>
+                                <li><a href="products.jsp">Sản Phẩm</a></li>
                                 <li><a href="contact.jsp">Liên Hệ</a></li>
 
                             </ul>
@@ -139,7 +139,7 @@
                         <ul class="crumb">
                             <li><a href="index-2.jsp">Trang Chủ</a></li>
                             <li class="sep">/</li>
-                            <li><a style="color: aliceblue;" href="shop.jsp"> Sản Phẩm</a></li>
+                            <li><a style="color: aliceblue;" href="products.jsp"> Sản Phẩm</a></li>
                             <li class="sep">/</li>
                             <li>
                                 <a style="color: aliceblue;" href="pkhach.jsp">phòng khách </a>
@@ -220,7 +220,7 @@
                         <div class="widget widget_category">
                             <h4>DANH MỤC SẢN PHẨM</h4>
                             <ul class="product">
-                                <li><a href="shop.jsp">Tất cả <i class="fa fa-angle-right" style="padding-top:5px ;"></i>    </a></li>
+                                <li><a href="products.jsp">Tất cả <i class="fa fa-angle-right" style="padding-top:5px ;"></i>    </a></li>
                                 <li><a href="pngu.jsp"> Nội thất phòng ngủ   <i class="fa fa-angle-right" style="padding-top:5px ;"></i>     </a></li>
                                 <li><a href="pkhach.jsp">Nội thất phòng khách    <i class="fa fa-angle-right" style="padding-top:5px ;"></i>     </a></li>
                                 <li><a href="products-2.jsp">Nội thất phòng ăn     <i class="fa fa-angle-right" style="padding-top:5px ;"></i>       </a></li>
@@ -1455,7 +1455,7 @@ Bộ Bàn Ghế Gỗ GG01</a>
     <script type="text/javascript " src="rs-plugin/js/jquery.themepunch.revolution.min.js "></script>
 </body>
 
-<!-- Mirrored from www.themenesia.com/themeforest/archi-light/shop.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:09:50 GMT -->
+<!-- Mirrored from www.themenesia.com/themeforest/archi-light/products.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:09:50 GMT -->
 
 </html>
 

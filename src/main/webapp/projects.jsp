@@ -91,7 +91,7 @@
 
                                 </li>
                                 <li><a href="about.jsp">Về Chúng Tôi</a></li>
-                                <li><a href="shop.jsp">Sản Phẩm</a></li>
+                                <li><a href="products.jsp">Sản Phẩm</a></li>
                                 <li><a href="contact.jsp">Liên Hệ</a></li>
 
                             </ul>
@@ -171,7 +171,7 @@
                     <!-- gallery item -->
                     <div class="item residential">
                         <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details-2.jsp">
+                            <a class="simple-ajax-popup-align-top" href="project-details.jsp">
                                 <span class="overlay">
                                     <span class="pf_text">
                                         <span class="project-name">Id design</span> <!-- Nhap id thiet ke -->
