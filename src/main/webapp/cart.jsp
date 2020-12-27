@@ -69,7 +69,7 @@
 
         .btn-danger:hover {
             background-color: #fab702;
-            color: r;
+            color: red;
         }
 
         tfoot td a {
@@ -148,7 +148,7 @@
 <div id="wrapper">
     <%--        Header Bigin--%>
     <%@include file="header.jsp" %>
-    >
+
     <!-- header close -->
 
     <!-- subheader -->
@@ -254,7 +254,7 @@
         </div>
         <!-- footer begin -->
         <%@include file="footer.jsp" %>
-        >
+
         <!-- footer close -->
 
     </div>

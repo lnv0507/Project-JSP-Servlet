@@ -3,6 +3,9 @@ package com.dao;
 import com.dtos.ProductDTO;
 import com.utils.DBUtils;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -11,7 +14,10 @@ public class ProductDAO {
         Connection con = null;
         PreparedStatement pst = null;
         ResultSet resut = null;
+        FileInputStream fis = null;
+
         try {
+            File image = new File("images");
             con = DBUtils.makeConnection();
             if(con!= null){
                 String sql = "insert into product(IDPRODUCT, TENPRODUCT, LOAI, CHATLIEU, GIATIEN, SOLUONGTRONGKHO, DANHGIA, tinhtrang, image)\n" +
@@ -22,10 +28,11 @@ public class ProductDAO {
                 pst.setString(3, productDTO.getLoai());
                 pst.setString(4, productDTO.getChatLieu());
                 pst.setInt(5, productDTO.getGiaTien());
-                pst.setString(6, productDTO.getSoLuongTrongKho());
+                pst.setInt(6, productDTO.getSoLuongTrongKho());
                 pst.setString(7, productDTO.getDanhGia());
                 pst.setString(8, productDTO.getTinhTrang());
-                pst.setString(9, productDTO.getImage());
+                fis = new FileInputStream(image);
+                pst.setBinaryStream(9, (InputStream) fis, (int)  (image.length()));
                 pst.executeUpdate();
             }
         }catch (Exception e){

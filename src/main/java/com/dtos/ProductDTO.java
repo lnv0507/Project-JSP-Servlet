@@ -6,7 +6,7 @@ public class ProductDTO {
     private String loai;
     private String chatLieu;
     private int giaTien;
-    private String soLuongTrongKho;
+    private int soLuongTrongKho;
     private String danhGia;
     private String tinhTrang;
     private String image;
@@ -14,7 +14,7 @@ public class ProductDTO {
     public ProductDTO() {
     }
 
-    public ProductDTO(String idProduct, String tenProduct, String loai, String chatLieu, int giaTien, String soLuongTrongKho, String danhGia, String tinhTrang, String image) {
+    public ProductDTO(String idProduct, String tenProduct, String loai, String chatLieu, int giaTien, int soLuongTrongKho, String danhGia, String tinhTrang, String image) {
         this.idProduct = idProduct;
         this.tenProduct = tenProduct;
         this.loai = loai;
@@ -66,11 +66,11 @@ public class ProductDTO {
         this.giaTien = giaTien;
     }
 
-    public String getSoLuongTrongKho() {
+    public int getSoLuongTrongKho() {
         return soLuongTrongKho;
     }
 
-    public void setSoLuongTrongKho(String soLuongTrongKho) {
+    public void setSoLuongTrongKho(int soLuongTrongKho) {
         this.soLuongTrongKho = soLuongTrongKho;
     }
 

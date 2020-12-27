@@ -62,7 +62,7 @@
         <!-- content begin -->
         <section class="background-login">
             <div class="login-wrap">
-                <div class="login-jsp">
+                <div class="login-html">
                     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab"><a
                         href="#">Đăng Ký</a></label>
                     <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"><a
@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="hr"></div>
                                 <div class="foot-lnk">
-                                    <label for="tab-1">Đã Có Tài Khoản?</a>
+                                    <a href="login.jsp"> Đã Có Tài Khoản?</a>
                                 </div>
                             </div>
                         </form>
@@ -110,7 +110,7 @@
 
 <!-- style switcher
 ================================================== -->
-<script src="js/switcher.jsp"></script>
+<script src="js/switcher.html"></script>
 <script src="//cdn.jsdelivr.net/npm/less"></script>
 
 

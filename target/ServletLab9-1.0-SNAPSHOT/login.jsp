@@ -63,7 +63,7 @@
         <div id="content" class="no-bottom no-top">
             <section class="background-login">
                 <div class="login-wrap">
-                    <div class="login-jsp">
+                    <div class="login-html">
                         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
                                                                                                  class="tab"><a
                             href="#">Đăng Nhập</a></label>
@@ -110,45 +110,7 @@
 <script src="js/switcher.jsp"></script>
 <script src="//cdn.jsdelivr.net/npm/less"></script>
 
-<!-- <div id="switcher">
-<span class="custom-close"></span>
-<span class="custom-show"></span>
 
-<span class="sw-title">Header Style</span>
-<select name="switcher" id="de-header">
-<option value="opt-1" selected>Solid</option>
-<option value="opt-2">Transparent</option>
-</select>
-
-<div class="clearfix"></div>
-
-<span class="sw-title">Menu Style</span>
-<select name="switcher" id="de-menu">
-<option value="opt-1" selected>Dotted Separator</option>
-<option value="opt-2">Line Separator</option>
-<option value="opt-3">Circle Separator</option>
-<option value="opt-4">Square Separator</option>
-<option value="opt-5">Plus Separator</option>
-<option value="opt-6">Strip Separator</option>
-<option value="opt-0">No Separator</option>
-</select>
-
-<div class="clearfix"></div>
-
-<span class="sw-title">Color :</span>
-<ul id="de-color">
-    <li class="bg1"></li>
-    <li class="bg2"></li>
-    <li class="bg3"></li>
-    <li class="bg4"></li>
-    <li class="bg5"></li>
-    <li class="bg6"></li>
-    <li class="bg7"></li>
-    <li class="bg8"></li>
-    <li class="bg9"></li>
-    <li class="bg10"></li>
-</ul>
-</div> -->
 
 <!-- Javascript Files
 ================================================== -->

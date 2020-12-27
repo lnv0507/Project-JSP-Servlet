@@ -16,847 +16,242 @@
     <link href="css/jquery.datetimepicker.css" rel="stylesheet">
 </head>
 <body>
-<header>
-    <nav id="navbar-container" class="navbar navbar- navbar-fixed-top">
-        <div class="container-fluid">
-            
-            
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              
-                <ul class="nav navbar-nav navbar-right">
-                                    <li style="border-right: 1px solid #E1E1E1; padding-right: 15px;">
-                        <label style="margin: 13px 15px; color: white">
-                            Tiệm đồ cũ DEND 
-                        </label>
-                    </li>
-                   
-                                    <li class="dropdown user-profile">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false"><span class="hello">Xin chào, </span>DEND<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="TaiKhoan.jsp"><i class="fa fa-user"></i>Tài khoản</a></li>
-                            <li><a href="DangNhap.jsp"><i class="fa fa-power-off"></i>Thoát</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav></header>
-<section class="main" role="main">
-    <div class="container-fluid">
+<%@include file="HeaderAdmin.jsp" %>
+<div class="col-md-10 padd-left-0">
+    <div class="orders-content check-order">
         <div class="row">
-            <div class="col-md-2 padd-0">
-                <div class="sidebar sidebar-fixed hidden-xs hidden-sm hidden-md" id="sidebar">
-                    <ul class="nav nav-pills nav-list nav-stacked">                        
-                        <li id="dashboard"><a href="Trangchu.jsp" ><i class="fa fa-gg-circle"></i><b>Trang Chủ</b></a></li>
-                        <li id="orders"><a href="#" style=" color: white;background-color: #33CB82!important;"><i class="fa fa-shopping-cart"></i><b>Đơn hàng</b></a></li>
-                        <li id="product"><a href="SanPham.jsp"><i class="fa fa-product-hunt"></i><b>Sản phẩm</b></a></li>
-                        <li id="customer"><a href="KhachHang.jsp" ><i class="fa fa-users"></i><b>Khách hàng</b></a></li>
-                        <li id="import"><a href="NhapKho.jsp" ><i class="fa fa-truck"></i><b>Nhập kho</b></a></li>
-                        <li id="inventory"><a href="TonKho.jsp" ><i class="fa fa-list-alt"></i><b>Tồn kho</b></a></li>
-                        <li id="inventory"><a href="LienHe.jsp" ><i class="fa fa-user"></i><b>Liên hệ</b></a></li>
-                        <li id="config"><a href="ThietLap.jsp" ><i class="fa fa-empire"></i><b>Thiết lập</b></a></li>
-                        <img id="dend" style="width: 180px; height: 180px; margin-left: 15px;"  src="images/logodend.png" alt=" ">
-                    </ul>
-</div>            </div>
-            <div class="col-md-10 padd-left-0">
-                <div class="main-content">
-                    <div class="alert alert-dange ajax-error" role="alert"><span
-        style="font-weight: bold; font-size: 18px;">Thông báo!</span><br>
+            <div class="col-md-8">
+                <div class="order-search" style="margin: 10px 0px; position: relative;">
+                    <input type="text" class="form-control ui-autocomplete-input"
+                           placeholder="Nhập mã sản phẩm hoặc tên sản phẩm" id="search-pro-box"
+                           autocomplete="off">
+                </div>
+                <script>
+                    $(function () {
+                        $("#search-pro-box").autocomplete({
+                            minLength: 1,
+                            source: 'orders/cms_autocomplete_products/',
+                            focus: function (event, ui) {
+                                $("#search-pro-box").val(ui.item.prd_code);
+                                return false;
+                            },
+                            select: function (event, ui) {
+                                cms_select_product_sell(ui.item.ID);
+                                $("#search-pro-box").val('');
+                                return false;
+                            }
+                        }).keyup(function (e) {
+                            if (e.which === 13) {
+                                cms_autocomplete_enter_sell();
+                                $("#search-pro-box").val('');
+                                $(".ui-menu-item").hide();
+                            }
+                        })
+                            .autocomplete("instance")._renderItem = function (ul, item) {
+                            return $("<li>")
+                                .append("<div>" + item.prd_code + " - " + item.prd_name + "</div>")
+                                .appendTo(ul);
+                        };
+                    });
+                </script>
+                <div class="product-results">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th class="text-center">STT</th>
+                            <th>Mã hàng</th>
+                            <th>Tên sản phẩm</th>
+                            <th class="text-center">Số lượng</th>
+                            <th class="text-center">Giá bán</th>
+                            <th class="text-center">Thành tiền</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody id="pro_search_append">
+                        </tbody>
+                    </table>
+                    <div class="alert alert-success" style="margin-top: 30px;" role="alert">Gõ mã hoặc tên sản
+                        phẩm vào hộp
+                        tìm kiếm để thêm hàng vào đơn hàng
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="morder-info" style="padding: 4px;">
+                            <div class="tab-contents" style="padding: 8px 6px;">
+                                <div class="form-group marg-bot-10 clearfix">
+                                    <div style="padding:0px" class="col-md-4">
+                                        <label>Khách hàng</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="col-md-10 padd-0" style="position: relative;">
+                                            <input id="search-box-cys" class="form-control" type="text"
+                                                   placeholder="Tìm khách hàng"
+                                                   style="border-radius: 3px 0 0 3px !important;"><span
+                                                style="color: red; position: absolute; right: 5px; top:5px; "
+                                                class="del-cys"></span>
 
-    <div class="ajax-error-ct"></div>
-</div>
-<div class="alert ajax-success" role="alert"
-     style="width: 350px;background: rgba(92,130,79,0.9); display:none; color: #fff;"><span
-        style="font-weight: bold; font-size: 18px;">Thông báo!</span>
-    <br>
-
-    <div class="ajax-success-ct"></div>
-</div>
-<!-- Start create employee -->
-<div class="modal fade" id="create-nv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel" style="text-transform: uppercase;"><i class="fa fa-user"></i>
-                    Thêm tài khoản đăng nhập </h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal" id="frm-cruser">
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="tennhanvien">Tên nhân viên</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="display_name" name="display_name" class="form-control" value=""
-                                   placeholder="Nhập tên nhân viên">
-                            <span style="color: red; font-style: italic;" class="error error-display_name"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="manv">Mã nhân viên</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="manv" name="manv" class="form-control" value=""
-                                   placeholder="Nhập mã nhân viên">
-                            <span style="color: red; font-style: italic;" class="error error-manv"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="manv">Email</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="mail" name="email" class="form-control" value=""
-                                   placeholder="Nhập email của bạn">
-                            <span style="color: red; font-style: italic;" class="error error-mail"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="manv">Mật khẩu</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="password" id="password" name="password" class="form-control" value=""
-                                   placeholder="Nhập Mật khẩu">
-                            <span style="color: red; font-style: italic;" class="error error-password"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3 padd-right-0">
-                            <label for="manv">Nhóm người dùng</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <div class="group-user">
-                                <div class="group-selbox">
-
-                                </div>
-                                <span style="color: red; font-style: italic;" class="error error-group"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="stock">Kho làm việc</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <div class="stock-selbox"></div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm btn-crnv" onclick="cms_cruser()"><i
-                        class="fa fa-check"></i> Lưu
-                </button>
-                <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i
-                        class="fa fa-undo"></i> Bỏ qua
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end create employee -->
-
-<!-- Start create function -->
-<div class="modal fade" id="create-func" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel" style="text-transform: uppercase;"><i class="fa fa-user"></i>
-                    Thêm Chức năng </h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="tennhanvien">URL</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="permisstion_url" name="permisstion_url" class="form-control" value=""
-                                   placeholder="Nhập url cho phép của chức năng">
-                            <span style="color: red; font-style: italic;" class="error error-permisstion_url"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="manv">Tên chức năng</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="permisstion_name" name="permisstion_name" class="form-control"
-                                   value="" placeholder="Nhập tên chức năng">
-                            <span style="color: red; font-style: italic;" class="error error-permisstion_name"></span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm btn-crfunc"><i class="fa fa-check"></i> Lưu</button>
-                <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i
-                        class="fa fa-undo"></i> Bỏ qua
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end create function -->
-
-<!-- Start create group -->
-<div class="modal fade" id="create-group" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel" style="text-transform: uppercase;"><i class="fa fa-user"></i>
-                    Thêm nhóm người dùng </h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="group-name">Tên Nhóm</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="group-name" name="group_name" class="form-control" value=""
-                                   placeholder="Nhập tên nhóm người dùng">
-                            <span style="color: red; font-style: italic;" class="error error-group_name"></span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm btn-crgroup"><i class="fa fa-check"></i> Lưu
-                </button>
-                <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i
-                        class="fa fa-undo"></i> Bỏ qua
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end create function -->
-
-<!-- Start create group -->
-<div class="modal fade" id="create-store" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel" style="text-transform: uppercase;"><i class="fa fa-user"></i>
-                    Thêm kho </h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal">
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="group-name">Tên Kho</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="store-name" name="store_name" class="form-control" value=""
-                                   placeholder="Nhập tên kho">
-                            <span style="color: red; font-style: italic;" class="error error-store_name"></span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm" onclick="cms_crstore();" ><i class="fa fa-check"></i> Lưu
-                </button>
-                <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i
-                        class="fa fa-undo"></i> Bỏ qua
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- end create function -->
-
-<!-- start create customer -->
-
-<div class="modal fade" id="create-cust" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel" style="color: white;">Tạo mới khách hàng</h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal" id="frm-crcust">
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="customer_name">Mã khách hàng</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="customer_code" name="customer_code" class="form-control" value=""
-                                   placeholder="Mã khách hàng(tự sinh nếu bỏ trống)">
-                            <span style="color: red; font-style: italic;" class="error error-customer_code"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="customer_name">Tên Khách hàng</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="customer_name" name="customer_name" class="form-control" value=""
-                                   placeholder="Nhập tên khách hàng( bắc buộc )">
-                            <span style="color: red; font-style: italic;" class="error error-customer_name"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="customer_phone">Số điện thoại</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="customer_phone" name="customer_phone"
-                                   class="form-control" value="" placeholder="">
-                            <span style="color: red; font-style: italic;" class="error error-customer_phone"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="customer_email">Email</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="customer_email" name="customer_email" class="form-control" value=""
-                                   placeholder="Nhập email khách hàng ( ví dụ: kh10@gmail.com )">
-                            <span style="color: red; font-style: italic;" class="error error-customer_email"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="customer_addr">Địa chỉ</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="customer_addr" name="customer_addr" class="form-control"
-                                   value="" placeholder="">
-                            <span style="color: red; font-style: italic;" class="error error-customer_addr"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="customer_notes">Ghi chú</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="customer_notes" name="customer_notes" class="form-control" value=""
-                                   placeholder="">
-                            <span style="color: red; font-style: italic;" class="error error-customer_notes"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="customer_birthday">Ngày sinh</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="customer_birthday" name="customer_birthday"
-                                   class="form-control txttimes" value="" placeholder="yyyy-mm-dd">
-                            <span style="color: red;" class="error error-customer_birthday"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="customer_gender">Giới tính</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="radio" name="gender" checked class="customer_gender" value="0"> Nam
-                            <input type="radio" name="gender" class="customer_gender" value="1"> Nữ
-                            <span style="color: red; font-style: italic;" class="error error-customer_gender"></span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm btn-crcust" onclick="cms_crCustomer();"><i
-                        class="fa fa-check"></i> Lưu
-                </button>
-                <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i
-                        class="fa fa-undo"></i> Bỏ qua
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- end customer -->
-
-<!-- start create supplier -->
-
-<div class="modal fade" id="create-sup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Tạo mới nhà cung cấp</h4>
-            </div>
-            <div class="modal-body">
-                <form class="form-horizontal" id="frm-crsup">
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="supplier_name">Mã nhà cung cấp</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="supplier_code" name="supplier_code" class="form-control" value=""
-                                   placeholder="Mã nhà cung cấp (Tự sinh nếu bỏ trống)">
-                            <span style="color: red; font-style: italic;" class="error error-supplier_code"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="supplier_name">Tên nhà cung cấp</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="supplier_name" name="supplier_name" class="form-control" value=""
-                                   placeholder="Nhập tên nhà cung cấp (bắc buộc)">
-                            <span style="color: red; font-style: italic;" class="error error-supplier_name"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="supplier_phone">Số điện thoại</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="supplier_phone" name="supplier_phone" class="form-control"
-                                   value="" placeholder="Số điện thoại">
-                            <span style="color: red; font-style: italic;" class="error error-supplier_phone"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="supplier_email">Email</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="supplier_email" name="supplier_email" class="form-control" value=""
-                                   placeholder="Nhập email nhà cung cấp ( ví dụ: kh10@gmail.com )">
-                            <span style="color: red; font-style: italic;" class="error error-supplier_email"></span>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="supplier_addr">Địa chỉ</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="supplier_addr" name="supplier_addr" class="form-control"
-                                   value="" placeholder="">
-                            <span style="color: red; font-style: italic;" class="error error-supplier_addr"></span>
-                        </div>
-                    </div>
-                                        <div class="form-group">
-                                            <div class="col-sm-3">
-                                                <label for="tax_code">Mã số thuế</label>
-                                            </div>
-                                            <div class="col-sm-9">
-                                                <input type="text" id="tax_code" name="tax_code" class="form-control" value="" placeholder="">
-                                                <span style="color: red; font-style: italic;" class="error error-tax_code"></span>
+                                            <div id="cys-suggestion-box"
+                                                 style="border: 1px solid #444; display: none; overflow-y: auto;background-color: #fff; z-index: 2 !important; position: absolute; left: 0; width: 100%; padding: 5px 0px; max-height: 400px !important;">
+                                                <div class="search-cys-inner"></div>
                                             </div>
                                         </div>
-                    <div class="form-group">
-                        <div class="col-sm-3">
-                            <label for="supplier_notes">Ghi chú</label>
-                        </div>
-                        <div class="col-sm-9">
-                            <input type="text" id="supplier_notes" name="notes" class="form-control" value="" placeholder="">
-                            <span style="color: red; font-style: italic;" class="error error-supplier_notes"></span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary btn-sm btn-crsup" onclick="cms_crsup();"><i
-                        class="fa fa-check"></i> Lưu
-                </button>
-                <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i
-                        class="fa fa-undo"></i> Bỏ qua
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- end supacture -->
-
-<!-- PRODUCTS -->
-<div class="modal fade" id="list-prd-manufacture" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Quản lý nhà sản xuất</h4>
-            </div>
-            <div class="modal-body">
-                <div class="tabtable">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs tab-setting" role="tablist"
-                        style="background-color: #EFF3F8; padding: 5px 0 0 15px;">
-                        <li role="presentation" class="active list-manufacture-click" style="margin-right: 3px;"><a
-                                href="#list-manufacture" aria-controls="list-manufacture" role="tab"
-                                data-toggle="tab"><i class="fa fa-list"></i> Danh sách Nhà sản xuất</a></li>
-                        <li role="presentation"><a href="#create-manufacture" aria-controls="create-manufacture"
-                                                   role="tab" data-toggle="tab"><i class="fa fa-plus"></i> Tạo mới chủng
-                                loại</a></li>
-                    </ul>
-
-                    <!-- Tab panes -->
-                    <div class="tab-content" style="padding:10px; border: 1px solid #ddd; border-top: none;">
-                        <div role="tabpanel" class="tab-pane active" id="list-manufacture">
-                            <div class="prd_manufacture-body">
-
-                            </div>
-                        </div>
-
-                        <!-- Tab Function -->
-                        <div role="tabpanel" class="tab-pane" id="create-manufacture">
-                            <div class="row form-horizontal">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <div class="col-md-7 padd-right-0">
-                                            <input type="text" style="border-radius: 0 !important;" class="form-control"
-                                                   id="prd_manuf_name" value="" placeholder="Nhập tên Nhà sản xuất">
-                                        </div>
-                                        <div class="input-groups-btn col-md-5 padd-0">
-                                            <button type="button" class="btn btn-primary"
-                                                    style="border-radius: 0 3px 3px 0;"
-                                                    onclick="cms_create_manufacture(1);"><i class="fa fa-check"></i> Lưu
-                                            </button>
-                                            <button type="button" class="btn btn-primary " onclick="cms_create_manufacture(0);"><i
-                                                    class="fa fa-floppy-o"></i> Lưu và tiếp tục
+                                        <div class="col-md-2 padd-0">
+                                            <button type="button" data-toggle="modal" data-target="#create-cust"
+                                                    class="btn btn-primary"
+                                                    style="border-radius: 0 3px 3px 0; box-shadow: none; padding: 7px 11px;">
+                                                +KH Mới
                                             </button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i
-                        class="fa fa-undo"></i> Đóng
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="list-prd-group" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                        aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Quản lý danh mục</h4>
-            </div>
-            <div class="modal-body">
-                <div class="tabtable">
-                    <!-- Nav tabs -->
-                    <ul class="nav nav-tabs tab-setting" role="tablist"
-                        style="background-color: #EFF3F8; padding: 5px 0 0 15px;">
-                        <li role="presentation" class="active" style="margin-right: 3px;"><a href="#list-groups"
-                                                                                             aria-controls="list-group"
-                                                                                             role="tab"
-                                                                                             data-toggle="tab"><i
-                                    class="fa fa-list"></i> Danh sách danh mục</a></li>
-                        <li role="presentation"><a href="#create-groups" aria-controls="create-group" role="tab"
-                                                   data-toggle="tab"><i class="fa fa-plus"></i> Tạo mới danh mục</a>
-                        </li>
-                    </ul>
-
-                    <!-- Tab panes -->
-                    <div class="tab-content" style="padding:10px; border: 1px solid #ddd; border-top: none;">
-                        <div role="tabpanel" class="tab-pane active" id="list-groups">
-                            <div class="prd_group-body">
-                                <div class="text-center"><img src="/images/balls.gif"/></div>
-                            </div>
-                        </div>
-
-                        <!-- Tab Function -->
-                        <div role="tabpanel" class="tab-pane" id="create-groups">
-                            <div class="row form-horizontal">
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <div class="col-md-4 text-right">
-                                            <label>Tên danh mục</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <input type="text" id="prd_group_name" class="form-control"
-                                                   placeholder="Nhập tên danh mục.">
-                                        </div>
+                                <div class="form-group marg-bot-10 clearfix">
+                                    <div style="padding:0px" class="col-md-4">
+                                        <label>Ngày bán</label>
                                     </div>
-                                    <div class="form-group">
-                                        <div class="col-md-4 text-right">
-                                            <label>Danh mục cấp cha</label>
-                                        </div>
-                                        <div class="col-md-8">
-                                            <select id="parentid" class="form-control">
-
-                                            </select>
-                                        </div>
+                                    <div class="col-md-8">
+                                        <input id="date-order" class="form-control datepk" type="text"
+                                               placeholder="Hôm nay" style="border-radius: 0 !important;">
                                     </div>
-                                    <div class="form-group">
-                                        <div class="col-md-8 col-md-offset-4">
-                                            <button type="button" class="btn btn-primary"
-                                                    style="border-radius: 0 3px 3px 0;" onclick="cms_create_group(1);"><i
-                                                    class="fa fa-check"></i> Lưu
-                                            </button>
-                                            <button type="button" class="btn btn-primary "
-                                                    onclick="cms_create_group(0);"><i class="fa fa-floppy-o"></i> Lưu
-                                                và tiếp tục
-                                            </button>
-                                        </div>
+                                    <script>$('#date-order').datetimepicker({
+                                        autoclose: true
+                                    });
+                                    </script>
+                                </div>
+                                <div class="form-group marg-bot-10 clearfix">
+                                    <div style="padding:0px" class="col-md-4">
+                                        <label>NV bán hàng</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <select class="form-control" id="sale_id">
+                                            <option value="">Chọn NV bán hàng</option>
+                                            <option value="2">admin</option>
+                                            <option value="9">Lên Anh Tài</option>
+                                            <option value="10">Lương Tài Em</option>
+                                            <option value="11">Phạm Quỳnh Ánh</option>
+                                            <option value="12">Lý Thành Nam</option>
+                                            <option value="13">Lê Thành Tâm</option>
+                                            <option value="14">Nguyễn Văn An</option>
+                                            <option value="15">Nguyễn Văn Bình</option>
+                                            <option value="16">Lê Thị Yến</option>
+                                            <option value="17">Nguyễn Thị Linh</option>
+                                            <option value="18">Lương Văn Tài</option>
+                                            <option value="19">Nguyễn Tuấn Anh</option>
+                                            <option value="20">Nguyễn Thị Lan Anh</option>
+                                            <option value="21">Nguyễn Thị Ánh</option>
+                                            <option value="22">Phạm Thị Quỳnh</option>
+                                            <option value="23">Phạm Thị Quỳnh Anh</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group marg-bot-10 clearfix">
+                                    <div style="padding:0px" class="col-md-4">
+                                        <label>Ghi chú</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                                <textarea id="note-order" cols="" class="form-control" rows="3"
+                                                          style="border-radius: 0;"></textarea>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i
-                        class="fa fa-undo"></i> Đóng
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="orders"><div class="breadcrumbs-fixed panel-action">
-    <div class="row">
-        <div class="orders-act">
-            <div class="col-md-4 col-md-offset-2">
-                <div class="left-action text-left clearfix">
-                    <h2>Tạo đơn hàng</h2>
-                </div>
-            </div>
-          
-        </div>
-    </div>
-</div>
+                    <div class="col-md-12">
+                        <h4 class="lighter" style="margin-top: 0;">
+                            <i class="fa fa-info-circle blue"></i>
+                            Thông tin thanh toán
+                        </h4>
 
-<div class="main-space orders-space"></div>
+                        <div class="morder-info" style="padding: 4px;">
+                            <div class="tab-contents" style="padding: 8px 6px;">
+                                <div class="form-group marg-bot-10 clearfix">
+                                    <div class="col-md-4">
+                                        <label>Hình thức</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="input-group">
+                                            <input type="radio" class="payment-method" name="method-pay"
+                                                   value="1" checked="">
+                                            Tiền mặt &nbsp;
+                                            <input type="radio" class="payment-method" name="method-pay"
+                                                   value="2"> Thẻ&nbsp;
+                                        </div>
 
-<div class="orders-content check-order">
-    <div class="row">
-        <div class="col-md-8">
-            <div class="order-search" style="margin: 10px 0px; position: relative;">
-                <input type="text" class="form-control ui-autocomplete-input" placeholder="Nhập mã sản phẩm hoặc tên sản phẩm" id="search-pro-box" autocomplete="off">
-            </div>
-<script>
-    $(function () {
-        $("#search-pro-box").autocomplete({
-            minLength: 1,
-            source: 'orders/cms_autocomplete_products/',
-            focus: function (event, ui) {
-                $("#search-pro-box").val(ui.item.prd_code);
-                return false;
-            },
-            select: function (event, ui) {
-                cms_select_product_sell(ui.item.ID);
-                $("#search-pro-box").val('');
-                return false;
-            }
-        }).keyup(function (e) {
-            if(e.which === 13) {
-                cms_autocomplete_enter_sell();
-                $("#search-pro-box").val('');
-                $(".ui-menu-item").hide();
-            }
-        })
-            .autocomplete("instance")._renderItem = function (ul, item) {
-            return $("<li>")
-                .append("<div>" + item.prd_code + " - " + item.prd_name + "</div>")
-                .appendTo(ul);
-        };
-    });
-</script>
-            <div class="product-results">
-                <table class="table table-bordered table-striped">
-                    <thead>
-                    <tr>
-                        <th class="text-center">STT</th>
-                        <th>Mã hàng</th>
-                        <th>Tên sản phẩm</th>
-                        <th class="text-center">Số lượng</th>
-                        <th class="text-center">Giá bán</th>
-                        <th class="text-center">Thành tiền</th>
-                        <th></th>
-                    </tr>
-                    </thead>
-                    <tbody id="pro_search_append">
-                    </tbody>
-                </table>
-                <div class="alert alert-success" style="margin-top: 30px;" role="alert">Gõ mã hoặc tên sản phẩm vào hộp
-                    tìm kiếm để thêm hàng vào đơn hàng
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="morder-info" style="padding: 4px;">
-                        <div class="tab-contents" style="padding: 8px 6px;">
-                            <div class="form-group marg-bot-10 clearfix">
-                                <div style="padding:0px" class="col-md-4">
-                                    <label>Khách hàng</label>
+                                    </div>
                                 </div>
-                                <div class="col-md-8">
-                                    <div class="col-md-10 padd-0" style="position: relative;">
-                                        <input id="search-box-cys" class="form-control" type="text" placeholder="Tìm khách hàng" style="border-radius: 3px 0 0 3px !important;"><span style="color: red; position: absolute; right: 5px; top:5px; " class="del-cys"></span>
-
-                                        <div id="cys-suggestion-box" style="border: 1px solid #444; display: none; overflow-y: auto;background-color: #fff; z-index: 2 !important; position: absolute; left: 0; width: 100%; padding: 5px 0px; max-height: 400px !important;">
-                                            <div class="search-cys-inner"></div>
+                                <div class="form-group marg-bot-10 clearfix">
+                                    <div class="col-md-4">
+                                        <label>Tiền hàng</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="total-money" style="color: white;">
+                                            0
                                         </div>
                                     </div>
-                                    <div class="col-md-2 padd-0">
-                                        <button type="button" data-toggle="modal" data-target="#create-cust" class="btn btn-primary" style="border-radius: 0 3px 3px 0; box-shadow: none; padding: 7px 11px;">
-                                            +KH Mới
-                                        </button>
+                                </div>
+                                <div class="form-group marg-bot-10 clearfix">
+                                    <div class="col-md-4">
+                                        <label>Giảm giá</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text"
+                                               class="form-control text-right txtMoney discount-order"
+                                               placeholder="0" style="border-radius: 0 !important;">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="form-group marg-bot-10 clearfix">
-                                <div style="padding:0px" class="col-md-4">
-                                    <label>Ngày bán</label>
+                                <div class="form-group marg-bot-10 clearfix">
+                                    <div class="col-md-4">
+                                        <label>Tổng cộng</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="total-after-discount" style="color: white;">
+                                            0
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-md-8">
-                                    <input id="date-order" class="form-control datepk" type="text" placeholder="Hôm nay" style="border-radius: 0 !important;">
+                                <div class="form-group marg-bot-10 clearfix">
+                                    <div class="col-md-4 padd-right-0">
+                                        <label>KH đã trả</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <input type="text" class="form-control text-right txtMoney customer-pay"
+                                               placeholder="0" style="border-radius: 0 !important;">
+                                    </div>
                                 </div>
-                            <script>$('#date-order').datetimepicker({
-                                    autoclose: true
-                                });
-                            </script>
-                            </div>
-                            <div class="form-group marg-bot-10 clearfix">
-                                <div style="padding:0px" class="col-md-4">
-                                    <label>NV bán hàng</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <select class="form-control" id="sale_id">
-                                        <option value="">Chọn NV bán hàng</option>
-                                                                                    <option value="2">admin</option>
-                                                                                    <option value="9">Lên Anh Tài</option>
-                                                                                    <option value="10">Lương Tài Em</option>
-                                                                                    <option value="11">Phạm Quỳnh Ánh</option>
-                                                                                    <option value="12">Lý Thành Nam</option>
-                                                                                    <option value="13">Lê Thành Tâm</option>
-                                                                                    <option value="14">Nguyễn Văn An</option>
-                                                                                    <option value="15">Nguyễn Văn Bình</option>
-                                                                                    <option value="16">Lê Thị Yến</option>
-                                                                                    <option value="17">Nguyễn Thị Linh</option>
-                                                                                    <option value="18">Lương Văn Tài</option>
-                                                                                    <option value="19">Nguyễn Tuấn Anh</option>
-                                                                                    <option value="20">Nguyễn Thị Lan Anh</option>
-                                                                                    <option value="21">Nguyễn Thị Ánh</option>
-                                                                                    <option value="22">Phạm Thị Quỳnh</option>
-                                                                                    <option value="23">Phạm Thị Quỳnh Anh</option>
-                                                                            </select>
-                                </div>
-                            </div>
-                            <div class="form-group marg-bot-10 clearfix">
-                                <div style="padding:0px" class="col-md-4">
-                                    <label>Ghi chú</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <textarea id="note-order" cols="" class="form-control" rows="3" style="border-radius: 0;"></textarea>
+                                <div class="form-group marg-bot-10 clearfix">
+                                    <div class="col-md-4">
+                                        <label class="debt">KH còn nợ</label>
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="debt" style="color: white;">0</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-12">
-                    <h4 class="lighter" style="margin-top: 0;">
-                        <i class="fa fa-info-circle blue"></i>
-                        Thông tin thanh toán
-                    </h4>
+                    <div class="col-md-12">
+                        <div class="btn-groups pull-right" style="margin-bottom: 50px;">
 
-                    <div class="morder-info" style="padding: 4px;">
-                        <div class="tab-contents" style="padding: 8px 6px;">
-                            <div class="form-group marg-bot-10 clearfix">
-                                <div class="col-md-4">
-                                    <label>Hình thức</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="input-group">
-                                        <input type="radio" class="payment-method" name="method-pay" value="1" checked="">
-                                        Tiền mặt &nbsp;
-                                        <input type="radio" class="payment-method" name="method-pay" value="2"> Thẻ&nbsp;
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="form-group marg-bot-10 clearfix">
-                                <div class="col-md-4">
-                                    <label>Tiền hàng</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="total-money" style="color: white;">
-                                        0
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group marg-bot-10 clearfix">
-                                <div class="col-md-4">
-                                    <label>Giảm giá</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control text-right txtMoney discount-order" placeholder="0" style="border-radius: 0 !important;">
-                                </div>
-                            </div>
-                            <div class="form-group marg-bot-10 clearfix">
-                                <div class="col-md-4">
-                                    <label>Tổng cộng</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="total-after-discount" style="color: white;">
-                                        0
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group marg-bot-10 clearfix">
-                                <div class="col-md-4 padd-right-0">
-                                    <label>KH đã trả</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <input type="text" class="form-control text-right txtMoney customer-pay" placeholder="0" style="border-radius: 0 !important;">
-                                </div>
-                            </div>
-                            <div class="form-group marg-bot-10 clearfix">
-                                <div class="col-md-4">
-                                    <label class="debt">KH còn nợ</label>
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="debt" style="color: white;">0</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="btn-groups pull-right" style="margin-bottom: 50px;">
-                       
-                        <button type="button" class="btn btn-primary" onclick="cms_save_orders(1)"><i class="fa fa-check"></i> Lưu
-                        </button>
-                       
-                        <a href="DonHang.jsp">
-                            <button type="button" class="btn-back btn btn-primary"><i class="fa fa-arrow-left"></i> Trở lại
+                            <button type="button" class="btn btn-primary" onclick="cms_save_orders(1)"><i
+                                    class="fa fa-check"></i> Lưu
                             </button>
-                        </a>
+
+                            <a href="DonHang.jsp">
+                                <button type="button" class="btn-back btn btn-primary"><i
+                                        class="fa fa-arrow-left"></i> Trở lại
+                                </button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div></div>           
-             </div>
-            </div>
-        </div>
-    </div>
+</div>
+</div>
+</div>
 </section>
 </body>
 <script src="js/jquery.js"></script>
