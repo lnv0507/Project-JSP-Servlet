@@ -58,7 +58,6 @@
     <%@include file="header.jsp" %>
     <!-- header close -->
 
-
     <div id="content" class="no-bottom no-top">
         <section id="subheader" data-speed="8" data-type="background">
             <div class="container">

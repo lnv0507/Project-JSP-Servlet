@@ -14,12 +14,12 @@ public class ProductDAO {
         Connection con = null;
         PreparedStatement pst = null;
         ResultSet resut = null;
+        Blob image = null;
+        byte[] imgData = null;
         FileInputStream fis = null;
-
         try {
-            File image = new File("images");
             con = DBUtils.makeConnection();
-            if(con!= null){
+            if (con != null) {
                 String sql = "insert into product(IDPRODUCT, TENPRODUCT, LOAI, CHATLIEU, GIATIEN, SOLUONGTRONGKHO, DANHGIA, tinhtrang, image)\n" +
                         "value(?,?,?,?,?,?,?,?,?)";
                 pst = con.prepareStatement(sql);
@@ -31,17 +31,52 @@ public class ProductDAO {
                 pst.setInt(6, productDTO.getSoLuongTrongKho());
                 pst.setString(7, productDTO.getDanhGia());
                 pst.setString(8, productDTO.getTinhTrang());
-                fis = new FileInputStream(image);
-                pst.setBinaryStream(9, (InputStream) fis, (int)  (image.length()));
+//                File image2 = new File(productDTO.getImage());
+//                fis = new FileInputStream(image2.getAbsolutePath());
+//                pst.setBinaryStream(9,(InputStream) fis,(int)(image.length()));
+                pst.setString(9, productDTO.getImage());
                 pst.executeUpdate();
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
-        }finally {
-            if(pst != null){
+        } finally {
+            if (pst != null) {
                 pst.close();
             }
-            if(con != null){
+            if (con != null) {
+                con.close();
+            }
+        }
+    }
+
+    public void upload2(String name, String nam2, InputStream fis) throws SQLException {
+        Connection con = null;
+        PreparedStatement pst = null;
+        ResultSet resut = null;
+        try {
+            con = DBUtils.makeConnection();
+            if (con != null) {
+                String sql = "insert into product(IDPRODUCT, TENPRODUCT, LOAI, CHATLIEU, GIATIEN, SOLUONGTRONGKHO, DANHGIA, tinhtrang, image)\n" +
+                        "value(?,?,?,?,?,?,?,?,?)";
+                pst = con.prepareStatement(sql);
+                pst.setString(1, name);
+                pst.setString(2, nam2);
+                pst.setString(3, "");
+                pst.setString(4, "");
+                pst.setInt(5, 1);
+                pst.setInt(6, 2);
+                pst.setString(7, "");
+                pst.setString(8, "");
+                pst.setBlob(9, fis);
+                pst.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (pst != null) {
+                pst.close();
+            }
+            if (con != null) {
                 con.close();
             }
         }

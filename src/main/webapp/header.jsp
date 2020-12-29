@@ -9,7 +9,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <!-- Mirrored from w ww.themenesia.com/themeforest/archi-light/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:03:59 GMT -->
-
+<head>
+    <style>
+        .helloUser:hover .itemUser{
+            display: block;
+            color: red;
+        }
+        .itemUser{
+            display: none;
+        }
+    </style>
+</head>
 <div class="header-banner">
     <div class="header-banner-item">
         <div class="search">
@@ -22,8 +32,14 @@
             if (username != null) {
         %>
         <div style="display: flex; justify-content: space-between">
-            <h5>Xin Chào: <%= username%>
-            </h5>
+            <div class="infoUser">
+                <h5 style="color: blue" class="helloUser">Xin Chào: <%= username%></h5>
+                <ul class="itemUser">
+                    <li>Thông Tin Cá Nhân</li>
+                    <li>Giỏ Hàng</li>
+                    <li>Thông Báo</li>
+                </ul>
+            </div>
             <h5><a href="logout">Đăng Xuất</a></h5>
         </div>
         <%
