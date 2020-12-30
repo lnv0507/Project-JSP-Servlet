@@ -14,8 +14,6 @@ public class ProductDAO {
         Connection con = null;
         PreparedStatement pst = null;
         ResultSet resut = null;
-        Blob image = null;
-        byte[] imgData = null;
         FileInputStream fis = null;
         try {
             con = DBUtils.makeConnection();
@@ -31,9 +29,6 @@ public class ProductDAO {
                 pst.setInt(6, productDTO.getSoLuongTrongKho());
                 pst.setString(7, productDTO.getDanhGia());
                 pst.setString(8, productDTO.getTinhTrang());
-//                File image2 = new File(productDTO.getImage());
-//                fis = new FileInputStream(image2.getAbsolutePath());
-//                pst.setBinaryStream(9,(InputStream) fis,(int)(image.length()));
                 pst.setString(9, productDTO.getImage());
                 pst.executeUpdate();
             }
