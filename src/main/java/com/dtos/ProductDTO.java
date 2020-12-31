@@ -1,5 +1,7 @@
 package com.dtos;
 
+import java.util.ArrayList;
+
 public class ProductDTO {
     private String idProduct;
     private String tenProduct;
@@ -9,12 +11,12 @@ public class ProductDTO {
     private int soLuongTrongKho;
     private String danhGia;
     private String tinhTrang;
-    private String image;
+    private ArrayList<String> images;
 
     public ProductDTO() {
     }
 
-    public ProductDTO(String idProduct, String tenProduct, String loai, String chatLieu, int giaTien, int soLuongTrongKho, String danhGia, String tinhTrang, String image) {
+    public ProductDTO(String idProduct, String tenProduct, String loai, String chatLieu, int giaTien, int soLuongTrongKho, String danhGia, String tinhTrang) {
         this.idProduct = idProduct;
         this.tenProduct = tenProduct;
         this.loai = loai;
@@ -23,7 +25,7 @@ public class ProductDTO {
         this.soLuongTrongKho = soLuongTrongKho;
         this.danhGia = danhGia;
         this.tinhTrang = tinhTrang;
-        this.image = image;
+        this.images = new ArrayList<>();
     }
 
     public String getIdProduct() {
@@ -90,12 +92,12 @@ public class ProductDTO {
         this.tinhTrang = tinhTrang;
     }
 
-    public String getImage() {
-        return image;
+    public ArrayList<String> getImages() {
+        return images;
     }
 
-    public void setImage(String image) {
-        this.image = image;
+    public void addImage(String image) {
+        images.add(image);
     }
 
     @Override
@@ -109,7 +111,7 @@ public class ProductDTO {
                 ", soLuongTrongKho='" + soLuongTrongKho + '\'' +
                 ", danhGia='" + danhGia + '\'' +
                 ", tinhTrang='" + tinhTrang + '\'' +
-                ", image='" + image + '\'' +
+                ", image='" + images.get(0) + '\'' +
                 '}';
     }
 }

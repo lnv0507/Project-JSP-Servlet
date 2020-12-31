@@ -14,6 +14,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 @WebServlet(name = "ProductController", urlPatterns = "/admin/addproduct")
 public class ProductController extends HttpServlet {
@@ -23,6 +24,7 @@ public class ProductController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
         InputStream is = null;
+        ArrayList<String> images = new ArrayList<>();
         try {
             String idProduct = request.getParameter("txtIDName");
             String nameProduct = request.getParameter("txtName");
@@ -33,6 +35,7 @@ public class ProductController extends HttpServlet {
             String danhGia = request.getParameter("txtDanhGia");
             String tinhTrang = request.getParameter("txtTinhTrang");
             String image = request.getParameter("txtImage");
+            images.add(image);
 //            Part part = request.getPart("txtImage");
 //            String image = extractFileName(part);
 //            is = part.getInputStream();
@@ -40,7 +43,8 @@ public class ProductController extends HttpServlet {
             boolean check = true;
 
             if (check) {
-                ProductDTO proDTO = new ProductDTO(idProduct, nameProduct, loai, chatLieu, Integer.parseInt(giaTien), Integer.parseInt(soLuong), danhGia, tinhTrang, "images"+File.separator+image);
+                ProductDTO proDTO = new ProductDTO(idProduct, nameProduct, loai, chatLieu, Integer.parseInt(giaTien), Integer.parseInt(soLuong), danhGia, tinhTrang);
+                proDTO.addImage(image);
                 proDAO.upload(proDTO);
                 url = SUCCESS;
             }
