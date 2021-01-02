@@ -12,8 +12,9 @@ public class ProductDTO {
     private String danhGia;
     private String tinhTrang;
     private ArrayList<String> images;
-
+    private String firstImage;
     public ProductDTO() {
+        this.images = new ArrayList<>();
     }
 
     public ProductDTO(String idProduct, String tenProduct, String loai, String chatLieu, int giaTien, int soLuongTrongKho, String danhGia, String tinhTrang) {
@@ -26,6 +27,7 @@ public class ProductDTO {
         this.danhGia = danhGia;
         this.tinhTrang = tinhTrang;
         this.images = new ArrayList<>();
+        this.firstImage = images.get(0);
     }
 
     public String getIdProduct() {

@@ -1,4 +1,9 @@
+<%@ page import="com.dao.ProductDAO" %>
+<%@ page import="com.dtos.ProductDTO" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <html lang="en">
 <!-- Mirrored from www.themenesia.com/themeforest/archi-light/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:03:59 GMT -->
 
@@ -52,6 +57,25 @@
 </head>
 
 <body id="homepage">
+
+<%--<%--%>
+<%--    ProductDAO pdDAO = new ProductDAO();--%>
+<%--    ArrayList<ProductDTO> lsProducts = pdDAO.getList();--%>
+<%--    int start = 0, end;--%>
+<%--    if(lsProducts.size() < 10){--%>
+<%--        end = 9;--%>
+<%--    }else{--%>
+<%--        end = lsProducts.size();--%>
+<%--    }--%>
+<%--    if(request.getParameter("start")!=null){--%>
+<%--        start = Integer.parseInt(request.getParameter("start"));--%>
+<%--    }--%>
+<%--    if(request.getParameter("end")!=null){--%>
+<%--        end = Integer.parseInt(request.getParameter("end"));--%>
+<%--    }--%>
+<%--    ArrayList<ProductDTO> lsByPage = pdDAO.getListByPage(lsProducts,start,end);--%>
+
+<%--%>--%>
 
     <div id="wrapper">
        <%@include file="header.jsp"%>
@@ -162,16 +186,6 @@
                             <h4>Các SẢN PHẨM mới NHẤT </h4>
                             <ul>
                                 <li>
-                                    <a href="product-details.jsp">
-                                        <img src="images/shop/1.jpg" alt="">
-                                        <div class="text">
-                                            Sofa băng SB44
-                                            <div class="price">4.400.000 Đ</div>
-                                            <a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i  style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
 
                                     <a href="product-details.jsp">
                                         <img src="images/shop/6.jpg" alt="">
@@ -182,47 +196,6 @@
                                         </div>
                                     </a>
                                 </li>
-                                <li>
-                                    <a href="product-detais.jsp">
-                                        <img src="images/shop/12.jpg" alt="">
-                                        <div class="text">
-                                            Tủ giày gỗ công nghiệp TG72
-                                            <div class="price">2.890.000 Đ</div> <a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i  style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="product-detais.jsp">
-                                        <img src="images/shop/13.jpg" alt="">
-                                        <div class="text">
-                                            Giường đa năng màu đỏ
-                                            <div class="price">9,059,0000 Đ</div> <a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i  style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-
-                                    <a href="product-details.jsp">
-                                        <img src="images/shop/14.jpg" alt="">
-                                        <div class="text">
-                                            Bàn trà kim cương BT65
-                                            <div class="price">2.190.000 Đ</div> <a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i  style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
-
-                                        </div>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="product-detais.jsp">
-                                        <img src="images/shop/25.jpg" alt="">
-                                        <div class="text">
-                                            Tủ giày gỗ công nghiệp TG72
-                                            <div class="price">2.890.000 Đ</div> <a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i  style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
-                                        </div>
-                                    </a>
-                                </li>
-
-
-
                             </ul>
 
                         </div>
@@ -234,13 +207,14 @@
 
                             <div class="row " style="padding-left: 30px;">
 
+                                <%--                                        product--%>
+                                <c:forEach items="${data}" var="d">
                                 <div class="col-md-3 col-sm-6 ">
                                     <div class="product-grid ">
                                         <div class="product-image ">
                                             <a href="product-details.jsp">
-                                                <img class="pic-1 " src="images/shop/sopha1.jpg ">
-                                                <img class="pic-2 " src="images/shop/sopha1.jpg ">
-                                                <!-- <span class="product-discount-label ">-20%</span> -->
+                                                <img class="pic-1 " src="${pageContext.request.contextPath}${d.getImages().get(0)}">
+                                                <img class="pic-2 " src="${pageContext.request.contextPath}${d.getImages().get(0)}">
                                             </a>
                                             <!-- <span class="product-trend-label ">Mới</span> -->
 
@@ -253,475 +227,16 @@
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title ">
-                                                <a href="pkhach.jsp"> 
-
-Bộ Bàn Ghế Gỗ GG01</a>
+                                                <a href="pngu-giuong.jsp">"${d.tenProduct}"/a>
 
                                             </h3>
-                                            <div class="price  ">1.500.000 đ</div>
-                                            <!-- <div class="price discount "><span>$100</span>1.236.000 đ</div> -->
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="product-details.jsp">
-                                                <img class="pic-1 " src="images/shop/giasach11.jpg ">
-                                                <img class="pic-2 " src="images/shop/giasach11.jpg ">
-                                            </a>
-                                            <!-- <span class="product-trend-label ">Mới</span> -->
-
-                                            <ul class="social ">
-                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title ">
-                                                <a href="pngu-giuong.jsp">Bộ bàn ghế sofa Libra</a>
-
-                                            </h3>
-                                            <div class="price  ">1.500.000 đ</div>
+                                            <div class="price  ">${d.giaTien}</div>
                                         </div>
                                     </div>
                                 </div>
 
-
-
-
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="product-details.jsp">
-                                                <img class="pic-1 " src="images/shop/ghetua1.jpg ">
-                                                <img class="pic-2 " src="images/shop/ghetua1.jpg ">
-                                            </a>
-                                            <span class="product-trend-label ">Mới</span>
-
-                                            <ul class="social ">
-                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title "><a href="pkhach-ketu.jsp"> Giường GD5231</a></h3>
-                                            <div class="price  "> 2.190.000 đ</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="# ">
-                                                <img class="pic-1 " src="images/shop/bankhach.jpg ">
-                                                <img class="pic-2 " src="images/shop/bankhach.jpg ">
-                                            </a>
-                                            <span class="product-trend-label ">Mới</span>
-
-                                            <ul class="social ">
-                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title "><a href="# ">Bộ Bàn Ghế Sofa gỗ </a></h3>
-                                            <div class="price  ">2.990.000 đ
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br><br><br>
-
-
-
-
-
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="# ">
-                                                <img class="pic-1 " src="images/shop/giasach12.jpg ">
-                                                <img class="pic-2 " src="images/shop/giasach12.jpg ">
-                                            </a>
-                                            <span class="product-trend-label ">Mới</span>
-                                            <ul class="social ">
-                                                <li>
-                                                    <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                    <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                    <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                    <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title "><a href="pkhach-sopha.jsp">Bàn Trang Điểm T563</a></h3>
-                                            <div class="price ">$140</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="# ">
-                                                <img class="pic-1 " src="images/shop/bankhach14.jpg ">
-                                                <img class="pic-2 " src="images/shop/bankhach14.jpg ">
-                                            </a>
-                                            <!-- <span class="product-trend-label ">Mới</span> -->
-
-                                            <ul class="social ">
-                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title ">
-                                                <a href="giuong.jsp ">Giường G01</a>
-                                            </h3>
-                                            <div class="price ">$100</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
-
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="# ">
-                                                <img class="pic-1 " src="images/shop/ketivi.jpg ">
-                                                <img class="pic-2 " src="images/shop/ketivi.jpg ">
-                                            </a>
-                                            <span class="product-trend-label ">Mới</span>
-
-                                            <ul class="social ">
-                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title "><a href="# ">Giường G03</a></h3>
-                                            <div class="price ">$100</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br><br><br>
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="# ">
-                                                <img class="pic-1 " src="images/shop/ketivi10.jpg ">
-                                                <img class="pic-2 " src="images/shop/ketivi10.jpg ">
-                                            </a>
-                                            <!-- <span class="product-trend-label ">Mới</span> -->
-
-                                            <ul class="social ">
-                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title "><a href="pngu1-giuong.jsp">Bàn Phấn Trang Điểm 01</a></h3>
-                                            <div class="price ">1.850.000đ</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="giuong.jsp ">
-                                                <img class="pic-1 " src="images/shop/bankhach15.jpg ">
-                                                <img class="pic-2 " src="images/shop/bankhach15.jpg ">
-                                            </a>
-                                            <span class="product-trend-label ">Mới</span>
-
-                                            <ul class="social ">
-                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title "><a href="pkhach-ban.jsp">Kệ Tivi MFC Màu Xám </a></h3>
-                                            <div class="price ">1.890.000 đ</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="giuong.jsp ">
-                                                <img class="pic-1 " src="images/shop/banghe4.jpg ">
-                                                <img class="pic-2 " src="images/shop/banghe4.jpg ">
-                                            </a>
-                                            <span class="product-trend-label ">Mới</span>
-
-                                            <ul class="social ">
-                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                            <div class="price ">$100</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="giuong.jsp ">
-                                                <img class="pic-1 " src="images/shop/banghe5.jpg ">
-                                                <img class="pic-2 " src="images/shop/banghe5.jpg ">
-                                            </a>
-                                            <span class="product-trend-label ">Mới</span>
-
-                                            <ul class="social ">
-                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                            <div class="price ">$100</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="# ">
-                                                <img class="pic-1 " src="images/shop/banghe6.jpg ">
-                                                <img class="pic-2 " src="images/shop/banghe6.jpg ">
-                                            </a>
-                                            <span class="product-trend-label ">Mới</span>
-                                            <ul class="social ">
-                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title "><a href="# ">Tủ quần áo MDF 4 cánh QA33</a></h3>
-                                            <div class="price ">$140</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="# ">
-                                                <img class="pic-1 " src="images/shop/banghe7.jpg ">
-                                                <img class="pic-2 " src="images/shop/banghe7.jpg ">
-                                            </a>
-                                            <!-- <span class="product-trend-label ">Mới</span> -->
-
-                                            <ul class="social ">
-                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                            <div class="price ">$100</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="# ">
-                                                <img class="pic-1 " src="images/shop/giasach17.jpg ">
-                                                <img class="pic-2 " src="images/shop/giasach17.jpg ">
-                                            </a>
-                                            <span class="product-trend-label ">Mới</span>
-
-                                            <ul class="social ">
-                                                <li><a href="ca " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                            <div class="price ">$100</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="# ">
-                                                <img class="pic-1 " src="images/shop/banghe9.jpg ">
-                                                <img class="pic-2 " src="images/shop/banghe9.jpg ">
-                                            </a>
-                                            <span class="product-trend-label ">Mới</span>
-
-                                            <ul class="social ">
-                                                <li><a href="# " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title "><a href="# ">Tủ quần áo MDF QA32</a></h3>
-                                            <div class="price ">$100</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <br><br><br>
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="# ">
-                                                <img class="pic-1 " src="images/shop/ketivi18.jpg ">
-                                                <img class="pic-2 " src="images/shop/ketivi18.jpg ">
-                                            </a>
-                                            <!-- <span class="product-trend-label ">Mới</span> -->
-
-                                            <ul class="social ">
-                                                <li><a href="# " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title "><a href="# ">Bàn Ăn Gỗ Sồi</a></h3>
-                                            <div class="price ">11.800.000đ</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="# ">
-                                                <img class="pic-1 " src="images/shop/ghetua19.jpg ">
-                                                <img class="pic-2 " src="images/shop/ghetua19.jpg ">
-                                            </a>
-                                            <!-- <span class="product-trend-label ">Mới</span> -->
-
-                                            <ul class="social ">
-                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title ">
-                                                <a href="# ">Tủ Quần Áo QA40</a>
-                                            </h3>
-                                            <div class="price ">6.693.000đ</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="# ">
-                                                <img class="pic-1 " src="images/shop/bankhach26.jpg ">
-                                                <img class="pic-2 " src="images/shop/bankhach26.jpg ">
-                                            </a>
-                                            <span class="product-trend-label ">Mới</span>
-
-                                            <ul class="social ">
-                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title ">
-                                                <a href="# ">Tủ Quần Áo QAG56</a>
-                                            </h3>
-                                            <div class="price ">8.245.000đ</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="# ">
-                                                <img class="pic-1 " src="images/shop/ketivi17.jpg ">
-                                                <img class="pic-2 " src="images/shop/ketivi17.jpg ">
-                                            </a>
-                                            <span class="product-trend-label ">Mới</span>
-
-                                            <ul class="social ">
-                                                <li><a href="# " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title "><a href="# ">Tủ Kệ Tivi Gỗ</a></h3>
-                                            <div class="price ">5.800.000đ</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="# ">
-                                                <img class="pic-1 " src="images/shop/bankhach27.jpg ">
-                                                <img class="pic-2 " src="images/shop/bankhach27.jpg ">
-                                            </a>
-                                            <span class="product-trend-label ">Mới</span>
-
-                                            <ul class="social ">
-                                                <li><a href="# " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                            <div class="price ">$100</div>
-                                        </div>
-                                    </div>
-                                </div>
-
+                                </c:forEach>
+                                <%--end product--%>
 
 
                                 <!-- end -->
@@ -729,7 +244,9 @@ Bộ Bàn Ghế Gỗ GG01</a>
                             </div>
                             <div class="otherInfo ">
 
-                                <h3 style="border-bottom: none;padding: 0px;font-size: 17px; " class="otherInfoHandle ">XEM NHIỀU HƠN</h3>
+                               <ul class ="pagination">
+                                    <li><a href="">1</a></li>
+                               </ul>
                                 <div class="otherInfoBody ">
                                     <div class="col-md-3 col-sm-6 ">
                                         <div class="product-grid ">
@@ -753,240 +270,6 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                             </div>
                                         </div>
                                     </div>
-
-                                    <div class="col-md-3 col-sm-6 ">
-                                        <div class="product-grid ">
-                                            <div class="product-image ">
-                                                <a href="giuong.jsp ">
-                                                    <img class="pic-1 " src="images/shop/banghe4.jpg ">
-                                                    <img class="pic-2 " src="images/shop/banghe4.jpg ">
-                                                </a>
-                                                <span class="product-trend-label ">Mới</span>
-
-                                                <ul class="social ">
-                                                    <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                    <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                    <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                    <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="product-content ">
-                                                <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                                <div class="price ">$100</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3 col-sm-6 ">
-                                        <div class="product-grid ">
-                                            <div class="product-image ">
-                                                <a href="giuong.jsp ">
-                                                    <img class="pic-1 " src="images/shop/banghe5.jpg ">
-                                                    <img class="pic-2 " src="images/shop/banghe5.jpg ">
-                                                </a>
-                                                <span class="product-trend-label ">Mới</span>
-
-                                                <ul class="social ">
-                                                    <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                    <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                    <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                    <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="product-content ">
-                                                <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                                <div class="price ">$100</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 ">
-                                        <div class="product-grid ">
-                                            <div class="product-image ">
-                                                <a href="# ">
-                                                    <img class="pic-1 " src="images/shop/banghe6.jpg ">
-                                                    <img class="pic-2 " src="images/shop/banghe6.jpg ">
-                                                </a>
-                                                <span class="product-trend-label ">Mới</span>
-                                                <ul class="social ">
-                                                    <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                    <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                    <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                    <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="product-content ">
-                                                <h3 class="title "><a href="# ">Tủ quần áo MDF 4 cánh QA33</a></h3>
-                                                <div class="price ">$140</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 ">
-                                        <div class="product-grid ">
-                                            <div class="product-image ">
-                                                <a href="# ">
-                                                    <img class="pic-1 " src="images/shop/banghe7.jpg ">
-                                                    <img class="pic-2 " src="images/shop/banghe7.jpg ">
-                                                </a>
-                                                <!-- <span class="product-trend-label ">Mới</span> -->
-
-                                                <ul class="social ">
-                                                    <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                    <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                    <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                    <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="product-content ">
-                                                <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                                <div class="price ">$100</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-
-                                    <div class="col-md-3 col-sm-6 ">
-                                        <div class="product-grid ">
-                                            <div class="product-image ">
-                                                <a href="# ">
-                                                    <img class="pic-1 " src="images/shop/giasach17.jpg ">
-                                                    <img class="pic-2 " src="images/shop/giasach17.jpg ">
-                                                </a>
-                                                <span class="product-trend-label ">Mới</span>
-
-                                                <ul class="social ">
-                                                    <li><a href="ca " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                    <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                    <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                    <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="product-content ">
-                                                <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                                <div class="price ">$100</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3 col-sm-6 ">
-                                        <div class="product-grid ">
-                                            <div class="product-image ">
-                                                <a href="# ">
-                                                    <img class="pic-1 " src="images/shop/banghe9.jpg ">
-                                                    <img class="pic-2 " src="images/shop/banghe9.jpg ">
-                                                </a>
-                                                <span class="product-trend-label ">Mới</span>
-
-                                                <ul class="social ">
-                                                    <li><a href="# " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                    <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                    <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                    <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="product-content ">
-                                                <h3 class="title "><a href="# ">Tủ quần áo MDF QA32</a></h3>
-                                                <div class="price ">$100</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br><br><br>
-                                    <div class="col-md-3 col-sm-6 ">
-                                        <div class="product-grid ">
-                                            <div class="product-image ">
-                                                <a href="# ">
-                                                    <img class="pic-1 " src="images/shop/ketivi18.jpg ">
-                                                    <img class="pic-2 " src="images/shop/ketivi18.jpg ">
-                                                </a>
-                                                <!-- <span class="product-trend-label ">Mới</span> -->
-
-                                                <ul class="social ">
-                                                    <li><a href="# " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                    <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                    <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                    <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="product-content ">
-                                                <h3 class="title "><a href="# ">Bàn Ăn Gỗ Sồi</a></h3>
-                                                <div class="price ">11.800.000đ</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 col-sm-6 ">
-                                        <div class="product-grid ">
-                                            <div class="product-image ">
-                                                <a href="# ">
-                                                    <img class="pic-1 " src="images/shop/ghetua19.jpg ">
-                                                    <img class="pic-2 " src="images/shop/ghetua19.jpg ">
-                                                </a>
-                                                <!-- <span class="product-trend-label ">Mới</span> -->
-
-                                                <ul class="social ">
-                                                    <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                    <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                    <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                    <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="product-content ">
-                                                <h3 class="title ">
-                                                    <a href="# ">Tủ Quần Áo QA40</a>
-                                                </h3>
-                                                <div class="price ">6.693.000đ</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3 col-sm-6 ">
-                                        <div class="product-grid ">
-                                            <div class="product-image ">
-                                                <a href="# ">
-                                                    <img class="pic-1 " src="images/shop/bankhach26.jpg ">
-                                                    <img class="pic-2 " src="images/shop/bankhach26.jpg ">
-                                                </a>
-                                                <span class="product-trend-label ">Mới</span>
-
-                                                <ul class="social ">
-                                                    <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                    <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                    <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                    <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="product-content ">
-                                                <h3 class="title ">
-                                                    <a href="# ">Tủ Quần Áo QAG56</a>
-                                                </h3>
-                                                <div class="price ">8.245.000đ</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="col-md-3 col-sm-6 ">
-                                        <div class="product-grid ">
-                                            <div class="product-image ">
-                                                <a href="# ">
-                                                    <img class="pic-1 " src="images/shop/giasach3.jpg ">
-                                                    <img class="pic-2 " src="images/shop/giasach3.jpg ">
-                                                </a>
-                                                <!-- <span class="product-trend-label ">Mới</span> -->
-
-                                                <ul class="social ">
-                                                    <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                                    <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                    <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                                    <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="product-content ">
-                                                <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                                <div class="price ">$100</div>
-                                            </div>
-                                        </div>
-                                        <h3 style="border-bottom: none;padding-right: 30px;font-size: 17px; " class="otherInfoHandle ">XEM ÍT HƠN</h3>
-                                    </div>
-
                                 </div>
 
                             </div>
@@ -1035,117 +318,6 @@ Bộ Bàn Ghế Gỗ GG01</a>
                                     </div>
                                 </div>
                             </div>
-                            <div class="item ">
-                                <div class="product-grid ">
-                                    <div class="product-image ">
-                                        <a href="giuong.jsp ">
-                                            <img class="pic-1 " src="images/shop/giasach11.jpg ">
-                                            <img class="pic-2 " src="images/shop/giasach11.jpg ">
-                                        </a>
-                                        <span class="product-trend-label ">Mới</span>
-
-                                        <ul class="social ">
-                                            <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                            <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                            <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                            <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content ">
-                                        <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                        <div class="price ">$100</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item ">
-                                <div class="product-grid ">
-                                    <div class="product-image ">
-                                        <a href="giuong.jsp ">
-                                            <img class="pic-1 " src="images/shop/sopha.jpg ">
-                                            <img class="pic-2 " src="images/shop/sopha.jpg ">
-                                        </a>
-                                        <span class="product-trend-label ">Mới</span>
-
-                                        <ul class="social ">
-                                            <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                            <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                            <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                            <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content ">
-                                        <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                        <div class="price ">$100</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item ">
-                                <div class="product-grid ">
-                                    <div class="product-image ">
-                                        <a href="giuong.jsp ">
-                                            <img class="pic-1 " src="images/shop/ketivi18.jpg ">
-                                            <img class="pic-2 " src="images/shop/ketivi18.jpg ">
-                                        </a>
-                                        <span class="product-trend-label ">Mới</span>
-
-                                        <ul class="social ">
-                                            <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                            <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                            <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                            <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content ">
-                                        <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                        <div class="price ">$100</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item ">
-                                <div class="product-grid ">
-                                    <div class="product-image ">
-                                        <a href="giuong.jsp ">
-                                            <img class="pic-1 " src="images/shop/bankhach1.jpg ">
-                                            <img class="pic-2 " src="images/shop/bankhach1.jpg ">
-                                        </a>
-                                        <span class="product-trend-label ">Mới</span>
-
-                                        <ul class="social ">
-                                            <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                            <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                            <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                            <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content ">
-                                        <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                        <div class="price ">$100</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item ">
-                                <div class="product-grid ">
-                                    <div class="product-image ">
-                                        <a href="giuong.jsp ">
-                                            <img class="pic-1 " src="images/shop/ghetua12.jpg ">
-                                            <img class="pic-2 " src="images/shop/ghetua12.jpg ">
-                                        </a>
-                                        <span class="product-trend-label ">Mới</span>
-
-                                        <ul class="social ">
-                                            <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i class="fa fa-shopping-cart "></i></a></li>
-                                            <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                            <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                            <li><a href="product-details.jsp " data-tip="Xem thêm "><i class="fa fa-search "></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content ">
-                                        <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                        <div class="price ">$100</div>
-                                    </div>
-                                </div>
-                            </div>
-
                         </div>
                     </div>
                 </div>
