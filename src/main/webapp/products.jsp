@@ -58,24 +58,6 @@
 
 <body id="homepage">
 
-<%--<%--%>
-<%--    ProductDAO pdDAO = new ProductDAO();--%>
-<%--    ArrayList<ProductDTO> lsProducts = pdDAO.getList();--%>
-<%--    int start = 0, end;--%>
-<%--    if(lsProducts.size() < 10){--%>
-<%--        end = 9;--%>
-<%--    }else{--%>
-<%--        end = lsProducts.size();--%>
-<%--    }--%>
-<%--    if(request.getParameter("start")!=null){--%>
-<%--        start = Integer.parseInt(request.getParameter("start"));--%>
-<%--    }--%>
-<%--    if(request.getParameter("end")!=null){--%>
-<%--        end = Integer.parseInt(request.getParameter("end"));--%>
-<%--    }--%>
-<%--    ArrayList<ProductDTO> lsByPage = pdDAO.getListByPage(lsProducts,start,end);--%>
-
-<%--%>--%>
 
     <div id="wrapper">
        <%@include file="header.jsp"%>
@@ -111,7 +93,7 @@
 
         <!-- content begin -->
         <!-- content begin -->
-        <div id="content" class="no-bottom no-top">
+        <div id="content" class="no-bottom no-top"  >
             <br><br><br><br>
             <div class=" danhmuc ">
                 <div class="slick-slider slick-initialized " style="padding-left: 150px;">
@@ -227,7 +209,7 @@
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title ">
-                                                <a href="pngu-giuong.jsp">"${d.tenProduct}"/a>
+                                                <a href="pngu-giuong.jsp">"${d.tenProduct}"</a>
 
                                             </h3>
                                             <div class="price  ">${d.giaTien}</div>
@@ -236,6 +218,7 @@
                                 </div>
 
                                 </c:forEach>
+
                                 <%--end product--%>
 
 
@@ -245,7 +228,9 @@
                             <div class="otherInfo ">
 
                                <ul class ="pagination">
-                                    <li><a href="">1</a></li>
+                                  <c:forEach begin="1" end="${endPage}" var="i">
+                                      <a href="#">${i}</a>
+                                      </c:forEach>
                                </ul>
                                 <div class="otherInfoBody ">
                                     <div class="col-md-3 col-sm-6 ">

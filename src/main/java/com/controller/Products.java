@@ -22,25 +22,21 @@ public class Products extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        ProductDAO pdDAO = new ProductDAO();
-        ArrayList<ProductDTO> lsProducts = pdDAO.getList();
-        int start = 0, end;
-        if(lsProducts.size() < 10){
-            end = 9;
-        }else{
-            end = lsProducts.size();
-        }
-        if(request.getParameter("start")!=null){
-            start = Integer.parseInt(request.getParameter("start"));
-        }
-        if(request.getParameter("end")!=null){
-            end = Integer.parseInt(request.getParameter("end"));
-        }
-        ArrayList<ProductDTO> lsByPage = pdDAO.getListByPage(lsProducts,start,end);
-
-        Collection<ProductDTO> values = lsByPage;
-            request.setAttribute("data", values);
-            request.getRequestDispatcher("products.jsp").forward(request, response);
+           ProductDAO productDAO = new ProductDAO();
+            ArrayList<ProductDTO> allProducts = productDAO.getList();
+            String indexString = request.getParameter("index");
+            int index = Integer.parseInt(indexString);
+            int pageSize = 16;
+            int endPage = 0;
+            endPage = allProducts.size() / pageSize;
+            if(allProducts.size() % pageSize != 0){
+                endPage++;
+            }
+            ArrayList<ProductDTO> listProductsByPage = productDAO.getListByPage(index, pageSize);
+            request.setAttribute("endPage",endPage);
+            request.setAttribute("data",listProductsByPage);
+            request.getRequestDispatcher("products.jsp").forward(request,response);
     }
+    
 
 }
