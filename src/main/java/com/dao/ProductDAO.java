@@ -28,9 +28,9 @@ public class ProductDAO {
                 pst.setString(4, productDTO.getChatLieu());
                 pst.setInt(5, productDTO.getGiaTien());
                 pst.setInt(6, productDTO.getSoLuongTrongKho());
-                pst.setString(7, productDTO.getDanhGia());
+                pst.setInt(7, productDTO.getDanhGia());
                 pst.setString(8, productDTO.getTinhTrang());
-                pst.setString(9, productDTO.addImage());
+//                pst.setString(9, productDTO.addImage());
 
                 // Sửa lại thành upload nhiều hình
 
@@ -103,7 +103,7 @@ public class ProductDAO {
                 pd.setChatLieu(rsProducts.getString(4));
                 pd.setGiaTien(rsProducts.getInt(5));
                 pd.setSoLuongTrongKho(rsProducts.getInt(6));
-                pd.setDanhGia(rsProducts.getString(7));
+                pd.setDanhGia(rsProducts.getInt(7));
                 String sqlImage = "Select * from hinhanh where id = '" + rsProducts.getString(1) + "'";
                 rsImages = DBUtils.makeConnection().createStatement().executeQuery(sqlImage);
                 while (rsImages.next()) {
@@ -144,7 +144,7 @@ public class ProductDAO {
                 pd.setChatLieu(rsProducts.getString(5));
                 pd.setGiaTien(rsProducts.getInt(6));
                 pd.setSoLuongTrongKho(rsProducts.getInt(7));
-                pd.setDanhGia(rsProducts.getString(8));
+                pd.setDanhGia(rsProducts.getInt(8));
                 String sqlImage = "Select * from hinhanh where id = '" + rsProducts.getString(2) + "'";
                 rsImages = DBUtils.makeConnection().createStatement().executeQuery(sqlImage);
                 while (rsImages.next()) {
@@ -159,8 +159,39 @@ public class ProductDAO {
         return lsProducts;
     }
 
-    public static void main(String[] args) {
+    public ProductDTO getProductById(String id) throws SQLException {
+        ProductDTO product = new ProductDTO();
+        ResultSet rsProduct = null;
+        ResultSet rsImages = null;
+        Connection con = DBUtils.makeConnection();
+        String sql = "select * from product where IDPRODUCT like ?";
+        PreparedStatement ps = con.prepareStatement(sql);
+        ps.setString(1,id);
+        rsProduct = ps.executeQuery();
+        rsProduct.next();
+//        while(rsProduct.next()){
+            product.setIdProduct(rsProduct.getString(1));
+            product.setTenProduct(rsProduct.getString(2));
+            product.setLoai(rsProduct.getString(3));
+            product.setChatLieu(rsProduct.getString(4));
+            product.setGiaTien(rsProduct.getInt(5));
+            product.setSoLuongTrongKho(rsProduct.getInt(6));
+            product.setDanhGia(rsProduct.getInt(7));
+            String sqlImage = "Select * from hinhanh where id = ?";
+            PreparedStatement psImage = con.prepareStatement(sqlImage);
+            psImage.setString(1,id);
+            rsImages = ps.executeQuery();
+            while (rsImages.next()) {
+                product.addImage(rsImages.getString(2));
+            }
+//        }
+
+        return product;
+    }
+
+    public static void main(String[] args) throws SQLException {
         ProductDAO productDAO = new ProductDAO();
+        System.out.println(productDAO.getProductById("LS625002R9"));
 //        System.out.println(productDAO.getListByPage(1,10));
     }
 }

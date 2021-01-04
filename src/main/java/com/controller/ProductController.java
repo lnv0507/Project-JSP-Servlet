@@ -32,7 +32,7 @@ public class ProductController extends HttpServlet {
             String chatLieu = request.getParameter("txtChatLieu");
             String giaTien = request.getParameter("txtGia");
             String soLuong = request.getParameter("txtNumber");
-            String danhGia = request.getParameter("txtDanhGia");
+            int danhGia = Integer.parseInt(request.getParameter("txtDanhGia"));
             String tinhTrang = request.getParameter("txtTinhTrang");
             String image = request.getParameter("txtImage");
             images.add(image);

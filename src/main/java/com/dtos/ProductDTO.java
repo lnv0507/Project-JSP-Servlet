@@ -9,7 +9,7 @@ public class ProductDTO {
     private String chatLieu;
     private int giaTien;
     private int soLuongTrongKho;
-    private String danhGia;
+    private int danhGia;
     private String tinhTrang;
     private ArrayList<String> images;
     private String firstImage;
@@ -17,7 +17,7 @@ public class ProductDTO {
         this.images = new ArrayList<>();
     }
 
-    public ProductDTO(String idProduct, String tenProduct, String loai, String chatLieu, int giaTien, int soLuongTrongKho, String danhGia, String tinhTrang) {
+    public ProductDTO(String idProduct, String tenProduct, String loai, String chatLieu, int giaTien, int soLuongTrongKho, int danhGia, String tinhTrang) {
         this.idProduct = idProduct;
         this.tenProduct = tenProduct;
         this.loai = loai;
@@ -78,11 +78,11 @@ public class ProductDTO {
         this.soLuongTrongKho = soLuongTrongKho;
     }
 
-    public String getDanhGia() {
+    public int getDanhGia() {
         return danhGia;
     }
 
-    public void setDanhGia(String danhGia) {
+    public void setDanhGia(int danhGia) {
         this.danhGia = danhGia;
     }
 

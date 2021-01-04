@@ -195,8 +195,8 @@
                                     <div class="product-grid ">
                                         <div class="product-image ">
                                             <a href="product-details.jsp">
-                                                <img class="pic-1 " src="${pageContext.request.contextPath}${d.getImages().get(0)}">
-                                                <img class="pic-2 " src="${pageContext.request.contextPath}${d.getImages().get(0)}">
+                                                <img class="pic-1 " src="${pageContext.request.contextPath}/images/products/${d.getImages().get(0)}">
+                                                <img class="pic-2 " src="${pageContext.request.contextPath}/images/products/${d.getImages().get(0)}">
                                             </a>
                                             <!-- <span class="product-trend-label ">Mới</span> -->
 
@@ -209,7 +209,7 @@
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title ">
-                                                <a href="pngu-giuong.jsp">"${d.tenProduct}"</a>
+                                                <a href="ProductDetailController?id=${d.getIdProduct()}">"${d.tenProduct}"</a>
 
                                             </h3>
                                             <div class="price  ">${d.giaTien}</div>
@@ -229,7 +229,7 @@
 
                                <ul class ="pagination">
                                   <c:forEach begin="1" end="${endPage}" var="i">
-                                      <a href="Products?index=${i}>${i}</a>
+                                      <a href="Products?index=${i}">${i}</a>
                                       </c:forEach>
                                </ul>
                                 <div class="otherInfoBody ">
