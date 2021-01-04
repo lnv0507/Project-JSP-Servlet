@@ -11,11 +11,12 @@
 <!-- Mirrored from w ww.themenesia.com/themeforest/archi-light/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:03:59 GMT -->
 <head>
     <style>
-        .helloUser:hover .itemUser{
+        .helloUser:hover .itemUser {
             display: block;
             color: red;
         }
-        .itemUser{
+
+        .itemUser {
             display: none;
         }
     </style>
@@ -33,7 +34,8 @@
         %>
         <div style="display: flex; justify-content: space-between">
             <div class="infoUser">
-                <h5 style="color: blue" class="helloUser">Xin Chào: <%= username%></h5>
+                <h5 style="color: blue" class="helloUser">Xin Chào: <%= username%>
+                </h5>
                 <ul class="itemUser">
                     <li>Thông Tin Cá Nhân</li>
                     <li>Giỏ Hàng</li>
@@ -86,8 +88,8 @@
 
                         <li><a href="about.jsp">Về Chúng Tôi</a></li>
 
-                        <li><a href="Products?index=1">Centers List</a></li>
-<%--                        <li><a href="products.jsp">Sản Phẩm</a></li>--%>
+                        <li><a href="Products?index=1">Sản Phẩm</a></li>
+                        <%--                        <li><a href="products.jsp">Sản Phẩm</a></li>--%>
                         <li><a href="contact.jsp">Liên Hệ</a></li>
 
                     </ul>
@@ -95,12 +97,14 @@
 
                         <ul id="menu-bar">
                             <li>
-                                <p id="search">
-                                    <i onmouseout="searchOut()" onmouseover="search()" class="fa fa-search">
-                                        <input placeholder="Tìm Kiếm..." style="display: none;" id="input-search"
-                                               type="text" class="input-text">
-                                    </i>
-                                </p>
+                                <form action="Products" method="get">
+                                    <p id="search">
+                                        <i onmouseout="searchOut()" onmouseover="search()" class="fa fa-search">
+                                            <input placeholder="Tìm Kiếm..." style="display: none;" id="input-search"
+                                                   type="search" class="input-text">
+                                        </i>
+                                    </p>
+                                </form>
                                 <p class="cart">
                                     <a href="cart.jsp">
                                         <i class="fa fa-shopping-cart">

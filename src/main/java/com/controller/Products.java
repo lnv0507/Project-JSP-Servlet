@@ -24,6 +24,7 @@ public class Products extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
            ProductDAO productDAO = new ProductDAO();
             ArrayList<ProductDTO> allProducts = productDAO.getList();
+            String txtSearch = request.getParameter("txtSearch");
             String indexString = request.getParameter("index");
             int index = Integer.parseInt(indexString);
             int pageSize = 16;

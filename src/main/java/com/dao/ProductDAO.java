@@ -89,10 +89,10 @@ public class ProductDAO {
     public ArrayList<ProductDTO> getList() {
         ResultSet rsProducts = null;
         ResultSet rsImages = null;
-        String sql = "Select * from product";
         ArrayList<ProductDTO> lsProducts = new ArrayList<>();
         try {
 //            rsProducts = DBUtils.connect().executeQuery(sql);
+            String sql = "Select * from product";
             rsProducts = DBUtils.makeConnection().createStatement().executeQuery(sql);
             rsProducts.beforeFirst();
             while (rsProducts.next()) {
@@ -118,46 +118,46 @@ public class ProductDAO {
         return lsProducts;
     }
 
-    public ArrayList<ProductDTO> getListByPage(int index, int size){
-            ResultSet rsProducts = null;
-            ResultSet rsImages = null;
-            String sql = "with x as (select ROW_NUMBER() over (order by IDPRODUCT asc ) as r,product.*" +
-                    "from product)" +
-                    "select * from x where r between ?*?-?+1 and ?*?";
-            ArrayList<ProductDTO> lsProducts = new ArrayList<>();
-            try {
+    public ArrayList<ProductDTO> getListByPage(int index, int size) {
+        ResultSet rsProducts = null;
+        ResultSet rsImages = null;
+        String sql = "with x as (select ROW_NUMBER() over (order by IDPRODUCT asc ) as r,product.*" +
+                "from product)" +
+                "select * from x where r between ?*?-?+1 and ?*?";
+        ArrayList<ProductDTO> lsProducts = new ArrayList<>();
+        try {
 //            rsProducts = DBUtils.connect().executeQuery(sql);
-                Connection con = DBUtils.makeConnection();
-                PreparedStatement ps = con.prepareStatement(sql);
-                ps.setInt(1,index);
-                ps.setInt(2,size);
-                ps.setInt(3,size);
-                ps.setInt(4,index);
-                ps.setInt(5,size);
-                rsProducts = ps.executeQuery();
-                rsProducts.beforeFirst();
-                while (rsProducts.next()) {
-                    ProductDTO pd = new ProductDTO();
-                    pd.setIdProduct(rsProducts.getString(2));
-                    pd.setTenProduct(rsProducts.getString(3));
-                    pd.setLoai(rsProducts.getString(4));
-                    pd.setChatLieu(rsProducts.getString(5));
-                    pd.setGiaTien(rsProducts.getInt(6));
-                    pd.setSoLuongTrongKho(rsProducts.getInt(7));
-                    pd.setDanhGia(rsProducts.getString(8));
-                    String sqlImage = "Select * from hinhanh where id = '" + rsProducts.getString(2) + "'";
-                    rsImages = DBUtils.makeConnection().createStatement().executeQuery(sqlImage);
-                    while (rsImages.next()) {
-                        pd.addImage(rsImages.getString(2));
-                    }
-                    lsProducts.add(pd);
+            Connection con = DBUtils.makeConnection();
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setInt(1, index);
+            ps.setInt(2, size);
+            ps.setInt(3, size);
+            ps.setInt(4, index);
+            ps.setInt(5, size);
+            rsProducts = ps.executeQuery();
+            rsProducts.beforeFirst();
+            while (rsProducts.next()) {
+                ProductDTO pd = new ProductDTO();
+                pd.setIdProduct(rsProducts.getString(2));
+                pd.setTenProduct(rsProducts.getString(3));
+                pd.setLoai(rsProducts.getString(4));
+                pd.setChatLieu(rsProducts.getString(5));
+                pd.setGiaTien(rsProducts.getInt(6));
+                pd.setSoLuongTrongKho(rsProducts.getInt(7));
+                pd.setDanhGia(rsProducts.getString(8));
+                String sqlImage = "Select * from hinhanh where id = '" + rsProducts.getString(2) + "'";
+                rsImages = DBUtils.makeConnection().createStatement().executeQuery(sqlImage);
+                while (rsImages.next()) {
+                    pd.addImage(rsImages.getString(2));
                 }
-                Collection<ProductDTO> values = lsProducts;
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
+                lsProducts.add(pd);
             }
-            return lsProducts;
+            Collection<ProductDTO> values = lsProducts;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
+        return lsProducts;
+    }
 
     public static void main(String[] args) {
         ProductDAO productDAO = new ProductDAO();
