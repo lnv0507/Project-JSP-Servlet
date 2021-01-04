@@ -30,7 +30,7 @@ public class ProductDAO {
                 pst.setInt(6, productDTO.getSoLuongTrongKho());
                 pst.setString(7, productDTO.getDanhGia());
                 pst.setString(8, productDTO.getTinhTrang());
-//                pst.setString(9, productDTO.getImage());
+                pst.setString(9, productDTO.addImage());
 
                 // Sửa lại thành upload nhiều hình
 

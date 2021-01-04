@@ -90,6 +90,7 @@ public class ProductDTO {
         return tinhTrang;
     }
 
+
     public void setTinhTrang(String tinhTrang) {
         this.tinhTrang = tinhTrang;
     }
@@ -100,6 +101,14 @@ public class ProductDTO {
 
     public void addImage(String image) {
         images.add(image);
+    }
+
+    public String getFirstImage() {
+        return firstImage;
+    }
+
+    public void setFirstImage(String firstImage) {
+        this.firstImage = firstImage;
     }
 
     @Override
