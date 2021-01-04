@@ -38,6 +38,8 @@ public class Products extends HttpServlet {
             request.setAttribute("data",listProductsByPage);
             request.getRequestDispatcher("products.jsp").forward(request,response);
     }
+
+
     
 
 }

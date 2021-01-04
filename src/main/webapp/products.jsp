@@ -229,7 +229,7 @@
 
                                <ul class ="pagination">
                                   <c:forEach begin="1" end="${endPage}" var="i">
-                                      <a href="#">${i}</a>
+                                      <a href="Products?index=${i}>${i}</a>
                                       </c:forEach>
                                </ul>
                                 <div class="otherInfoBody ">
