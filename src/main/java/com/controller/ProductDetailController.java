@@ -28,7 +28,7 @@ public class ProductDetailController extends HttpServlet {
             throwables.printStackTrace();
         }
         request.setAttribute("product",productDTO);
-        request.getRequestDispatcher()
+//        request.getRequestDispatcher()
 
     }
 }

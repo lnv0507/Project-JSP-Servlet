@@ -15,6 +15,10 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
+
 
 @WebServlet(name = "ProductController", urlPatterns = "/admin/addproduct")
 public class ProductController extends HttpServlet {
@@ -32,10 +36,43 @@ public class ProductController extends HttpServlet {
             String chatLieu = request.getParameter("txtChatLieu");
             String giaTien = request.getParameter("txtGia");
             String soLuong = request.getParameter("txtNumber");
-            int danhGia = Integer.parseInt(request.getParameter("txtDanhGia"));
+            int danhGia = 2;
             String tinhTrang = request.getParameter("txtTinhTrang");
-            String image = request.getParameter("txtImage");
-            images.add(image);
+
+            //---------------------------
+            ServletFileUpload upload = new ServletFileUpload(factory);
+            List items = upload.parseRequest(request);
+            Iterator iterator = items.iterator();
+            while (iterator.hasNext())
+            {
+                FileItem item = (FileItem) iterator.next();
+                if (!item.isFormField())
+                {
+                    String fileName = item.getName();
+                    String root = getServletContext().getRealPath("/");
+                    File path = new File(root + "/uploads");
+                    if (!path.exists())
+                    {
+                        boolean status = path.mkdirs();
+                    }
+                    File uploadedFile = new File(path + "/" + fileName);
+                    System.out.println(uploadedFile.getAbsolutePath());
+                    if(fileName!="")
+                        item.write(uploadedFile);
+                    else
+                        out.println("file not found");
+                    out.println("<h1>File Uploaded Successfully....:-)</h1>");
+                }
+                else
+                {
+                    String abc = item.getString();
+                    out.println("<br><br><h1>"+abc+"</h1><br><br>");
+                }
+            }
+
+            //----------------------------
+
+//            images.add(image);
 //            Part part = request.getPart("txtImage");
 //            String image = extractFileName(part);
 //            is = part.getInputStream();
@@ -51,7 +88,7 @@ public class ProductController extends HttpServlet {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
-            request.getRequestDispatcher(url).forward(request, response);
+            request.getRequestDispatcher("test.jsp").forward(request, response);
         }
 
 
