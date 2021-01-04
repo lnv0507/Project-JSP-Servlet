@@ -16,16 +16,23 @@ PASSWORD VARCHAR(255)
 CREATE table product(
 IDPRODUCT VARCHAR(50) PRIMARY KEY,
 TENPRODUCT VARCHAR(255),
-LOAI VARCHAR(50),
+LOAI VARCHAR(	50),
 CHATLIEU VARCHAR(50),
 GIATIEN int,
 SOLUONGTRONGKHO INT,
 DANHGIA VARCHAR(255)
 );
 
-alter table productadd column tinhtrang varchar(100)
+ALTER table product MODIFY column DANHGIA NVARCHAR(255)
+ALTER table product MODIFY column tinhtrang NVARCHAR(100)
+ALTER table product MODIFY column LOAI NVARCHAR(50)
+ALTER table product MODIFY column CHATLIEU NVARCHAR(50)
+ 
+alter table product
+add column tinhtrang varchar(100)
 
-
+alter table product
+add column image BLOB
 
 
 CREATE TABLE lienhe(
