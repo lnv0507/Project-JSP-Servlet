@@ -11,9 +11,7 @@
     <meta name="author" content="">
 
 
-    <!--[if lt IE 9]>
-    <script src="js/jsp5shiv.js"></script>
-    <![endif]-->
+
 
 
     <!-- CSS Files
@@ -110,10 +108,6 @@
                         </div>
                     </div>
                     <!-- close gallery item -->
-
-
-
-
                 </div>
 
             </section>
@@ -138,7 +132,6 @@
 
     <!-- style switcher
 ================================================== -->
-    <script src="js/switcher.jsp"></script>
 
 
 

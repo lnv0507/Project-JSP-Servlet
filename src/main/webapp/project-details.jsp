@@ -36,7 +36,6 @@
 <!--                </div>-->
 
                 <p></p>
-
                 <p>
                     <h4>Mô tả</h4>
                     Với lối thiết kế trung thành với tone chủ đạo vẫn là màu trắng kết hợp với màu hồng nhạt được xem là sự kết hợp kinh điển trong thiết kế nội thất. Sắc hồng là màu sắc tạo sự nhẹ nhàng và màu trắng là màu trung gian, căn phòng sẽ trở nên đầy tính nghệ thuật và êm ái nhưng không kém phần quyến rũ tác động mạnh mẽ vào thị giác, tạo nên dự hấp dẫn riêng cho căn hộ.
@@ -50,8 +49,6 @@
                             <li><a href="product-details.jsp">Bàn lớn A20 </a> </li>Số lượng : 1
                         </ul>
                 </p>
-
-
             </div>
         </div>
     </div>

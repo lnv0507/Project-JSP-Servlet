@@ -41,8 +41,7 @@
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                 aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel" style="color: white;">Tạo mới khách
-                            hàng</h4>
+                        <h4 class="modal-title" id="myModalLabel" style="color: white;">Tạo mới khách hàng</h4>
                     </div>
                     <div class="modal-body">
                         <form class="form-horizontal" id="frm-crcust">
@@ -137,114 +136,6 @@
 
         <!-- start create supplier -->
 
-        <div class="modal fade" id="create-sup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-                                aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel" style="color: white;">Tạo mới nhà cung
-                            cấp</h4>
-                    </div>
-                    <div class="modal-body">
-                        <form class="form-horizontal" id="frm-crsup">
-                            <div class="form-group">
-                                <div class="col-sm-3">
-                                    <label for="supplier_name">Mã nhà cung cấp</label>
-                                </div>
-                                <div class="col-sm-9">
-                                    <input type="text" id="supplier_code" name="supplier_code"
-                                           class="form-control" value=""
-                                           placeholder="Mã nhà cung cấp (Tự sinh nếu bỏ trống)">
-                                    <span style="color: red; font-style: italic;"
-                                          class="error error-supplier_code"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-3">
-                                    <label for="supplier_name">Tên nhà cung cấp</label>
-                                </div>
-                                <div class="col-sm-9">
-                                    <input type="text" id="supplier_name" name="supplier_name"
-                                           class="form-control" value=""
-                                           placeholder="Nhập tên nhà cung cấp (bắc buộc)">
-                                    <span style="color: red; font-style: italic;"
-                                          class="error error-supplier_name"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-3">
-                                    <label for="supplier_phone">Số điện thoại</label>
-                                </div>
-                                <div class="col-sm-9">
-                                    <input type="text" id="supplier_phone" name="supplier_phone"
-                                           class="form-control"
-                                           value="" placeholder="Số điện thoại">
-                                    <span style="color: red; font-style: italic;"
-                                          class="error error-supplier_phone"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-3">
-                                    <label for="supplier_email">Email</label>
-                                </div>
-                                <div class="col-sm-9">
-                                    <input type="text" id="supplier_email" name="supplier_email"
-                                           class="form-control" value=""
-                                           placeholder="Nhập email nhà cung cấp ( ví dụ: kh10@gmail.com )">
-                                    <span style="color: red; font-style: italic;"
-                                          class="error error-supplier_email"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-3">
-                                    <label for="supplier_addr">Địa chỉ</label>
-                                </div>
-                                <div class="col-sm-9">
-                                    <input type="text" id="supplier_addr" name="supplier_addr"
-                                           class="form-control"
-                                           value="" placeholder="">
-                                    <span style="color: red; font-style: italic;"
-                                          class="error error-supplier_addr"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-3">
-                                    <label for="tax_code">Mã số thuế</label>
-                                </div>
-                                <div class="col-sm-9">
-                                    <input type="text" id="tax_code" name="tax_code" class="form-control"
-                                           value="" placeholder="">
-                                    <span style="color: red; font-style: italic;"
-                                          class="error error-tax_code"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-sm-3">
-                                    <label for="supplier_notes">Ghi chú</label>
-                                </div>
-                                <div class="col-sm-9">
-                                    <input type="text" id="supplier_notes" name="notes" class="form-control"
-                                           value="" placeholder="">
-                                    <span style="color: red; font-style: italic;"
-                                          class="error error-supplier_notes"></span>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-sm btn-crsup"
-                                onclick="cms_crsup();"><i
-                                class="fa fa-check"></i> Lưu
-                        </button>
-                        <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal">
-                            <i
-                                    class="fa fa-undo"></i> Bỏ qua
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
         <!-- end supacture -->
         <div class="customer-supplier">
             <div class="breadcrumbs-fixed panel-action">
@@ -262,29 +153,7 @@
                                             data-target="#create-cust"><i class="fa fa-plus-circle"></i> Tạo
                                         khách hàng
                                     </button>
-                                    <button type="button" class="btn btn-success" onclick=""><i
-                                            class="fa fa-download"></i> Xuất Excel
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="supplier-act act" style="display: none;">
-                        <div class="col-md-4 col-md-offset-2">
-                            <div class="left-action text-left clearfix">
-                                <h2>Nhà cung cấp</h2>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="right-action text-right">
-                                <div class="btn-groups">
-                                    <button type="button" class="btn btn-primary" data-toggle="modal"
-                                            data-target="#create-sup">
-                                        <i class="fa fa-plus-circle"></i> Tạo nhà cung cấp
-                                    </button>
-                                    <button type="button" class="btn btn-success"><i
-                                            class="fa fa-download"></i> Xuất Excel
-                                    </button>
+
                                 </div>
                             </div>
                         </div>
@@ -300,11 +169,7 @@
                             role="tab"
                             data-toggle="tab"><i
                             class="fa fa-user"></i> Khách hàng</a></li>
-                    <li role="presentation" onclick="tab_click_act('supplier');"><a href="#sup"
-                                                                                    aria-controls="supplier"
-                                                                                    role="tab"
-                                                                                    data-toggle="tab"><i
-                            class="fa fa-truck"></i> Nhà cung cấp</a></li>
+
                 </ul>
                 <div class="tab-content">
                     <div id="cus" class="tab-pane active">
@@ -319,12 +184,11 @@
                                         <select id="cus-option" class="form-control">
                                             <option value="0">Tất cả</option>
                                             <option value="1">KH từng mua hàng</option>
-                                            <option value="2">KH còn nợ</option>
                                         </select>
                                     </div>
                                     <button type="button" onclick="cms_paging_listcustomer(1)"
                                             class="btn btn-primary btn-large btn-sCustomer"><i
-                                            class="fa fa-search""></i> Tìm kiếm
+                                            class="fa fa-search"></i> Tìm kiếm
                                     </button>
                                 </div>
                             </div>
@@ -337,9 +201,9 @@
                                     <th class="text-center">Tên KH</th>
                                     <th class="text-center">Điện thoại</th>
                                     <th class="text-center">Địa chỉ</th>
-                                    <th class="text-center">Lần cuối mua hàng</th>
-                                    <th class="text-center">Tổng tiền hàng</th>
-                                    <th class="text-center">Tổng nợ</th>
+                                    <th class="text-center">Email</th>
+                                    <th class="text-center">Chức Vụ</th>
+                                    <th class="text-center">Tổng Tiền Hàng</th>
                                     <th></th>
                                 </tr>
                                 </thead>
@@ -353,104 +217,11 @@
                                     </td>
                                     <td class="text-center">0969022097</td>
                                     <td class="text-center">Vĩnh Long</td>
-                                    <td class="text-center">-</td>
-                                    <td class="text-right"
-                                        style="font-weight: bold; ">-
-                                    </td>
-                                    <td class="text-right">-</td>
+                                    <td class="text-center">lamdilinh.nguyen@gmail.com</td>
+                                    <td class="text-right" style="font-weight: bold; "> Khách Hàng</td>
+                                    <td class="text-right"> 999999</td>
                                     <td class="text-center"><i class="fa fa-trash-o" style="cursor:pointer;"
                                                                onclick="cms_delCustomer(45,1);"></i>
-                                    </td>
-                                </tr>
-                                <tr id="tr-item-44">
-                                    <td class="text-center tr-detail-item"
-                                    >KH000005
-                                    </td>
-                                    <td class="text-center tr-detail-item"
-                                    >Phan Thành Đoan
-                                    </td>
-                                    <td class="text-center">0862083141</td>
-                                    <td class="text-center">Phan Rang - Ninh Thuận</td>
-                                    <td class="text-center">-</td>
-                                    <td class="text-right"
-                                        style="font-weight: bold; ">-
-                                    </td>
-                                    <td class="text-right">-</td>
-                                    <td class="text-center"><i class="fa fa-trash-o" style="cursor:pointer;"
-                                                               onclick="cms_delCustomer(44,1);"></i>
-                                    </td>
-                                </tr>
-                                <tr id="tr-item-43">
-                                    <!-- onclick="cms_detail_customer(43)" -->
-                                    <td class="text-center tr-detail-item"
-                                    >KH000004
-                                    </td>
-                                    <td class="text-center tr-detail-item"
-                                    >Phạm Minh Nguyên
-                                    </td>
-                                    <td class="text-center">0924404048</td>
-                                    <td class="text-center">Biên Hòa - Đồng Nai</td>
-                                    <td class="text-center">2020-11-15 23:42:29</td>
-                                    <td class="text-right"
-                                        style="font-weight: bold; ">22,000,000
-                                    </td>
-                                    <td class="text-right">-</td>
-                                    <td class="text-center"><i class="fa fa-trash-o" style="cursor:pointer;"
-                                                               onclick="cms_delCustomer(43,1);"></i>
-                                    </td>
-                                </tr>
-                                <tr id="tr-item-42">
-                                    <td class="text-center tr-detail-item"
-                                    >KH000003
-                                    </td>
-                                    <td class="text-center tr-detail-item"
-                                    >Nguyễn Công Dự
-                                    </td>
-                                    <td class="text-center">0921172028</td>
-                                    <td class="text-center">Đồng Tháp</td>
-                                    <td class="text-center">-</td>
-                                    <td class="text-right"
-                                        style="font-weight: bold; ">-
-                                    </td>
-                                    <td class="text-right">-</td>
-                                    <td class="text-center"><i class="fa fa-trash-o" style="cursor:pointer;"
-                                                               onclick="cms_delCustomer(42,1);"></i>
-                                    </td>
-                                </tr>
-                                <tr id="tr-item-41">
-                                    <td class="text-center tr-detail-item"
-                                    >KH000002
-                                    </td>
-                                    <td class="text-center tr-detail-item"
-                                    >Phạm Huy Phước
-                                    </td>
-                                    <td class="text-center">0948733173</td>
-                                    <td class="text-center">Biên Hòa-Đồng Nai</td>
-                                    <td class="text-center">-</td>
-                                    <td class="text-right"
-                                        style="font-weight: bold; ">-
-                                    </td>
-                                    <td class="text-right">-</td>
-                                    <td class="text-center"><i class="fa fa-trash-o" style="cursor:pointer;"
-                                                               onclick="cms_delCustomer(41,1);"></i>
-                                    </td>
-                                </tr>
-                                <tr id="tr-item-40">
-                                    <td class="text-center tr-detail-item"
-                                    >KH000001
-                                    </td>
-                                    <td class="text-center tr-detail-item"
-                                    >Nguyễn Viết Lâm
-                                    </td>
-                                    <td class="text-center">0937983205</td>
-                                    <td class="text-center">Di Linh- Lâm Đồng</td>
-                                    <td class="text-center">-</td>
-                                    <td class="text-right"
-                                        style="font-weight: bold; ">-
-                                    </td>
-                                    <td class="text-right">-</td>
-                                    <td class="text-center"><i class="fa fa-trash-o" style="cursor:pointer;"
-                                                               onclick="cms_delCustomer(40,1);"></i>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -458,8 +229,8 @@
                             <div class="alert alert-info summany-info clearfix" role="alert">
                                 <div class="ajax-loadlist-total sm-info pull-left padd-0">Số khách hàng:
                                     <span><b>6</b></span>
-                                    | Tổng tiền hàng: <span><b>22,000,000</b> đ</span> | Tổng nợ:
-                                    <span><b>0</b> đ</span></div>
+                                    | Tổng tiền hàng: <span><b>22,000,000</b> đ</span>
+                                </div>
                                 <div class="pull-right">
                                 </div>
                             </div>
@@ -487,73 +258,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="sup-body">
-                            <table class="table table-bordered">
-                                <thead>
-                                <tr>
-                                    <th class="text-center">Mã NCC</th>
-                                    <th class="text-center">Tên NCC</th>
-                                    <th class="text-center">Điện thoại</th>
-                                    <th class="text-center">Địa chỉ</th>
-                                    <th class="text-center">Lần cuối nhập hàng</th>
-                                    <th class="text-center">Tổng tiền hàng</th>
-                                    <th class="text-center">Nợ</th>
-                                    <th></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td class="text-center" onclick="cms_detail_supplier(23)">NCC000003</td>
-                                    <td class="text-center" onclick="cms_detail_supplier(23)">
-                                        HieuSecondHand
-                                    </td>
-                                    <td class="text-center">02081234567</td>
-                                    <td class="text-left">Nguyễn Ngọc Vũ - Hà Nội</td>
-                                    <td class="text-center">2019-06-14 23:32:00</td>
-                                    <td class="text-right" style="font-weight: bold; ">75,000,000</td>
-                                    <td class="text-right">0</td>
-                                    <td class="text-center"><i class="fa fa-trash-o" style="cursor:pointer;"
-                                                               onclick="cms_delsup(23,1);"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center" onclick="cms_detail_supplier(22)">NCC000002</td>
-                                    <td class="text-center" onclick="cms_detail_supplier(22)">The Nineteen
-                                        2Hand
-                                    </td>
-                                    <td class="text-center">02083656789</td>
-                                    <td class="text-left">Gò Vấp - Thành Phố Hồ Chí Minh</td>
-                                    <td class="text-center">-</td>
-                                    <td class="text-right" style="font-weight: bold; ">0</td>
-                                    <td class="text-right">0</td>
-                                    <td class="text-center"><i class="fa fa-trash-o" style="cursor:pointer;"
-                                                               onclick="cms_delsup(22,1);"></i></td>
-                                </tr>
-                                <tr>
-                                    <td class="text-center" onclick="cms_detail_supplier(21)">NCC000001</td>
-                                    <td class="text-center" onclick="cms_detail_supplier(21)">3Bich</td>
-                                    <td class="text-center">0123456777</td>
-                                    <td class="text-left">Bình Thạnh - Thành Phố Hồ Chí Minh</td>
-                                    <td class="text-center">-</td>
-                                    <td class="text-right" style="font-weight: bold; ">0</td>
-                                    <td class="text-right">0</td>
-                                    <td class="text-center"><i class="fa fa-trash-o" style="cursor:pointer;"
-                                                               onclick="cms_delsup(21,1);"></i></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <div class="alert alert-info summany-info clearfix" role="alert">
-                                <div class="sm-info pull-left padd-0">
-                                    Số NCC:<span>3</span>
-                                    Tổng tiền: <span>75,000,000 đ</span>
-                                    Tổng nợ: <span>0 đ</span>
-                                </div>
-                                <div class="pull-right ajax-pagination">
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

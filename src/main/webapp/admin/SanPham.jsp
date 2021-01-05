@@ -156,181 +156,32 @@
                             <th class="text-center">SL</th>
                             <th class="text-center">Giá bán</th>
                             <th class="text-center">Danh mục</th>
-                            <th class="text-center">Nhà cung cấp</th>
+                            <th class="text-center">Tình Trạng</th>
                             <!--        <th class="text-center">Hình</th>-->
                             <th></th>
                         </tr>
                         </thead>
                         <tbody>
                         <tr>
-                            <td class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox"
-                                                                                                      value="119"
-                                                                                                      class="checkbox chk"><span
-                                    style="width: 15px; height: 15px;"></span></label>
+                            <td class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox" value="119" class="checkbox chk"><span style="width: 15px; height: 15px;"></span></label>
                             </td>
                             <!--  onclick="cms_detail_product(119)" style="color: #2a6496; cursor: pointer;" -->
-                            <td class="text-left prd_name">Áo Đầu Lâu Bốc Cháy</td>
-                            <td class="text-center">SP000001</td>
+                            <td class="text-left prd_name">Tên Sản Phẩm</td>
+                            <td class="text-center">mã Sản Phâm</td>
                             <td class="text-center">
                                 <img src="images/a1.jpg" style="width: 80px ; height: 80px;" alt="">
                             </td>
                             <td class="text-center">5</td>
                             <td class="text-right" style="font-weight: bold;">50,000</td>
                             <td>Áo thun</td>
-                            <td>3Bich</td>
+                            <td>Còn Hàng</td>
                             <td class="text-center">
                                 <a href="SanPhamInfo.jsp">
-                                    <i class="fa fa-eye" style="margin-right: 5px; color: #307ECC;"
-                                       aria-hidden="true"></i>
+                                    <i class="fa fa-eye" style="margin-right: 5px; color: #307ECC;" aria-hidden="true"></i>
 
                                 </a>
-                                <i title="Ngừng kinh doanh" class="fa fa-pause" onclick="cms_deactivate_product(119,1);"
-                                   style="margin-right: 5px; color: #C6699F; cursor: pointer;"></i>
-                                <i class="fa fa-trash-o" style="color: darkred;" title="Xóa"
-                                   onclick="cms_delete_product(119,1)"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox"
-                                                                                                      value="118"
-                                                                                                      class="checkbox chk"><span
-                                    style="width: 15px; height: 15px;"></span></label>
-                            </td>
-                            <!-- onclick="cms_detail_product(118)" style="color: #2a6496; cursor: pointer;" -->
-                            <td class="text-left prd_name">Áo Denim The Devil</td>
-                            <td class="text-center">SP000002</td>
-                            <td class="text-center">
-                                <img src="images/a3.jpg" style="width: 80px ; height: 80px;" alt="">
-                            </td>
-                            <td class="text-center">6</td>
-                            <td class="text-right" style="font-weight: bold;">50,000</td>
-                            <td>Áo Denim</td>
-                            <td>HieuSecondHand</td>
-                            <td class="text-center">
-                                <a href="SanPhamInfo.jsp">
-                                    <i class="fa fa-eye" style="margin-right: 5px; color: #307ECC;"
-                                       aria-hidden="true"></i>
-
-                                </a>
-                                <i title="Ngừng kinh doanh" class="fa fa-pause" onclick="cms_deactivate_product(118,1);"
-                                   style="margin-right: 5px; color: #C6699F; cursor: pointer;"></i>
-                                <i class="fa fa-trash-o" style="color: darkred;" title="Xóa"
-                                   onclick="cms_delete_product(118,1)"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox"
-                                                                                                      value="117"
-                                                                                                      class="checkbox chk"><span
-                                    style="width: 15px; height: 15px;"></span></label>
-                            </td>
-                            <!-- onclick="cms_detail_product(117)" style="color: #2a6496; cursor: pointer;" -->
-                            <td class="text-left prd_name">Quần Jeans Robin Hood</td>
-                            <td class="text-center">SP000003</td>
-                            <td class="text-center">
-                                <img src="images/a6.jpg" style="width: 80px ; height: 80px;" alt="">
-                            </td>
-                            <td class="text-center">10</td>
-                            <td class="text-right" style="font-weight: bold;">50,000</td>
-                            <td>Quần short</td>
-                            <td>3Bich</td>
-                            <td class="text-center">
-                                <a href="SanPhamInfo.jsp">
-                                    <i class="fa fa-eye" style="margin-right: 5px; color: #307ECC;"
-                                       aria-hidden="true"></i>
-
-                                </a>
-                                <i title="Ngừng kinh doanh" class="fa fa-pause" onclick="cms_deactivate_product(117,1);"
-                                   style="margin-right: 5px; color: #C6699F; cursor: pointer;"></i>
-                                <i class="fa fa-trash-o" style="color: darkred;" title="Xóa"
-                                   onclick="cms_delete_product(117,1)"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox"
-                                                                                                      value="116"
-                                                                                                      class="checkbox chk"><span
-                                    style="width: 15px; height: 15px;"></span></label>
-                            </td>
-                            <!-- onclick="cms_detail_product(116)" style="color: #2a6496; cursor: pointer;" -->
-                            <td class="text-left prd_name">Quần Short Champion</td>
-                            <td class="text-center">SP000004</td>
-                            <td class="text-center">
-                                <img src="images/a2.jpg" style="width: 80px ; height: 80px;" alt="">
-
-                            </td>
-                            <td class="text-center">12</td>
-                            <td class="text-right" style="font-weight: bold;">50,000</td>
-                            <td>Quần Short</td>
-                            <td>Nineteen 2Hand</td>
-                            <td class="text-center">
-                                <a href="SanPhamInfo.jsp">
-                                    <i class="fa fa-eye" style="margin-right: 5px; color: #307ECC;"
-                                       aria-hidden="true"></i>
-
-                                </a>
-                                <i title="Ngừng kinh doanh" class="fa fa-pause" onclick="cms_deactivate_product(116,1);"
-                                   style="margin-right: 5px; color: #C6699F; cursor: pointer;"></i>
-                                <i class="fa fa-trash-o" style="color: darkred;" title="Xóa"
-                                   onclick="cms_delete_product(116,1)"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox"
-                                                                                                      value="115"
-                                                                                                      class="checkbox chk"><span
-                                    style="width: 15px; height: 15px;"></span></label>
-                            </td>
-                            <!-- onclick="cms_detail_product(115)" style="color: #2a6496; cursor: pointer;" -->
-                            <td class="text-left prd_name">Quần Short White Navy</td>
-                            <td class="text-center">SP000005</td>
-                            <td class="text-center">
-                                <img src="images/a5.jpg" style="width: 80px ; height: 80px;" alt="">
-                            </td>
-                            <td class="text-center">8</td>
-                            <td class="text-right" style="font-weight: bold;">50,000</td>
-                            <td>Quần Short</td>
-                            <td>3Bich</td>
-                            <td class="text-center">
-                                <a href="SanPhamInfo.jsp">
-                                    <i class="fa fa-eye" style="margin-right: 5px; color: #307ECC;"
-                                       aria-hidden="true"></i>
-
-                                </a>
-                                <i title="Ngừng kinh doanh" class="fa fa-pause" onclick="cms_deactivate_product(115,1);"
-                                   style="margin-right: 5px; color: #C6699F; cursor: pointer;"></i>
-                                <i class="fa fa-trash-o" style="color: darkred;" title="Xóa"
-                                   onclick="cms_delete_product(115,1)"></i>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox"
-                                                                                                      value="114"
-                                                                                                      class="checkbox chk"><span
-                                    style="width: 15px; height: 15px;"></span></label>
-                            </td>
-                            <!-- onclick="cms_detail_product(114)" style="color: #2a6496; cursor: pointer;" -->
-                            <td class="text-left prd_name">Mắt Kính 02</td>
-                            <td class="text-center">SP000006</td>
-                            <td class="text-center">
-                                <img src="images/a2%20copy.jpg" style="width: 80px ; height: 80px;" alt="">
-                            </td>
-                            <td class="text-center">10</td>
-                            <td class="text-right" style="font-weight: bold;">50,000</td>
-                            <td>Mắt kính</td>
-                            <td>HieuSecondHand</td>
-                            <!--                <td class="text-center"-->
-                            <!--                    style="width: 35px;">--><!--</td>-->
-                            <td class="text-center">
-                                <a href="SanPhamInfo.jsp">
-                                    <i class="fa fa-eye" style="margin-right: 5px; color: #307ECC;"
-                                       aria-hidden="true"></i>
-
-                                </a>
-                                <i title="Ngừng kinh doanh" class="fa fa-pause" onclick="cms_deactivate_product(114,1);"
-                                   style="margin-right: 5px; color: #C6699F; cursor: pointer;"></i>
-                                <i class="fa fa-trash-o" style="color: darkred;" title="Xóa"
-                                   onclick="cms_delete_product(114,1)"></i>
+                                <i title="Ngừng kinh doanh" class="fa fa-pause" onclick="cms_deactivate_product(119,1);" style="margin-right: 5px; color: #C6699F; cursor: pointer;"></i>
+                                <i class="fa fa-trash-o" style="color: darkred;" title="Xóa" onclick="cms_delete_product(119,1)"></i>
                             </td>
                         </tr>
 

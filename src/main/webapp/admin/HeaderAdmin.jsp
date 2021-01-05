@@ -48,7 +48,6 @@
                         <li id="product"><a href="SanPham.jsp"><i class="fa fa-product-hunt"></i><b>Sản phẩm</b></a>
                         </li>
                         <li id="customer"><a href="KhachHang.jsp"><i class="fa fa-users"></i><b>Khách hàng</b></a></li>
-                        <li id="import"><a href="NhapKho.jsp"><i class="fa fa-truck"></i><b>Nhập kho</b></a></li>
                         <li id="inventory"><a href="TonKho.jsp"><i class="fa fa-list-alt"></i><b>Tồn kho</b></a></li>
                         <li id="contact"><a href="LienHe.jsp"><i class="fa fa-user"></i><b>Liên Hệ</b></a></li>
                         <li id="config"><a href="ThietLap.jsp"><i class="fa fa-empire"></i><b>Thiết lập</b></a></li>

@@ -12,14 +12,11 @@
     <meta name="author" content="">
 
 
-    <!--[if lt IE 9]>
-    <script src="js.jsp5shiv.js"></script>
-    <![endif]-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">--%>
+<%--    <meta name="viewport" content="width=device-width, initial-scale=1">--%>
+<%--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--%>
+<%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--%>
+<%--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--%>
     <style>
         .checked {
             color: orange;
@@ -93,7 +90,7 @@
 
 
                         <div class="sp-large">
-                            <a href=" images/shop/tqa.jpg" class="sp-current-big"><img src="images/products/${p.getImages().get(0)}" alt=""></a>
+                            <a class="sp-current-big" href="image.jsp"><img src="images/products/${p.getImages().get(0)}" alt=""></a>
 <%--                                ${pageContext.request.contextPath}/images/products/${p.getImages().get(0)}--%>
                         </div>
                         <div class="sp-thumbs sp-tb-active">
@@ -258,19 +255,8 @@ Chất lượng gỗ tốt với khả năng chịu lực, chịu ẩm mốc và
 
 
         </div>
-
-
-        <!-- section close -->
-
-
         <!-- footer begin -->
-
-        <!-- footer close -->
-
-        <!-- footer begin -->
-
         <%@include file="footer.jsp" %>
-
         <!-- footer close -->
     </div>
 </div>
@@ -278,7 +264,6 @@ Chất lượng gỗ tốt với khả năng chịu lực, chịu ẩm mốc và
 
 <!-- style switcher
 ================================================== -->
-<script src="detail/js/switcher.jsp "></script>
 <script src="detail/js/jquery-3.3.1.min.js "></script>
 <script src="detail/js/jquery.cycle.js "></script>
 <script src="detail/js/owl.carousel.min.js "></script>
@@ -360,53 +345,7 @@ Chất lượng gỗ tốt với khả năng chịu lực, chịu ẩm mốc và
     });
     //-----------------------
 </script>
-<!-- <div class="sp-lightbox" data-currenteq="1" style="display: block;">
-<a href="#" id="sp-prev" style="opacity: 1;"></a>
-<a href="#" id="sp-next" style="opacity: 0.1;"></a><img src="images/shop/giuong5.jpg" style=""></div> -->
-
-
-<!-- <div id="switcher ">
-<span class="custom-close "></span>
-<span class="custom-show "></span>
-
-<span class="sw-title ">Header Style</span>
-<select name="switcher " id="de-header ">
-<option value="opt-1 " selected>Solid</option>
-<option value="opt-2 ">Transparent</option>
-</select>
-
-<div class="clearfix "></div>
-
-<span class="sw-title ">Menu Style</span>
-<select name="switcher " id="de-menu ">
-<option value="opt-1 " selected>Dotted Separator</option>
-<option value="opt-2 ">Line Separator</option>
-<option value="opt-3 ">Circle Separator</option>
-<option value="opt-4 ">Square Separator</option>
-<option value="opt-5 ">Plus Separator</option>
-<option value="opt-6 ">Strip Separator</option>
-<option value="opt-0 ">No Separator</option>
-</select>
-
-<div class="clearfix "></div>
-
-<span class="sw-title ">Color :</span>
-<ul id="de-color ">
-<li class="bg1 "></li>
-<li class="bg2 "></li>
-<li class="bg3 "></li>
-<li class="bg4 "></li>
-<li class="bg5 "></li>
-<li class="bg6 "></li>
-<li class="bg7 "></li>
-<li class="bg8 "></li>
-<li class="bg9 "></li>
-<li class="bg10 "></li>
-</ul>
-</div> -->
-
-<!-- Javascript Files
-================================================== -->
+<%----%>
 <script src="js/style.js "></script>
 <script src="js/jquery.min.js "></script>
 <script src="js/jpreLoader.js "></script>
@@ -425,7 +364,6 @@ Chất lượng gỗ tốt với khả năng chịu lực, chịu ẩm mốc và
 <script src="js/enquire.min.js "></script>
 <script src="js/designesia.js "></script>
 <script src="demo/demo.js "></script>
-
 <!-- SLIDER REVOLUTION SCRIPTS  -->
 <script type="text/javascript " src="rs-plugin/js/jquery.themepunch.plugins.min.js "></script>
 <script type="text/javascript " src="rs-plugin/js/jquery.themepunch.revolution.min.js "></script>

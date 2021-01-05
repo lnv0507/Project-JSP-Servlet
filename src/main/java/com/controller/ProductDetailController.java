@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -26,7 +27,9 @@ public class ProductDetailController extends HttpServlet {
         try {
            productDTO = productDAO.getProductById(id);
            lsProducts.add(productDTO);
-           request.setAttribute("product",lsProducts);
+            HttpSession session = request.getSession();
+
+            session.setAttribute("product",lsProducts);
            request.getRequestDispatcher("product-details.jsp").forward(request,response);
 
         } catch (SQLException throwables) {
