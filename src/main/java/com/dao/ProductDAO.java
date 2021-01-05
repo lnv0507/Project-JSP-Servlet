@@ -6,6 +6,7 @@ import com.utils.DBUtils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -19,8 +20,9 @@ public class ProductDAO {
         try {
             con = DBUtils.makeConnection();
             if (con != null) {
-                String sql = "insert into product(IDPRODUCT, TENPRODUCT, LOAI, CHATLIEU, GIATIEN, SOLUONGTRONGKHO, DANHGIA, tinhtrang, image)\n" +
-                        "value(?,?,?,?,?,?,?,?,?)";
+                String sql = "insert into product(IDPRODUCT, TENPRODUCT, LOAI, CHATLIEU, GIATIEN, SOLUONGTRONGKHO, DANHGIA)\n" +
+                        "value(?,?,?,?,?,?,?)";
+
                 pst = con.prepareStatement(sql);
                 pst.setString(1, productDTO.getIdProduct());
                 pst.setString(2, productDTO.getTenProduct());
@@ -29,13 +31,15 @@ public class ProductDAO {
                 pst.setInt(5, productDTO.getGiaTien());
                 pst.setInt(6, productDTO.getSoLuongTrongKho());
                 pst.setInt(7, productDTO.getDanhGia());
-                pst.setString(8, productDTO.getTinhTrang());
-//                pst.setString(9, productDTO.addImage());
-
                 // Sửa lại thành upload nhiều hình
 
-
                 pst.executeUpdate();
+                String sqlImage = "insert into hinhanh(ID, URL) value  (?,?)";
+                PreparedStatement psImage = con.prepareStatement(sqlImage);
+
+                psImage.setString(1, productDTO.getIdProduct());
+                psImage.setString(2, productDTO.getFirstImage());
+                psImage.executeUpdate();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -167,10 +171,10 @@ public class ProductDAO {
         Connection con = DBUtils.makeConnection();
         String sql = "select * from product where IDPRODUCT like ?";
         PreparedStatement ps = con.prepareStatement(sql);
-        ps.setString(1,id);
+        ps.setString(1, id);
         rsProduct = ps.executeQuery();
-        rsProduct.next();
-//        while(rsProduct.next()){
+        rsProduct.beforeFirst();
+        while (rsProduct.next()) {
             product.setIdProduct(rsProduct.getString(1));
             product.setTenProduct(rsProduct.getString(2));
             product.setLoai(rsProduct.getString(3));
@@ -180,19 +184,13 @@ public class ProductDAO {
             product.setDanhGia(rsProduct.getInt(7));
             String sqlImage = "Select * from hinhanh where id like ?";
             PreparedStatement psImage = con.prepareStatement(sqlImage);
-            psImage.setString(1,id);
+            psImage.setString(1, id);
             rsImages = psImage.executeQuery();
             while (rsImages.next()) {
                 product.addImage(rsImages.getString(2));
             }
-//        }
 
+        }
         return product;
-    }
-
-    public static void main(String[] args) throws SQLException {
-        ProductDAO productDAO = new ProductDAO();
-        productDAO.getProductById("LS625002R9");
-//        System.out.println(productDAO.getListByPage(1,10));
     }
 }

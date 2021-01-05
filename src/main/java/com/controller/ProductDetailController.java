@@ -33,6 +33,5 @@ public class ProductDetailController extends HttpServlet {
             throwables.printStackTrace();
         }
 
-
     }
 }

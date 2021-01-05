@@ -65,7 +65,7 @@
                 <div class="main-space orders-space"></div>
                 <!-- Tạo sản phẩm -->
                 <div class="products-content" style="margin-bottom: 25px;">
-                    <form action="addproduct" method="post">
+                    <form action="addproduct" method="post" enctype="multipart/form-data>
                         <div class="basic-info">
                             <div class="row">
                                 <div class="col-md-12">
@@ -221,43 +221,43 @@
                                                         </button>
                                                     </div>
                                                 </div>
+<%--                                                <div class="col-md-6 padd-right-0">--%>
+<%--                                                    <label>Đánh Giá</label>--%>
+<%--                                                    <div class="col-md-11 padd-0">--%>
+<%--                                                        <select class="form-control" id="prd_manufacture_id"--%>
+<%--                                                                name="txtDanhGia">--%>
+<%--                                                            <optgroup label="Chọn nhà sản xuất">--%>
+<%--                                                                <option>--%>
+<%--                                                                    Tốt--%>
+<%--                                                                </option>--%>
+<%--                                                                <option>--%>
+<%--                                                                    Kém--%>
+<%--                                                                </option>--%>
+<%--                                                                <option>--%>
+<%--                                                                    Chán--%>
+<%--                                                                </option>--%>
+<%--                                                            </optgroup>--%>
+<%--                                                            <optgroup label="------------------------">--%>
+<%--                                                                <option value="product_manufacture"--%>
+<%--                                                                        data-toggle="modal"--%>
+<%--                                                                        data-target="#list-prd-manufacture">--%>
+<%--                                                                    Tạo--%>
+<%--                                                                    mới Nhà sản xuất--%>
+<%--                                                                </option>--%>
+<%--                                                            </optgroup>--%>
+<%--                                                        </select>--%>
+<%--                                                    </div>--%>
+<%--                                                    <div class="col-md-1 padd-0">--%>
+<%--                                                        <button type="button" class="btn btn-primary"--%>
+<%--                                                                data-toggle="modal"--%>
+<%--                                                                data-target="#list-prd-manufacture"--%>
+<%--                                                                style="border-radius: 0 3px 3px 0; box-shadow: none;">--%>
+<%--                                                            ...--%>
+<%--                                                        </button>--%>
+<%--                                                    </div>--%>
+<%--                                                </div>--%>
                                                 <div class="col-md-6 padd-right-0">
-                                                    <label>Đánh Giá</label>
-                                                    <div class="col-md-11 padd-0">
-                                                        <select class="form-control" id="prd_manufacture_id"
-                                                                name="txtDanhGia">
-                                                            <optgroup label="Chọn nhà sản xuất">
-                                                                <option>
-                                                                    Tốt
-                                                                </option>
-                                                                <option>
-                                                                    Kém
-                                                                </option>
-                                                                <option>
-                                                                    Chán
-                                                                </option>
-                                                            </optgroup>
-                                                            <optgroup label="------------------------">
-                                                                <option value="product_manufacture"
-                                                                        data-toggle="modal"
-                                                                        data-target="#list-prd-manufacture">
-                                                                    Tạo
-                                                                    mới Nhà sản xuất
-                                                                </option>
-                                                            </optgroup>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-1 padd-0">
-                                                        <button type="button" class="btn btn-primary"
-                                                                data-toggle="modal"
-                                                                data-target="#list-prd-manufacture"
-                                                                style="border-radius: 0 3px 3px 0; box-shadow: none;">
-                                                            ...
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 padd-right-0">
-                                                    <input type="file" name="txtImage" id="">
+                                                    <input type="file" name="txtImage" id="" multiple="multiple">
                                                 </div>
                                             </div>
                                             <div class="form-group clearfix">
