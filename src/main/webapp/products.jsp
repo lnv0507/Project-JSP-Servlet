@@ -195,15 +195,13 @@
                         <ul>
                             <c:forEach items="${t.top5}" var="o">
                                 <li>
-
                                     <a href="product-details.jsp">
-                                        <img src="images/shop/6.jpg" alt="">
+                                        <img src="images/shop/${o.getImages().get(0)}" alt="">
                                         <div class="text">
-                                                ${o.tenProduct}
-                                            <div class="price">${o.giaTien}</div>
+                                            ${o.tenProduct}
+                                            <div class="price"> ${o.giaTien }</div>
                                             <a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i
                                                     style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
-
                                         </div>
                                     </a>
                                 </li>
@@ -244,7 +242,7 @@
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title ">
-                                                <a href="ProductDetailController?id=${d.getIdProduct()}">"${d.tenProduct}"</a>
+                                                <a style="font-size: 11px" href="ProductDetailController?id=${d.getIdProduct()}">"${d.tenProduct}"</a>
 
                                             </h3>
                                             <div class="price  ">${d.giaTien}</div>

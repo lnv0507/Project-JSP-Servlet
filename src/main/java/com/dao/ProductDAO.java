@@ -10,6 +10,7 @@ import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 public class ProductDAO {
     public void upload(ProductDTO productDTO) throws SQLException {
@@ -36,9 +37,11 @@ public class ProductDAO {
                 pst.executeUpdate();
                 String sqlImage = "insert into hinhanh(ID, URL) value  (?,?)";
                 PreparedStatement psImage = con.prepareStatement(sqlImage);
+                List<String> listImage = new ArrayList<String>();
 
                 psImage.setString(1, productDTO.getIdProduct());
                 psImage.setString(2, productDTO.getFirstImage());
+
                 psImage.executeUpdate();
             }
         } catch (Exception e) {
@@ -193,7 +196,7 @@ public class ProductDAO {
         }
         return product;
     }
-    public ProductDTO getTop5() {
+    public ProductDTO getTop1() {
         ProductDTO product = new ProductDTO();
         ResultSet rsProduct = null;
         ResultSet rsImage = null;
@@ -228,9 +231,44 @@ public class ProductDAO {
         }
         return null;
     }
+    public List<ProductDTO> getTop5(){
+        ProductDTO product = new ProductDTO();
+        ResultSet rsProduct = null;
+        ResultSet rsImage = null;
+        PreparedStatement pst = null;
+        String sql = "select * from product order by IDPRODUCT desc limit 5";
+        try {
+            Connection con = DBUtils.makeConnection();
+            pst = con.prepareStatement(sql);
+            rsProduct = pst.executeQuery();
+            List<ProductDTO > list = new ArrayList<>();
+            while (rsProduct.next()) {
+                ProductDTO productx = new ProductDTO();
+                productx.setIdProduct(rsProduct.getString(1));
+                productx.setTenProduct(rsProduct.getString(2));
+                productx.setLoai(rsProduct.getString(3));
+                productx.setChatLieu(rsProduct.getString(4));
+                productx.setGiaTien(rsProduct.getInt(5));
+                productx.setSoLuongTrongKho(rsProduct.getInt(6));
+                productx.setDanhGia(rsProduct.getInt(7));
+                String sqlImage = "Select * from hinhanh where id = '" + rsProduct.getString(1) + "'";
+                rsImage = DBUtils.makeConnection().createStatement().executeQuery(sqlImage);
+                while (rsImage.next()) {
+                    productx.addImage(rsImage.getString(2));
+                }
+                list.add(productx);
+                return list;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     public static void main(String[] args) throws SQLException {
         ProductDAO productDAO = new ProductDAO();
-        System.out.println(productDAO.getProductById("LS625002R9"));
+//        System.out.println(productDAO.getProductById("LS625002R9"));
 //        System.out.println(productDAO.getListByPage(1,10));
+        System.out.println(productDAO.getTop5());
     }
 }
