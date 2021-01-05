@@ -152,6 +152,7 @@ public class ProductDAO {
                 String sqlImage = "Select * from hinhanh where id = '" + rsProducts.getString(2) + "'";
                 rsImages = DBUtils.makeConnection().createStatement().executeQuery(sqlImage);
                 while (rsImages.next()) {
+                    System.out.println(rsImages.getString(2));
                     pd.addImage(rsImages.getString(2));
                 }
                 lsProducts.add(pd);
@@ -172,27 +173,61 @@ public class ProductDAO {
         PreparedStatement ps = con.prepareStatement(sql);
         ps.setString(1, id);
         rsProduct = ps.executeQuery();
-        rsProduct.next();
-//        while(rsProduct.next()){
-        product.setIdProduct(rsProduct.getString(1));
-        product.setTenProduct(rsProduct.getString(2));
-        product.setLoai(rsProduct.getString(3));
-        product.setChatLieu(rsProduct.getString(4));
-        product.setGiaTien(rsProduct.getInt(5));
-        product.setSoLuongTrongKho(rsProduct.getInt(6));
-        product.setDanhGia(rsProduct.getInt(7));
-        String sqlImage = "Select * from hinhanh where id = ?";
-        PreparedStatement psImage = con.prepareStatement(sqlImage);
-        psImage.setString(1, id);
-        rsImages = ps.executeQuery();
-        while (rsImages.next()) {
-            product.addImage(rsImages.getString(2));
-        }
-//        }
+        rsProduct.beforeFirst();
+        while (rsProduct.next()) {
+            product.setIdProduct(rsProduct.getString(1));
+            product.setTenProduct(rsProduct.getString(2));
+            product.setLoai(rsProduct.getString(3));
+            product.setChatLieu(rsProduct.getString(4));
+            product.setGiaTien(rsProduct.getInt(5));
+            product.setSoLuongTrongKho(rsProduct.getInt(6));
+            product.setDanhGia(rsProduct.getInt(7));
+            String sqlImage = "Select * from hinhanh where id like ?";
+            PreparedStatement psImage = con.prepareStatement(sqlImage);
+            psImage.setString(1, id);
+            rsImages = psImage.executeQuery();
+            while (rsImages.next()) {
+                product.addImage(rsImages.getString(2));
+            }
 
+        }
         return product;
     }
+    public ProductDTO getTop5() {
+        ProductDTO product = new ProductDTO();
+        ResultSet rsProduct = null;
+        ResultSet rsImage = null;
+        PreparedStatement pst = null;
+        ArrayList<ProductDTO> lsProducts = new ArrayList<>();
+        String sql = "select * from product order by IDPRODUCT desc limit 5";
+        try {
+            Connection con = DBUtils.makeConnection();
+            pst = con.prepareStatement(sql);
+            rsProduct = pst.executeQuery();
+            while (rsProduct.next()) {
 
+                ProductDTO productx = new ProductDTO();
+                productx.setIdProduct(rsProduct.getString(1));
+                productx.setTenProduct(rsProduct.getString(2));
+                productx.setLoai(rsProduct.getString(3));
+                productx.setChatLieu(rsProduct.getString(4));
+                productx.setGiaTien(rsProduct.getInt(5));
+                productx.setSoLuongTrongKho(rsProduct.getInt(6));
+                productx.setDanhGia(rsProduct.getInt(7));
+                String sqlImage = "Select * from hinhanh where id = '" + rsProduct.getString(1) + "'";
+                rsImage = DBUtils.makeConnection().createStatement().executeQuery(sqlImage);
+                while (rsImage.next()) {
+                    productx.addImage(rsImage.getString(2));
+                }
+                lsProducts.add(productx);
+                return productx;
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
     public static void main(String[] args) throws SQLException {
         ProductDAO productDAO = new ProductDAO();
         System.out.println(productDAO.getProductById("LS625002R9"));

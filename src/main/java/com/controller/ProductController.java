@@ -40,35 +40,35 @@ public class ProductController extends HttpServlet {
             String tinhTrang = request.getParameter("txtTinhTrang");
 
             //---------------------------
-            ServletFileUpload upload = new ServletFileUpload(factory);
-            List items = upload.parseRequest(request);
-            Iterator iterator = items.iterator();
-            while (iterator.hasNext())
-            {
-                FileItem item = (FileItem) iterator.next();
-                if (!item.isFormField())
-                {
-                    String fileName = item.getName();
-                    String root = getServletContext().getRealPath("/");
-                    File path = new File(root + "/uploads");
-                    if (!path.exists())
-                    {
-                        boolean status = path.mkdirs();
-                    }
-                    File uploadedFile = new File(path + "/" + fileName);
-                    System.out.println(uploadedFile.getAbsolutePath());
-                    if(fileName!="")
-                        item.write(uploadedFile);
-                    else
-                        out.println("file not found");
-                    out.println("<h1>File Uploaded Successfully....:-)</h1>");
-                }
-                else
-                {
-                    String abc = item.getString();
-                    out.println("<br><br><h1>"+abc+"</h1><br><br>");
-                }
-            }
+//            ServletFileUpload upload = new ServletFileUpload(factory);
+//            List items = upload.parseRequest(request);
+//            Iterator iterator = items.iterator();
+//            while (iterator.hasNext())
+//            {
+//                FileItem item = (FileItem) iterator.next();
+//                if (!item.isFormField())
+//                {
+//                    String fileName = item.getName();
+//                    String root = getServletContext().getRealPath("/");
+//                    File path = new File(root + "/uploads");
+//                    if (!path.exists())
+//                    {
+//                        boolean status = path.mkdirs();
+//                    }
+//                    File uploadedFile = new File(path + "/" + fileName);
+//                    System.out.println(uploadedFile.getAbsolutePath());
+//                    if(fileName!="")
+//                        item.write(uploadedFile);
+//                    else
+//                        out.println("file not found");
+//                    out.println("<h1>File Uploaded Successfully....:-)</h1>");
+//                }
+//                else
+//                {
+//                    String abc = item.getString();
+//                    out.println("<br><br><h1>"+abc+"</h1><br><br>");
+//                }
+//            }
 
             //----------------------------
 
@@ -81,7 +81,7 @@ public class ProductController extends HttpServlet {
 
             if (check) {
                 ProductDTO proDTO = new ProductDTO(idProduct, nameProduct, loai, chatLieu, Integer.parseInt(giaTien), Integer.parseInt(soLuong), danhGia, tinhTrang);
-                proDTO.addImage(image);
+//                proDTO.addImage(image);
                 proDAO.upload(proDTO);
                 url = SUCCESS;
             }
