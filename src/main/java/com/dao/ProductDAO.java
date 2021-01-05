@@ -148,6 +148,7 @@ public class ProductDAO {
                 String sqlImage = "Select * from hinhanh where id = '" + rsProducts.getString(2) + "'";
                 rsImages = DBUtils.makeConnection().createStatement().executeQuery(sqlImage);
                 while (rsImages.next()) {
+                    System.out.println(rsImages.getString(2));
                     pd.addImage(rsImages.getString(2));
                 }
                 lsProducts.add(pd);
@@ -177,10 +178,10 @@ public class ProductDAO {
             product.setGiaTien(rsProduct.getInt(5));
             product.setSoLuongTrongKho(rsProduct.getInt(6));
             product.setDanhGia(rsProduct.getInt(7));
-            String sqlImage = "Select * from hinhanh where id = ?";
+            String sqlImage = "Select * from hinhanh where id like ?";
             PreparedStatement psImage = con.prepareStatement(sqlImage);
             psImage.setString(1,id);
-            rsImages = ps.executeQuery();
+            rsImages = psImage.executeQuery();
             while (rsImages.next()) {
                 product.addImage(rsImages.getString(2));
             }
@@ -191,7 +192,7 @@ public class ProductDAO {
 
     public static void main(String[] args) throws SQLException {
         ProductDAO productDAO = new ProductDAO();
-        System.out.println(productDAO.getProductById("LS625002R9"));
+        productDAO.getProductById("LS625002R9");
 //        System.out.println(productDAO.getListByPage(1,10));
     }
 }
