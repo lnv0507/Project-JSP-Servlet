@@ -22,14 +22,16 @@ public class ProductDetailController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String id = request.getParameter("id");
         ArrayList<ProductDTO> lsProducts = new ArrayList<>();
+        ArrayList<String> lsImages = new ArrayList<>();
         ProductDAO productDAO = new ProductDAO();
         ProductDTO productDTO = new ProductDTO();
         try {
            productDTO = productDAO.getProductById(id);
            lsProducts.add(productDTO);
-            HttpSession session = request.getSession();
+           lsImages = productDTO.getImages();
 
-            session.setAttribute("product",lsProducts);
+            request.setAttribute("product",lsProducts);
+            request.setAttribute("images",lsImages);
            request.getRequestDispatcher("product-details.jsp").forward(request,response);
 
         } catch (SQLException throwables) {

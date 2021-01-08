@@ -15,6 +15,11 @@ public class ProductDTO {
     private String firstImage;
     public ProductDTO() {
         this.images = new ArrayList<>();
+        if(soLuongTrongKho == 0){
+            this.tinhTrang = "Còn hàng";
+        }else{
+            this.tinhTrang = "Hết hàng";
+        }
     }
     public ProductDTO(String idProduct, String tenProduct, String loai, String chatLieu, int giaTien, int soLuongTrongKho, int danhGia, String tinhTrang, String firstImage) {
         this.idProduct = idProduct;
@@ -24,7 +29,11 @@ public class ProductDTO {
         this.giaTien = giaTien;
         this.soLuongTrongKho = soLuongTrongKho;
         this.danhGia = danhGia;
-        this.tinhTrang = tinhTrang;
+        if(soLuongTrongKho == 0){
+            this.tinhTrang = "Còn hàng";
+        }else{
+            this.tinhTrang = "Hết hàng";
+        }
         this.images = new ArrayList<>();
         this.firstImage = images.get(0);
     }
@@ -36,7 +45,11 @@ public class ProductDTO {
         this.giaTien = giaTien;
         this.soLuongTrongKho = soLuongTrongKho;
         this.danhGia = danhGia;
-        this.tinhTrang = tinhTrang;
+        if(soLuongTrongKho == 0){
+            this.tinhTrang = "Còn hàng";
+        }else{
+            this.tinhTrang = "Hết hàng";
+        }
         this.images = new ArrayList<>();
         this.firstImage = images.get(0);
     }
