@@ -114,15 +114,9 @@
                 <div class="product-detail-right-1">
                     <h3>${p.getTenProduct()}<br><small>Mã sản phẩm : ${p.getIdProduct()}</small>
                     </h3>
-<<<<<<< Updated upstream
                     <h5><b>Giá: </b>${p.getGiaTien()}</h5>
                     <h5><b>Chất liệu: </b> ${p.getChatLieu()}</h5>
-=======
-                    <h5><b>Giá: </b>${p.giaTien}</h5>
-                    <h5><b>CHỌN KÍCH THƯỚC: </b> 160 x 200cm</h5>
-                    <h5><b>Chất liệu: </b> Gỗ Công Nghiệp MDF/MFC Cao Cấp.</h5>
-                    <h5><b> bảo hành:</b> 10 năm</h5>
->>>>>>> Stashed changes
+
 
                     <h5><b>Trạng thái: </b>${p.getTinhTrang()}</h5>
                     <a href="#" class="addtocart"><i class="fas fa-heart"></i> Thêm vào giỏ hàng</a>
@@ -369,11 +363,11 @@
         xhttp.open("GET", "image.jsp",true);
         xhttp.send();
     }
-    $.ajax({
-        type: 'POST',
-        url: 'image.jsp',
-        success: function ()
-    })
+    // $.ajax({
+    //     type: 'POST',
+    //     url: 'image.jsp',
+    //     success: function ()
+    // })
 
     //-----------------------
 </script>
