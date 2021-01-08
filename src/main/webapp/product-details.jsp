@@ -11,12 +11,19 @@
     <meta name="keywords" content="onepage,responsive,minimal,bootstrap,theme">
     <meta name="author" content="">
 
+    <!-- Magnific Popup core CSS file -->
+    <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
 
-<%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">--%>
-<%--    <meta name="viewport" content="width=device-width, initial-scale=1">--%>
-<%--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--%>
-<%--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>--%>
-<%--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--%>
+    <!-- jQuery 1.7.2+ or Zepto.js 1.0+ -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- Magnific Popup core JS file -->
+    <script src="magnific-popup/jquery.magnific-popup.js"></script>
+    <%--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">--%>
+    <%--    <meta name="viewport" content="width=device-width, initial-scale=1">--%>
+    <%--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">--%>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <%--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>--%>
     <style>
         .checked {
             color: orange;
@@ -90,8 +97,9 @@
 
 
                         <div class="sp-large">
-                            <a class="sp-current-big" href="image.jsp"><img src="images/products/${p.getImages().get(0)}" alt=""></a>
-<%--                                ${pageContext.request.contextPath}/images/products/${p.getImages().get(0)}--%>
+                            <a onclick="loadimage()" class="sp-current-big" href="image.jsp"><img
+                                    src="images/products/${p.getImages().get(0)}" alt=""></a>
+                                <%--                                ${pageContext.request.contextPath}/images/products/${p.getImages().get(0)}--%>
                         </div>
 
                         <div class="sp-thumbs sp-tb-active">
@@ -106,8 +114,15 @@
                 <div class="product-detail-right-1">
                     <h3>${p.getTenProduct()}<br><small>Mã sản phẩm : ${p.getIdProduct()}</small>
                     </h3>
+<<<<<<< Updated upstream
                     <h5><b>Giá: </b>${p.getGiaTien()}</h5>
                     <h5><b>Chất liệu: </b> ${p.getChatLieu()}</h5>
+=======
+                    <h5><b>Giá: </b>${p.giaTien}</h5>
+                    <h5><b>CHỌN KÍCH THƯỚC: </b> 160 x 200cm</h5>
+                    <h5><b>Chất liệu: </b> Gỗ Công Nghiệp MDF/MFC Cao Cấp.</h5>
+                    <h5><b> bảo hành:</b> 10 năm</h5>
+>>>>>>> Stashed changes
 
                     <h5><b>Trạng thái: </b>${p.getTinhTrang()}</h5>
                     <a href="#" class="addtocart"><i class="fas fa-heart"></i> Thêm vào giỏ hàng</a>
@@ -115,14 +130,14 @@
                     <div class="star_mark">
                     <span onmouseover="starmark(this)" onclick="starmark(this)" id="1one"
                           style="font-size:40px;cursor:pointer;" class="fa fa-star checked"></span>
-                    <span onmouseover="starmark(this)" onclick="starmark(this)" id="2one"
-                          style="font-size:40px;cursor:pointer;" class="fa fa-star "></span>
-                    <span onmouseover="starmark(this)" onclick="starmark(this)" id="3one"
-                          style="font-size:40px;cursor:pointer;" class="fa fa-star "></span>
-                    <span onmouseover="starmark(this)" onclick="starmark(this)" id="4one"
-                          style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
-                    <span onmouseover="starmark(this)" onclick="starmark(this)" id="5one"
-                          style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
+                        <span onmouseover="starmark(this)" onclick="starmark(this)" id="2one"
+                              style="font-size:40px;cursor:pointer;" class="fa fa-star "></span>
+                        <span onmouseover="starmark(this)" onclick="starmark(this)" id="3one"
+                              style="font-size:40px;cursor:pointer;" class="fa fa-star "></span>
+                        <span onmouseover="starmark(this)" onclick="starmark(this)" id="4one"
+                              style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
+                        <span onmouseover="starmark(this)" onclick="starmark(this)" id="5one"
+                              style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
                     </div>
                     <a href="cart.jsp" class="buynow"><i class="fas fa-shopping-cart"></i> MUA NGAY</a>
                 </div>
@@ -254,7 +269,7 @@
 
 
         </div>
-        <!-- footer begin -->
+        <!-- footer close -->
         <%@include file="footer.jsp" %>
         <!-- footer close -->
     </div>
@@ -336,12 +351,30 @@
 
     });
     //------------------------
-    $(document).ready(function () {
-        $('#search').hover(function () {
-            $('#input-search').fadeToggle(500);
-            $('#mainmenu').toggle(1000);
-        });
+
+    $('.sp-current-big').magnificPopup({
+        type: 'ajax',
+        alignTop: true,
+        overflowY: 'scroll'
     });
+
+    function loadimage() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementsByClassName("sp-current-big").innerHTML =
+                    this.responseText;
+            }
+        };
+        xhttp.open("GET", "image.jsp",true);
+        xhttp.send();
+    }
+    $.ajax({
+        type: 'POST',
+        url: 'image.jsp',
+        success: function ()
+    })
+
     //-----------------------
 </script>
 <%----%>

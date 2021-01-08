@@ -28,10 +28,15 @@ public class ProductDetailController extends HttpServlet {
         try {
            productDTO = productDAO.getProductById(id);
            lsProducts.add(productDTO);
+<<<<<<< Updated upstream
            lsImages = productDTO.getImages();
 
             request.setAttribute("product",lsProducts);
             request.setAttribute("images",lsImages);
+=======
+            HttpSession session = request.getSession();
+            session.setAttribute("product",lsProducts);
+>>>>>>> Stashed changes
            request.getRequestDispatcher("product-details.jsp").forward(request,response);
 
         } catch (SQLException throwables) {
