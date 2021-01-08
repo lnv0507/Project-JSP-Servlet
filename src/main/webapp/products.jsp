@@ -195,7 +195,7 @@
                         <ul>
                             <c:forEach items="${t.top5}" var="o">
                                 <li>
-                                    <a href="product-details.jsp">
+                                    <a href="ProductDetailController?id=${o.getIdProduct()}">
                                         <img src="images/shop/${o.getImages().get(0)}" alt="">
                                         <div class="text">
                                             ${o.tenProduct}
@@ -222,7 +222,7 @@
                                 <div class="col-md-3 col-sm-6 ">
                                     <div class="product-grid ">
                                         <div class="product-image ">
-                                            <a href="product-details.jsp">
+                                            <a href="ProductDetailController?id=${d.getIdProduct()}">
                                                 <img class="pic-1 "
                                                      src="${pageContext.request.contextPath}/images/products/${d.getImages().get(0)}">
                                                 <img class="pic-2 "

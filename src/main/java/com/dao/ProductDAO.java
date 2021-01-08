@@ -33,15 +33,12 @@ public class ProductDAO {
                 pst.setInt(6, productDTO.getSoLuongTrongKho());
                 pst.setInt(7, productDTO.getDanhGia());
                 // Sửa lại thành upload nhiều hình
-
                 pst.executeUpdate();
                 String sqlImage = "insert into hinhanh(ID, URL) value  (?,?)";
                 PreparedStatement psImage = con.prepareStatement(sqlImage);
                 List<String> listImage = new ArrayList<String>();
-
                 psImage.setString(1, productDTO.getIdProduct());
                 psImage.setString(2, productDTO.getFirstImage());
-
                 psImage.executeUpdate();
             }
         } catch (Exception e) {
@@ -196,6 +193,7 @@ public class ProductDAO {
         }
         return product;
     }
+
     public ProductDTO getTop1() {
         ProductDTO product = new ProductDTO();
         ResultSet rsProduct = null;
@@ -231,7 +229,8 @@ public class ProductDAO {
         }
         return null;
     }
-    public List<ProductDTO> getTop5(){
+
+    public List<ProductDTO> getTop5() {
         ProductDTO product = new ProductDTO();
         ResultSet rsProduct = null;
         ResultSet rsImage = null;
@@ -241,7 +240,7 @@ public class ProductDAO {
             Connection con = DBUtils.makeConnection();
             pst = con.prepareStatement(sql);
             rsProduct = pst.executeQuery();
-            List<ProductDTO > list = new ArrayList<>();
+            List<ProductDTO> list = new ArrayList<>();
             while (rsProduct.next()) {
                 ProductDTO productx = new ProductDTO();
                 productx.setIdProduct(rsProduct.getString(1));
@@ -265,10 +264,11 @@ public class ProductDAO {
         }
         return null;
     }
+
     public static void main(String[] args) throws SQLException {
         ProductDAO productDAO = new ProductDAO();
 //        System.out.println(productDAO.getProductById("LS625002R9"));
-//        System.out.println(productDAO.getListByPage(1,10));
-        System.out.println(productDAO.getTop5());
+        System.out.println(productDAO.getListByPage(1,10));
+//        System.out.println(productDAO.getTop5());
     }
 }

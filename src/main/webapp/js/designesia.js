@@ -41,11 +41,7 @@ jQuery(document).ready(function() {
     });
     document.createElement("article");
     document.createElement("section");
-    $('.sp-current-big').magnificPopup({
-        type: 'ajax',
-        alignTop: true,
-        overflowY: 'scroll'
-    });
+
 
     // --------------------------------------------------
     // magnificPopup
@@ -57,10 +53,9 @@ jQuery(document).ready(function() {
         overflowY: 'scroll'
     });
 
-
-    // $('.simple-ajax-popup').magnificPopup({
-    //     type: 'ajax'
-    // });
+    $('.simple-ajax-popup').magnificPopup({
+        type: 'ajax'
+    });
 
     // wow jquery
 

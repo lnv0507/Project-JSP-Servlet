@@ -34,7 +34,7 @@
         %>
         <div style="display: flex; justify-content: space-between">
             <div class="infoUser">
-                <h5 style="color: blue" class="helloUser">Xin Chào: <%= username%>
+                <h5 style="color: blue" class="helloUser">Xin Chào: <%=username%>
                 </h5>
                 <ul class="itemUser">
                     <li>Thông Tin Cá Nhân</li>
