@@ -77,7 +77,7 @@ public class AccountDAO {
     }
 
     public static void main(String[] args) throws SQLException {
-        AccountDAO acDAO = new AccountDAO();
-        System.out.println(acDAO.checkLogin("lam1", "abc123"));
+//        AccountDAO acDAO = new AccountDAO();
+//        System.out.println(acDAO.checkLogin("lam1", "abc123"));
     }
 }

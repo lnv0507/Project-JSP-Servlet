@@ -229,7 +229,6 @@ public class ProductDAO {
         }
         return null;
     }
-
     public List<ProductDTO> getTop5() {
         ProductDTO product = new ProductDTO();
         ResultSet rsProduct = null;
@@ -266,9 +265,9 @@ public class ProductDAO {
     }
 
     public static void main(String[] args) throws SQLException {
-        ProductDAO productDAO = new ProductDAO();
+//        ProductDAO productDAO = new ProductDAO();
 //        System.out.println(productDAO.getProductById("LS625002R9"));
-        System.out.println(productDAO.getListByPage(1,10));
+//        System.out.println(productDAO.getListByPage(1,10));
 //        System.out.println(productDAO.getTop5());
     }
 }

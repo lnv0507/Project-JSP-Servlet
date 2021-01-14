@@ -200,12 +200,9 @@
                             } else {
                                 document.getElementById((i + 1) + subid).style.color = "black";
                             }
-
-
                         }
 
                     }
-
                     function result() {
                         //Rating : Count
                         //Review : Comment(id)
