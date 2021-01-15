@@ -1,4 +1,4 @@
-package com.controller;
+package com.controller.customer;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;

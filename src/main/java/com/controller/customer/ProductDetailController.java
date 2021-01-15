@@ -1,4 +1,4 @@
-package com.controller;
+package com.controller.customer;
 
 import com.dao.ProductDAO;
 import com.dtos.ProductDTO;
@@ -16,7 +16,7 @@ import java.util.ArrayList;
 @WebServlet(name = "ProductDetailController", urlPatterns = "/ProductDetailController")
 public class ProductDetailController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    doPost(request,response);
+        doPost(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -26,14 +26,15 @@ public class ProductDetailController extends HttpServlet {
         ProductDAO productDAO = new ProductDAO();
         ProductDTO productDTO = new ProductDTO();
         try {
-           productDTO = productDAO.getProductById(id);
-           lsProducts.add(productDTO);
-           lsImages = productDTO.getImages();
-            request.setAttribute("product",lsProducts);
-            request.setAttribute("images",lsImages);
+            productDTO = productDAO.getProductById(id);
+            lsProducts.add(productDTO);
+            lsImages = productDTO.getImages();
+//            request.setAttribute("product",lsProducts);
+//            request.setAttribute("images",lsImages);
             HttpSession session = request.getSession();
-            session.setAttribute("product",lsProducts);
-           request.getRequestDispatcher("product-details.jsp").forward(request,response);
+            session.setAttribute("product", lsProducts);
+            session.setAttribute("images", lsImages);
+            request.getRequestDispatcher("product-details.jsp").forward(request, response);
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

@@ -1,9 +1,11 @@
 package com.dao;
 
 import com.dtos.AccountDTO;
+import com.dtos.ProductDTO;
 import com.utils.DBUtils;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class AccountDAO {
     public AccountDTO checkLogin(String userId, String passWord) throws SQLException {
@@ -76,8 +78,38 @@ public class AccountDAO {
         }
     }
 
+    public ArrayList<AccountDTO> getAccount(){
+        Connection cn = null;
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        ArrayList<AccountDTO> listAc = new ArrayList<>();
+        try {
+            cn = DBUtils.makeConnection();
+            pst= cn.prepareStatement("SELECT  * FROM  Account");
+            rs = pst.executeQuery();
+            while (rs.next()){
+                AccountDTO ad = new AccountDTO();
+                ad.setIdAccount(rs.getString(1));
+                ad.setTenAccount(rs.getString(2));
+                ad.setSoDienThoai(rs.getString(3));
+                ad.setDiaChi(rs.getString(4));
+                ad.setEmail(rs.getString(5));
+                ad.setChucVu(rs.getString(6));
+                ad.setPassWord(rs.getString(7));
+                listAc.add(ad);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+
+        }
+        for(AccountDTO lit:listAc){
+            System.out.println(lit.toString());
+        }
+        return listAc;
+    }
     public static void main(String[] args) throws SQLException {
-//        AccountDAO acDAO = new AccountDAO();
-//        System.out.println(acDAO.checkLogin("lam1", "abc123"));
+        AccountDAO acDAO = new AccountDAO();
+        acDAO.getAccount();
     }
 }

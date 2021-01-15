@@ -1,4 +1,4 @@
-package com.controller;
+package com.controller.customer;
 
 import com.dao.AccountDAO;
 import com.dtos.AccountDTO;
@@ -26,7 +26,6 @@ public class SignUpController extends HttpServlet {
             String soDienThoai = request.getParameter("");
             String diaChi = request.getParameter("");
             String email = request.getParameter("email");
-            String chucVu = request.getParameter("");
             String pass = request.getParameter("password");
             String repass = request.getParameter("repass");
             AccountDAO accDAO = new AccountDAO();
@@ -44,7 +43,7 @@ public class SignUpController extends HttpServlet {
                 check = false;
             }
             if(check){
-                AccountDTO accDTO = new AccountDTO(username,tenAccount,soDienThoai,diaChi, email,chucVu, pass);
+                AccountDTO accDTO = new AccountDTO(username,tenAccount,soDienThoai,diaChi, email,"Khách Hàng", pass);
                 accDAO.signUp(accDTO);
                 url = SUCCESS;
             }

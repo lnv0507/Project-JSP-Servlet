@@ -1,4 +1,4 @@
-package com.controller;
+package com.controller.customer;
 
 import com.dao.AccountDAO;
 import com.dtos.AccountDTO;

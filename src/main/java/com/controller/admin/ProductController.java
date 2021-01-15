@@ -1,24 +1,22 @@
-package com.controller;
+package com.controller.admin;
 
 import com.dao.ProductDAO;
 import com.dtos.ProductDTO;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+import javax.servlet.http.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 
 
-@WebServlet(name = "ProductController", urlPatterns = "/admin/addproduct")
+@WebServlet(name = "ProductController", urlPatterns = {"/admin/addproduct","/admin/product"})
 public class ProductController extends HttpServlet {
     final static String ERROR = "SanPhamCreate.jsp";
     final static String SUCCESS = "SanPhamInfo.jsp";
@@ -27,6 +25,7 @@ public class ProductController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
         InputStream is = null;
+//        HashMap<String, List<String>> hash = new HashMap<>();
         ArrayList<String> images = new ArrayList<>();
         try {
             String idProduct = request.getParameter("txtIDName");
@@ -39,15 +38,22 @@ public class ProductController extends HttpServlet {
             String tinhTrang = request.getParameter("txtTinhTrang");
             String imagee1 = request.getParameter("photos1");
             String imagee2 = request.getParameter("photos2");
-            List<String> list = new ArrayList<String>();
+            ArrayList<String> list = new ArrayList<String>();
             list.add(imagee1);
             list.add(imagee2);
-
+//            hash.put(idProduct, list);
             ProductDAO proDAO = new ProductDAO();
             boolean check = true;
             if (check) {
-                ProductDTO proDTO = new ProductDTO(idProduct, nameProduct, loai, chatLieu, Integer.parseInt(giaTien), Integer.parseInt(soLuong), danhGia, tinhTrang);
+                ProductDTO proDTO = null;
+                ProductDTO proDTOimg = null;
+                for(String listImage : list) {
+                    proDTO = new ProductDTO(idProduct, nameProduct, loai, chatLieu, Integer.parseInt(giaTien), Integer.parseInt(soLuong), danhGia, tinhTrang, listImage);
+                }
                 proDAO.upload(proDTO);
+//                HttpServletRequest request;
+                HttpSession session = request.getSession();
+                request.setAttribute("list", proDTO);
                 url = SUCCESS;
             }
         } catch (SQLException throwables) {
@@ -58,7 +64,15 @@ public class ProductController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+//        doPost(request, response);
+//        HttpServletRequest request;
+        HttpSession session = request.getSession();
+        session.getAttribute("list");
+        ProductDAO pd = new ProductDAO();
+        ArrayList<ProductDTO> listPro = pd.getListByPage(1,10);
+        session.setAttribute("data", listPro);
+        request.getRequestDispatcher("/admin/SanPham.jsp").forward(request,response);
+
     }
 
     private String extractFileName(Part part) {

@@ -13,14 +13,33 @@ public class ProductDTO {
     private String tinhTrang;
     private ArrayList<String> images;
     private String firstImage;
+
     public ProductDTO() {
         this.images = new ArrayList<>();
-        if(soLuongTrongKho == 0){
+        if (soLuongTrongKho == 0) {
             this.tinhTrang = "Còn hàng";
-        }else{
+        } else {
             this.tinhTrang = "Hết hàng";
         }
     }
+
+    public ProductDTO(String idProduct, String tenProduct, String loai, String chatLieu, int giaTien, int soLuongTrongKho, int danhGia, String tinhTrang, ArrayList<String> images) {
+        this.idProduct = idProduct;
+        this.tenProduct = tenProduct;
+        this.loai = loai;
+        this.chatLieu = chatLieu;
+        this.giaTien = giaTien;
+        this.soLuongTrongKho = soLuongTrongKho;
+        this.danhGia = danhGia;
+        this.danhGia = danhGia;
+        if (soLuongTrongKho == 0) {
+            this.tinhTrang = "Còn hàng";
+        } else {
+            this.tinhTrang = "Hết hàng";
+        }
+        this.images = new ArrayList<>();
+    }
+
     public ProductDTO(String idProduct, String tenProduct, String loai, String chatLieu, int giaTien, int soLuongTrongKho, int danhGia, String tinhTrang, String firstImage) {
         this.idProduct = idProduct;
         this.tenProduct = tenProduct;
@@ -29,14 +48,15 @@ public class ProductDTO {
         this.giaTien = giaTien;
         this.soLuongTrongKho = soLuongTrongKho;
         this.danhGia = danhGia;
-        if(soLuongTrongKho == 0){
+        if (soLuongTrongKho == 0) {
             this.tinhTrang = "Còn hàng";
-        }else{
+        } else {
             this.tinhTrang = "Hết hàng";
         }
         this.images = new ArrayList<>();
         this.firstImage = images.get(0);
     }
+
     public ProductDTO(String idProduct, String tenProduct, String loai, String chatLieu, int giaTien, int soLuongTrongKho, int danhGia, String tinhTrang) {
         this.idProduct = idProduct;
         this.tenProduct = tenProduct;
@@ -45,15 +65,14 @@ public class ProductDTO {
         this.giaTien = giaTien;
         this.soLuongTrongKho = soLuongTrongKho;
         this.danhGia = danhGia;
-        if(soLuongTrongKho == 0){
+        if (soLuongTrongKho == 0) {
             this.tinhTrang = "Còn hàng";
-        }else{
+        } else {
             this.tinhTrang = "Hết hàng";
         }
         this.images = new ArrayList<>();
         this.firstImage = images.get(0);
     }
-
     public String getIdProduct() {
         return idProduct;
     }

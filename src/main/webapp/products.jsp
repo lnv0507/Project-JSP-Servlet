@@ -198,7 +198,7 @@
                                     <a href="ProductDetailController?id=${o.getIdProduct()}">
                                         <img src="images/shop/${o.getImages().get(0)}" alt="">
                                         <div class="text">
-                                            ${o.tenProduct}
+                                                ${o.tenProduct}
                                             <div class="price"> ${o.giaTien }</div>
                                             <a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i
                                                     style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
@@ -242,7 +242,8 @@
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title ">
-                                                <a style="font-size: 11px" href="ProductDetailController?id=${d.getIdProduct()}">"${d.tenProduct}"</a>
+                                                <a style="font-size: 11px"
+                                                   href="ProductDetailController?id=${d.getIdProduct()}">"${d.tenProduct}"</a>
 
                                             </h3>
                                             <div class="price  ">${d.giaTien}</div>

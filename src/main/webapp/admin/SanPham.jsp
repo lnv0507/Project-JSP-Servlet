@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html><html lang="en">
 <head>
@@ -162,19 +163,20 @@
                         </tr>
                         </thead>
                         <tbody>
+                        <c:forEach items="data" var="d">
                         <tr>
                             <td class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox" value="119" class="checkbox chk"><span style="width: 15px; height: 15px;"></span></label>
                             </td>
                             <!--  onclick="cms_detail_product(119)" style="color: #2a6496; cursor: pointer;" -->
-                            <td class="text-left prd_name">Tên Sản Phẩm</td>
-                            <td class="text-center">mã Sản Phâm</td>
+                            <td class="text-left prd_name">${d.tenProduct}</td>
+                            <td class="text-center">${d.idProduct}</td>
                             <td class="text-center">
                                 <img src="images/a1.jpg" style="width: 80px ; height: 80px;" alt="">
                             </td>
-                            <td class="text-center">5</td>
-                            <td class="text-right" style="font-weight: bold;">50,000</td>
-                            <td>Áo thun</td>
-                            <td>Còn Hàng</td>
+                            <td class="text-center">${d.soLuongTrongKho}</td>
+                            <td class="text-right" style="font-weight: bold;">${d.giaTien}</td>
+                            <td>${d.loai}</td>
+                            <td>${d.tinhTrang}</td>
                             <td class="text-center">
                                 <a href="SanPhamInfo.jsp">
                                     <i class="fa fa-eye" style="margin-right: 5px; color: #307ECC;" aria-hidden="true"></i>
@@ -184,7 +186,7 @@
                                 <i class="fa fa-trash-o" style="color: darkred;" title="Xóa" onclick="cms_delete_product(119,1)"></i>
                             </td>
                         </tr>
-
+                        </c:forEach>
                         </tbody>
                     </table>
                     <div class="alert alert-info summany-info clearfix" role="alert">

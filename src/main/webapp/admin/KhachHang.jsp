@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html><html lang="en">
 <head>
@@ -44,15 +45,15 @@
                         <h4 class="modal-title" id="myModalLabel" style="color: white;">Tạo mới khách hàng</h4>
                     </div>
                     <div class="modal-body">
-                        <form class="form-horizontal" id="frm-crcust">
+                        <form class="form-horizontal" id="frm-crcust" action="createAcount" method="post">
                             <div class="form-group">
                                 <div class="col-sm-3">
                                     <label for="customer_name">Mã khách hàng</label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" id="customer_code" name="customer_code"
+                                    <input type="text" id="customer_code" name="customer_create"
                                            class="form-control" value=""
-                                           placeholder="Mã khách hàng(tự sinh nếu bỏ trống)">
+                                           placeholder="Mã khách hàng">
                                     <span style="color: red; font-style: italic;"
                                           class="error error-customer_code"></span>
                                 </div>
@@ -107,27 +108,27 @@
 
                             <div class="form-group">
                                 <div class="col-sm-3">
-                                    <label for="customer_birthday">Ngày sinh</label>
+                                    <label for="customer_birthday">PassWord</label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" id="customer_birthday" name="customer_birthday"
-                                           class="form-control txttimes" value="" placeholder="yyyy-mm-dd">
+                                    <input type="password" id="customer_birthday" name="password"
+                                           class="form-control txttimes" value="" placeholder="PassWord">
                                     <span style="color: red;" class="error error-customer_birthday"></span>
                                 </div>
                             </div>
-
+                            <div class="modal-footer">
+                                <button id="submit_create" type="button" class="btn btn-primary btn-sm btn-crcust"
+                                        onclick="cms_crCustomer();"><i
+                                        class="fa fa-check"></i> Lưu
+                                </button>
+                                <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal">
+                                    <i
+                                            class="fa fa-undo"></i> Bỏ qua
+                                </button>
+                            </div>
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-sm btn-crcust"
-                                onclick="cms_crCustomer();"><i
-                                class="fa fa-check"></i> Lưu
-                        </button>
-                        <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal">
-                            <i
-                                    class="fa fa-undo"></i> Bỏ qua
-                        </button>
-                    </div>
+
                 </div>
             </div>
         </div>
@@ -208,22 +209,24 @@
                                 </tr>
                                 </thead>
                                 <tbody class="ajax-loadlist-customer">
+                                <c:forEach items="${listAC}" var="d">
                                 <tr id="tr-item-45">
                                     <td class="text-center tr-detail-item"
-                                    >KH000006
+                                    >${d.idAccount}
                                     </td>
                                     <td class="text-center tr-detail-item"
-                                    >Mai Huỳnh Phước Đạt
+                                    >${d.tenAccount}
                                     </td>
-                                    <td class="text-center">0969022097</td>
-                                    <td class="text-center">Vĩnh Long</td>
-                                    <td class="text-center">lamdilinh.nguyen@gmail.com</td>
-                                    <td class="text-right" style="font-weight: bold; "> Khách Hàng</td>
+                                    <td class="text-center">${d.soDienThoai}</td>
+                                    <td class="text-center">${d.diaChi}</td>
+                                    <td class="text-center">${d.email}</td>
+                                    <td class="text-right" style="font-weight: bold; ">${d.chucVu}</td>
                                     <td class="text-right"> 999999</td>
                                     <td class="text-center"><i class="fa fa-trash-o" style="cursor:pointer;"
                                                                onclick="cms_delCustomer(45,1);"></i>
                                     </td>
                                 </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                             <div class="alert alert-info summany-info clearfix" role="alert">
@@ -278,5 +281,5 @@
 <script src="js/bootstrap-datepicker.vi.min.js"></script>
 <script src="js/ckeditor.js"></script>
 <script src="js/editor.js"></script>
-<script src="js/ajax.js"></script>
+<script src="js/ajax1.js"></script>
 </html>

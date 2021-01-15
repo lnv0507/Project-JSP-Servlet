@@ -167,3 +167,6 @@ function cms_save_import(type) {
         cms_adapter_ajax($param);
     }
 }
+$('#submit_create').submit(function (e){
+    e.preventDefault();
+})

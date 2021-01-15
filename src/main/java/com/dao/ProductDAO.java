@@ -10,6 +10,7 @@ import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 
 public class ProductDAO {
@@ -18,6 +19,7 @@ public class ProductDAO {
         PreparedStatement pst = null;
         ResultSet resut = null;
         FileInputStream fis = null;
+        HashMap<String, ArrayList<String>> listHashMap = new HashMap<>();
         try {
             con = DBUtils.makeConnection();
             if (con != null) {
@@ -32,14 +34,15 @@ public class ProductDAO {
                 pst.setInt(5, productDTO.getGiaTien());
                 pst.setInt(6, productDTO.getSoLuongTrongKho());
                 pst.setInt(7, productDTO.getDanhGia());
+                pst.setArray(8, (Array) productDTO.getImages());
                 // Sửa lại thành upload nhiều hình
                 pst.executeUpdate();
-                String sqlImage = "insert into hinhanh(ID, URL) value  (?,?)";
-                PreparedStatement psImage = con.prepareStatement(sqlImage);
-                List<String> listImage = new ArrayList<String>();
-                psImage.setString(1, productDTO.getIdProduct());
-                psImage.setString(2, productDTO.getFirstImage());
-                psImage.executeUpdate();
+//                String sqlImage = "insert into hinhanh(ID, URL) value  (?,?)";
+//                PreparedStatement psImage = con.prepareStatement(sqlImage);
+//                List<String> listImage = new ArrayList<String>();
+//                psImage.setString(1, productDTO.getIdProduct());
+//                psImage.setString(2, productDTO.getFirstImage());
+//                psImage.executeUpdate();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -229,6 +232,7 @@ public class ProductDAO {
         }
         return null;
     }
+
     public List<ProductDTO> getTop5() {
         ProductDTO product = new ProductDTO();
         ResultSet rsProduct = null;
@@ -254,6 +258,7 @@ public class ProductDAO {
                 while (rsImage.next()) {
                     productx.addImage(rsImage.getString(2));
                 }
+
                 list.add(productx);
                 return list;
             }
@@ -265,9 +270,10 @@ public class ProductDAO {
     }
 
     public static void main(String[] args) throws SQLException {
-//        ProductDAO productDAO = new ProductDAO();
+        ProductDAO productDAO = new ProductDAO();
+//        System.out.println(productDAO.getList());
 //        System.out.println(productDAO.getProductById("LS625002R9"));
 //        System.out.println(productDAO.getListByPage(1,10));
-//        System.out.println(productDAO.getTop5());
+        System.out.println(productDAO.getTop5());
     }
 }

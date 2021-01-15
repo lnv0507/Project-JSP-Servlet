@@ -43,13 +43,13 @@
                             Thêm tài khoản đăng nhập </h4>
                     </div>
                     <div class="modal-body">
-                        <form class="form-horizontal" id="frm-cruser">
+                        <form class="form-horizontal" id="frm-cruser" action="admincreate" method="post">
                             <div class="form-group">
                                 <div class="col-sm-3">
-                                    <label for="tennhanvien">Tên nhân viên</label>
+                                    <label>Tên nhân viên</label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" id="display_name" name="display_name" class="form-control"
+                                    <input type="text" id="display_name" name="customer_name" class="form-control"
                                            value=""
                                            placeholder="Nhập tên nhân viên">
                                     <span style="color: red; font-style: italic;"
@@ -61,8 +61,18 @@
                                     <label for="manv">Mã nhân viên</label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" id="manv" name="manv" class="form-control" value=""
+                                    <input type="text" id="manv" name="customer_create" class="form-control" value=""
                                            placeholder="Nhập mã nhân viên">
+                                    <span style="color: red; font-style: italic;" class="error error-manv"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3">
+                                    <label for="manv">Số Điện Thoại</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" name="customer_phone" class="form-control" value=""
+                                           placeholder="Nhập số điện thoại">
                                     <span style="color: red; font-style: italic;" class="error error-manv"></span>
                                 </div>
                             </div>
@@ -78,7 +88,17 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-3">
-                                    <label for="manv">Mật khẩu</label>
+                                    <label for="manv">Địa Chỉ</label>
+                                </div>
+                                <div class="col-sm-9">
+                                    <input type="text" name="customer_email" class="form-control" value=""
+                                           placeholder="Nhập Địa Chỉ">
+                                    <span style="color: red; font-style: italic;" class="error error-manv"></span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-3">
+                                    <label>Mật khẩu</label>
                                 </div>
                                 <div class="col-sm-9">
                                     <input type="password" id="password" name="password" class="form-control" value=""
@@ -86,17 +106,17 @@
                                     <span style="color: red; font-style: italic;" class="error error-password"></span>
                                 </div>
                             </div>
-
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary btn-sm btn-crnv"><i
+                                        class="fa fa-check"></i> Lưu
+                                </button>
+                                <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i
+                                        class="fa fa-undo"></i> Bỏ qua
+                                </button>
+                            </div>
                         </form>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-primary btn-sm btn-crnv" onclick="cms_cruser()"><i
-                                class="fa fa-check"></i> Lưu
-                        </button>
-                        <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i
-                                class="fa fa-undo"></i> Bỏ qua
-                        </button>
-                    </div>
+
                 </div>
             </div>
         </div>
