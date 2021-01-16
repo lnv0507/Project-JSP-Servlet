@@ -9,10 +9,9 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/home")
 public class HomeController extends HttpServlet {
-    public static final String HOME = "index-2.jsp";
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String url = HOME;
+        String url = LinkController.HOME;
         try {
 
         }catch (Exception e){

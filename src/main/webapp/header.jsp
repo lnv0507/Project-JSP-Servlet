@@ -83,14 +83,14 @@
                         </li>
                         <li><a href="<c:url value="/projects"/>">Thiết kế</a></li>
                         <li>
-                            <a href="tintuc.jsp">Tin tức</a>
+                            <a href="<c:url value="/newfeed"/>">Tin tức</a>
 
                         </li>
 
-                        <li><a href="about.jsp">Về Chúng Tôi</a></li>
+                        <li><a href="<c:url value="/about"/> ">Về Chúng Tôi</a></li>
 
                         <li><a href="Products?index=1">Sản Phẩm</a></li>
-                        <li><a href="contact.jsp">Liên Hệ</a></li>
+                        <li><a href="<c:url value="/contact"/> ">Liên Hệ</a></li>
 
                     </ul>
                     <div>

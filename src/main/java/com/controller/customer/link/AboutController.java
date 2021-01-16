@@ -8,10 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 @WebServlet(urlPatterns = "/about")
 public class AboutController extends HttpServlet {
-    public static final String ABOUT = "about.jsp";
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String url = ABOUT;
+        String url = LinkController.ABOUT;
         try {
 
 
