@@ -1685,4 +1685,4 @@ VALUES('LS625002R9','vani-1.png'),
 ('STSAMCOLTAB01.0005','Bàn-coffee-vuông-Minimal-noi-that-moho02-2-scaled.jpg'),
 ('STSAMCOLTAB01.0005','Bàn-coffee-vuông-Minimal-noi-that-moho03-2-scaled.jpg')
 
->>>>>>> b8939742e5cff1f03ed2972af2c83d89a9a035a3
+alter table product add tinhtrang nvarchar(255)

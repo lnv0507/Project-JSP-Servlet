@@ -32,8 +32,8 @@ public class ProductDAO {
                 pst.setInt(5, productDTO.getGiaTien());
                 pst.setInt(6, productDTO.getSoLuongTrongKho());
                 pst.setInt(7, productDTO.getDanhGia());
-                pst.setString(8,productDTO.getTinhTrang());
-                if(pst.executeUpdate()>0){
+                pst.setString(8, productDTO.getTinhTrang());
+                if (pst.executeUpdate() > 0) {
                     pst = con.prepareStatement("select * from product");
                     pst.executeQuery();
 
@@ -65,10 +65,10 @@ public class ProductDAO {
             }
         } catch (Exception e) {
             e.printStackTrace();
-        }finally {
+        } finally {
             try {
-                if(pst!= null) pst.close();
-            }catch (Exception e){
+                if (pst != null) pst.close();
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -128,18 +128,18 @@ public class ProductDAO {
                 pd.setGiaTien(rsProducts.getInt(5));
                 pd.setSoLuongTrongKho(rsProducts.getInt(6));
                 pd.setDanhGia(rsProducts.getInt(7));
-               getImagesByProduct(pd);
+                getImagesByProduct(pd);
                 lsProducts.add(pd);
             }
             Collection<ProductDTO> values = lsProducts;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-        }finally {
+        } finally {
             try {
-                if(rsProducts!=null) rsProducts.close();
-                if(rsImages!= null) rsImages.close();
-                if(ps!=null) ps.close();
-            }catch (Exception e){
+                if (rsProducts != null) rsProducts.close();
+                if (rsImages != null) rsImages.close();
+                if (ps != null) ps.close();
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -271,39 +271,40 @@ public class ProductDAO {
         }
         return null;
     }
-    public void getImagesByProduct (ProductDTO productDTO){
+
+    public void getImagesByProduct(ProductDTO productDTO) {
         Connection con = null;
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
         String sql = "Select * from hinhanh where id = ?";
-        try{
+        try {
             con = DBUtils.makeConnection();
             preparedStatement = con.prepareStatement(sql);
-            preparedStatement.setString(1,productDTO.getIdProduct());
+            preparedStatement.setString(1, productDTO.getIdProduct());
             rs = preparedStatement.executeQuery();
             while (rs.next()) {
                 productDTO.addImage(rs.getString(2));
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
     //filter theo gia san pham
-    public ArrayList<ProductDTO> getProductByPrice(int priceLow, int priceHigh){
+    public ArrayList<ProductDTO> getProductByPrice(int priceLow, int priceHigh) {
         ArrayList<ProductDTO> result = new ArrayList<>();
         Connection con = null;
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
         String sql = "Select * from product where giatien between ? and ?";
-        try{
+        try {
             con = DBUtils.makeConnection();
             preparedStatement = con.prepareStatement(sql);
-            preparedStatement.setInt(1,priceLow);
-            preparedStatement.setInt(2,priceHigh);
+            preparedStatement.setInt(1, priceLow);
+            preparedStatement.setInt(2, priceHigh);
             rs = preparedStatement.executeQuery();
             rs.beforeFirst();
-            while(rs.next()){
+            while (rs.next()) {
                 ProductDTO product = new ProductDTO();
                 product.setIdProduct(rs.getString(1));
                 product.setTenProduct(rs.getString(2));
@@ -313,11 +314,11 @@ public class ProductDAO {
                 product.setSoLuongTrongKho((rs.getInt(6)));
                 product.setDanhGia(rs.getInt(7));
                 product.setTinhTrang(rs.getString(8));
-                 getImagesByProduct(product);
+                getImagesByProduct(product);
                 result.add(product);
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return result;
@@ -325,7 +326,7 @@ public class ProductDAO {
 
     public static void main(String[] args) {
         ProductDAO pd = new ProductDAO();
-        for(ProductDTO ld : pd.getTop5()){
+        for (ProductDTO ld : pd.getTop5()) {
             System.out.println(ld);
         }
     }
