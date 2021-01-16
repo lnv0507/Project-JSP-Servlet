@@ -96,11 +96,11 @@
 
                         <ul id="menu-bar">
                             <li>
-                                <form action="Products" method="get">
+                                <form action="Search" method="get">
                                     <p id="search">
                                         <i onmouseout="searchOut()" onmouseover="search()" class="fa fa-search">
                                             <input placeholder="Tìm Kiếm..." style="display: none;" id="input-search"
-                                                   type="search" class="input-text">
+                                                   type="search" class="input-text" name="search">
                                         </i>
                                     </p>
                                 </form>

@@ -268,6 +268,56 @@ public class ProductDAO {
         }
         return null;
     }
+    public void getImagesByProduct (ProductDTO productDTO){
+        Connection con = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        String sql = "Select * from hinhanh where id = ?";
+        try{
+            con = DBUtils.makeConnection();
+            preparedStatement = con.prepareStatement(sql);
+            preparedStatement.setString(1,productDTO.getIdProduct());
+            rs = preparedStatement.executeQuery();
+            while (rs.next()) {
+                productDTO.addImage(rs.getString(2));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
+    //filter theo gia san pham
+    public ArrayList<ProductDTO> getProductByPrice(int priceLow, int priceHigh){
+        ArrayList<ProductDTO> result = new ArrayList<>();
+        Connection con = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        String sql = "Select * from product where giatien between ? and ?";
+        try{
+            con = DBUtils.makeConnection();
+            preparedStatement = con.prepareStatement(sql);
+            preparedStatement.setInt(1,priceLow);
+            preparedStatement.setInt(2,priceHigh);
+            rs = preparedStatement.executeQuery();
+            rs.beforeFirst();
+            while(rs.next()){
+                ProductDTO product = new ProductDTO();
+                product.setIdProduct(rs.getString(1));
+                product.setTenProduct(rs.getString(2));
+                product.setLoai(rs.getString(3));
+                product.setChatLieu(rs.getString(4));
+                product.setGiaTien(rs.getInt(5));
+                product.setSoLuongTrongKho((rs.getInt(6)));
+                product.setDanhGia(rs.getInt(7));
+//                product.setTinhTrang(rs.getString(8));
+                 getImagesByProduct(product);
+                result.add(product);
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return result;
+    }
 
 }
