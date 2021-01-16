@@ -224,40 +224,40 @@
 </div>
 </section>
 <script type="text/javascript">
-    $('#hihi').click(function () {
-        alert('hihi');
-    });
-
-
-    $('#submit_create').click(function () {
-
-        var customer_code = $('#customer_code').val();
-        var customer_name = $('#customer_name').val();
-        var customer_phone = $('#customer_phone').val();
-        var customer_email = $('#customer_email').val();
-        var customer_addr = $('#customer_addr').val();
-        var customer_password = $('#customer_password').val();
-        if (customer_code == '' || customer_name == '' || customer_phone == '' || customer_email == '' || customer_addr == '' || customer_password == '') {
-            alert('Không được bỏ trống nha!');
-        } else {
-            $.ajax({
-                url: 'admincreate',
-                method: "POST",
-                data: {
-                    customer_code: customer_code,
-                    customer_name: customer_name,
-                    customer_phone: customer_phone,
-                    customer_email: customer_email,
-                    customer_addr: customer_addr,
-                    customer_password: customer_password
-                },
-                success: function (data) {
-                    // history.pushState({},"","/webshop/admin/createAcount");
-                    window.location.href = "/webshop/admin/admincreate";
-                }
-            });
-        }
-    })
+    // $('#hihi').click(function () {
+    //     alert('hihi');
+    // });
+    //
+    //
+    // $('#submit_create').click(function () {
+    //
+    //     var customer_code = $('#customer_code').val();
+    //     var customer_name = $('#customer_name').val();
+    //     var customer_phone = $('#customer_phone').val();
+    //     var customer_email = $('#customer_email').val();
+    //     var customer_addr = $('#customer_addr').val();
+    //     var customer_password = $('#customer_password').val();
+    //     if (customer_code == '' || customer_name == '' || customer_phone == '' || customer_email == '' || customer_addr == '' || customer_password == '') {
+    //         alert('Không được bỏ trống nha!');
+    //     } else {
+    //         $.ajax({
+    //             url: 'admincreate',
+    //             method: "POST",
+    //             data: {
+    //                 customer_code: customer_code,
+    //                 customer_name: customer_name,
+    //                 customer_phone: customer_phone,
+    //                 customer_email: customer_email,
+    //                 customer_addr: customer_addr,
+    //                 customer_password: customer_password
+    //             },
+    //             success: function (data) {
+    //                 // history.pushState({},"","/webshop/admin/createAcount");
+    //                 window.location.href = "/webshop/admin/admincreate";
+    //             }
+    //         });
+    //     }
+    // })
 
 </script>
 <script src=" js/jquery.js"></script>

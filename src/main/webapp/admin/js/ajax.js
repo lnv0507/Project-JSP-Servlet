@@ -932,41 +932,20 @@ function cms_crCustomer() {
         cms_adapter_ajax($param);
     }
 }
-$a  =$('#hehe').val().trim();
-var b = "tr-item-";
-var idd =  b.concat(a);
-alert($a)
-alert(idd)
-document.write(idd)
-idd.addEventListener('click', function (idd){
-    'use strict';
-    var conf = confirm('Bạn chắc chắn muốn xóa khách hàng này!');
-    if (conf) {
-        var $param = {
-            'type': 'POST',
-            'url': 'deleteAccount',
-            'data': {'id': Siddd},
-            'callback': function (data) {
-                if (data == '0') {
-                    $('.ajax-error-ct').html('Lỗi! không thể xóa Khách hàng').parent().fadeIn().delay(1000).fadeOut('slow');
-                } else {
-                    $('.ajax-success-ct').html('Bạn đã xóa khách hàng thành công!').parent().fadeIn().delay(1000).fadeOut('slow');
-                    window.location.href = "/webshop/admin/createAcount";
-                    // cms_paging_listcustomer($page);
-                }
-            }
-        };
-        cms_adapter_ajax($param);
-    }
-})
-// function cms_delCustomer($id, $page) {
+// $a  =$('#hehe').val().trim();
+// var b = "tr-item-";
+// var idd =  b.concat(a);
+// alert($a)
+// alert(idd)
+// document.write(idd)
+// idd.addEventListener('click', function (idd){
 //     'use strict';
 //     var conf = confirm('Bạn chắc chắn muốn xóa khách hàng này!');
 //     if (conf) {
 //         var $param = {
 //             'type': 'POST',
 //             'url': 'deleteAccount',
-//             'data': {'id': $id},
+//             'data': {'id': Siddd},
 //             'callback': function (data) {
 //                 if (data == '0') {
 //                     $('.ajax-error-ct').html('Lỗi! không thể xóa Khách hàng').parent().fadeIn().delay(1000).fadeOut('slow');
@@ -979,7 +958,28 @@ idd.addEventListener('click', function (idd){
 //         };
 //         cms_adapter_ajax($param);
 //     }
-// }
+// })
+function cms_delCustomer($id, $page) {
+    'use strict';
+    var conf = confirm('Bạn chắc chắn muốn xóa khách hàng này!');
+    if (conf) {
+        var $param = {
+            'type': 'POST',
+            'url': 'deleteAccount',
+            'data': {'id': $id},
+            'callback': function (data) {
+                if (data == '0') {
+                    $('.ajax-error-ct').html('Lỗi! không thể xóa Khách hàng').parent().fadeIn().delay(1000).fadeOut('slow');
+                } else {
+                    $('.ajax-success-ct').html('Bạn đã xóa khách hàng thành công!').parent().fadeIn().delay(1000).fadeOut('slow');
+                    window.location.href = "/webshop/admin/createAcount";
+                    // cms_paging_listcustomer($page);
+                }
+            }
+        };
+        cms_adapter_ajax($param);
+    }
+}
 
 function cms_save_edit_customer() {
     'use strict';

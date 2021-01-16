@@ -192,22 +192,19 @@
 
                     <div class="widget widget_top_rated_product">
                         <h4>Các SẢN PHẨM mới NHẤT </h4>
-                        <ul>
-                            <c:forEach items="${t.top5}" var="o">
+                        <c:forEach items="${t.top5}" var="o">
+                            <ul>
                                 <li>
                                     <a href="ProductDetailController?id=${o.getIdProduct()}">
-                                        <img src="images/shop/${o.getImages().get(0)}" alt="">
-                                        <div class="text">
-                                                ${o.tenProduct}
+                                        <img src="images/products/${o.getImages().get(0)}" alt="">
+                                        <div class="text">${o.tenProduct}
                                             <div class="price"> ${o.giaTien }</div>
-                                            <a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i
-                                                    style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
+                                            <a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
                                         </div>
                                     </a>
                                 </li>
-                            </c:forEach>
-                        </ul>
-
+                            </ul>
+                        </c:forEach>
                     </div>
 
                 </div>
