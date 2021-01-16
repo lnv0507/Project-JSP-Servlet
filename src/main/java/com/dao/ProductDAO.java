@@ -333,7 +333,7 @@ public class ProductDAO {
                 product.setGiaTien(rs.getInt(5));
                 product.setSoLuongTrongKho((rs.getInt(6)));
                 product.setDanhGia(rs.getInt(7));
-//                product.setTinhTrang(rs.getString(8));
+                product.setTinhTrang(rs.getString(8));
                  getImagesByProduct(product);
                 result.add(product);
             }
