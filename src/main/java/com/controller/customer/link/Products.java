@@ -1,4 +1,4 @@
-package com.controller.customer;
+package com.controller.customer.link;
 
 import com.dao.ProductDAO;
 import com.dtos.ProductDTO;

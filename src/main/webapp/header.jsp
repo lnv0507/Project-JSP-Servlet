@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Nguyen Viet Lam
@@ -77,10 +78,10 @@
                 <!-- mainmenu begin -->
                 <nav>
                     <ul id="mainmenu">
-                        <li><a href="index-2.jsp">Trang Chủ</a>
+                        <li><a href="<c:url value="/home"/> ">Trang Chủ</a>
 
                         </li>
-                        <li><a href="projects.jsp">Thiết kế</a></li>
+                        <li><a href="<c:url value="/projects"/>">Thiết kế</a></li>
                         <li>
                             <a href="tintuc.jsp">Tin tức</a>
 

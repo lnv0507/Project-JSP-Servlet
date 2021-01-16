@@ -24,6 +24,7 @@ public class ProductDTO {
     }
 
     public ProductDTO(String idProduct, String tenProduct, String loai, String chatLieu, int giaTien, int soLuongTrongKho, int danhGia, String tinhTrang, ArrayList<String> images) {
+        this.images = new ArrayList<>();
         this.idProduct = idProduct;
         this.tenProduct = tenProduct;
         this.loai = loai;
@@ -37,10 +38,11 @@ public class ProductDTO {
         } else {
             this.tinhTrang = "Hết hàng";
         }
-        this.images = new ArrayList<>();
+
     }
 
     public ProductDTO(String idProduct, String tenProduct, String loai, String chatLieu, int giaTien, int soLuongTrongKho, int danhGia, String tinhTrang, String firstImage) {
+        this.images = new ArrayList<>();
         this.idProduct = idProduct;
         this.tenProduct = tenProduct;
         this.loai = loai;
@@ -53,7 +55,6 @@ public class ProductDTO {
         } else {
             this.tinhTrang = "Hết hàng";
         }
-        this.images = new ArrayList<>();
         this.firstImage = images.get(0);
     }
 
@@ -65,14 +66,11 @@ public class ProductDTO {
         this.giaTien = giaTien;
         this.soLuongTrongKho = soLuongTrongKho;
         this.danhGia = danhGia;
-        if (soLuongTrongKho == 0) {
-            this.tinhTrang = "Còn hàng";
-        } else {
-            this.tinhTrang = "Hết hàng";
-        }
+        this.tinhTrang = tinhTrang;
         this.images = new ArrayList<>();
         this.firstImage = images.get(0);
     }
+
     public String getIdProduct() {
         return idProduct;
     }
@@ -165,7 +163,7 @@ public class ProductDTO {
                 ", soLuongTrongKho='" + soLuongTrongKho + '\'' +
                 ", danhGia='" + danhGia + '\'' +
                 ", tinhTrang='" + tinhTrang + '\'' +
-                ", image='" + images.get(0) + '\'' +
+                ", image='" + firstImage + '\'' +
                 '}';
     }
 }

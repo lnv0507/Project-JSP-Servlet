@@ -257,8 +257,8 @@
 <%--                                                    </div>--%>
 <%--                                                </div>--%>
                                                 <div class="col-md-6 padd-right-0">
-                                                    <input type="file" name="photos1" id="1">
-                                                    <input type="file" name="photos2" id="2">
+                                                    <input type="file" name="photos1" id="1" multiple>
+<%--                                                    <input type="file" name="photos2" id="2">--%>
 <%--                                                    <input type="file" name="photos3" id="3">--%>
 <%--                                                    <input type="file" name="photos4" id="4">--%>
 <%--                                                    <input type="file" name="photos5" id="5">--%>

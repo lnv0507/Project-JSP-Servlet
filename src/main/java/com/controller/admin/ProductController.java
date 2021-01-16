@@ -15,8 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 
 
-
-@WebServlet(name = "ProductController", urlPatterns = {"/admin/addproduct","/admin/product"})
+@WebServlet(name = "ProductController", urlPatterns = {"/admin/addproduct", "/admin/product"})
 public class ProductController extends HttpServlet {
     final static String ERROR = "SanPhamCreate.jsp";
     final static String SUCCESS = "SanPhamInfo.jsp";
@@ -24,8 +23,6 @@ public class ProductController extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
-        InputStream is = null;
-//        HashMap<String, List<String>> hash = new HashMap<>();
         ArrayList<String> images = new ArrayList<>();
         try {
             String idProduct = request.getParameter("txtIDName");
@@ -34,26 +31,28 @@ public class ProductController extends HttpServlet {
             String chatLieu = request.getParameter("txtChatLieu");
             String giaTien = request.getParameter("txtGia");
             String soLuong = request.getParameter("txtNumber");
-            int danhGia = 2;
             String tinhTrang = request.getParameter("txtTinhTrang");
             String imagee1 = request.getParameter("photos1");
-            String imagee2 = request.getParameter("photos2");
+//            String imagee2 = request.getParameter("photos2");
             ArrayList<String> list = new ArrayList<String>();
             list.add(imagee1);
-            list.add(imagee2);
-//            hash.put(idProduct, list);
+//            list.add(imagee2);
             ProductDAO proDAO = new ProductDAO();
             boolean check = true;
             if (check) {
-                ProductDTO proDTO = null;
-                ProductDTO proDTOimg = null;
-                for(String listImage : list) {
-                    proDTO = new ProductDTO(idProduct, nameProduct, loai, chatLieu, Integer.parseInt(giaTien), Integer.parseInt(soLuong), danhGia, tinhTrang, listImage);
+                ProductDTO proDTO = new ProductDTO();
+                proDTO.setIdProduct(idProduct);
+                proDTO.setTenProduct(nameProduct);
+                proDTO.setLoai(loai);
+                proDTO.setChatLieu(chatLieu);
+                proDTO.setSoLuongTrongKho(Integer.parseInt(soLuong));
+                proDTO.setGiaTien(Integer.parseInt(giaTien));
+                proDTO.setTinhTrang(tinhTrang);
+                for (String listImage : list) {
+                    proDTO.addImage(listImage);
+                    proDAO.uploadImage(idProduct, listImage);
                 }
                 proDAO.upload(proDTO);
-//                HttpServletRequest request;
-                HttpSession session = request.getSession();
-                request.setAttribute("list", proDTO);
                 url = SUCCESS;
             }
         } catch (SQLException throwables) {
@@ -65,13 +64,10 @@ public class ProductController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        doPost(request, response);
-//        HttpServletRequest request;
-        HttpSession session = request.getSession();
-        session.getAttribute("list");
         ProductDAO pd = new ProductDAO();
-        ArrayList<ProductDTO> listPro = pd.getListByPage(1,10);
-        session.setAttribute("data", listPro);
-        request.getRequestDispatcher("/admin/SanPham.jsp").forward(request,response);
+        ArrayList<ProductDTO> listPro = pd.getList();
+        request.setAttribute("data", listPro);
+        request.getRequestDispatcher("/admin/SanPham.jsp").forward(request, response);
 
     }
 

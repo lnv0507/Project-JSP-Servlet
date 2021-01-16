@@ -18,14 +18,11 @@ public class ProductDAO {
         Connection con = null;
         PreparedStatement pst = null;
         ResultSet resut = null;
-        FileInputStream fis = null;
-        HashMap<String, ArrayList<String>> listHashMap = new HashMap<>();
         try {
             con = DBUtils.makeConnection();
             if (con != null) {
-                String sql = "insert into product(IDPRODUCT, TENPRODUCT, LOAI, CHATLIEU, GIATIEN, SOLUONGTRONGKHO, DANHGIA)\n" +
-                        "value(?,?,?,?,?,?,?)";
-
+                String sql = "insert into product(IDPRODUCT, TENPRODUCT, LOAI, CHATLIEU, GIATIEN, SOLUONGTRONGKHO, DANHGIA, TINHTRANG)\n" +
+                        "value(?,?,?,?,?,?,?,?)";
                 pst = con.prepareStatement(sql);
                 pst.setString(1, productDTO.getIdProduct());
                 pst.setString(2, productDTO.getTenProduct());
@@ -34,15 +31,12 @@ public class ProductDAO {
                 pst.setInt(5, productDTO.getGiaTien());
                 pst.setInt(6, productDTO.getSoLuongTrongKho());
                 pst.setInt(7, productDTO.getDanhGia());
-                pst.setArray(8, (Array) productDTO.getImages());
-                // Sửa lại thành upload nhiều hình
-                pst.executeUpdate();
-//                String sqlImage = "insert into hinhanh(ID, URL) value  (?,?)";
-//                PreparedStatement psImage = con.prepareStatement(sqlImage);
-//                List<String> listImage = new ArrayList<String>();
-//                psImage.setString(1, productDTO.getIdProduct());
-//                psImage.setString(2, productDTO.getFirstImage());
-//                psImage.executeUpdate();
+                pst.setString(8,productDTO.getTinhTrang());
+                if(pst.executeUpdate()>0){
+                    pst = con.prepareStatement("select * from product");
+                    pst.executeQuery();
+
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -50,14 +44,34 @@ public class ProductDAO {
             if (pst != null) {
                 pst.close();
             }
-            if (con != null) {
-                con.close();
-            }
+
         }
     }
 
-    public void uploadImage() {
+    public boolean uploadImage(String id, String image) {
         //Upload image vao database
+        Connection con = null;
+        PreparedStatement pst = null;
+        try {
+            con = DBUtils.makeConnection();
+            pst = con.prepareStatement("Insert into hinhanh(ID,URL) VALUES (?,?)");
+            pst.setString(1, id);
+            pst.setString(2, image);
+            if (pst.executeUpdate() > 0) {
+                pst = con.prepareStatement("Select*from hinhanh");
+                pst.executeQuery();
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            try {
+                if(pst!= null) pst.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return false;
     }
 
     public void upload2(String name, String nam2, InputStream fis) throws SQLException {
@@ -87,20 +101,22 @@ public class ProductDAO {
             if (pst != null) {
                 pst.close();
             }
-            if (con != null) {
-                con.close();
-            }
+
         }
     }
 
     public ArrayList<ProductDTO> getList() {
+        Connection con = null;
         ResultSet rsProducts = null;
         ResultSet rsImages = null;
+        PreparedStatement ps = null;
         ArrayList<ProductDTO> lsProducts = new ArrayList<>();
         try {
+            con = DBUtils.makeConnection();
 //            rsProducts = DBUtils.connect().executeQuery(sql);
             String sql = "Select * from product";
-            rsProducts = DBUtils.makeConnection().createStatement().executeQuery(sql);
+            ps = con.prepareStatement(sql);
+            rsProducts = ps.executeQuery();
             rsProducts.beforeFirst();
             while (rsProducts.next()) {
                 ProductDTO pd = new ProductDTO();
@@ -121,6 +137,14 @@ public class ProductDAO {
             Collection<ProductDTO> values = lsProducts;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        }finally {
+            try {
+                if(rsProducts!=null) rsProducts.close();
+                if(rsImages!= null) rsImages.close();
+                if(ps!=null) ps.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
         }
         return lsProducts;
     }
@@ -318,6 +342,11 @@ public class ProductDAO {
             e.printStackTrace();
         }
         return result;
+    }
+
+    public static void main(String[] args) {
+        ProductDAO pd = new ProductDAO();
+        System.out.println(pd.getListByPage(1,10));
     }
 
 }

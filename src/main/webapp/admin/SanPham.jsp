@@ -163,7 +163,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach items="data" var="d">
+                        <c:forEach items="${data}" var="d">
                         <tr>
                             <td class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox" value="119" class="checkbox chk"><span style="width: 15px; height: 15px;"></span></label>
                             </td>
@@ -171,7 +171,7 @@
                             <td class="text-left prd_name">${d.tenProduct}</td>
                             <td class="text-center">${d.idProduct}</td>
                             <td class="text-center">
-                                <img src="images/a1.jpg" style="width: 80px ; height: 80px;" alt="">
+                                <img src="../images/products/${d.getImages().get(0)}" style="width: 80px ; height: 80px;" alt="">
                             </td>
                             <td class="text-center">${d.soLuongTrongKho}</td>
                             <td class="text-right" style="font-weight: bold;">${d.giaTien}</td>
