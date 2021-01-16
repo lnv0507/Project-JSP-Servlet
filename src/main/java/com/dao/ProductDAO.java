@@ -249,7 +249,7 @@ public class ProductDAO {
         ResultSet rsProduct = null;
         ResultSet rsImage = null;
         PreparedStatement pst = null;
-        String sql = "select * from product order by IDPRODUCT desc limit 5";
+        String sql = "select * from product order by IDPRODUCT desc limit 4";
         try {
             Connection con = DBUtils.makeConnection();
             pst = con.prepareStatement(sql);
@@ -268,8 +268,8 @@ public class ProductDAO {
                 getImagesByProduct(productx);
 
                 list.add(productx);
-                return list;
             }
+            return list;
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -330,7 +330,9 @@ public class ProductDAO {
 
     public static void main(String[] args) {
         ProductDAO pd = new ProductDAO();
-        System.out.println(pd.getListByPage(1,10));
+        for(ProductDTO ld : pd.getTop5()){
+            System.out.println(ld);
+        }
     }
 
 }

@@ -224,8 +224,8 @@
                                         <td class="text-right"> 999999</td>
                                         <td class="text-center"><i class="fa fa-trash-o"
                                                                    style="cursor:pointer;"
-                                                                   ></i>
-<%--                                            on="cms_delCustomer(${d.idAccount},1);--%>
+                                                                   onclick="cms_delCustomer(${d.idAccount},1)"></i>
+
                                         </td>
                                     </tr>
                                 </c:forEach>
@@ -272,68 +272,6 @@
 </div>
 </div>
 </section>
-
-<%--<script type="text/javascript">--%>
-
-
-<%--    // $(document).ready(function () {--%>
-<%--    //     function fetch_data() {--%>
-<%--    //         $.ajax({--%>
-<%--    //             url: "createAcount",--%>
-<%--    //             method: "GET",--%>
-<%--    //             success: function (data) {--%>
-<%--    //                 // fetch_data();--%>
-<%--    //             }--%>
-<%--    //         })--%>
-<%--    //     }--%>
-
-<%--        // fetch_data();--%>
-<%--        $('#submit_create').click(function () {--%>
-
-<%--            var customer_code = $('#customer_code').val();--%>
-<%--            var customer_name = $('#customer_name').val();--%>
-<%--            var customer_phone = $('#customer_phone').val();--%>
-<%--            var customer_email = $('#customer_email').val();--%>
-<%--            var customer_addr = $('#customer_addr').val();--%>
-<%--            var customer_password = $('#customer_password').val();--%>
-<%--            if (customer_code == '' || customer_name == '' || customer_phone == '' || customer_email == '' || customer_addr == '' || customer_password == '') {--%>
-<%--                alert('Không được bỏ trống nha!');--%>
-<%--            } else {--%>
-<%--                $.ajax({--%>
-<%--                    url: 'createAcount',--%>
-<%--                    method: "POST",--%>
-<%--                    data: {--%>
-<%--                        customer_code: customer_code,--%>
-<%--                        customer_name: customer_name,--%>
-<%--                        customer_phone: customer_phone,--%>
-<%--                        customer_email: customer_email,--%>
-<%--                        customer_addr: customer_addr,--%>
-<%--                        customer_password: customer_password--%>
-<%--                    },--%>
-<%--                    success: function (data) {--%>
-<%--                        // history.pushState({},"","/webshop/admin/createAcount");--%>
-<%--                         window.location.href = "/webshop/admin/createAcount";--%>
-<%--                        // $('#insert-data')[0].reset();--%>
-<%--                        // fetch_data();--%>
-<%--                    }--%>
-<%--                });--%>
-<%--            }--%>
-<%--        });--%>
-<%--    // });--%>
-
-<%--    // $('#Delete_Account').click(function (){--%>
-<%--    //     var id = $('#')--%>
-<%--    //     $.ajax({--%>
-<%--    //         url: 'deleteAccount',--%>
-<%--    //         method: 'POST',--%>
-<%--    //         data:{customer_code:$('#')},--%>
-<%--    //         success:function (data){--%>
-<%--    //             window.location.href = "/webshop/admin/createAcount";--%>
-<%--    //         }--%>
-<%--    //     })--%>
-<%--    // });--%>
-<%--</script>--%>
-
 
 <script src=" js/jquery.js"></script>
 <script src=" js/jquery-ui.min.js"></script>
