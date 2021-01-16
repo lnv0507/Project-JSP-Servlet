@@ -3113,6 +3113,7 @@ $('#submit_create').click( function () {
         $.ajax({
             url: 'createAcount',
             method: "POST",
+            contentType: "application/json",
             data: {
                 customer_code: customer_code,
                 customer_name: customer_name,
@@ -3121,10 +3122,18 @@ $('#submit_create').click( function () {
                 customer_addr: customer_addr,
                 customer_password: customer_password
             },
+            dataType:'json',
             success: function (data) {
                 // history.pushState({},"","/webshop/admin/createAcount");
+                console.log(data);
                 window.location.href = "/webshop/admin/createAcount";
+            },
+            error:function (error){
+                console.log(error);
             }
         });
+
+
     }
+
 })

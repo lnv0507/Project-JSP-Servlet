@@ -1,24 +1,3 @@
-// function search() {
-//     let search = document.getElementsByClassName('search');
-
-//     if (search) {
-//         document.getElementById('input-search').style.display = 'block';
-//         document.getElementById('mainmenu').style.display = 'none';
-//     }
-
-
-
-// }
-
-// function searchOut() {
-//     let search = document.getElementsByClassName('search');
-//     if (search) {
-//         document.getElementById('input-search').style.display = 'none';
-//         document.getElementById('mainmenu').style.display = 'block';
-//     }
-// }
-
-
 function signIn() {
     let name = document.getElementById('user');
     let pass = document.getElementById('pass');
@@ -44,25 +23,37 @@ function signIn() {
     } else {
         email.style.border = 'solid 1px green';
     }
-
-
 }
-// document.getElementById('check').onclick = function(e) {
-//     if (check.checked) {
-//         return true;
-//     } else {
-//         alert('Bạn Có Muốn Lưu Đăng Nhập')
-//     }
 
-// }
+function submit() {
+    var fullname = document.getElementById("fullname");
+    var email = document.getElementById("email");
+    var phone = document.getElementById("phone");
+    if (document.getElementById("name").value == "") {
+        fullname.style.border = "solid 5px red";
+        status = false;
 
-// $(document).ready(function() {
-//     $('.search').hover(function() {
-//         $('#input-search').fadeToggle(300);
-//         $('#mainmenu').toggle(1000);
-//     });
-// });
+    } else {
+        fullname.style.border = "solid 5px green";
+        status = true;
+    }
+    if (document.getElementById("emailInput").value == "") {
+        email.style.border = "solid 5px red";
+        status = false;
 
+    } else {
+        email.style.border = "solid 5px green";
+        status = true;
+    }
+    if (document.getElementById("phoneInput").value == "") {
+        phone.style.border = "solid 5px red";
+        status = false;
+
+    } else {
+        phone.style.border = "solid 5px green";
+        status = true;
+    }
+}
 
 // function menubar() {
 
@@ -73,34 +64,162 @@ function signIn() {
 //         hover.style.display = 'none';
 //     }
 // }
-$("#sliderShuffle ").cycle({
-    next: '#next',
-    prev: '#prev'
-});
+// SEARCH
+$(document).ready(function () {
+    $('.search').hover(function () {
+        $('#input-search').fadeToggle(300);
+        $('#mainmenu').toggle(1000);
+    });
 
-$('.owl-carousel').owlCarousel({
-    items: 4,
-    loop: true,
-    margin: 15,
-    autoplay: true,
-    autoplayTimeout: 3000, //3 Second
-    nav: true,
-    responsiveClass: true,
-    responsive: {
-        0: {
-            items: 1,
-            nav: true
-        },
-        600: {
-            items: 3,
-            nav: true
-        },
-        1000: {
-            items: 4,
-            nav: true
+
+//     $("#sliderShuffle").cycle({
+//         next: '#next',
+//         prev: '#prev'
+//     });
+
+    $('.owl-carousel').owlCarousel({
+        items: 4,
+        loop: true,
+        margin: 15,
+        autoplay: true,
+        autoplayTimeout: 3000, //3 Second
+        nav: true,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            600: {
+                items: 3,
+                nav: true
+            },
+            1000: {
+                items: 4,
+                nav: true
+            }
+        }
+
+    });
+
+////////////////////////////
+
+    $('.owl-carousel').owlCarousel({
+        items: 4,
+        loop: true,
+        margin: 15,
+        autoplay: true,
+        autoplayTimeout: 3000, //3 Second
+        nav: true,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            600: {
+                items: 3,
+                nav: true
+            },
+            1000: {
+                items: 4,
+                nav: true
+            }
+        }
+
+    });
+
+
+    //------------------------
+    $(function () {
+        $(".topbar ul li ").click(function () {
+            $(".topbar ul li ").not(this).find("ul ").slideUp();
+            $(this).find("ul ").slideToggle();
+        });
+        $(".topbar ul li ul li, productCategories ul li .megamenu ").click(function (e) {
+            e.stopPropagation();
+        });
+        $(".productCategories ul li ").click(function () {
+            $(".productCategories ul li ").not(this).find(".megamenu ").hide();
+            $(this).find(".megamenu ").toggle();
+        });
+        $(".otherInfoBody ").hide();
+        $(".otherInfoHandle ").click(function () {
+            $(".otherInfoBody ").slideToggle();
+        });
+        $(".signBtn ").click(function () {
+            $("body ").css("overflow ", "hidden ");
+            $(".loginBox ").slideDown();
+        });
+        $(".closeBtn ").click(function () {
+            $("body ").css("overflow ", "visible ");
+            $(".loginBox ").slideUp();
+        });
+        $(".productViewBtn ").click(function (e) {
+            e.preventDefault();
+            $("body ").css("overflow ", "hidden ");
+            $(".productViewBox ").slideDown();
+        });
+        $(".productViewBox-closeBtn ").click(function () {
+            $("body ").css("overflow ", "visible ");
+            $(".productViewBox ").slideUp();
+        });
+
+        // $(".sp-wrap ").smoothproducts();
+    });
+
+    //////////////
+    $(".step").click(function () {
+        $(this).addClass("active").prevAll().addClass("active");
+        $(this).nextAll().removeClass("active");
+    });
+
+    $(".step01").click(function () {
+        $("#line-progress").css("width", "3%");
+        $(".discovery").addClass("active").siblings().removeClass("active");
+    });
+
+    $(".step02").click(function () {
+        $("#line-progress").css("width", "25%");
+        $(".strategy").addClass("active").siblings().removeClass("active");
+    });
+
+    $(".step03").click(function () {
+        $("#line-progress").css("width", "50%");
+        $(".creative").addClass("active").siblings().removeClass("active");
+    });
+
+    $(".step04").click(function () {
+        $("#line-progress").css("width", "75%");
+        $(".production").addClass("active").siblings().removeClass("active");
+    });
+
+    $(".step05").click(function () {
+        $("#line-progress").css("width", "100%");
+        $(".analysis").addClass("active").siblings().removeClass("active");
+    });
+    var modal = document.getElementById("myModal");
+
+// Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    $('.sp-current-big').click(function (){
+        modal.style.display = "block";
+        $('#popup').load("image.jsp");
+    });
+    $('.sp-current-big2').click(function (){
+        modal.style.display = "block";
+        $('#popup').load("imagelist.jsp");
+    });
+    span.onclick = function (){
+        modal.style.display = "none";
+    }
+    window.onclick = function (event){
+        if(event.target == modal){
+            modal.style.display = "none";
         }
     }
-
 });
 // tạo jquery cho sản phẩm ------------------------
 //---------------------------------------------
+

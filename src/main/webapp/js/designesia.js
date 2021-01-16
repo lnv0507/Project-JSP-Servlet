@@ -53,9 +53,7 @@ jQuery(document).ready(function() {
         overflowY: 'scroll'
     });
 
-    $('.simple-ajax-popup').magnificPopup({
-        type: 'ajax'
-    });
+
 
     // wow jquery
 

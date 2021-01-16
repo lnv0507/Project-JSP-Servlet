@@ -16,7 +16,7 @@ import java.util.List;
 
 public class ProductDAO {
     public void upload(ProductDTO productDTO) throws SQLException {
-        Connection con = null;
+        Connection con;
         PreparedStatement pst = null;
         ResultSet resut = null;
         try {
@@ -51,7 +51,7 @@ public class ProductDAO {
 
     public boolean uploadImage(String id, String image) {
         //Upload image vao database
-        Connection con = null;
+        Connection con;
         PreparedStatement pst = null;
         try {
             con = DBUtils.makeConnection();
@@ -76,7 +76,7 @@ public class ProductDAO {
     }
 
     public void upload2(String name, String nam2, InputStream fis) throws SQLException {
-        Connection con = null;
+        Connection con;
         PreparedStatement pst = null;
         ResultSet resut = null;
         try {
@@ -107,7 +107,7 @@ public class ProductDAO {
     }
 
     public ArrayList<ProductDTO> getList() {
-        Connection con = null;
+        Connection con;
         ResultSet rsProducts = null;
         ResultSet rsImages = null;
         PreparedStatement ps = null;
@@ -149,14 +149,16 @@ public class ProductDAO {
     public ArrayList<ProductDTO> getListByPage(int index, int size) {
         ResultSet rsProducts = null;
         ResultSet rsImages = null;
+        PreparedStatement ps = null;
+        Connection con;
         String sql = "with x as (select ROW_NUMBER() over (order by IDPRODUCT asc ) as r,product.*" +
                 "from product)" +
                 "select * from x where r between ?*?-?+1 and ?*?";
         ArrayList<ProductDTO> lsProducts = new ArrayList<>();
         try {
 //            rsProducts = DBUtils.connect().executeQuery(sql);
-            Connection con = DBUtils.makeConnection();
-            PreparedStatement ps = con.prepareStatement(sql);
+            con = DBUtils.makeConnection();
+            ps = con.prepareStatement(sql);
             ps.setInt(1, index);
             ps.setInt(2, size);
             ps.setInt(3, size);
@@ -179,6 +181,14 @@ public class ProductDAO {
             Collection<ProductDTO> values = lsProducts;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
+        } finally {
+            try {
+                if (rsProducts != null) rsProducts.close();
+                if (rsImages != null) rsImages.close();
+                if (ps != null) ps.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         return lsProducts;
     }
@@ -236,6 +246,14 @@ public class ProductDAO {
 
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (rsProduct != null) rsProduct.close();
+                if (rsImage != null) rsImage.close();
+                if (pst != null) pst.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         return null;
     }
@@ -245,7 +263,7 @@ public class ProductDAO {
         ResultSet rsProduct = null;
         ResultSet rsImage = null;
         PreparedStatement pst = null;
-        String sql = "select * from product order by IDPRODUCT desc limit 4";
+        String sql = "select * from product order by IDPRODUCT desc limit 5";
         try {
             Connection con = DBUtils.makeConnection();
             pst = con.prepareStatement(sql);
@@ -261,19 +279,26 @@ public class ProductDAO {
                 productx.setSoLuongTrongKho(rsProduct.getInt(6));
                 productx.setDanhGia(rsProduct.getInt(7));
                 getImagesByProduct(productx);
-
                 list.add(productx);
             }
             return list;
 
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (rsProduct != null) rsProduct.close();
+                if (rsImage != null) rsImage.close();
+                if (pst != null) pst.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         return null;
     }
 
     public void getImagesByProduct(ProductDTO productDTO) {
-        Connection con = null;
+        Connection con;
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
         String sql = "Select * from hinhanh where id = ?";
@@ -287,13 +312,20 @@ public class ProductDAO {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (rs != null) rs.close();
+                if (preparedStatement != null) preparedStatement.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
     }
 
     //filter theo gia san pham
     public ArrayList<ProductDTO> getProductByPrice(int priceLow, int priceHigh) {
         ArrayList<ProductDTO> result = new ArrayList<>();
-        Connection con = null;
+        Connection con;
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
         String sql = "Select * from product where giatien between ? and ?";
@@ -320,15 +352,16 @@ public class ProductDAO {
 
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            try {
+                if (preparedStatement != null) preparedStatement.close();
+                if (rs != null) rs.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
         return result;
     }
 
-    public static void main(String[] args) {
-        ProductDAO pd = new ProductDAO();
-        for (ProductDTO ld : pd.getTop5()) {
-            System.out.println(ld);
-        }
-    }
 
 }

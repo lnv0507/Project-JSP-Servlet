@@ -152,74 +152,7 @@
         <!-- footer begin -->
         <%@include file="footer.jsp" %>
         <!-- footer close -->
-    </div>
-</div>
 
-<!-- style switcher
-================================================== -->
-<script src="js/switcher.jsp"></script>
-
-
-<!-- Javascript Files
-================================================== -->
-<script src="js/style.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="js/jpreLoader.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.isotope.min.js"></script>
-<script src="js/easing.js"></script>
-<script src="js/jquery.scrollto.js"></script>
-<script src="js/owl.carousel.js"></script>
-<script src="js/jquery.countTo.js"></script>
-<script src="js/classie.js"></script>
-<script src="js/validation.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/enquire.min.js"></script>
-<script src="js/designesia.js"></script>
-<script src="demo/demo.js"></script>
-
-<!-- SLIDER REVOLUTION SCRIPTS  -->
-<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
-<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $('#search').hover(function () {
-            $('#input-search').fadeToggle(300);
-            $('#mainmenu').toggle(1000);
-        });
-    });
-
-    function submit() {
-        var fullname = document.getElementById("fullname");
-        var email = document.getElementById("email");
-        var phone = document.getElementById("phone");
-        if (document.getElementById("name").value == "") {
-            fullname.style.border = "solid 5px red";
-            status = false;
-
-        } else {
-            fullname.style.border = "solid 5px green";
-            status = true;
-        }
-        if (document.getElementById("emailInput").value == "") {
-            email.style.border = "solid 5px red";
-            status = false;
-
-        } else {
-            email.style.border = "solid 5px green";
-            status = true;
-        }
-        if (document.getElementById("phoneInput").value == "") {
-            phone.style.border = "solid 5px red";
-            status = false;
-
-        } else {
-            phone.style.border = "solid 5px green";
-            status = true;
-        }
-    }
-</script>
 
 </body>
 

@@ -41,9 +41,7 @@ public class AccountDAO {
             if (pst != null) {
                 pst.close();
             }
-            if (cn != null) {
-                cn.close();
-            }
+
         }
         return acDTO;
     }
@@ -74,9 +72,7 @@ public class AccountDAO {
             if (pst != null) {
                 pst.close();
             }
-            if (cn != null) {
-                cn.close();
-            }
+
         }
     }
 
@@ -105,9 +101,7 @@ public class AccountDAO {
         } finally {
 
         }
-        for (AccountDTO lis : listAc) {
-            System.out.println(lis);
-        }
+
         return listAc;
     }
 
@@ -160,8 +154,4 @@ public class AccountDAO {
         return false;
     }
 
-    public static void main(String[] args) {
-        AccountDAO ad = new AccountDAO();
-        ad.deleteAccount("AAAAAAAAAA");
-    }
 }

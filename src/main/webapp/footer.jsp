@@ -66,5 +66,98 @@
             </div>
         </div>
     </div>
-
 </footer>
+</div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jpreLoader.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.isotope.min.js"></script>
+<script src="js/easing.js"></script>
+<script src="js/jquery.scrollto.js"></script>
+<script src="js/owl.carousel.js"></script>
+<script src="js/jquery.countTo.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/enquire.min.js"></script>
+<script src="js/designesia.js"></script>
+<script src="demo/demo.js"></script>
+
+<!-- SLIDER REVOLUTION SCRIPTS -->
+<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
+<script type="text/javascript" src="rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+<script src="js/style.js"></script>
+
+
+
+<%--<script>--%>
+<%--    $("#sliderShuffle").cycle({--%>
+<%--        next: '#next',--%>
+<%--        prev: '#prev'--%>
+<%--    });--%>
+
+<%--    $('.owl-carousel').owlCarousel({--%>
+<%--        items: 4,--%>
+<%--        loop: true,--%>
+<%--        margin: 15,--%>
+<%--        autoplay: true,--%>
+<%--        autoplayTimeout: 3000, //3 Second--%>
+<%--        nav: true,--%>
+<%--        responsiveClass: true,--%>
+<%--        responsive: {--%>
+<%--            0: {--%>
+<%--                items: 1,--%>
+<%--                nav: true--%>
+<%--            },--%>
+<%--            600: {--%>
+<%--                items: 3,--%>
+<%--                nav: true--%>
+<%--            },--%>
+<%--            1000: {--%>
+<%--                items: 4,--%>
+<%--                nav: true--%>
+<%--            }--%>
+<%--        }--%>
+
+<%--    });--%>
+
+<%--    $(function () {--%>
+<%--        $(".topbar ul li").click(function () {--%>
+<%--            $(".topbar ul li").not(this).find("ul").slideUp();--%>
+<%--            $(this).find("ul").slideToggle();--%>
+<%--        });--%>
+<%--        $(".topbar ul li ul li, productCategories ul li .megamenu").click(function (e) {--%>
+<%--            e.stopPropagation();--%>
+<%--        });--%>
+<%--        $(".productCategories ul li").click(function () {--%>
+<%--            $(".productCategories ul li").not(this).find(".megamenu").hide();--%>
+<%--            $(this).find(".megamenu").toggle();--%>
+<%--        });--%>
+<%--        $(".otherInfoBody").hide();--%>
+<%--        $(".otherInfoHandle").click(function () {--%>
+<%--            $(".otherInfoBody").slideToggle();--%>
+<%--        });--%>
+<%--        $(".signBtn").click(function () {--%>
+<%--            $("body").css("overflow", "hidden");--%>
+<%--            $(".loginBox").slideDown();--%>
+<%--        });--%>
+<%--        $(".closeBtn").click(function () {--%>
+<%--            $("body").css("overflow", "visible");--%>
+<%--            $(".loginBox").slideUp();--%>
+<%--        });--%>
+<%--        $(".productViewBtn").click(function (e) {--%>
+<%--            e.preventDefault();--%>
+<%--            $("body").css("overflow", "hidden");--%>
+<%--            $(".productViewBox").slideDown();--%>
+<%--        });--%>
+<%--        $(".productViewBox-closeBtn").click(function () {--%>
+<%--            $("body").css("overflow", "visible");--%>
+<%--            $(".productViewBox").slideUp();--%>
+<%--        });--%>
+
+<%--        $(".sp-wrap").smoothproducts();--%>
+<%--    });--%>
+<%--</script>--%>
