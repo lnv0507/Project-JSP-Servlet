@@ -6,6 +6,7 @@ import com.utils.DBUtils;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStream;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.sql.*;
 import java.util.ArrayList;
@@ -127,11 +128,7 @@ public class ProductDAO {
                 pd.setGiaTien(rsProducts.getInt(5));
                 pd.setSoLuongTrongKho(rsProducts.getInt(6));
                 pd.setDanhGia(rsProducts.getInt(7));
-                String sqlImage = "Select * from hinhanh where id = '" + rsProducts.getString(1) + "'";
-                rsImages = DBUtils.makeConnection().createStatement().executeQuery(sqlImage);
-                while (rsImages.next()) {
-                    pd.addImage(rsImages.getString(2));
-                }
+               getImagesByProduct(pd);
                 lsProducts.add(pd);
             }
             Collection<ProductDTO> values = lsProducts;
@@ -176,12 +173,7 @@ public class ProductDAO {
                 pd.setGiaTien(rsProducts.getInt(6));
                 pd.setSoLuongTrongKho(rsProducts.getInt(7));
                 pd.setDanhGia(rsProducts.getInt(8));
-                String sqlImage = "Select * from hinhanh where id = '" + rsProducts.getString(2) + "'";
-                rsImages = DBUtils.makeConnection().createStatement().executeQuery(sqlImage);
-                while (rsImages.next()) {
-                    System.out.println(rsImages.getString(2));
-                    pd.addImage(rsImages.getString(2));
-                }
+                getImagesByProduct(pd);
                 lsProducts.add(pd);
             }
             Collection<ProductDTO> values = lsProducts;
@@ -209,13 +201,7 @@ public class ProductDAO {
             product.setGiaTien(rsProduct.getInt(5));
             product.setSoLuongTrongKho(rsProduct.getInt(6));
             product.setDanhGia(rsProduct.getInt(7));
-            String sqlImage = "Select * from hinhanh where id like ?";
-            PreparedStatement psImage = con.prepareStatement(sqlImage);
-            psImage.setString(1, id);
-            rsImages = psImage.executeQuery();
-            while (rsImages.next()) {
-                product.addImage(rsImages.getString(2));
-            }
+            getImagesByProduct(product);
 
         }
         return product;
@@ -242,11 +228,8 @@ public class ProductDAO {
                 productx.setGiaTien(rsProduct.getInt(5));
                 productx.setSoLuongTrongKho(rsProduct.getInt(6));
                 productx.setDanhGia(rsProduct.getInt(7));
-                String sqlImage = "Select * from hinhanh where id = '" + rsProduct.getString(1) + "'";
-                rsImage = DBUtils.makeConnection().createStatement().executeQuery(sqlImage);
-                while (rsImage.next()) {
-                    productx.addImage(rsImage.getString(2));
-                }
+
+                getImagesByProduct(productx);
                 lsProducts.add(productx);
                 return productx;
             }
@@ -277,11 +260,7 @@ public class ProductDAO {
                 productx.setGiaTien(rsProduct.getInt(5));
                 productx.setSoLuongTrongKho(rsProduct.getInt(6));
                 productx.setDanhGia(rsProduct.getInt(7));
-                String sqlImage = "Select * from hinhanh where id = '" + rsProduct.getString(1) + "'";
-                rsImage = DBUtils.makeConnection().createStatement().executeQuery(sqlImage);
-                while (rsImage.next()) {
-                    productx.addImage(rsImage.getString(2));
-                }
+                getImagesByProduct(productx);
 
                 list.add(productx);
                 return list;
