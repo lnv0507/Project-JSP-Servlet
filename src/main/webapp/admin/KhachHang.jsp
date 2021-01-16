@@ -2,19 +2,20 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html><html lang="en">
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href=""/>
-    <link rel="shortcut icon" type="image/png" href="images/logodend.png"/>
+    <link rel="shortcut icon" type="image/png" href=" images/logodend.png"/>
     <title>Khách Hàng</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/bootstrap-datepicker.css" rel="stylesheet">
-    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/jquery-ui.min.css" rel="stylesheet">
-    <link href="css/jquery.datetimepicker.css" rel="stylesheet">
+    <link href=" css/bootstrap.min.css" rel="stylesheet">
+    <link href=" css/bootstrap-datepicker.css" rel="stylesheet">
+    <link href=" css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+    <link href=" css/font-awesome.min.css" rel="stylesheet">
+    <link href=" css/style.css" rel="stylesheet">
+    <link href=" css/jquery-ui.min.css" rel="stylesheet">
+    <link href=" css/jquery.datetimepicker.css" rel="stylesheet">
 </head>
 <body>
 <%@include file="HeaderAdmin.jsp" %>
@@ -45,7 +46,8 @@
                         <h4 class="modal-title" id="myModalLabel" style="color: white;">Tạo mới khách hàng</h4>
                     </div>
                     <div class="modal-body">
-                        <form class="form-horizontal" id="frm-crcust" action="createAcount" method="post">
+                        <%--                        id="frm-crcust" action="createAcount" method="post"--%>
+                        <form class="form-horizontal" id="insert-data">
                             <div class="form-group">
                                 <div class="col-sm-3">
                                     <label for="customer_name">Mã khách hàng</label>
@@ -108,22 +110,20 @@
 
                             <div class="form-group">
                                 <div class="col-sm-3">
-                                    <label for="customer_birthday">PassWord</label>
+                                    <label for="customer_password">PassWord</label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="password" id="customer_birthday" name="password"
+                                    <input type="password" id="customer_password" name="password"
                                            class="form-control txttimes" value="" placeholder="PassWord">
                                     <span style="color: red;" class="error error-customer_birthday"></span>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button id="submit_create" type="button" class="btn btn-primary btn-sm btn-crcust"
-                                        onclick="cms_crCustomer();"><i
+                                <button id="submit_create" type="button" class="btn btn-primary btn-sm btn-crcust"><i
                                         class="fa fa-check"></i> Lưu
                                 </button>
                                 <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal">
-                                    <i
-                                            class="fa fa-undo"></i> Bỏ qua
+                                    <i class="fa fa-undo"></i> Bỏ qua
                                 </button>
                             </div>
                         </form>
@@ -210,22 +210,24 @@
                                 </thead>
                                 <tbody class="ajax-loadlist-customer">
                                 <c:forEach items="${listAC}" var="d">
-                                <tr id="tr-item-45">
-                                    <td class="text-center tr-detail-item"
-                                    >${d.idAccount}
-                                    </td>
-                                    <td class="text-center tr-detail-item"
-                                    >${d.tenAccount}
-                                    </td>
-                                    <td class="text-center">${d.soDienThoai}</td>
-                                    <td class="text-center">${d.diaChi}</td>
-                                    <td class="text-center">${d.email}</td>
-                                    <td class="text-right" style="font-weight: bold; ">${d.chucVu}</td>
-                                    <td class="text-right"> 999999</td>
-                                    <td class="text-center"><i class="fa fa-trash-o" style="cursor:pointer;"
-                                                               onclick="cms_delCustomer(45,1);"></i>
-                                    </td>
-                                </tr>
+                                    <tr id="tr-item-${d.idAccount}">
+                                        <td class="text-center tr-detail-item" id="hehe"
+                                        >${d.idAccount}
+                                        </td>
+                                        <td class="text-center tr-detail-item"
+                                        >${d.tenAccount}
+                                        </td>
+                                        <td class="text-center">${d.soDienThoai}</td>
+                                        <td class="text-center">${d.diaChi}</td>
+                                        <td class="text-center">${d.email}</td>
+                                        <td class="text-right" style="font-weight: bold; ">${d.chucVu}</td>
+                                        <td class="text-right"> 999999</td>
+                                        <td class="text-center"><i class="fa fa-trash-o"
+                                                                   style="cursor:pointer;"
+                                                                   ></i>
+<%--                                            on="cms_delCustomer(${d.idAccount},1);--%>
+                                        </td>
+                                    </tr>
                                 </c:forEach>
                                 </tbody>
                             </table>
@@ -270,16 +272,82 @@
 </div>
 </div>
 </section>
+
+<%--<script type="text/javascript">--%>
+
+
+<%--    // $(document).ready(function () {--%>
+<%--    //     function fetch_data() {--%>
+<%--    //         $.ajax({--%>
+<%--    //             url: "createAcount",--%>
+<%--    //             method: "GET",--%>
+<%--    //             success: function (data) {--%>
+<%--    //                 // fetch_data();--%>
+<%--    //             }--%>
+<%--    //         })--%>
+<%--    //     }--%>
+
+<%--        // fetch_data();--%>
+<%--        $('#submit_create').click(function () {--%>
+
+<%--            var customer_code = $('#customer_code').val();--%>
+<%--            var customer_name = $('#customer_name').val();--%>
+<%--            var customer_phone = $('#customer_phone').val();--%>
+<%--            var customer_email = $('#customer_email').val();--%>
+<%--            var customer_addr = $('#customer_addr').val();--%>
+<%--            var customer_password = $('#customer_password').val();--%>
+<%--            if (customer_code == '' || customer_name == '' || customer_phone == '' || customer_email == '' || customer_addr == '' || customer_password == '') {--%>
+<%--                alert('Không được bỏ trống nha!');--%>
+<%--            } else {--%>
+<%--                $.ajax({--%>
+<%--                    url: 'createAcount',--%>
+<%--                    method: "POST",--%>
+<%--                    data: {--%>
+<%--                        customer_code: customer_code,--%>
+<%--                        customer_name: customer_name,--%>
+<%--                        customer_phone: customer_phone,--%>
+<%--                        customer_email: customer_email,--%>
+<%--                        customer_addr: customer_addr,--%>
+<%--                        customer_password: customer_password--%>
+<%--                    },--%>
+<%--                    success: function (data) {--%>
+<%--                        // history.pushState({},"","/webshop/admin/createAcount");--%>
+<%--                         window.location.href = "/webshop/admin/createAcount";--%>
+<%--                        // $('#insert-data')[0].reset();--%>
+<%--                        // fetch_data();--%>
+<%--                    }--%>
+<%--                });--%>
+<%--            }--%>
+<%--        });--%>
+<%--    // });--%>
+
+<%--    // $('#Delete_Account').click(function (){--%>
+<%--    //     var id = $('#')--%>
+<%--    //     $.ajax({--%>
+<%--    //         url: 'deleteAccount',--%>
+<%--    //         method: 'POST',--%>
+<%--    //         data:{customer_code:$('#')},--%>
+<%--    //         success:function (data){--%>
+<%--    //             window.location.href = "/webshop/admin/createAcount";--%>
+<%--    //         }--%>
+<%--    //     })--%>
+<%--    // });--%>
+<%--</script>--%>
+
+
+<script src=" js/jquery.js"></script>
+<script src=" js/jquery-ui.min.js"></script>
+<script src=" js/html5shiv.min.js"></script>
+<script src=" js/respond.min.js"></script>
+<script src=" js/bootstrap.min.js"></script>
+<script src=" js/jquery.datetimepicker.full.js"></script>
+<script src=" js/bootstrap-datepicker.min.js"></script>
+<script src=" js/bootstrap-datepicker.vi.min.js"></script>
+<script src=" js/ckeditor.js"></script>
+<script src=" js/editor.js"></script>
+<script src=" js/ajax.js"></script>
 </body>
-<script src="js/jquery.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script src="../admin/js/jsp5shiv.min.js"></script>
-<script src="js/respond.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.datetimepicker.full.js"></script>
-<script src="js/bootstrap-datepicker.min.js"></script>
-<script src="js/bootstrap-datepicker.vi.min.js"></script>
-<script src="js/ckeditor.js"></script>
-<script src="js/editor.js"></script>
-<script src="js/ajax1.js"></script>
+
+
 </html>
+

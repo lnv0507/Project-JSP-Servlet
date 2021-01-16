@@ -14,6 +14,9 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/jquery-ui.min.css" rel="stylesheet">
     <link href="css/jquery.datetimepicker.css" rel="stylesheet">
+    <script src="js/jquery.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.14.4/jquery.min.js"></script>
 </head>
 <body>
 <%@include file="HeaderAdmin.jsp" %>
@@ -43,13 +46,13 @@
                             Thêm tài khoản đăng nhập </h4>
                     </div>
                     <div class="modal-body">
-                        <form class="form-horizontal" id="frm-cruser" action="admincreate" method="post">
+                        <form class="form-horizontal">
                             <div class="form-group">
                                 <div class="col-sm-3">
                                     <label>Tên nhân viên</label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" id="display_name" name="customer_name" class="form-control"
+                                    <input type="text" id="customer_name" name="customer_name" class="form-control"
                                            value=""
                                            placeholder="Nhập tên nhân viên">
                                     <span style="color: red; font-style: italic;"
@@ -58,40 +61,43 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-3">
-                                    <label for="manv">Mã nhân viên</label>
+                                    <label for="customer_code">Mã nhân viên</label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" id="manv" name="customer_create" class="form-control" value=""
+                                    <input type="text" id="customer_code" name="customer_create" class="form-control"
+                                           value=""
                                            placeholder="Nhập mã nhân viên">
                                     <span style="color: red; font-style: italic;" class="error error-manv"></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-3">
-                                    <label for="manv">Số Điện Thoại</label>
+                                    <label>Số Điện Thoại</label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" name="customer_phone" class="form-control" value=""
+                                    <input id="customer_phone" type="text" name="customer_phone" class="form-control"
+                                           value=""
                                            placeholder="Nhập số điện thoại">
                                     <span style="color: red; font-style: italic;" class="error error-manv"></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-3">
-                                    <label for="manv">Email</label>
+                                    <label for="customer_email">Email</label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" id="mail" name="email" class="form-control" value=""
+                                    <input type="text" id="customer_email" name="email" class="form-control" value=""
                                            placeholder="Nhập email của bạn">
                                     <span style="color: red; font-style: italic;" class="error error-mail"></span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-sm-3">
-                                    <label for="manv">Địa Chỉ</label>
+                                    <label for="customer_addr">Địa Chỉ</label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="text" name="customer_email" class="form-control" value=""
+                                    <input type="text" id="customer_addr" name="customer_email" class="form-control"
+                                           value=""
                                            placeholder="Nhập Địa Chỉ">
                                     <span style="color: red; font-style: italic;" class="error error-manv"></span>
                                 </div>
@@ -101,13 +107,14 @@
                                     <label>Mật khẩu</label>
                                 </div>
                                 <div class="col-sm-9">
-                                    <input type="password" id="password" name="password" class="form-control" value=""
+                                    <input type="password" id="customer_password" name="password" class="form-control"
+                                           value=""
                                            placeholder="Nhập Mật khẩu">
                                     <span style="color: red; font-style: italic;" class="error error-password"></span>
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button type="submit" class="btn btn-primary btn-sm btn-crnv"><i
+                                <button id="submit_create" type="button" class="btn btn-primary btn-sm btn-crnv"><i
                                         class="fa fa-check"></i> Lưu
                                 </button>
                                 <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i
@@ -154,165 +161,51 @@
                                     <th>Tên nhân viên</th>
                                     <th>Email</th>
                                     <th>Nhóm người sử dụng</th>
-                                    <th class="text-center">Trạng thái</th>
                                     <th></th>
                                     </thead>
                                     <tbody>
+                                    <c:forEach items="${listADMIN}" var="d">
+                                        <tr class="tr-item-24">
+                                            <td class="text-center">18</td>
+                                            <td>${d.idAccount}</td>
+                                            <td>${d.tenAccount}</td>
+                                            <td>${d.email}</td>
+                                            <td><span class="user_group"><i class="fa fa-male"></i>${d.chucVu}</span>
+                                            </td>
+                                            <td class="text-center"><i class="fa fa-pencil-square-o edit-item"
+                                                                       title="Sửa"
+                                                                       onclick="cms_edit_usitem(24)"
+                                                                       style="margin-right: 10px; cursor: pointer;"></i><i
+                                                    onclick="cms_del_usitem(24)" title="Xóa"
+                                                    class="fa fa-trash-o delete-item" style="cursor: pointer;"></i></td>
+                                        </tr>
+                                        <tr class="edit-tr-item-24" style="display: none;">
+                                            <td class="text-center">18</td>
+                                            <td class="itmanv"><input type="text" class="form-control"
+                                                                      value="18130156" disabled/>
+                                            </td>
+                                            <td class="itdisplay_name"><input type="text" class="form-control"
+                                                                              value="Phạm Minh Nguyên"/>
+                                            </td>
+                                            <td class="itemail">
+                                                <input type="text" class="form-control"
+                                                       value="pmnguyen1032000@gmail.com"/>
+                                            </td>
+                                            <td class="itgroup_name">
+                                                <div class="group-user">
+                                                    <div class="group-selbox">
+                                                    </div>
+                                                </div>
+                                            </td>
 
-                                    <tr class="tr-item-24">
-                                        <td class="text-center">18</td>
-                                        <td>18130156</td>
-                                        <td>Phạm Minh Nguyên</td>
-                                        <td>pmnguyen1032000@gmail.com</td>
-                                        <td><span class="user_group"><i class="fa fa-male"></i> Admin</span></td>
-                                        <td class="text-center"><span class='user_status'><i class='fa fa-unlock'></i> Hoạt động</span>
-                                        </td>
-                                        <td class="text-center"><i class="fa fa-pencil-square-o edit-item" title="Sửa"
-                                                                   onclick="cms_edit_usitem(24)"
-                                                                   style="margin-right: 10px; cursor: pointer;"></i><i
-                                                onclick="cms_del_usitem(24)" title="Xóa"
-                                                class="fa fa-trash-o delete-item" style="cursor: pointer;"></i></td>
-                                    </tr>
-                                    <tr class="edit-tr-item-24" style="display: none;">
-                                        <td class="text-center">18</td>
-                                        <td class="itmanv"><input type="text" class="form-control"
-                                                                  value="18130156" disabled/>
-                                        </td>
-                                        <td class="itdisplay_name"><input type="text" class="form-control"
-                                                                          value="Phạm Minh Nguyên"/>
-                                        </td>
-                                        <td class="itemail">
-                                            <input type="text" class="form-control"
-                                                   value="pmnguyen1032000@gmail.com"/>
-                                        </td>
-                                        <td class="itgroup_name">
-                                            <div class="group-user">
-                                                <div class="group-selbox">
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center ituser_status">
-                                            <select class="ituser_status form-control">
-                                                <option
-                                                        value="1" selected="selected">
-                                                    Hoạt động
-                                                </option>
-                                                <option
-                                                        value="0">
-                                                    Tạm dừng
-                                                </option>
-                                            </select>
-                                        </td>
-                                        <td class="text-center"><i class="fa fa-floppy-o" title="Lưu"
-                                                                   onclick="cms_save_item_user( 24 )"
-                                                                   style="color: #EC971F; cursor: pointer; margin-right: 10px;"></i><i
-                                                onclick="cms_undo_item( 24 )" title="Hủy"
-                                                class="fa fa-undo"
-                                                style="color: green; cursor: pointer; margin-right: 5px;"></i></td>
-                                    </tr>
-                                    <tr class="tr-item-25">
-                                        <td class="text-center">19</td>
-                                        <td>18130041</td>
-                                        <td>Phan Thành Đoan</td>
-                                        <td>18130041@st.hcmuaf.edu.vn</td>
-                                        <td><span class="user_group"><i class="fa fa-male"></i> Admin</span></td>
-                                        <td class="text-center"><span class='user_status'><i class='fa fa-unlock'></i> Hoạt động</span>
-                                        </td>
-                                        <td class="text-center"><i class="fa fa-pencil-square-o edit-item" title="Sửa"
-                                                                   onclick="cms_edit_usitem(25)"
-                                                                   style="margin-right: 10px; cursor: pointer;"></i><i
-                                                onclick="cms_del_usitem(25)" title="Xóa"
-                                                class="fa fa-trash-o delete-item" style="cursor: pointer;"></i></td>
-                                    </tr>
-                                    <tr class="edit-tr-item-25" style="display: none;">
-                                        <td class="text-center">19</td>
-                                        <td class="itmanv"><input type="text" class="form-control"
-                                                                  value="18130041" disabled/>
-                                        </td>
-                                        <td class="itdisplay_name"><input type="text" class="form-control"
-                                                                          value="Phan Thành Đoan"/>
-                                        </td>
-                                        <td class="itemail">
-                                            <input type="text" class="form-control"
-                                                   value="18130041@st.hcmuaf.edu.vn"/>
-                                        </td>
-                                        <td class="itgroup_name">
-                                            <div class="group-user">
-                                                <div class="group-selbox">
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center ituser_status">
-                                            <select class="ituser_status form-control">
-                                                <option
-                                                        value="1" selected="selected">
-                                                    Hoạt động
-                                                </option>
-                                                <option
-                                                        value="0">
-                                                    Tạm dừng
-                                                </option>
-                                            </select>
-                                        </td>
-                                        <td class="text-center"><i class="fa fa-floppy-o" title="Lưu"
-                                                                   onclick="cms_save_item_user( 25 )"
-                                                                   style="color: #EC971F; cursor: pointer; margin-right: 10px;"></i><i
-                                                onclick="cms_undo_item( 25 )" title="Hủy"
-                                                class="fa fa-undo"
-                                                style="color: green; cursor: pointer; margin-right: 5px;"></i></td>
-                                    </tr>
-                                    <tr class="tr-item-26">
-                                        <td class="text-center">20</td>
-                                        <td>18130031</td>
-                                        <td>Mai Huỳnh Phước Đạt</td>
-                                        <td>18130031@st.hcmuaf.edu.vn</td>
-                                        <td><span class="user_group"><i class="fa fa-male"></i> Admin</span></td>
-                                        <td class="text-center"><span class='user_status'><i class='fa fa-unlock'></i> Hoạt động</span>
-                                        </td>
-                                        <td class="text-center"><i class="fa fa-pencil-square-o edit-item" title="Sửa"
-                                                                   onclick="cms_edit_usitem(26)"
-                                                                   style="margin-right: 10px; cursor: pointer;"></i><i
-                                                onclick="cms_del_usitem(26)" title="Xóa"
-                                                class="fa fa-trash-o delete-item" style="cursor: pointer;"></i></td>
-                                    </tr>
-                                    <tr class="edit-tr-item-26" style="display: none;">
-                                        <td class="text-center">20</td>
-                                        <td class="itmanv"><input type="text" class="form-control"
-                                                                  value="18130031" disabled/>
-                                        </td>
-                                        <td class="itdisplay_name"><input type="text" class="form-control"
-                                                                          value="Mai Huỳnh Phước Đạt"/>
-                                        </td>
-                                        <td class="itemail">
-                                            <input type="text" class="form-control"
-                                                   value="18130031@st.hcmuaf.edu.vn"/>
-                                        </td>
-                                        <td class="itgroup_name">
-                                            <div class="group-user">
-                                                <div class="group-selbox">
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="text-center ituser_status">
-                                            <select class="ituser_status form-control">
-                                                <option
-                                                        value="1" selected="selected">
-                                                    Hoạt động
-                                                </option>
-                                                <option
-                                                        value="0">
-                                                    Tạm dừng
-                                                </option>
-                                            </select>
-                                        </td>
-                                        <td class="text-center"><i class="fa fa-floppy-o" title="Lưu"
-                                                                   onclick="cms_save_item_user( 26 )"
-                                                                   style="color: #EC971F; cursor: pointer; margin-right: 10px;"></i><i
-                                                onclick="cms_undo_item( 26 )" title="Hủy"
-                                                class="fa fa-undo"
-                                                style="color: green; cursor: pointer; margin-right: 5px;"></i></td>
-                                    </tr>
-
+                                            <td class="text-center"><i class="fa fa-floppy-o" title="Lưu"
+                                                                       onclick="cms_save_item_user( 24 )"
+                                                                       style="color: #EC971F; cursor: pointer; margin-right: 10px;"></i><i
+                                                    onclick="cms_undo_item( 24 )" title="Hủy"
+                                                    class="fa fa-undo"
+                                                    style="color: green; cursor: pointer; margin-right: 5px;"></i></td>
+                                        </tr>
+                                    </c:forEach>
                                     </tbody>
                                 </table>
                             </div>
@@ -330,16 +223,55 @@
 </div>
 </div>
 </section>
+<script type="text/javascript">
+    $('#hihi').click(function () {
+        alert('hihi');
+    });
+
+
+    $('#submit_create').click(function () {
+
+        var customer_code = $('#customer_code').val();
+        var customer_name = $('#customer_name').val();
+        var customer_phone = $('#customer_phone').val();
+        var customer_email = $('#customer_email').val();
+        var customer_addr = $('#customer_addr').val();
+        var customer_password = $('#customer_password').val();
+        if (customer_code == '' || customer_name == '' || customer_phone == '' || customer_email == '' || customer_addr == '' || customer_password == '') {
+            alert('Không được bỏ trống nha!');
+        } else {
+            $.ajax({
+                url: 'admincreate',
+                method: "POST",
+                data: {
+                    customer_code: customer_code,
+                    customer_name: customer_name,
+                    customer_phone: customer_phone,
+                    customer_email: customer_email,
+                    customer_addr: customer_addr,
+                    customer_password: customer_password
+                },
+                success: function (data) {
+                    // history.pushState({},"","/webshop/admin/createAcount");
+                    window.location.href = "/webshop/admin/admincreate";
+                }
+            });
+        }
+    })
+
+</script>
+<script src=" js/jquery.js"></script>
+<script src=" js/jquery-ui.min.js"></script>
+<script src=" js/html5shiv.min.js"></script>
+<script src=" js/respond.min.js"></script>
+<script src=" js/bootstrap.min.js"></script>
+<script src=" js/jquery.datetimepicker.full.js"></script>
+<script src=" js/bootstrap-datepicker.min.js"></script>
+<script src=" js/bootstrap-datepicker.vi.min.js"></script>
+<script src=" js/ckeditor.js"></script>
+<script src=" js/editor.js"></script>
+<script src=" js/ajax.js"></script>
 </body>
-<script src="js/jquery.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script src="../admin/js/jsp5shiv.min.js"></script>
-<script src="js/respond.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.datetimepicker.full.js"></script>
-<script src="js/bootstrap-datepicker.min.js"></script>
-<script src="js/bootstrap-datepicker.vi.min.js"></script>
-<script src="js/ckeditor.js"></script>
-<script src="js/editor.js"></script>
-<script src="js/ajax1.js"></script>
+
+
 </html>

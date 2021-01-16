@@ -269,11 +269,5 @@ public class ProductDAO {
         return null;
     }
 
-    public static void main(String[] args) throws SQLException {
-        ProductDAO productDAO = new ProductDAO();
-//        System.out.println(productDAO.getList());
-//        System.out.println(productDAO.getProductById("LS625002R9"));
-//        System.out.println(productDAO.getListByPage(1,10));
-        System.out.println(productDAO.getTop5());
-    }
+
 }

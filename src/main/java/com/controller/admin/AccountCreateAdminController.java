@@ -22,12 +22,12 @@ public class AccountCreateAdminController extends HttpServlet {
         String url = ERROR;
         resp.setContentType("text/html;charset=UTF-8");
         try {
-            String idAccount = req.getParameter("customer_create");
+            String idAccount = req.getParameter("customer_code");
             String nameAccount = req.getParameter("customer_name");
             String soDienThoai = req.getParameter("customer_phone");
             String email = req.getParameter("customer_email");
             String diachi = req.getParameter("customer_addr");
-            String pass = req.getParameter("password");
+            String pass = req.getParameter("customer_password");
             AccountDAO accountDAO = new AccountDAO();
             boolean check = true;
             if (idAccount.isEmpty()) {
@@ -66,8 +66,8 @@ public class AccountCreateAdminController extends HttpServlet {
         AccountDAO accountDAO = new AccountDAO();
         ArrayList<AccountDTO> list = accountDAO.getAccount();
         try {
-            HttpSession session = req.getSession();
-            session.setAttribute("listAC", list);
+//            HttpSession session = req.getSession();
+            req.setAttribute("listAC", list);
             req.getRequestDispatcher("/admin/KhachHang.jsp").forward(req, resp);
         } catch (Exception e) {
             e.printStackTrace();

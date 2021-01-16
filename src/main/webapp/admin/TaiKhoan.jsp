@@ -137,16 +137,17 @@
 </div>
 </div>
 </section>
+<script src=" js/jquery.js"></script>
+<script src=" js/jquery-ui.min.js"></script>
+<script src=" js/html5shiv.min.js"></script>
+<script src=" js/respond.min.js"></script>
+<script src=" js/bootstrap.min.js"></script>
+<script src=" js/jquery.datetimepicker.full.js"></script>
+<script src=" js/bootstrap-datepicker.min.js"></script>
+<script src=" js/bootstrap-datepicker.vi.min.js"></script>
+<script src=" js/ckeditor.js"></script>
+<script src=" js/editor.js"></script>
+<script src=" js/ajax.js"></script>
 </body>
-<script src="js/jquery.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script src="../admin/js/jsp5shiv.min.js"></script>
-<script src="js/respond.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.datetimepicker.full.js"></script>
-<script src="js/bootstrap-datepicker.min.js"></script>
-<script src="js/bootstrap-datepicker.vi.min.js"></script>
-<script src="js/ckeditor.js"></script>
-<script src="js/editor.js"></script>
-<script src="js/ajax1.js"></script>
+
 </html>

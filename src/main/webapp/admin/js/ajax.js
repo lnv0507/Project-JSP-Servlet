@@ -932,27 +932,54 @@ function cms_crCustomer() {
         cms_adapter_ajax($param);
     }
 }
-
-function cms_delCustomer($id, $page) {
+$a  =$('#hehe').val().trim();
+var b = "tr-item-";
+var idd =  b.concat(a);
+alert($a)
+alert(idd)
+document.write(idd)
+idd.addEventListener('click', function (idd){
     'use strict';
     var conf = confirm('Bạn chắc chắn muốn xóa khách hàng này!');
     if (conf) {
         var $param = {
             'type': 'POST',
-            'url': 'customer/cms_delCustomer',
-            'data': {'id': $id},
+            'url': 'deleteAccount',
+            'data': {'id': Siddd},
             'callback': function (data) {
                 if (data == '0') {
                     $('.ajax-error-ct').html('Lỗi! không thể xóa Khách hàng').parent().fadeIn().delay(1000).fadeOut('slow');
                 } else {
                     $('.ajax-success-ct').html('Bạn đã xóa khách hàng thành công!').parent().fadeIn().delay(1000).fadeOut('slow');
-                    cms_paging_listcustomer($page);
+                    window.location.href = "/webshop/admin/createAcount";
+                    // cms_paging_listcustomer($page);
                 }
             }
         };
         cms_adapter_ajax($param);
     }
-}
+})
+// function cms_delCustomer($id, $page) {
+//     'use strict';
+//     var conf = confirm('Bạn chắc chắn muốn xóa khách hàng này!');
+//     if (conf) {
+//         var $param = {
+//             'type': 'POST',
+//             'url': 'deleteAccount',
+//             'data': {'id': $id},
+//             'callback': function (data) {
+//                 if (data == '0') {
+//                     $('.ajax-error-ct').html('Lỗi! không thể xóa Khách hàng').parent().fadeIn().delay(1000).fadeOut('slow');
+//                 } else {
+//                     $('.ajax-success-ct').html('Bạn đã xóa khách hàng thành công!').parent().fadeIn().delay(1000).fadeOut('slow');
+//                     window.location.href = "/webshop/admin/createAcount";
+//                     // cms_paging_listcustomer($page);
+//                 }
+//             }
+//         };
+//         cms_adapter_ajax($param);
+//     }
+// }
 
 function cms_save_edit_customer() {
     'use strict';
@@ -3060,3 +3087,44 @@ function cms_del_icon_click(obs, attach) {
         $(this).html('').parent().find(attach).val('').removeAttr('data-id').prop('readonly', false);
     })
 }
+
+////////////////////////////////////////////////////////////////////////////
+
+
+
+$('#hihi').click(function (){
+    alert('hihi');
+});
+
+
+
+
+$('#submit_create').click( function () {
+
+    var customer_code = $('#customer_code').val();
+    var customer_name = $('#customer_name').val();
+    var customer_phone = $('#customer_phone').val();
+    var customer_email = $('#customer_email').val();
+    var customer_addr = $('#customer_addr').val();
+    var customer_password = $('#customer_password').val();
+    if (customer_code == '' || customer_name == '' || customer_phone == '' || customer_email == '' || customer_addr == '' || customer_password == '') {
+        alert('Không được bỏ trống nha!');
+    } else {
+        $.ajax({
+            url: 'createAcount',
+            method: "POST",
+            data: {
+                customer_code: customer_code,
+                customer_name: customer_name,
+                customer_phone: customer_phone,
+                customer_email: customer_email,
+                customer_addr: customer_addr,
+                customer_password: customer_password
+            },
+            success: function (data) {
+                // history.pushState({},"","/webshop/admin/createAcount");
+                window.location.href = "/webshop/admin/createAcount";
+            }
+        });
+    }
+})

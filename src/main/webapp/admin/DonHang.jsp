@@ -134,7 +134,7 @@
                                     <th>Khách hàng</th>
                                     <th class="text-center">Địa chỉ</th>
                                     <th class="text-center">Trạng thái</th>
-                                    <th class="text-center" >Tổng tiền</th>
+                                    <th class="text-center">Tổng tiền</th>
                                     <th class="text-center">Xóa</th>
                                     <!-- <th class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox" class="checkbox chkAll"><span style="width: 15px; height: 15px;"></span></label></th> -->
                                     <th class="text-center"> Check</th>
@@ -143,29 +143,36 @@
                                 <tbody>
                                 <tr>
                                     <td style="text-align: center;">
-                                        <i style="color: #478fca!important;" title="Chi tiết đơn hàng" onclick="cms_show_detail_order(248)" class="fa fa-plus-circle i-detail-order-248">
+                                        <i style="color: #478fca!important;" title="Chi tiết đơn hàng"
+                                           onclick="cms_show_detail_order(248)"
+                                           class="fa fa-plus-circle i-detail-order-248">
 
                                         </i>
-                                        <i style="color: #478fca!important;" title="Chi tiết đơn hàng" onclick="cms_show_detail_order(248)" class="fa fa-minus-circle i-hide i-detail-order-248">
+                                        <i style="color: #478fca!important;" title="Chi tiết đơn hàng"
+                                           onclick="cms_show_detail_order(248)"
+                                           class="fa fa-minus-circle i-hide i-detail-order-248">
 
                                         </i>
                                     </td>
                                     <!-- style="color: #2a6496; cursor: pointer;" onclick="cms_detail_order(248)" -->
-                                    <td class="text-center" >PX0000006</td>
+                                    <td class="text-center">PX0000006</td>
                                     <td class="text-center">22:41 24/11/2020</td>
                                     <!-- <td class="text-center">Phạm Minh Nguyên</td> -->
                                     <td class="text-center">Nguyễn Công Dự</td>
                                     <td class="text-center">Đại học Nông Lâm TPHCM</td>
                                     <td class="text-center">Chưa hoàn thành</td>
-                                    <td class="text-center" >100,000</td>
-                                    <td class="text-center" >
-                                        <i class="fa fa-trash-o" style="color: darkred;" title="Xóa" onclick="cms_del_temp_order(248,1)"></i></td>
+                                    <td class="text-center">100,000</td>
+                                    <td class="text-center">
+                                        <i class="fa fa-trash-o" style="color: darkred;" title="Xóa"
+                                           onclick="cms_del_temp_order(248,1)"></i></td>
                                     <!-- <td class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox" value="248" class="checkbox chk"><span style="width: 15px; height: 15px;"></span></label>
                                     </td> -->
                                     <td>
                                         <div class="col-md-3 padd-0" style="padding-left: 5px;">
-                                            <button style="box-shadow: none;" type="button" class="btn btn-primary btn-large"
-                                                    onclick="cms_paging_order(1)"><i class="fa fa-shopping-cart"></i> Xác Nhận
+                                            <button style="box-shadow: none;" type="button"
+                                                    class="btn btn-primary btn-large"
+                                                    onclick="cms_paging_order(1)"><i class="fa fa-shopping-cart"></i>
+                                                Xác Nhận
                                             </button>
                                         </div>
                                     </td>
@@ -228,17 +235,23 @@
                                                         <tbody>
                                                         <tr>
                                                             <td class="text-center width-5 hidden-320 ">
-                                                                1</td>
+                                                                1
+                                                            </td>
                                                             <td class="text-left hidden-768">
-                                                                SP000001</td>
+                                                                SP000001
+                                                            </td>
                                                             <td class="text-left ">
-                                                                Áo Huy Chương</td>
+                                                                Áo Huy Chương
+                                                            </td>
                                                             <td class="text-center ">
-                                                                1</td>
+                                                                1
+                                                            </td>
                                                             <td class="text-center">
-                                                                50,000</td>
+                                                                50,000
+                                                            </td>
                                                             <td class="text-center">
-                                                                50,000</td>
+                                                                50,000
+                                                            </td>
                                                         </tr>
 
                                                         </tbody>
@@ -343,7 +356,7 @@
                                     <th>Khách hàng</th>
                                     <th class="text-center">Địa chỉ</th>
                                     <th class="text-center">Trạng thái</th>
-                                    <th class="text-center" >Tổng tiền</th>
+                                    <th class="text-center">Tổng tiền</th>
                                     <th class="text-center">Xóa</th>
                                     <!-- <th class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox" class="checkbox chkAll"><span style="width: 15px; height: 15px;"></span></label></th> -->
                                     <!-- <th class="text-center"> Check</th> -->
@@ -352,23 +365,28 @@
                                 <tbody>
                                 <tr>
                                     <td style="text-align: center;">
-                                        <i style="color: #478fca!important;" title="Chi tiết đơn hàng" onclick="cms_show_detail_order(249)" class="fa fa-plus-circle i-detail-order-249">
+                                        <i style="color: #478fca!important;" title="Chi tiết đơn hàng"
+                                           onclick="cms_show_detail_order(249)"
+                                           class="fa fa-plus-circle i-detail-order-249">
 
                                         </i>
-                                        <i style="color: #478fca!important;" title="Chi tiết đơn hàng" onclick="cms_show_detail_order(249)" class="fa fa-minus-circle i-hide i-detail-order-249">
+                                        <i style="color: #478fca!important;" title="Chi tiết đơn hàng"
+                                           onclick="cms_show_detail_order(249)"
+                                           class="fa fa-minus-circle i-hide i-detail-order-249">
 
                                         </i>
                                     </td>
                                     <!-- style="color: #2a6496; cursor: pointer;" onclick="cms_detail_order(248)" -->
-                                    <td class="text-center" >PX0000006</td>
+                                    <td class="text-center">PX0000006</td>
                                     <td class="text-center">22:41 24/11/2020</td>
                                     <td class="text-center">Phạm Minh Nguyên</td>
                                     <td class="text-center">Nguyễn Công Dự</td>
                                     <td class="text-center">Đại học Nông Lâm TPHCM</td>
                                     <td class="text-center">Hoàn thành</td>
-                                    <td class="text-center" >100,000</td>
-                                    <td class="text-center" >
-                                        <i class="fa fa-trash-o" style="color: darkred;" title="Xóa" onclick="cms_del_temp_order(248,1)"></i></td>
+                                    <td class="text-center">100,000</td>
+                                    <td class="text-center">
+                                        <i class="fa fa-trash-o" style="color: darkred;" title="Xóa"
+                                           onclick="cms_del_temp_order(248,1)"></i></td>
                                     <!-- <td class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox" value="248" class="checkbox chk"><span style="width: 15px; height: 15px;"></span></label>
                                     </td> -->
                                     <!-- <td>
@@ -437,17 +455,23 @@
                                                         <tbody>
                                                         <tr>
                                                             <td class="text-center width-5 hidden-320 ">
-                                                                1</td>
+                                                                1
+                                                            </td>
                                                             <td class="text-left hidden-768">
-                                                                SP000001</td>
+                                                                SP000001
+                                                            </td>
                                                             <td class="text-left ">
-                                                                Áo Huy Chương</td>
+                                                                Áo Huy Chương
+                                                            </td>
                                                             <td class="text-center ">
-                                                                1</td>
+                                                                1
+                                                            </td>
                                                             <td class="text-center">
-                                                                50,000</td>
+                                                                50,000
+                                                            </td>
                                                             <td class="text-center">
-                                                                50,000</td>
+                                                                50,000
+                                                            </td>
                                                         </tr>
 
                                                         </tbody>
@@ -482,16 +506,17 @@
 </div>
 </div>
 </section>
+<script src=" js/jquery.js"></script>
+<script src=" js/jquery-ui.min.js"></script>
+<script src=" js/html5shiv.min.js"></script>
+<script src=" js/respond.min.js"></script>
+<script src=" js/bootstrap.min.js"></script>
+<script src=" js/jquery.datetimepicker.full.js"></script>
+<script src=" js/bootstrap-datepicker.min.js"></script>
+<script src=" js/bootstrap-datepicker.vi.min.js"></script>
+<script src=" js/ckeditor.js"></script>
+<script src=" js/editor.js"></script>
+<script src=" js/ajax.js"></script>
 </body>
-<script src="js/jquery.js"></script>
-<script src="js/jquery-ui.min.js"></script>
-<script src="../admin/js/jsp5shiv.min.js"></script>
-<script src="js/respond.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.datetimepicker.full.js"></script>
-<script src="js/bootstrap-datepicker.min.js"></script>
-<script src="js/bootstrap-datepicker.vi.min.js"></script>
-<script src="js/ckeditor.js"></script>
-<script src="js/editor.js"></script>
-<script src="js/ajax1.js"></script>
+
 </html>
