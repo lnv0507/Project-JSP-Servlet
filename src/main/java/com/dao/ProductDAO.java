@@ -173,7 +173,6 @@ public class ProductDAO {
                 pd.setGiaTien(rsProducts.getInt(6));
                 pd.setSoLuongTrongKho(rsProducts.getInt(7));
                 pd.setDanhGia(rsProducts.getInt(8));
-                pd.setTinhTrang(rsProducts.getString(9));
                 getImagesByProduct(pd);
                 lsProducts.add(pd);
             }
@@ -202,7 +201,6 @@ public class ProductDAO {
             product.setGiaTien(rsProduct.getInt(5));
             product.setSoLuongTrongKho(rsProduct.getInt(6));
             product.setDanhGia(rsProduct.getInt(7));
-            product.setTinhTrang(rsProduct.getString(8));
             getImagesByProduct(product);
 
         }
@@ -230,7 +228,6 @@ public class ProductDAO {
                 productx.setGiaTien(rsProduct.getInt(5));
                 productx.setSoLuongTrongKho(rsProduct.getInt(6));
                 productx.setDanhGia(rsProduct.getInt(7));
-                productx.setTinhTrang(rsProduct.getString(8));
 
                 getImagesByProduct(productx);
                 lsProducts.add(productx);
@@ -263,7 +260,6 @@ public class ProductDAO {
                 productx.setGiaTien(rsProduct.getInt(5));
                 productx.setSoLuongTrongKho(rsProduct.getInt(6));
                 productx.setDanhGia(rsProduct.getInt(7));
-                productx.setTinhTrang(rsProduct.getString(8));
                 getImagesByProduct(productx);
 
                 list.add(productx);
