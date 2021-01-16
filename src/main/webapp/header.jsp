@@ -65,7 +65,7 @@
             <div class="col-md-12 menu_big">
                 <!-- logo begin -->
                 <h1 id="logo">
-                    <a href="index-2.jsp">
+                    <a href="<c:url value="/home"/>">
                         <img class="logo" src="images/logo.png" alt="">
                     </a>
                 </h1>

@@ -94,66 +94,6 @@
     <!-- content begin -->
     <div id="content" class="no-bottom no-top">
         <br><br><br><br>
-        <div class=" danhmuc ">
-            <div class="slick-slider slick-initialized " style="padding-left: 150px;">
-                <div class="slick-list ">
-                    <div class="slick-track " style="width: 870px; opacity: 1; transform: translate3d(0px, 0px, 0px); ">
-                        <div data-index="0 " class="slick-slide slick-active slick-current " tabindex="-1 "
-                             aria-hidden="false " style="outline: none; width: 145px;float: left; ">
-                            <div>
-                                <div class="qNnW6aqnuALd3o_gNDcqn Div-ln5jk2-0 UcezA " display="flex " tabindex="-1 "
-                                     style="width: 100%; display: inline-block; ">
-                                    <a href="pbep1-xenhabep.jsp">
-                                        <div class="ImageShimmer__ImagePlaceHolderWrapper-sc-1uc61-0 dbRlxn "
-                                             overflow="auto " height="80px "><img class="Img-sc-1au8jwx-0 iaHwKP "
-                                                                                  width="80px " src="https://www.hometown.in/media/cms/icon/Dining-Tables.png
-            " alt="Giường " height="auto " display="block "></div>
-                                        <label class="Label-sc-1anmpe5-0 gpDkZH " display="block " font-size="0.875rem "
-                                               font-style="normal " font-family="regular " type="note "
-                                               color="textDark "><font style="vertical-align: inherit;
-            "><font style="vertical-align: inherit; ">Xe nhà bếp</font></font></label></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-index="1 " class="slick-slide slick-active " tabindex="-1 " aria-hidden="false "
-                             style="outline: none; width: 145px;float: left; ">
-                            <div>
-                                <div class="qNnW6aqnuALd3o_gNDcqn Div-ln5jk2-0 UcezA " display="flex " tabindex="-1 "
-                                     style="width: 100%; display: inline-block; ">
-                                    <a href="pbep2-tubep.jsp">
-                                        <div class="ImageShimmer__ImagePlaceHolderWrapper-sc-1uc61-0 dbRlxn "
-                                             overflow="auto " height="80px "><img class="Img-sc-1au8jwx-0 iaHwKP "
-                                                                                  width="80px " src="https://www.hometown.in/media/cms/hometownnew/banner/storage-sideboard.png
-            " alt="Tủ quần áo " height="auto " display="block "></div>
-                                        <label class="Lael-sc-1anmpe5-0 gpDkZH " display="block " font-size="0.875rem "
-                                               font-style="normal " font-family="regular " type="note "
-                                               color="textDark "><font style="vertical-align: inherit;
-            "><font style="vertical-align: inherit; ">Tủ bếp </font></font></label></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div data-index="2 " class="slick-slide slick-active " tabindex="-1 " aria-hidden="false "
-                             style="outline: none; width: 145px;float: left; ">
-                            <div>
-                                <div class="qNnW6aqnuALd3o_gNDcqn Div-ln5jk2-0 UcezA " display="flex " tabindex="-1 "
-                                     style="width: 100%; display: inline-block; ">
-                                    <a href="pbep3-bodoan.jsp">
-                                        <div class="ImageShimmer__ImagePlaceHolderWrapper-sc-1uc61-0 dbRlxn "
-                                             overflow="auto " height="80px "><img class="Img-sc-1au8jwx-0 iaHwKP "
-                                                                                  width="80px " src="https://www.hometown.in/media/cms/banner/20150513/Cutlery-Sets.png
-            " alt="Bàn đầu giường " height="auto " display="block "></div>
-                                        <label class="Label-sc-1anmpe5-0 gpDkZH " display="block " font-size="0.875rem "
-                                               font-style="normal " font-family="regular " type="note "
-                                               color="textDark "><font style="vertical-align: inherit;
-            "><font style="vertical-align: inherit; ">Bộ đồ ăn </font></font></label></a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
         <br><br><br><br><br>
@@ -173,18 +113,18 @@
                         <h4>DANH MỤC SẢN PHẨM</h4>
                         <ul class="product">
 
-                            <li><a href="products.jsp">Tất cả <i class="fa fa-angle-right"
+                            <li><a href="<c:url value="/Products?index=1"/>">Tất cả <i class="fa fa-angle-right"
                                                                  style="padding-top:5px ;"></i> </a></li>
-                            <li><a href="pngu.jsp"> Nội thất phòng ngủ <i class="fa fa-angle-right"
+                            <li><a href="pngu.jsp"> Giường <i class="fa fa-angle-right"
                                                                           style="padding-top:5px ;"></i> </a></li>
-                            <li><a href="pkhach.jsp">Nội thất phòng khách <i class="fa fa-angle-right"
+                            <li><a href="pkhach.jsp">Bàn<i class="fa fa-angle-right"
                                                                              style="padding-top:5px ;"></i> </a></li>
-                            <li><a href="products.jsp">Nội thất phòng ăn <i class="fa fa-angle-right"
+                            <li><a href="products.jsp">Ghế <i class="fa fa-angle-right"
                                                                             style="padding-top:5px ;"></i> </a></li>
 
-                            <li><a href="ptreem.jsp">nội thất trẻ em <i class="fa fa-angle-right"
+                            <li><a href="ptreem.jsp">Tủ <i class="fa fa-angle-right"
                                                                         style="padding-top:5px ;"></i> </a></li>
-                            <li><a href="trangtri.jsp">Đồ trang trí<i class="fa fa-angle-right"
+                            <li><a href="trangtri.jsp">Kệ<i class="fa fa-angle-right"
                                                                       style="padding-top:5px ;"></i> </a></li>
                         </ul>
                     </div>

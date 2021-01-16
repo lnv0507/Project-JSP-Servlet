@@ -224,7 +224,7 @@
                                         <td class="text-right"> 999999</td>
                                         <td class="text-center"><i class="fa fa-trash-o"
                                                                    style="cursor:pointer;"
-                                                                   onclick="cms_delCustomer(${d.idAccount},1)"></i>
+                                                                   onclick="cms_delCustomer('${d.idAccount}',1)"></i>
 
                                         </td>
                                     </tr>

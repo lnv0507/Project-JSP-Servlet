@@ -235,62 +235,7 @@
                             </div>
 
                         </div>
-                        <!-- <div class="sup-body"><table class="table table-bordered">
-                            <thead>
-                            <tr>
-                                <th class="text-center">Mã NCC</th>
-                                <th class="text-center">Tên NCC</th>
-                                <th class="text-center">Điện thoại</th>
-                                <th class="text-center">Địa chỉ</th>
-                                <th class="text-center">Lần cuối nhập hàng</th>
-                                <th class="text-center" style="background-color: #fff;">Tổng tiền hàng</th>
-                                <th class="text-center">Nợ</th>
-                                <th></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                                        <tr>
-                                        <td class="text-center" onclick="cms_detail_supplier(23)" style="cursor: pointer; color: #1b6aaa;">NCC000003</td>
-                                        <td class="text-center" onclick="cms_detail_supplier(23)" style="cursor: pointer; color: #1b6aaa;">HieuSecondHand</td>
-                                        <td class="text-center">02081234567</td>
-                                        <td class="text-left">Nguyễn Ngọc Vũ - Hà Nội</td>
-                                        <td class="text-center">2019-06-14 23:32:00</td>
-                                        <td class="text-right" style="font-weight: bold; background-color: #f9f9f9;">75,000,000                </td>
-                                        <td class="text-right">0</td>
-                                        <td class="text-center"><i class="fa fa-trash-o" style="cursor:pointer;" onclick="cms_delsup(23,1);"></i></td>
-                                    </tr>
-                                            <tr>
-                                        <td class="text-center" onclick="cms_detail_supplier(22)" style="cursor: pointer; color: #1b6aaa;">NCC000002</td>
-                                        <td class="text-center" onclick="cms_detail_supplier(22)" style="cursor: pointer; color: #1b6aaa;">The Nineteen 2Hand</td>
-                                        <td class="text-center">02083656789</td>
-                                        <td class="text-left">Gò Vấp - Thành Phố Hồ Chí Minh</td>
-                                        <td class="text-center">-</td>
-                                        <td class="text-right" style="font-weight: bold; background-color: #f9f9f9;">0                </td>
-                                        <td class="text-right">0</td>
-                                        <td class="text-center"><i class="fa fa-trash-o" style="cursor:pointer;" onclick="cms_delsup(22,1);"></i></td>
-                                    </tr>
-                                            <tr>
-                                        <td class="text-center" onclick="cms_detail_supplier(21)" style="cursor: pointer; color: #1b6aaa;">NCC000001</td>
-                                        <td class="text-center" onclick="cms_detail_supplier(21)" style="cursor: pointer; color: #1b6aaa;">3Bich</td>
-                                        <td class="text-center">0123456777</td>
-                                        <td class="text-left">Bình Thạnh - Thành Phố Hồ Chí Minh</td>
-                                        <td class="text-center">-</td>
-                                        <td class="text-right" style="font-weight: bold; background-color: #f9f9f9;">0                </td>
-                                        <td class="text-right">0</td>
-                                        <td class="text-center"><i class="fa fa-trash-o" style="cursor:pointer;" onclick="cms_delsup(21,1);"></i></td>
-                                    </tr>
-                                    </tbody>
-                        </table>
-                        <div class="alert alert-info summany-info clearfix" role="alert">
-                            <div class="sm-info pull-left padd-0">
-                                Số NCC:<span>3</span>
-                                Tổng tiền: <span>75,000,000 đ</span>
-                                Tổng nợ: <span>0 đ</span>
-                            </div>
-                            <div class="pull-right ajax-pagination">
-                                    </div>
-                        </div>
-                    </div> -->
+
 
                     </div>
                 </div>
