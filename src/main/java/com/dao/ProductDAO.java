@@ -404,7 +404,17 @@ public class ProductDAO {
         return listCategory;
     }
 
-    //chon san pham theo loai
+
+
+    public static void main(String[] args) {
+
+        ProductDAO dao = new ProductDAO();
+        List<ProductDTO> listCategory = dao.getListCategory();
+
+
+        System.out.println(listCategory);
+    }
+
 
 
 
