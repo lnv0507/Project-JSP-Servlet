@@ -35,6 +35,7 @@ public class Products extends HttpServlet {
             ArrayList<ProductDTO> listProductsByPage = productDAO.getListByPage(index, pageSize);
             request.setAttribute("endPage",endPage);
             request.setAttribute("data",listProductsByPage);
+            request.setAttribute("servlet","Products?");
             request.getRequestDispatcher("products.jsp").forward(request,response);
     }
 

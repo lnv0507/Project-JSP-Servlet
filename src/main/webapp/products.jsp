@@ -104,9 +104,12 @@
 
                 <div id="sidebar" class="col-md-3">
                     <div class="widget widget_search">
+                        <form action="SearchProduct" method="get">
                         <input type='text' name='search' id='search' class="form-control"
                                placeholder="tìm kiếm sản phẩm">
+                            <input hidden name="index" value="1">
                         <button id="btn-search" type='submit'></button>
+                        </form>
                         <div class="clearfix"></div>
                     </div>
                     <div class="widget widget_category">
@@ -204,9 +207,11 @@
                         <div class="otherInfo ">
 
                             <ul class="pagination">
+
                                 <c:forEach begin="1" end="${endPage}" var="i">
-                                    <a href="Products?index=${i}">${i}</a>
+                                    <a href="${servlet}index=${i}">${i}</a>
                                 </c:forEach>
+
                             </ul>
                             <div class="otherInfoBody ">
                                 <div class="col-md-3 col-sm-6 ">
