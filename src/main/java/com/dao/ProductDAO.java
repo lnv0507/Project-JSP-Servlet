@@ -367,6 +367,46 @@ public class ProductDAO {
         }
         return result;
     }
+    //Load danh muc
+    public ArrayList<ProductDTO> getListCategory() {
+        Connection con = null;
+        ResultSet rs = null;
+
+        PreparedStatement ps = null;
+        ArrayList<ProductDTO> listCategory = new ArrayList<>();
+        try {
+            con = DBUtils.makeConnection();
+
+            String sql = "SELECT DISTINCT loai from product";
+            ps = con.prepareStatement(sql);
+            rs = ps.executeQuery();
+            rs.beforeFirst();
+            while (rs.next()) {
+                ProductDTO pd = new ProductDTO();
+                pd.setLoai(rs.getString(1));
+
+
+
+                listCategory.add(pd);
+            }
+            Collection<ProductDTO> values = listCategory;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }finally {
+            try {
+                if(rs!=null) rs.close();
+
+                if(ps!=null) ps.close();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        return listCategory;
+    }
+
+    //chon san pham theo loai
+
+
 
 
 }
