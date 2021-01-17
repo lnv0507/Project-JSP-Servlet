@@ -77,13 +77,12 @@
             </div>
         </section>
 
-
         <!-- content begin -->
         <div class="profile">
             <div class="profile-account">
                 <div>
                     <i class="fa fa-user"></i>
-                    <span>lamlam0633</span>
+                    <span><%=ac.getIdAccount()%></span>
                 </div>
                 <div>
                     <ul>
@@ -111,19 +110,21 @@
                         <table>
                             <tr class="infor">
                                 <td>Tên Đăng Nhập</td>
-                                <td>lamlam0633</td>
+                                <td><%=ac.getIdAccount()%>
+                                </td>
                             </tr>
                             <tr class="infor">
                                 <td>Tên</td>
-                                <td><input type="text"></td>
+                                <td><input type="text" value="<%=ac.getTenAccount()%>"></td>
                             </tr>
                             <tr class="infor">
                                 <td>Email</td>
+                                <%=ac.getEmail()%>
                                 <td><a href="">Thêm</a></td>
                             </tr>
                             <tr class="infor">
                                 <td>Số Điện Thoại</td>
-                                <td>*******05 <a href="">Thay Đổi</a></td>
+                                <td><%=ac.getSoDienThoai()%> <a href="">Thay Đổi</a></td>
                             </tr>
                             <tr class="infor">
                                 <td>Số Tài Khoản</td>

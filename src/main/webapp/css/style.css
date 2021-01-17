@@ -82,12 +82,37 @@ div.header-banner-item .search .icon-email {
     font-size: 25px;
     color: rgba(242, #0b0b0b, 242, 1);
 }
-
-div.header-banner-item ul {
+.info-mation{
+    padding-top:5px;
     display: flex;
-    justify-content: space-between;
-    margin-top: 5px;
 }
+.info-mation h5{
+    padding-right: 10px;
+    /*cursor: pointer;*/
+}
+#itemUserr{
+    z-index: 99999999999999999999999999999999;
+    position: absolute;
+    display: none;
+    list-style: none;
+    padding: 10px;
+    right: 23.5%;
+    background-color: white;
+    margin-top: 10px;
+}
+#itemUserr li a{
+    text-decoration: none;
+}
+#itemUserr li{
+    color: black;
+    border-bottom: solid 1px black;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+/*.helloUser:hover .itemUserr{*/
+/*    display: block;*/
+
+/*}*/
 
 div.header-banner-item ul h5 {
     cursor: pointer;

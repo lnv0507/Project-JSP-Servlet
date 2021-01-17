@@ -85,6 +85,7 @@
                                         <input id="check" type="checkbox" class="check">
                                         <label for="check"><span class="icon"></span>Lưu Đăng Nhập</label>
                                     </div>
+                                    <input type="hidden" name="action" value="login">
                                     <div class="group">
                                         <input type="submit" class="button" value="Sign In" onclick="signIn()">
                                     </div>

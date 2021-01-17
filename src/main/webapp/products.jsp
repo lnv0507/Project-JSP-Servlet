@@ -105,9 +105,9 @@
                 <div id="sidebar" class="col-md-3">
                     <div class="widget widget_search">
                         <form action="SearchProduct" method="get">
-                        <input type='text' name='search' id='search' class="form-control"
+                        <input   type='text' name='search' id='search' class="form-control"
                                placeholder="tìm kiếm sản phẩm">
-                            <input hidden name="index" value="1">
+                            <input id="index" hidden name="index" value="1">
                         <button id="btn-search" type='submit'></button>
                         </form>
                         <div class="clearfix"></div>
@@ -130,7 +130,7 @@
                     <div class="widget widget_top_rated_product">
                         <h4>Các SẢN PHẨM mới NHẤT </h4>
                         <c:forEach items="${t.top5}" var="o">
-                            <ul>
+                            <ul class="test">
                                 <li>
                                     <a class="font_new" href="ProductDetailController?id=${o.getIdProduct()}">
                                         <div>
