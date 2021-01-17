@@ -25,13 +25,6 @@ function signIn() {
     }
 }
 
-var name = document.getElementById("name");
-var thongtin = document.getElementById("itemUserr");
-name.onclick = function () {
-    thongtin.style.display = "block";
-};
-
-
 function submit() {
     var fullname = document.getElementById("fullname");
     var email = document.getElementById("email");
@@ -61,7 +54,6 @@ function submit() {
         status = true;
     }
 }
-
 
 // function menubar() {
 
@@ -207,45 +199,22 @@ $(document).ready(function () {
 // Get the <span> element that closes the modal
     var span = document.getElementsByClassName("close")[0];
 
-
-    $('.sp-current-big').click(function () {
+    $('.sp-current-big').click(function (){
         modal.style.display = "block";
         $('#popup').load("image.jsp");
     });
-    $('.sp-current-big2').click(function () {
+    $('.sp-current-big2').click(function (){
         modal.style.display = "block";
         $('#popup').load("imagelist.jsp");
     });
-    span.onclick = function () {
+    span.onclick = function (){
         modal.style.display = "none";
-    };
-    window.onclick = function (event) {
-        if (event.target == modal) {
+    }
+    window.onclick = function (event){
+        if(event.target == modal){
             modal.style.display = "none";
         }
-    };
-
-    //search
-    // $('btn-search').click(function () {
-    //     var search = document.getElementById("search");
-    //     var index = document.getElementById("index");
-    //     $.ajax({
-    //         url: 'SearchProduct',
-    //         method: 'GET',
-    //         data: {search: search, index: index},
-    //         sucess: function (data){
-    //             $('.test').load('SearchProduct');
-    //         }
-    //
-    //     });
-    // });
-
-    // jquery hien thi thong tin
-
-    // $('#name').click(function () {
-    //     thongtin.style.display = "block";
-    // });
-
+    }
 });
 // tạo jquery cho sản phẩm ------------------------
 //---------------------------------------------
