@@ -35,7 +35,7 @@ a {
     width: 100%;
     margin: auto;
     max-width: 525px;
-    min-height: 670px;
+    min-height: 100%;
     position: relative;
     background-color: #0a0a0a;
     box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
@@ -48,6 +48,10 @@ a {
     padding: 90px 70px 50px 70px;
     background: rgb(27, 27, 27);
     opacity: .9;
+}
+.login-html-login{
+    min-height:550px !important;
+    height: 550px !important;
 }
 
 .login-html .sign-in-htm,

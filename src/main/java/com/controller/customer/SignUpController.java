@@ -22,9 +22,9 @@ public class SignUpController extends HttpServlet {
         PrintWriter out = response.getWriter();
         try {
             String username = request.getParameter("txtID");
-            String tenAccount = request.getParameter("");
-            String soDienThoai = request.getParameter("");
-            String diaChi = request.getParameter("");
+            String tenAccount = request.getParameter("txtName");
+            String soDienThoai = request.getParameter("txtNumber");
+            String diaChi = request.getParameter("txtAddr");
             String email = request.getParameter("email");
             String pass = request.getParameter("password");
             String repass = request.getParameter("repass");

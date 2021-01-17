@@ -62,13 +62,13 @@
         <!-- content begin -->
         <div id="content" class="no-bottom no-top">
             <section class="background-login">
-                <div class="login-wrap">
-                    <div class="login-html">
+                <div class="login-wrap login-html-login">
+                    <div class="login-html login-html-login">
                         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
                                                                                                  class="tab"><a
-                            href="#">Đăng Nhập</a></label>
+                            href="<c:url value="/Signin"/> ">Đăng Nhập</a></label>
                         <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"><a
-                            href="register.jsp">Đăng Ký</a></label>
+                            href="<c:url value="/signup"/>">Đăng Ký</a></label>
                         <div class="login-form">
                             <form action="Signin" method="post">
                                 <div class="sign-in-htm">

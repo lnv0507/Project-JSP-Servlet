@@ -66,10 +66,6 @@ function submit() {
 // }
 // SEARCH
 $(document).ready(function () {
-    $('.search').hover(function () {
-        $('#input-search').fadeToggle(300);
-        $('#mainmenu').toggle(1000);
-    });
 
 
 //     $("#sliderShuffle").cycle({

@@ -64,12 +64,16 @@
             <div class="login-wrap">
                 <div class="login-html">
                     <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab"><a
-                        href="#">Đăng Ký</a></label>
+                        href="<c:url value="/signup"/> ">Đăng Ký</a></label>
                     <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"><a
-                        href="login.jsp">Đăng Nhập</a></label>
+                        href="<c:url value="/Signin"/> ">Đăng Nhập</a></label>
                     <div class="login-form">
                         <form action="signup" method="POST">
                             <div class="sign-in-htm">
+                                <div class="group">
+                                    <label for="user" class="label">Họ Và Tên</label>
+                                    <input id="name" type="text" class="input" name="txtName">
+                                </div>
                                 <div class="group">
                                     <label for="user" class="label">Tài Khoản</label>
                                     <input id="user" type="text" class="input" name="txtID">
@@ -84,6 +88,14 @@
                                            name="repass">
                                 </div>
                                 <div class="group">
+                                    <label for="user" class="label">Số Điện Thoại</label>
+                                    <input id="numner" type="text" class="input" name="txtNumber">
+                                </div>
+                                <div class="group">
+                                    <label for="user" class="label">Địa Chỉ</label>
+                                    <input id="address" type="text" class="input" name="txtAddr">
+                                </div>
+                                <div class="group">
                                     <label for="pass" class="label">Email</label>
                                     <input id="email" name="email" type="text" class="input">
                                 </div>
@@ -92,7 +104,7 @@
                                 </div>
                                 <div class="hr"></div>
                                 <div class="foot-lnk">
-                                    <a href="login.jsp"> Đã Có Tài Khoản?</a>
+                                    <a href="<c:url value="/Signin"/> "> Đã Có Tài Khoản?</a>
                                 </div>
                             </div>
                         </form>

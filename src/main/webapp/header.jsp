@@ -43,13 +43,23 @@
                     <li>Thông Báo</li>
                 </ul>
             </div>
-            <h5><a href="logout">Đăng Xuất</a></h5>
+            <h5><a href="<c:url value="/logout"/>">Đăng Xuất</a></h5>
+            <%
+                String chucVu = (String) session.getAttribute("chucvu");
+                if (chucVu.equalsIgnoreCase("ADMIN")) {
+
+            %>
+            <h5><a href="<c:url value="admin/addproduct"/> "> ADMIN </a></h5>
+            <%
+                }
+            %>
         </div>
+
         <%
         } else {
         %>
         <ul>
-            <h5><a href="login.jsp"><i class="fa fa-user"></i></a></h5>
+            <h5><a href="<c:url value="/Signin" />"><i class="fa fa-user"></i></a></h5>
         </ul>
         <% }
         %>
@@ -99,9 +109,9 @@
                             <li>
                                 <form action="Search" method="get">
                                     <p id="search">
-                                        <i  class="fa fa-search"><input placeholder="Tìm Kiếm..." style="display: none;" id="input-search"
-                                                   type="search" class="input-text" name="search">
-                                        </i>
+                                        <a href="Search.jsp">
+                                            <i class="fa fa-search"></i>
+                                        </a>
                                     </p>
                                 </form>
                                 <p class="cart">

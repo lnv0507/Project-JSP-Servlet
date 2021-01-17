@@ -45,6 +45,7 @@ public class SignInController extends HttpServlet {
             if (check) {
                 HttpSession session = request.getSession();
                 session.setAttribute("tendangnhap", accDTO.getTenAccount());
+                session.setAttribute("chucvu", accDTO.getChucVu());
                 url = SUCCESS;
                 url = LOGINOK;
             }
