@@ -210,11 +210,11 @@ $(document).ready(function () {
 
     $('.sp-current-big').click(function () {
         modal.style.display = "block";
-        $('#popup').load("image.jsp");
+        $('#popup').load("cart.jsp");
     });
     $('.sp-current-big2').click(function () {
         modal.style.display = "block";
-        $('#popup').load("imagelist.jsp");
+        $('#popup').load("cart.jsp");
     });
     span.onclick = function () {
         modal.style.display = "none";

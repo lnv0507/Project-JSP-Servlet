@@ -65,8 +65,7 @@
                                 </div>
                                 <div class="col-sm-9">
                                     <input type="text" id="customer_code" name="customer_create" class="form-control"
-                                           value=""
-                                           placeholder="Nhập mã nhân viên">
+                                           value="" placeholder="Nhập mã nhân viên">
                                     <span style="color: red; font-style: italic;" class="error error-manv"></span>
                                 </div>
                             </div>
@@ -114,8 +113,8 @@
                                 </div>
                             </div>
                             <div class="modal-footer">
-                                <button id="submit_create" type="button" class="btn btn-primary btn-sm btn-crnv"><i
-                                        class="fa fa-check"></i> Lưu
+                                <button id="submit_create_admin" type="button" class="btn btn-primary btn-sm btn-crnv">
+                                    <i class="fa fa-check"></i> Lưu
                                 </button>
                                 <button type="button" class="btn btn-default btn-sm btn-close" data-dismiss="modal"><i
                                         class="fa fa-undo"></i> Bỏ qua
@@ -176,7 +175,7 @@
                                                                        title="Sửa"
                                                                        onclick="cms_edit_usitem(24)"
                                                                        style="margin-right: 10px; cursor: pointer;"></i><i
-                                                    onclick="cms_del_usitem(24)" title="Xóa"
+                                                    onclick="cms_del_usitem('${d.idAccount}')" title="Xóa"
                                                     class="fa fa-trash-o delete-item" style="cursor: pointer;"></i></td>
                                         </tr>
                                         <tr class="edit-tr-item-24" style="display: none;">

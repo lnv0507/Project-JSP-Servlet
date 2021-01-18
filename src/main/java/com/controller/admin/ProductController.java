@@ -52,6 +52,8 @@ public class ProductController extends HttpServlet {
                     proDTO.addImage(listImage);
                     proDAO.uploadImage(idProduct, listImage);
                 }
+                HttpSession session = request.getSession();
+                session.setAttribute("products" ,proDAO );
                 proDAO.upload(proDTO);
                 url = SUCCESS;
             }

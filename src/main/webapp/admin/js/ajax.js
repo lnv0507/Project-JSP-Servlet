@@ -466,12 +466,13 @@ function cms_del_usitem($id) {
     if (conf) {
         var $param = {
             'type': 'POST',
-            'url': 'ajax/cms_del_usitem',
+            'url': 'deleteAccount',
             'data': {'id': $id},
             'callback': function (data) {
                 if (data != '0') {
                     cms_upuser();
                     $('.ajax-success-ct').html('Xóa thành viên thành công!').parent().fadeIn().delay(1000).fadeOut('slow');
+                    window.location.href = "/webshop/admin/admincreate";
                 } else {
                     alert('Không thể xóa nhân viên!');
                 }
@@ -3113,7 +3114,6 @@ $('#submit_create').click( function () {
         $.ajax({
             url: 'createAcount',
             method: "POST",
-            contentType: "application/json",
             data: {
                 customer_code: customer_code,
                 customer_name: customer_name,
@@ -3122,18 +3122,44 @@ $('#submit_create').click( function () {
                 customer_addr: customer_addr,
                 customer_password: customer_password
             },
-            dataType:'json',
             success: function (data) {
                 // history.pushState({},"","/webshop/admin/createAcount");
                 console.log(data);
                 window.location.href = "/webshop/admin/createAcount";
-            },
-            error:function (error){
-                console.log(error);
             }
         });
 
 
     }
 
-})
+});
+
+$('#submit_create_admin').click( function () {
+    var customer_code = $('#customer_code').val();
+    var customer_name = $('#customer_name').val();
+    var customer_phone = $('#customer_phone').val();
+    var customer_email = $('#customer_email').val();
+    var customer_addr = $('#customer_addr').val();
+    var customer_password = $('#customer_password').val();
+    if (customer_code == '' || customer_name == '' || customer_phone == '' || customer_email == '' || customer_addr == '' || customer_password == '') {
+        alert('Không được bỏ trống nha!');
+    } else {
+        $.ajax({
+            url: 'admincreate',
+            method: "POST",
+            data: {
+                customer_code: customer_code,
+                customer_name: customer_name,
+                customer_phone: customer_phone,
+                customer_email: customer_email,
+                customer_addr: customer_addr,
+                customer_password: customer_password
+            },
+            success: function (data) {
+                // history.pushState({},"","/webshop/admin/createAcount");
+                console.log(data);
+                window.location.href = "/webshop/admin/admincreate";
+            }
+        });
+    }
+});

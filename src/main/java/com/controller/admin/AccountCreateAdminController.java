@@ -20,7 +20,7 @@ public class AccountCreateAdminController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String url = ERROR;
-        resp.setContentType("application/json");
+        resp.setContentType("text/html;charset=UTF-8");
         try {
             String idAccount = req.getParameter("customer_code");
             String nameAccount = req.getParameter("customer_name");
@@ -65,9 +65,8 @@ public class AccountCreateAdminController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         AccountDAO accountDAO = new AccountDAO();
         ArrayList<AccountDTO> list = accountDAO.getAccount();
-        resp.setContentType("application/json");
         try {
-//            HttpSession session = req.getSession();
+            HttpSession session = req.getSession();
             req.setAttribute("listAC", list);
             req.getRequestDispatcher("/admin/KhachHang.jsp").forward(req, resp);
         } catch (Exception e) {
