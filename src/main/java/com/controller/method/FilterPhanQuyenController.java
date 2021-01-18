@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(filterName = "FilterPhanQuyenController", urlPatterns = "/*")
+
 public class FilterPhanQuyenController implements Filter {
     public static final String home = "/webshop/home";
     private ServletContext context;

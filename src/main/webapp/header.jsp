@@ -99,10 +99,7 @@
 
                         </li>
                         <li><a href="<c:url value="/projects"/>">Thiết kế</a></li>
-                        <li>
-                            <a href="<c:url value="/newfeed"/>">Tin tức</a>
 
-                        </li>
 
                         <li><a href="<c:url value="/about"/> ">Về Chúng Tôi</a></li>
 
