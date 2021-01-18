@@ -68,7 +68,11 @@ public class ProductController extends HttpServlet {
 //        doPost(request, response);
         ProductDAO pd = new ProductDAO();
         ArrayList<ProductDTO> listPro = pd.getList();
+        //list Category
+        ArrayList<ProductDTO> listCategory = pd.getListCategory();
         request.setAttribute("data", listPro);
+        //
+        request.setAttribute("listC", listCategory);
         request.getRequestDispatcher("/admin/SanPham.jsp").forward(request, response);
 
     }

@@ -119,17 +119,10 @@
                             <li><a href="<c:url value="/Products?index=1"/>">Tất cả <i class="fa fa-angle-right"
                                                                                        style="padding-top:5px ;"></i>
                             </a></li>
-                            <li><a href="pngu.jsp"> Giường <i class="fa fa-angle-right"
-                                                              style="padding-top:5px ;"></i> </a></li>
-                            <li><a href="pkhach.jsp">Bàn<i class="fa fa-angle-right"
-                                                           style="padding-top:5px ;"></i> </a></li>
-                            <li><a href="products.jsp">Ghế <i class="fa fa-angle-right"
-                                                              style="padding-top:5px ;"></i> </a></li>
-
-                            <li><a href="ptreem.jsp">Tủ <i class="fa fa-angle-right"
-                                                           style="padding-top:5px ;"></i> </a></li>
-                            <li><a href="trangtri.jsp">Kệ<i class="fa fa-angle-right"
-                                                            style="padding-top:5px ;"></i> </a></li>
+                            <c:forEach items="${listC}" var="d">
+                                <li><a href="#">${d.loai} <i class="fa fa-angle-right"
+                                                             style="padding-top:5px ;"></i> </a></li>
+                            </c:forEach>
                         </ul>
                     </div>
 
