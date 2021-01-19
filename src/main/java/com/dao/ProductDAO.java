@@ -409,7 +409,7 @@ public class ProductDAO {
     public static void main(String[] args) {
 
         ProductDAO dao = new ProductDAO();
-        List<ProductDTO> listCategory = dao.getListCategory();
+        List<ProductDTO> listCategory = dao.getList();
 
 
         System.out.println(listCategory);

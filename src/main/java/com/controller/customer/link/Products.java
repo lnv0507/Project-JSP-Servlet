@@ -32,11 +32,37 @@ public class Products extends HttpServlet {
             if(allProducts.size() % pageSize != 0){
                 endPage++;
             }
+        handleParameter(request);
             ArrayList<ProductDTO> listProductsByPage = productDAO.getListByPage(index, pageSize);
+        ArrayList<ProductDTO> listCategory = productDAO.getListCategory();
             request.setAttribute("endPage",endPage);
             request.setAttribute("data",listProductsByPage);
             request.setAttribute("servlet","Products?");
+            request.setAttribute("listC",listCategory);
             request.getRequestDispatcher("products.jsp").forward(request,response);
+    }
+
+    private void handleParameter(HttpServletRequest request) {
+        int pages=1;
+        String category_name="";
+        String url ="";
+        String sqlCondition="";
+        if(request.getParameter("pages")!=null){
+            pages=Integer.parseInt(request.getParameter("pages"));
+
+        }
+        if(request.getParameter("category")!=null){
+            category_name=request.getParameter("category_name");
+
+            sqlCondition+="and category="+category_name;
+            url +="&category="+category_name;
+        }
+        request.setAttribute("pages",pages);
+        request.setAttribute("category_name",category_name);
+        request.setAttribute("url",url);
+        request.setAttribute("direct_to","products.jsp");
+        request.setAttribute("sql","select * from product"+ sqlCondition);
+
     }
 
 
