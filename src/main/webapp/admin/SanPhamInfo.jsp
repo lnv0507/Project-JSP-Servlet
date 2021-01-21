@@ -1,4 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html><html lang="en">
 <head>
     <meta charset="utf-8">
@@ -502,13 +504,15 @@
             </div>
 
             <div class="main-space orders-space"></div>
-
+            <c:forEach items="${product}" var="p">
             <div class="products-content" style="margin-bottom: 25px;">
                 <div class="basic-info">
                     <div class="row">
                         <div class="col-md-12">
+
                             <div class="col-md-4 padd-0">
-                                <h3>Thông tin cơ bản</h3>
+                                <h3>
+                                    Thông tin cơ bản</h3>
                                 <small>Nhập tên và các thông tin cơ bản của sản phẩm</small>
                             </div>
                             <div class="col-md-8">
@@ -517,20 +521,19 @@
                                         <div class="col-md-6 padd-left-0">
                                             <label>Tên sản phẩm</label>
 
-                                            <div style="font-size: 18px; color: white; ">Đồng hồ thể thao nữ Sport watch
-                                                samda
+                                            <div style="font-size: 18px; color: white; ">${p.getTenProduct()}
                                             </div>
                                         </div>
                                         <div class="col-md-6 padd-right-0">
                                             <label>Mã sản phẩm</label>
 
-                                            <div style="font-size: 18px; color: white; ">SP000006</div>
+                                            <div style="font-size: 18px; color: white; ">${p.getIdProduct()}></div>
                                         </div>
                                     </div>
                                     <div class="form-group clearfix">
                                         <div class="col-md-6 padd-left-0">
                                             <label>Số lượng</label>
-                                            <div style="font-size: 18px; color: white; ">1997</div>
+                                            <div style="font-size: 18px; color: white; ">${p.getSoLuongTrongKho()}</div>
                                         </div>
                                         <div class="col-md-6">
                                             <div style="padding-bottom: 5px; font-weight: 700; color: #ffffff; "><span>Theo dõi tồn kho :</span>
@@ -540,15 +543,11 @@
                                         </div>
                                     </div>
                                     <div class="form-group clearfix">
-                                        <div class="col-md-6 padd-left-0">
-                                            <label>Giá vốn</label>
 
-                                            <div style="font-size: 18px; color: white; ">150,000</div>
-                                        </div>
                                         <div class="col-md-6 padd-right-0">
                                             <label>Giá bán</label>
 
-                                            <div style="font-size: 18px; color: white; ">300,000</div>
+                                            <div style="font-size: 18px; color: white; ">${p.getGiaTien()}</div>
                                         </div>
                                     </div>
                                     <div class="form-group clearfix">
@@ -556,39 +555,18 @@
                                             <label>Danh mục</label>
 
                                             <div class="col-md-12 padd-0">
-                                                <div style="font-size: 18px; color: white; ">Đồng Hồ Nữ</div>
+                                                <div style="font-size: 18px; color: white; ">${p.getLoai()}</div>
                                             </div>
                                         </div>
-                                        <div class="col-md-6 padd-right-0">
-                                            <label>Nhà Cung cấp</label>
-
-                                            <div class="col-md-12 padd-0">
-                                                <div style="font-size: 18px; color: white; ">3Bich</div>
-                                            </div>
-                                        </div>
-
                                     </div>
-                                    <!--                            <div class="form-group clearfix">-->
-                                    <!--                                <div class="col-md-6 padd-0">-->
-                                    <!--                                    <label>Thuế VAT</label>-->
-                                    <!---->
-                                    <!--                                    <div>-->
-                                    <!--</div>-->
-                                    <!--                                </div>-->
-                                    <!--                            </div>-->
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
                 <div class="expand-info">
                     <div class="row">
-                        <!-- <div class="col-md-12">
-                            <h4 style="border-bottom: 1px solid white; padding-bottom: 10px;"><i class="fa fa-th-large blue"></i> <a style="color: white; text-decoration: none;" data-toggle="collapse" href="#collapseproductinfo" aria-expanded="false" aria-controls="collapseExample">Thông
-                                    tin mở rộng(
-                                    <small> Nhấn để xem các thông tin cho thuộc tính web</small>
-                                    )</a></h4>
-                        </div> -->
                         <div class="col-md-12">
                             <div style="margin-top: 5px;"></div>
                             <div id="collapseproductinfo">
@@ -597,7 +575,7 @@
                                     <div class="row">
                                         <div class="col-md-6 padd-20">
                                             <h3 style="color:white;">Hình ảnh sản phẩm</h3>
-                                            <img src="images/a1.jpg" style="width: 300px ; height: 300px;" alt="">
+                                            <img src="../images/products/${p.getImages().get(0)}" style="width: 300px ; height: 300px;" alt="">
                                         </div>
 
                                         <div class="col-md-6 padd-20">
@@ -618,6 +596,7 @@
             </div>
         </div>
     </div>
+    </c:forEach>
 </div>
 </div>
 </div>

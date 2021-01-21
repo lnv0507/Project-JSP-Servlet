@@ -404,15 +404,54 @@ public class ProductDAO {
         return listCategory;
     }
 
+//fillter theo Category_name
+public ArrayList<ProductDTO> getProductByCategoryName(String CName) {
+    ArrayList<ProductDTO> result = new ArrayList<>();
+    Connection con;
+    PreparedStatement preparedStatement = null;
+    ResultSet rs = null;
+    String sql = "Select * from product where loai like ?";
+    try {
+        con = DBUtils.makeConnection();
+        preparedStatement = con.prepareStatement(sql);
+        preparedStatement.setString(1,CName );
 
+        rs = preparedStatement.executeQuery();
+        rs.beforeFirst();
+        while (rs.next()) {
+            ProductDTO product = new ProductDTO();
+            product.setIdProduct(rs.getString(1));
+            product.setTenProduct(rs.getString(2));
+            product.setLoai(rs.getString(3));
+            product.setChatLieu(rs.getString(4));
+            product.setGiaTien(rs.getInt(5));
+            product.setSoLuongTrongKho((rs.getInt(6)));
+            product.setDanhGia(rs.getInt(7));
+            product.setTinhTrang(rs.getString(8));
+            getImagesByProduct(product);
+            result.add(product);
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        try {
+            if (preparedStatement != null) preparedStatement.close();
+            if (rs != null) rs.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    return result;
+}
 
     public static void main(String[] args) {
 
         ProductDAO dao = new ProductDAO();
-        List<ProductDTO> listCategory = dao.getList();
+        List<ProductDTO> listPrByCategory = dao.getProductByCategoryName("Tủ kệ");
 
 
-        System.out.println(listCategory);
+        System.out.println(listPrByCategory);
     }
 
 

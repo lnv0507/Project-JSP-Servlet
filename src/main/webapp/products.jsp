@@ -120,7 +120,7 @@
                                                                                        style="padding-top:5px ;"></i>
                             </a></li>
                             <c:forEach items="${listC}" var="d">
-                                <li><a href="#">${d.loai} <i class="fa fa-angle-right"
+                                <li><a href="Category?category_name=${d.loai}">${d.loai} <i class="fa fa-angle-right"
                                                              style="padding-top:5px ;"></i> </a></li>
                             </c:forEach>
                         </ul>
