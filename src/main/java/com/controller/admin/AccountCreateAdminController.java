@@ -68,7 +68,7 @@ public class AccountCreateAdminController extends HttpServlet {
         try {
             HttpSession session = req.getSession();
             req.setAttribute("listAC", list);
-            req.getRequestDispatcher("/admin/KhachHang.jsp").forward(req, resp);
+            req.getRequestDispatcher("KhachHang.jsp").forward(req, resp);
         } catch (Exception e) {
             e.printStackTrace();
         }

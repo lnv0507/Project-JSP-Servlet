@@ -32,7 +32,6 @@
 
             <div class="ajax-success-ct"></div>
         </div>
-        <!-- Start create employee -->
 
         <div class="products">
             <div class="breadcrumbs-fixed panel-action">
@@ -46,14 +45,12 @@
                         <div class="col-md-6">
                             <div class="right-action text-right">
                                 <div class="btn-groups">
-                                    <!-- onclick="cms_vcrproduct('1')" -->
                                     <a href="SanPhamCreate.jsp">
                                         <button type="button" class="btn btn-primary"><i
                                                 class="fa fa-plus"> </i> Tạo sản phẩm
                                         </button>
                                     </a>
 
-                                    <!-- <button type="button" class="btn btn-success"><i class="fa fa-download"></i> Xuất Excel</button> -->
                                 </div>
                             </div>
                         </div>
@@ -158,7 +155,6 @@
                             <th class="text-center">Giá bán</th>
                             <th class="text-center">Danh mục</th>
                             <th class="text-center">Tình Trạng</th>
-                            <!--        <th class="text-center">Hình</th>-->
                             <th></th>
                         </tr>
                         </thead>
@@ -167,7 +163,6 @@
                         <tr>
                             <td class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox" value="119" class="checkbox chk"><span style="width: 15px; height: 15px;"></span></label>
                             </td>
-                            <!--  onclick="cms_detail_product(119)" style="color: #2a6496; cursor: pointer;" -->
                             <td class="text-left prd_name">${d.tenProduct}</td>
                             <td class="text-center">${d.idProduct}</td>
                             <td class="text-center">
@@ -178,7 +173,7 @@
                             <td>${d.loai}</td>
                             <td>${d.tinhTrang}</td>
                             <td class="text-center">
-                                <a href="SanPhamInfo.jsp">
+                                <a href="DetailProduct?id=${d.getIdProduct()}">
                                     <i class="fa fa-eye" style="margin-right: 5px; color: #307ECC;" aria-hidden="true"></i>
 
                                 </a>

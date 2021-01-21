@@ -1,8 +1,9 @@
 package com.dtos;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class ProductDTO {
+public class ProductDTO implements Serializable {
     private String idProduct;
     private String tenProduct;
     private String loai;
@@ -10,6 +11,7 @@ public class ProductDTO {
     private int giaTien;
     private int soLuongTrongKho;
     private int danhGia;
+    private int amount;
     private String tinhTrang;
     private ArrayList<String> images;
     private String firstImage;
@@ -69,6 +71,21 @@ public class ProductDTO {
         this.tinhTrang = tinhTrang;
         this.images = new ArrayList<>();
         this.firstImage = images.get(0);
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
+    }
+
+    public ProductDTO(String idProduct, String tenProduct,int giaTien,int amount) {
+        this.idProduct = idProduct;
+        this.tenProduct = tenProduct;
+        this.giaTien = giaTien;
+        this.amount = amount;
     }
 
     public String getIdProduct() {
@@ -152,18 +169,5 @@ public class ProductDTO {
         this.firstImage = firstImage;
     }
 
-    @Override
-    public String toString() {
-        return "ProductDTO{" +
-                "idProduct='" + idProduct + '\'' +
-                ", tenProduct='" + tenProduct + '\'' +
-                ", loai='" + loai + '\'' +
-                ", chatLieu='" + chatLieu + '\'' +
-                ", giaTien=" + giaTien +
-                ", soLuongTrongKho='" + soLuongTrongKho + '\'' +
-                ", danhGia='" + danhGia + '\'' +
-                ", tinhTrang='" + tinhTrang + '\'' +
-                ", image='" + firstImage + '\'' +
-                '}';
-    }
+
 }

@@ -1,6 +1,8 @@
 package com.dtos;
 
-public class AccountDTO {
+import java.io.Serializable;
+
+public class AccountDTO implements Serializable {
     private String idAccount;
     private String tenAccount;
     private String soDienThoai;

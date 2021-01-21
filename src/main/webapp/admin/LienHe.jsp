@@ -63,13 +63,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <!-- <div class="col-md-3 padd-0" style="padding-left: 5px;">
-                                    <div class="btn-group order-btn-calendar">
-                                        <button type="button" onclick="cms_order_week()" class="btn btn-default">Tuần</button>
-                                        <button type="button" onclick="cms_order_month()" class="btn btn-default">Tháng</button>
-                                        <button type="button" onclick="cms_order_quarter()" class="btn btn-default">Quý</button>
-                                    </div>
-                                </div> -->
+
                             </div>
                         </div>
                         <div class="cus-body">
@@ -112,8 +106,7 @@
                                             </button>
                                         </div>
                                     </td>
-                                    <!-- <td class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox" value="248" class="checkbox chk"><span style="width: 15px; height: 15px;"></span></label>
-                                    </td> -->
+
 
                                 </tr>
                                 <tr class="tr-hide" id="tr-detail-order-248">
@@ -200,8 +193,6 @@
                                     <td class="text-center">Kí kết hợp tác</td>
                                     <td class="text-center">22:41 24/11/2020</td>
 
-                                    <!-- <td class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox" value="248" class="checkbox chk"><span style="width: 15px; height: 15px;"></span></label>
-                                    </td> -->
 
                                 </tr>
                                 <tr class="tr-hide" id="tr-detail-order-249">

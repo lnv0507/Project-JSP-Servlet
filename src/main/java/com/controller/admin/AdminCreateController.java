@@ -68,7 +68,7 @@ public class AdminCreateController extends HttpServlet {
         try {
             HttpSession session = req.getSession();
             session.setAttribute("listADMIN", list);
-            req.getRequestDispatcher("/admin/ThietLap.jsp").forward(req, resp);
+            req.getRequestDispatcher("ThietLap.jsp").forward(req, resp);
         } catch (Exception e) {
             e.printStackTrace();
         }

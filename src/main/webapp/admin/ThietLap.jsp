@@ -34,7 +34,6 @@
 
             <div class="ajax-success-ct"></div>
         </div>
-        <!-- Start create employee -->
         <div class="modal fade" id="create-nv" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -126,7 +125,6 @@
                 </div>
             </div>
         </div>
-        <!-- end create employee -->
 
 
         <div class="setting">
@@ -147,7 +145,6 @@
                                         data-target="#create-nv" style="background-color: #337ab7; color: white;"><i
                                         class="fa fa-pencil blue" style="color: white;"></i> Tạo nhân viên
                                 </button>
-                                <!-- | <i class="fa fa-refresh" style="font-size: 14px; cursor: pointer;" onclick="cms_upuser()"></i> -->
                             </div>
 
                         </div>
@@ -210,55 +207,14 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
-
             </div>
         </div>
-
     </div>
 </div>
 </div>
 </div>
 </section>
-<script type="text/javascript">
-    // $('#hihi').click(function () {
-    //     alert('hihi');
-    // });
-    //
-    //
-    // $('#submit_create').click(function () {
-    //
-    //     var customer_code = $('#customer_code').val();
-    //     var customer_name = $('#customer_name').val();
-    //     var customer_phone = $('#customer_phone').val();
-    //     var customer_email = $('#customer_email').val();
-    //     var customer_addr = $('#customer_addr').val();
-    //     var customer_password = $('#customer_password').val();
-    //     if (customer_code == '' || customer_name == '' || customer_phone == '' || customer_email == '' || customer_addr == '' || customer_password == '') {
-    //         alert('Không được bỏ trống nha!');
-    //     } else {
-    //         $.ajax({
-    //             url: 'admincreate',
-    //             method: "POST",
-    //             data: {
-    //                 customer_code: customer_code,
-    //                 customer_name: customer_name,
-    //                 customer_phone: customer_phone,
-    //                 customer_email: customer_email,
-    //                 customer_addr: customer_addr,
-    //                 customer_password: customer_password
-    //             },
-    //             success: function (data) {
-    //                 // history.pushState({},"","/webshop/admin/createAcount");
-    //                 window.location.href = "/webshop/admin/admincreate";
-    //             }
-    //         });
-    //     }
-    // })
-
-</script>
 <script src=" js/jquery.js"></script>
 <script src=" js/jquery-ui.min.js"></script>
 <script src=" js/html5shiv.min.js"></script>
@@ -271,6 +227,4 @@
 <script src=" js/editor.js"></script>
 <script src=" js/ajax.js"></script>
 </body>
-
-
 </html>

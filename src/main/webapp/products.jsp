@@ -105,10 +105,17 @@
                 <div id="sidebar" class="col-md-3">
                     <div class="widget widget_search">
                         <form action="SearchProduct" method="get">
+<<<<<<< Updated upstream
                         <input type='text' name='search' id='search' class="form-control"
                                placeholder="tìm kiếm sản phẩm">
                             <input hidden name="index" value="1">
                         <button id="btn-search" type='submit'></button>
+=======
+                            <input type='text' name='search' id='search' class="form-control"
+                                   placeholder="tìm kiếm sản phẩm">
+                            <input id="index" hidden name="index" value="1">
+                            <button id="btn-search" type='submit'></button>
+>>>>>>> Stashed changes
                         </form>
                         <div class="clearfix"></div>
                     </div>
@@ -154,7 +161,6 @@
                     <div class="row">
 
                         <div class="row " style="padding-left: 30px;">
-
                             <%--                                        product--%>
                             <c:forEach items="${data}" var="d">
                                 <div class="col-md-3 col-sm-6 ">
@@ -169,19 +175,23 @@
                                             <!-- <span class="product-trend-label ">Mới</span> -->
 
                                             <ul class="social ">
-                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i
-                                                        class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a>
+                                                <li>
+                                                        <%--                                                    <a href="${servlet}index=${i}">${i}</a>--%>
+
+                                                    <a href="cart?id=${d.getIdProduct()}" data-tip="Thêm vào giỏ hàng "><i
+                                                            class="fa fa-shopping-cart "></i></a>
                                                 </li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i
-                                                        class="fa fa-search "></i></a></li>
+                                                    <%--                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>--%>
+                                                    <%--                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>--%>
+                                                <li>
+                                                    <a href="ProductDetailController?id=${d.getIdProduct()}"
+                                                       data-tip="Xem thêm"><i class="fa fa-search "></i></a></li>
                                             </ul>
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title ">
                                                 <a style="font-size: 11px"
-                                                   href="ProductDetailController?id=${d.getIdProduct()}">"${d.tenProduct}"</a>
+                                                   href="ProductDetailController?id=${d.getIdProduct()}">${d.tenProduct}</a>
 
                                             </h3>
                                             <div class="price  ">${d.giaTien}</div>
@@ -206,33 +216,33 @@
                                 </c:forEach>
 
                             </ul>
-                            <div class="otherInfoBody ">
-                                <div class="col-md-3 col-sm-6 ">
-                                    <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="giuong.jsp ">
-                                                <img class="pic-1 " src="images/shop/bankhach15.jpg ">
-                                                <img class="pic-2 " src="images/shop/bankhach15.jpg ">
-                                            </a>
-                                            <span class="product-trend-label ">Mới</span>
+                            <%--                            <div class="otherInfoBody ">--%>
+                            <%--                                <div class="col-md-3 col-sm-6 ">--%>
+                            <%--                                    <div class="product-grid ">--%>
+                            <%--                                        <div class="product-image ">--%>
+                            <%--                                            <a href="giuong.jsp ">--%>
+                            <%--                                                <img class="pic-1 " src="images/shop/bankhach15.jpg ">--%>
+                            <%--                                                <img class="pic-2 " src="images/shop/bankhach15.jpg ">--%>
+                            <%--                                            </a>--%>
+                            <%--                                            <span class="product-trend-label ">Mới</span>--%>
 
-                                            <ul class="social ">
-                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i
-                                                        class="fa fa-shopping-cart "></i></a></li>
-                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a>
-                                                </li>
-                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i
-                                                        class="fa fa-search "></i></a></li>
-                                            </ul>
-                                        </div>
-                                        <div class="product-content ">
-                                            <h3 class="title "><a href="pkhach-ban.jsp">Kệ Tivi MFC Màu Xám </a></h3>
-                                            <div class="price ">1.890.000 đ</div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <%--                                            <ul class="social ">--%>
+                            <%--                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i--%>
+                            <%--                                                        class="fa fa-shopping-cart "></i></a></li>--%>
+                            <%--                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>--%>
+                            <%--                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a>--%>
+                            <%--                                                </li>--%>
+                            <%--                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i--%>
+                            <%--                                                        class="fa fa-search "></i></a></li>--%>
+                            <%--                                            </ul>--%>
+                            <%--                                        </div>--%>
+                            <%--                                        <div class="product-content ">--%>
+                            <%--                                            <h3 class="title "><a href="pkhach-ban.jsp">Kệ Tivi MFC Màu Xám </a></h3>--%>
+                            <%--                                            <div class="price ">1.890.000 đ</div>--%>
+                            <%--                                        </div>--%>
+                            <%--                                    </div>--%>
+                            <%--                                </div>--%>
+                            <%--                            </div>--%>
 
                         </div>
 

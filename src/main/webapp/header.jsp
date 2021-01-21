@@ -112,7 +112,7 @@
                                     </p>
                                 </form>
                                 <p class="cart">
-                                    <a href="cart.jsp">
+                                    <a href="print">
                                         <i class="fa fa-shopping-cart">
                                         </i>
                                     </a>

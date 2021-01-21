@@ -20,20 +20,6 @@
 <%@include file="HeaderAdmin.jsp" %>
 <div class="col-md-10 padd-left-0">
     <div class="main-content">
-        <div class="alert alert-dange ajax-error" role="alert"><span
-                style="font-weight: bold; font-size: 18px;">Thông báo!</span><br>
-
-            <div class="ajax-error-ct"></div>
-        </div>
-        <div class="alert ajax-success" role="alert"
-             style="width: 350px;background: rgba(92,130,79,0.9); display:none; color: #fff;"><span
-                style="font-weight: bold; font-size: 18px;">Thông báo!</span>
-            <br>
-
-            <div class="ajax-success-ct"></div>
-        </div>
-
-
         <div class="customer-supplier">
             <div class="breadcrumbs-fixed panel-action">
                 <div class="row">
@@ -46,14 +32,7 @@
                         <div class="col-md-6">
                             <div class="right-action text-right">
                                 <div class="btn-groups">
-                                    <!-- <a href="/QLBanHangOnline/orders">
-                                        <button type="button" class="btn btn-primary"">
-                                        <i class="fa fa-shopping-cart"></i> Đặt hàng
-                                        </button>
-                                    </a> -->
-                                    <!-- onclick="cms_vsell_order();" -->
-                                    <!-- <button type="button" class="btn btn-success"><i class="fa fa-download"></i> Xuất Excel
-                                    </button> -->
+
                                 </div>
                             </div>
                         </div>
@@ -109,13 +88,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <!-- <div class="col-md-3 padd-0" style="padding-left: 5px;">
-                                    <div class="btn-group order-btn-calendar">
-                                        <button type="button" onclick="cms_order_week()" class="btn btn-default">Tuần</button>
-                                        <button type="button" onclick="cms_order_month()" class="btn btn-default">Tháng</button>
-                                        <button type="button" onclick="cms_order_quarter()" class="btn btn-default">Quý</button>
-                                    </div>
-                                </div> -->
+
                             </div>
                         </div>
                         <div class="cus-body">
@@ -125,18 +98,12 @@
                                     <th></th>
                                     <th class="text-center">Mã đơn hàng</th>
                                     <th class="text-center">Ngày bán</th>
-                                    <!-- <th class="text-center">Thu ngân</th> -->
-                                    <!-- <th class="text-center" style="padding: 0px;">
-                                        <select style="text-align:center;" id="customer-id">
-                                            <option value="-1">Khách hàng</option>
-                                                                <option value="34">Lê Thành Tâm</option>
-                                                        </select></th> -->
+
                                     <th>Khách hàng</th>
                                     <th class="text-center">Địa chỉ</th>
                                     <th class="text-center">Trạng thái</th>
                                     <th class="text-center">Tổng tiền</th>
                                     <th class="text-center">Xóa</th>
-                                    <!-- <th class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox" class="checkbox chkAll"><span style="width: 15px; height: 15px;"></span></label></th> -->
                                     <th class="text-center"> Check</th>
                                 </tr>
                                 </thead>
@@ -154,10 +121,8 @@
 
                                         </i>
                                     </td>
-                                    <!-- style="color: #2a6496; cursor: pointer;" onclick="cms_detail_order(248)" -->
                                     <td class="text-center">PX0000006</td>
                                     <td class="text-center">22:41 24/11/2020</td>
-                                    <!-- <td class="text-center">Phạm Minh Nguyên</td> -->
                                     <td class="text-center">Nguyễn Công Dự</td>
                                     <td class="text-center">Đại học Nông Lâm TPHCM</td>
                                     <td class="text-center">Chưa hoàn thành</td>
@@ -165,8 +130,7 @@
                                     <td class="text-center">
                                         <i class="fa fa-trash-o" style="color: darkred;" title="Xóa"
                                            onclick="cms_del_temp_order(248,1)"></i></td>
-                                    <!-- <td class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox" value="248" class="checkbox chk"><span style="width: 15px; height: 15px;"></span></label>
-                                    </td> -->
+
                                     <td>
                                         <div class="col-md-3 padd-0" style="padding-left: 5px;">
                                             <button style="box-shadow: none;" type="button"
@@ -278,26 +242,7 @@
                         </div>
                     </div>
                     <div id="orderCheck" class="tab-pane">
-                        <!-- <div class="sup-sear panel-sear">
-                            <div>
-                                <div class="form-group col-md-6 padd-0">
-                                    <input type="text" class="form-control txt-ssupplier"
-                                           placeholder="Nhập tên, mã hoặc SDT Nhà cung cấp">
-                                </div>
-                                <div class="form-group col-md-6 ">
-                                    <div class="col-md-4 padd-0" style="margin-right: 10px;">
-                                        <select id="sup-option" class="form-control">
-                                            <option value="0">Tất cả</option>
-                                            <option value="1">NCC từng nhập hàng</option>
-                                            <option value="2">Còn nợ NCC</option>
-                                        </select>
-                                    </div>
-                                    <button type="button" class="btn btn-primary btn-large btn-ssup"
-                                            onclick="cms_paging_supplier(1)"><i class="fa fa-search"></i> Tìm kiếm
-                                    </button>
-                                </div>
-                            </div>
-                        </div> -->
+
                         <div class="product-sear panel-sear">
                             <div class="form-group col-md-3 padd-0">
                                 <input type="text" class="form-control" id="order-search"
@@ -331,13 +276,7 @@
                                         </button>
                                     </div>
                                 </div>
-                                <!-- <div class="col-md-3 padd-0" style="padding-left: 5px;">
-                                    <div class="btn-group order-btn-calendar">
-                                        <button type="button" onclick="cms_order_week()" class="btn btn-default">Tuần</button>
-                                        <button type="button" onclick="cms_order_month()" class="btn btn-default">Tháng</button>
-                                        <button type="button" onclick="cms_order_quarter()" class="btn btn-default">Quý</button>
-                                    </div>
-                                </div> -->
+
                             </div>
                         </div>
                         <div class="cus-body">
@@ -348,18 +287,13 @@
                                     <th class="text-center">Mã đơn hàng</th>
                                     <th class="text-center">Ngày bán</th>
                                     <th class="text-center">Thu ngân</th>
-                                    <!-- <th class="text-center" style="padding: 0px;">
-                                        <select style="text-align:center;" id="customer-id">
-                                            <option value="-1">Khách hàng</option>
-                                                                <option value="34">Lê Thành Tâm</option>
-                                                        </select></th> -->
+
                                     <th>Khách hàng</th>
                                     <th class="text-center">Địa chỉ</th>
                                     <th class="text-center">Trạng thái</th>
                                     <th class="text-center">Tổng tiền</th>
                                     <th class="text-center">Xóa</th>
-                                    <!-- <th class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox" class="checkbox chkAll"><span style="width: 15px; height: 15px;"></span></label></th> -->
-                                    <!-- <th class="text-center"> Check</th> -->
+
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -376,7 +310,6 @@
 
                                         </i>
                                     </td>
-                                    <!-- style="color: #2a6496; cursor: pointer;" onclick="cms_detail_order(248)" -->
                                     <td class="text-center">PX0000006</td>
                                     <td class="text-center">22:41 24/11/2020</td>
                                     <td class="text-center">Phạm Minh Nguyên</td>
@@ -387,15 +320,7 @@
                                     <td class="text-center">
                                         <i class="fa fa-trash-o" style="color: darkred;" title="Xóa"
                                            onclick="cms_del_temp_order(248,1)"></i></td>
-                                    <!-- <td class="text-center"><label class="checkbox" style="margin: 0;"><input type="checkbox" value="248" class="checkbox chk"><span style="width: 15px; height: 15px;"></span></label>
-                                    </td> -->
-                                    <!-- <td>
-                                        <div class="col-md-3 padd-0" style="padding-left: 5px;">
-                                            <button style="box-shadow: none;" type="button" class="btn btn-primary btn-large"
-                                                    onclick="cms_paging_order(1)"><i class="fa fa-shopping-cart"></i> Xác Nhận
-                                            </button>
-                                        </div>
-                                    </td> -->
+
                                 </tr>
                                 <tr class="tr-hide" id="tr-detail-order-248">
                                     <td colspan="15">

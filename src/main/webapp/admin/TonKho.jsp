@@ -48,33 +48,9 @@
                                         <select class="form-control" id="prd_group_id">
                                             <option value="-1" selected='selected'>Chọn danh mục</option>
                                             <optgroup label="Chọn danh mục">
-                                                <option value="36">Áo</option>
-                                                <option value="101">|---Áo Blazer</option>
-                                                <option value="102">|---Áo Bóng Chày</option>
-                                                <option value="103">|---Áo Denim</option>
-                                                <option value="104">|---Áo Len</option>
-                                                <option value="105">|---Áo Sơmi</option>
-                                                <option value="106">|---Áo Sweater</option>
-                                                <option value="107">|---Áo Thun</option>
-                                                <option value="35">Quần</option>
-                                                <option value="92">|---Quần Cargo</option>
-                                                <option value="93">|---Quần Jean</option>
-                                                <option value="94">|---Quần Kaki</option>
-                                                <option value="95">|---Quần Nhung</option>
-                                                <option value="96">|---Quần Short</option>
-                                                <option value="34">Phụ kiện</option>
-                                                <option value="82">|---Thắt lưng</option>
-                                                <option value="83">|---Mắt Kính</option>
-                                                <option value="84">|---Xách tay</option>
-                                                <option value="85">|---Mũ</option>
-                                                <option value="86">|---Móc khóa</option>
-                                                <option value="87">|--- Khăn choàng</option>
-                                                <option value="88">|---Vớ</option>
-                                                <option value="89">|---Sticker</option>
 
                                             </optgroup>
-                                            <optgroup label="------------------------">
-                                            </optgroup>
+
                                         </select>
                                     </div>
 
@@ -90,9 +66,7 @@
                                     <button style="box-shadow: none;" type="button" class="btn btn-primary btn-large"
                                     ><i class="fa fa-search"></i> Xem
                                     </button>
-                                    <!-- <button type="button" class="btn btn-success"  onclick="cms_export_inventory()"><i
-                                           class="fa fa-download"></i>Xuất Excel
-                                    </button> -->
+
                                 </div>
                             </div>
                             <div class="col-md-1 padd-0" style="padding-left: 1px;">
