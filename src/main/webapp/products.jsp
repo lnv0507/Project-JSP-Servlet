@@ -105,17 +105,11 @@
                 <div id="sidebar" class="col-md-3">
                     <div class="widget widget_search">
                         <form action="SearchProduct" method="get">
-<<<<<<< Updated upstream
-                        <input type='text' name='search' id='search' class="form-control"
-                               placeholder="tìm kiếm sản phẩm">
-                            <input hidden name="index" value="1">
-                        <button id="btn-search" type='submit'></button>
-=======
+
                             <input type='text' name='search' id='search' class="form-control"
                                    placeholder="tìm kiếm sản phẩm">
                             <input id="index" hidden name="index" value="1">
                             <button id="btn-search" type='submit'></button>
->>>>>>> Stashed changes
                         </form>
                         <div class="clearfix"></div>
                     </div>

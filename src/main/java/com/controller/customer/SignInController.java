@@ -46,8 +46,6 @@ public class SignInController extends HttpServlet {
                 HttpSession session = request.getSession();
                 session.setAttribute("tendangnhap", accDTO.getTenAccount());
                 session.setAttribute("chucvu", accDTO.getChucVu());
-<<<<<<< Updated upstream
-=======
                 String chuc = (String) session.getAttribute("chucvu");
                 if(chuc.equalsIgnoreCase("ADMIN")){
                     session.setAttribute("admin", "ADMIN");
@@ -57,8 +55,6 @@ public class SignInController extends HttpServlet {
                     session.setAttribute("none", "none");
                 }
                 session.setAttribute("account", accDTO);
-
->>>>>>> Stashed changes
                 url = SUCCESS;
                 url = LOGINOK;
             }
