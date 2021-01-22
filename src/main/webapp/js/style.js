@@ -25,11 +25,7 @@ function signIn() {
     }
 }
 
-var name = document.getElementById("name");
-var thongtin = document.getElementById("itemUserr");
-name.onclick = function () {
-    thongtin.style.display = "block";
-};
+
 
 
 function submit() {
@@ -242,7 +238,7 @@ $(document).ready(function () {
 
     // jquery hien thi thong tin
 
-    // $('#name').click(function () {
+    // $('#helloUser').onclick(function () {
     //     thongtin.style.display = "block";
     // });
 

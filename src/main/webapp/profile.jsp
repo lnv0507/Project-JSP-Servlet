@@ -119,8 +119,7 @@
                             </tr>
                             <tr class="infor">
                                 <td>Email</td>
-                                <%=ac.getEmail()%>
-                                <td><a href="">Thêm</a></td>
+                                <td><a href=""> <%=ac.getEmail()%></a></td>
                             </tr>
                             <tr class="infor">
                                 <td>Số Điện Thoại</td>
