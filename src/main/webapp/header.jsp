@@ -31,19 +31,26 @@
     <div class="header-banner-item">
         <%
             String username = (String) session.getAttribute("tendangnhap");
+            AccountDTO ac = (AccountDTO) session.getAttribute("account");
+
             if (username != null) {
         %>
-        <div style="display: flex; justify-content: space-between">
-            <div class="infoUser">
-                <h5 style="color: blue" class="helloUser">Xin Chào: <%=username%>
-                </h5>
-                <ul class="itemUser">
-                    <li>Thông Tin Cá Nhân</li>
+        <div class="info-mation">
+
+            <h5 class="helloUser" style="color: white">
+                <div id="name"> Xin Chào: <%=username%>
+                </div>
+                <ul id="itemUserr">
+                    <li>
+                        <a href=" <c:url value="/profile"/> ">Thông Tin Cá Nhân</a>
+                    </li>
                     <li>Giỏ Hàng</li>
                     <li>Thông Báo</li>
                 </ul>
-            </div>
+            </h5>
+
             <h5><a href="<c:url value="/logout"/>">Đăng Xuất</a></h5>
+            <br>
             <%
                 String chucVu = (String) session.getAttribute("chucvu");
                 if (chucVu.equalsIgnoreCase("ADMIN")) {
