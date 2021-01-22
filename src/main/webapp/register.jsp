@@ -70,6 +70,7 @@
                     <div class="login-form">
                         <form action="signup" method="POST">
                             <div class="sign-in-htm">
+                                <p class="text-danger">${message} </p>
                                 <div class="group">
                                     <label for="user" class="label">Họ Và Tên</label>
                                     <input id="name" type="text" class="input" name="txtName">

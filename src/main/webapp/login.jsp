@@ -70,8 +70,10 @@
                         <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"><a
                             href="<c:url value="/signup"/>">Đăng Ký</a></label>
                         <div class="login-form">
+
                             <form action="Signin" method="post">
                                 <div class="sign-in-htm">
+                                        <p class="text-danger">${message}</p>
                                     <div class="group">
                                         <label for="user" class="label">Tài Khoản</label>
                                         <input id="user" type="text" class="input" name="txtIDACCOUNT">

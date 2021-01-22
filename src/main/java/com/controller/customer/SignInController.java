@@ -29,34 +29,36 @@ public class SignInController extends HttpServlet {
 //            AccountDAO dao = new AccountDAO();
             AccountDTO accDTO = new AccountDAO().checkLogin(userID, password);
             boolean check = false;
-            if (userID.isEmpty()) {
+            if (userID.isEmpty() && password.isEmpty() ) {
                 check = false;
-            }
-            if (password.isEmpty()) {
-                check = false;
+                request.setAttribute("message", "Sai Thông Tin Đăng Nhập Rồi");
             }
             if (userID.equals(accDTO.getIdAccount())) {
                 check = true;
+            } else {
+                check = false;
             }
             if (password.equals(accDTO.getPassWord())) {
                 check = true;
+            } else {
+                check = false;
             }
             if (check) {
                 session.setAttribute("tendangnhap", accDTO.getTenAccount());
                 session.setAttribute("chucvu", accDTO.getChucVu());
                 String chuc = (String) session.getAttribute("chucvu");
-                if(chuc.equalsIgnoreCase("ADMIN")){
+                if (chuc.equalsIgnoreCase("ADMIN")) {
                     session.setAttribute("admin", "ADMIN");
-                }else if(chuc.equalsIgnoreCase("Khách Hàng")){
+                } else if (chuc.equalsIgnoreCase("Khách Hàng")) {
                     session.setAttribute("khach", "Khách Hàng");
-                }else{
+                } else {
                     session.setAttribute("none", "none");
                 }
                 session.setAttribute("account", accDTO);
-
                 url = SUCCESS;
                 url = LOGINOK;
             }
+
 
         } catch (Exception e) {
             e.printStackTrace();

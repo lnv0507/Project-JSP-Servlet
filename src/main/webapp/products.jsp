@@ -104,10 +104,10 @@
                 <div id="sidebar" class="col-md-3">
                     <div class="widget widget_search">
                         <form action="SearchProduct" method="get">
-                        <input   type='text' name='search' id='search' class="form-control"
-                               placeholder="tìm kiếm sản phẩm">
+                            <input type='text' name='search' id='search' class="form-control"
+                                   placeholder="tìm kiếm sản phẩm">
                             <input id="index" hidden name="index" value="1">
-                        <button id="btn-search" type='submit'></button>
+                            <button id="btn-search" type='submit'></button>
                         </form>
                         <div class="clearfix"></div>
                     </div>
@@ -120,14 +120,15 @@
                             </a></li>
                             <c:forEach items="${listC}" var="d">
                                 <li><a href="Category?category_name=${d.loai}">${d.loai} <i class="fa fa-angle-right"
-                                                             style="padding-top:5px ;"></i> </a></li>
+                                                                                            style="padding-top:5px ;"></i>
+                                </a></li>
                             </c:forEach>
                         </ul>
                     </div>
 
 
                     <div class="widget widget_top_rated_product">
-                        <h4>Các SẢN PHẨM mới NHẤT </h4>
+                        <h4>Các SẢN PHẨM ĐỨNG TOP</h4>
                         <c:forEach items="${t.top5}" var="o">
                             <ul class="test">
                                 <li>
@@ -162,7 +163,7 @@
                                                 <img class="pic-1 "
                                                      src="${pageContext.request.contextPath}/images/products/${d.getImages().get(0)}">
                                                 <img class="pic-2 "
-                                                     src="${pageContext.request.contextPath}/images/products/${d.getImages().get(0)}">
+                                                     src="${pageContext.request.contextPath}/images/products/${d.getImages().get(1)}">
                                             </a>
                                             <!-- <span class="product-trend-label ">Mới</span> -->
 
@@ -255,31 +256,32 @@
                 <div class="container ">
                     <h4 style="text-align: center; font-weight: bolder; ">SẢN PHẨM BÁN CHẠY NHẤT TRONG DANH MỤC NÀY</h4>
                     <div class="owl-carousel ">
+                        <c:forEach items="${t.top5}" var="o">
+                            <div class="item ">
+                                <div class="product-grid ">
+                                    <div class="product-image ">
+                                        <a href="<c:url value="ProductDetailController?id=${o.idProduct}"/>">
+                                            <img class="pic-1 " src="images/products/${o.images.get(0)}">
+                                            <img class="pic-2 " src="images/products/${o.images.get(1)}">
+                                        </a>
+                                        <span class="product-trend-label ">${o.tinhTrang}</span>
 
-                        <div class="item ">
-                            <div class="product-grid ">
-                                <div class="product-image ">
-                                    <a href="giuong.jsp ">
-                                        <img class="pic-1 " src="images/shop/ketivi21.jpg ">
-                                        <img class="pic-2 " src="images/shop/ketivi20.jpg ">
-                                    </a>
-                                    <span class="product-trend-label ">Mới</span>
-
-                                    <ul class="social ">
-                                        <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i
-                                                class="fa fa-shopping-cart "></i></a></li>
-                                        <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                        <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>
-                                        <li><a href="product-details.jsp " data-tip="Xem thêm "><i
-                                                class="fa fa-search "></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-content ">
-                                    <h3 class="title "><a href="# ">Giường GD1</a></h3>
-                                    <div class="price ">$100</div>
+                                        <ul class="social ">
+                                            <li><a href="cart?id=${o.idProduct}" data-tip="Thêm vào giỏ hàng"><i
+                                                    class="fa fa-shopping-cart "></i></a></li>
+<%--                                            <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>--%>
+<%--                                            <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>--%>
+                                            <li><a href="<c:url value="ProductDetailController?id=${o.idProduct}"/>" data-tip="Xem thêm "><i
+                                                    class="fa fa-search "></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="product-content ">
+                                        <h3 class="title "><a href="<c:url value="ProductDetailController?id=${o.idProduct}"/> ">${o.tenProduct}</a></h3>
+                                        <div class="price ">${o.giaTien}</div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </c:forEach>
                     </div>
                 </div>
             </div>

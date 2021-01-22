@@ -10,7 +10,7 @@
     <meta name="description" content="Responsive Minimal Bootstrap Theme">
     <meta name="keywords" content="onepage,responsive,minimal,bootstrap,theme">
     <meta name="author" content="">
-
+    <jsp:useBean id="t" class="com.dao.ProductDAO" scope="request"/>
 
     <link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <link rel="stylesheet" type="text/css" href="detail/css/style.css">
@@ -133,41 +133,41 @@
         <!-- revolution slider close -->
         <section>
 
-            <div class="phobien ">
+            <div class="phobien">
                 <!-- Greatest Offer News Start -->
                 <div class="news " style="background-color: white; ">
                     <div class="container ">
                         <h1>Sản phẩm nổi bật</h1>
                         <div class="separator"><span><i class="fa fa-circle"></i></span></div>
-                        <div class="owl-carousel">
+                        <div class="owl-carousel ">
+                            <c:forEach items="${t.top5}" var="o">
+                                <div class="item ">
+                                    <div class="product-grid ">
+                                        <div class="product-image ">
+                                            <a href="<c:url value="ProductDetailController?id=${o.idProduct}"/>">
+                                                <img class="pic-1 " src="images/products/${o.images.get(0)}">
+                                                <img class="pic-2 " src="images/products/${o.images.get(1)}">
+                                            </a>
+                                            <span class="product-trend-label ">${o.tinhTrang}</span>
 
-                            <div class="item ">
-                                <div class="product-grid ">
-                                    <div class="product-image ">
-                                        <a href="pngu1-giuong.jsp">
-                                            <img class="pic-1 " src="images/image-here.jpg"> <!-- Hinh ANh -->
-                                            <img class="pic-2 " src="images/image-here.jpg">
-                                        </a>
-                                        <span class="product-trend-label ">Tinh Trang Hien Tai</span>
-                                        <!-- JSP tinh trang-->
-
-                                        <ul class="social ">
-                                            <li><a href="cart.jsp " data-tip="Thêm Giỏ Hàng"><i
-                                                    class="fa fa-shopping-cart "></i></a></li>
-                                            <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>
-                                            <li><a href="# " data-tip="So Sánh "><i class="fa fa-random "></i></a></li>
-                                            <li><a href="product-details.jsp" data-tip="Xem Thêm "><i
-                                                    class="fa fa-search "></i></a></li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-content ">
-                                        <h3 class="title "><a href="product-details.jsp">Name Hinh</a></h3>
-                                        <!-- Ten cua hinh anh -->
-                                        <div class="price ">Gia Tien</div> <!-- Gia Tien -->
+                                            <ul class="social ">
+                                                <li><a href="cart?id=${o.idProduct}" data-tip="Thêm vào giỏ hàng"><i
+                                                        class="fa fa-shopping-cart "></i></a></li>
+                                                    <%--                                            <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>--%>
+                                                    <%--                                            <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>--%>
+                                                <li><a href="<c:url value="ProductDetailController?id=${o.idProduct}"/>" data-tip="Xem thêm "><i
+                                                        class="fa fa-search "></i></a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="product-content ">
+                                            <h3 class="title "><a href="<c:url value="ProductDetailController?id=${o.idProduct}"/> ">${o.tenProduct}</a></h3>
+                                            <div class="price ">${o.giaTien}</div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </c:forEach>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -338,7 +338,6 @@
         <!-- footer begin -->
         <%@include file="footer.jsp" %>
         <!-- footer close -->
-
 
 
 </body>

@@ -113,6 +113,9 @@ div.header-banner-item .search .icon-email {
 /*    display: block;*/
 
 /*}*/
+#helloUser{
+    cursor: pointer;
+}
 
 div.header-banner-item ul h5 {
     cursor: pointer;

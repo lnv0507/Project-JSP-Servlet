@@ -32,12 +32,19 @@ public class SignUpController extends HttpServlet {
             boolean check = true;
             if(username.isEmpty()){
                 check = false;
+                request.setAttribute("message", "Không Để Trống Tài Khoản");
+            }
+            if(tenAccount.isEmpty()){
+                check = false;
+                request.setAttribute("message", "Không Để Trống Họ Và Tên");
             }
             if(pass.isEmpty()){
                 check = false;
+                request.setAttribute("message", "Không Để Trống Mật Khẩu");
             }
             if(!repass.equals(pass)){
                 check = false;
+                request.setAttribute("message", "Nhập Lại Mật Khẩu Sai Rồi");
             }
             if(email.isEmpty()){
                 check = false;

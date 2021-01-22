@@ -228,7 +228,7 @@
                         <td></td>
 
                         <td>
-                            <a href="order" class="btn btn-success btn-block">
+                            <a href="<c:url value="/order"/> " class="btn btn-success btn-block">
                                 <span>Thanh toán </span><i class="fa fa-angle-right"></i></a>
                         </td>
                     </tr>

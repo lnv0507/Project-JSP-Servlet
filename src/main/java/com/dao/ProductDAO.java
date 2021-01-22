@@ -267,7 +267,7 @@ public class ProductDAO {
         ResultSet rsProduct = null;
         ResultSet rsImage = null;
         PreparedStatement pst = null;
-        String sql = "select * from product order by IDPRODUCT desc limit 5";
+        String sql = "select * from product order by IDPRODUCT desc limit 4";
         try {
             Connection con = DBUtils.makeConnection();
             pst = con.prepareStatement(sql);
