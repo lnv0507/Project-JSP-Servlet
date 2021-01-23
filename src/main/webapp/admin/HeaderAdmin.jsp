@@ -21,18 +21,19 @@
                     </li>
 
                     <li class="dropdown user-profile">
+                        <% String name = (String) session.getAttribute("tendangnhap");
+                            if (name != null) {
+                        %>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                           aria-expanded="false"><span class="hello">Xin chào, </span>nameJSP<span
+                           aria-expanded="false"><span class="hello">Xin chào, </span><%=name%><span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu">
-<<<<<<< HEAD
-                            <li><a href="TaiKhoan.jsp"><i class="fa fa-user"></i>Tài khoản</a></li>
-                            <li><a href="DangNhap.jsp"><i class="fa fa-power-off"></i>Thoát</a></li>
-=======
-                            <li><a href="<c:url value="/profile.jsp"/> "><i class="fa fa-user"></i>Tài khoản</a></li>
+                            <li><a href="<c:url value="/profile"/> "><i class="fa fa-user"></i>Tài khoản</a></li>
                             <li><a href="<c:url value="/logout"/>"><i class="fa fa-power-off"></i>Thoát</a></li>
->>>>>>> 08ce5e20b24eb16b8386a002d757fb57cebffbc1
                         </ul>
+                        <%
+                            }
+                        %>
                     </li>
                 </ul>
             </div>

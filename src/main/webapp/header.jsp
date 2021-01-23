@@ -43,7 +43,7 @@
                 </div>
                 <ul id="itemUserr">
                     <li><a href=" <c:url value="/profile"/> ">Thông Tin Cá Nhân</a></li>
-                    <li>Giỏ Hàng</li>
+                    <li><a href="<c:url value="/print"/> "> Giỏ Hàng</a></li>
                     <li>Thông Báo</li>
                 </ul>
             </h5>
@@ -135,14 +135,14 @@
         </div>
     </div>
 </header>
-<script >
-    function myFunction(){
-       var a = document.getElementById('itemUserr');
-       if(a.style.display == "block"){
-           a.style.display = "none";
-       }else{
-           a.style.display = "block";
-       }
+<script>
+    function myFunction() {
+        var a = document.getElementById('itemUserr');
+        if (a.style.display == "block") {
+            a.style.display = "none";
+        } else {
+            a.style.display = "block";
+        }
     }
 
 </script>

@@ -36,7 +36,6 @@ public class ProductDAO {
                 if (pst.executeUpdate() > 0) {
                     pst = con.prepareStatement("select * from product");
                     pst.executeQuery();
-
                 }
             }
         } catch (Exception e) {
@@ -199,23 +198,27 @@ public class ProductDAO {
         ProductDTO product = new ProductDTO();
         ResultSet rsProduct = null;
         ResultSet rsImages = null;
-        Connection con = DBUtils.makeConnection();
-        String sql = "select * from product where IDPRODUCT like ?";
-        PreparedStatement ps = con.prepareStatement(sql);
-        ps.setString(1, id);
-        rsProduct = ps.executeQuery();
-        rsProduct.beforeFirst();
-        while (rsProduct.next()) {
-            product.setIdProduct(rsProduct.getString(1));
-            product.setTenProduct(rsProduct.getString(2));
-            product.setLoai(rsProduct.getString(3));
-            product.setChatLieu(rsProduct.getString(4));
-            product.setGiaTien(rsProduct.getInt(5));
-            product.setSoLuongTrongKho(rsProduct.getInt(6));
-            product.setDanhGia(rsProduct.getInt(7));
-            product.setTinhTrang(rsProduct.getString(8));
-            getImagesByProduct(product);
-
+        Connection con = null;
+        try {
+            con = DBUtils.makeConnection();
+            String sql = "select * from product where IDPRODUCT like ?";
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setString(1, id);
+            rsProduct = ps.executeQuery();
+            rsProduct.beforeFirst();
+            while (rsProduct.next()) {
+                product.setIdProduct(rsProduct.getString(1));
+                product.setTenProduct(rsProduct.getString(2));
+                product.setLoai(rsProduct.getString(3));
+                product.setChatLieu(rsProduct.getString(4));
+                product.setGiaTien(rsProduct.getInt(5));
+                product.setSoLuongTrongKho(rsProduct.getInt(6));
+                product.setDanhGia(rsProduct.getInt(7));
+                product.setTinhTrang(rsProduct.getString(8));
+                getImagesByProduct(product);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return product;
     }
@@ -225,14 +228,14 @@ public class ProductDAO {
         ResultSet rsProduct = null;
         ResultSet rsImage = null;
         PreparedStatement pst = null;
+        Connection con = null;
         ArrayList<ProductDTO> lsProducts = new ArrayList<>();
         String sql = "select * from product order by IDPRODUCT desc limit 5";
         try {
-            Connection con = DBUtils.makeConnection();
+            con = DBUtils.makeConnection();
             pst = con.prepareStatement(sql);
             rsProduct = pst.executeQuery();
             while (rsProduct.next()) {
-
                 ProductDTO productx = new ProductDTO();
                 productx.setIdProduct(rsProduct.getString(1));
                 productx.setTenProduct(rsProduct.getString(2));
@@ -242,7 +245,6 @@ public class ProductDAO {
                 productx.setSoLuongTrongKho(rsProduct.getInt(6));
                 productx.setDanhGia(rsProduct.getInt(7));
                 productx.setTinhTrang(rsProduct.getString(8));
-
                 getImagesByProduct(productx);
                 lsProducts.add(productx);
                 return productx;
@@ -268,8 +270,9 @@ public class ProductDAO {
         ResultSet rsImage = null;
         PreparedStatement pst = null;
         String sql = "select * from product order by IDPRODUCT desc limit 4";
+        Connection con = null;
         try {
-            Connection con = DBUtils.makeConnection();
+            con = DBUtils.makeConnection();
             pst = con.prepareStatement(sql);
             rsProduct = pst.executeQuery();
             List<ProductDTO> list = new ArrayList<>();
@@ -303,7 +306,7 @@ public class ProductDAO {
     }
 
     public void getImagesByProduct(ProductDTO productDTO) {
-        Connection con;
+        Connection con = null;
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
         String sql = "Select * from hinhanh where id = ?";
@@ -330,7 +333,7 @@ public class ProductDAO {
     //filter theo gia san pham
     public ArrayList<ProductDTO> getProductByPrice(int priceLow, int priceHigh) {
         ArrayList<ProductDTO> result = new ArrayList<>();
-        Connection con;
+        Connection con = null;
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
         String sql = "Select * from product where giatien between ? and ?";
@@ -370,20 +373,19 @@ public class ProductDAO {
 
 
     public boolean deleteProduct(String id) {
-        Connection con  = null;
+        Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
             con = DBUtils.makeConnection();
             ps = con.prepareStatement("DELETE from product where idproduct = ?");
             ps.setString(1, id);
-            if(ps.executeUpdate() > 0){
+            if (ps.executeUpdate() > 0) {
                 ps = con.prepareStatement("SELECT  * from product");
                 ps.executeQuery();
                 return true;
             }
-
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
         return false;

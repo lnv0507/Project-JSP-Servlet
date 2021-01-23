@@ -47,11 +47,12 @@ public class ShowCartController extends HttpServlet {
             total = total + o.getAmount() * o.getGiaTien();
             tinhtien = o.getAmount() * o.getGiaTien();
         }
-        request.setAttribute("tinhtien", tinhtien);
-        request.setAttribute("list", list);
-        request.setAttribute("total", total);
-        request.setAttribute("vat", 0.1 * total);
-        request.setAttribute("sum", 1.1 * total);
+        HttpSession session = request.getSession();
+        session.setAttribute("tinhtien", tinhtien);
+        session.setAttribute("list", list);
+        session.setAttribute("total", total);
+        session.setAttribute("vat", 0.1 * total);
+        session.setAttribute("sum", 1.1 * total);
         request.getRequestDispatcher("cart.jsp").forward(request, response);
     }
 

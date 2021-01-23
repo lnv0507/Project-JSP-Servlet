@@ -9,7 +9,6 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class AccountDAO {
-
     public AccountDTO checkLogin(String userId, String passWord) throws SQLException {
         AccountDTO acDTO = null;
         Connection cn = null;
@@ -135,15 +134,15 @@ public class AccountDAO {
     }
 
     public boolean deleteAccount(String id) {
-        Connection con = null;
+        Connection cn = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
-            con = DBUtils.makeConnection();
-            ps = con.prepareStatement("DELETE from account where idaccount = ?");
+            cn = DBUtils.makeConnection();
+            ps = cn.prepareStatement("DELETE from account where idaccount = ?");
             ps.setString(1, id);
             if (ps.executeUpdate() > 0) {
-                ps = con.prepareStatement("SELECT  * from account");
+                ps = cn.prepareStatement("SELECT  * from account");
                 ps.executeQuery();
                 return true;
             }

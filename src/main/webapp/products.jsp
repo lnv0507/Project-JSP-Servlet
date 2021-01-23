@@ -94,11 +94,7 @@
     <!-- content begin -->
     <div id="content" class="no-bottom no-top">
         <br><br><br><br>
-
-
         <br><br><br><br><br>
-
-
         <div class="container">
             <div class="row">
                 <div id="sidebar" class="col-md-3">
@@ -114,15 +110,12 @@
                     <div class="widget widget_category">
                         <h4>DANH MỤC SẢN PHẨM</h4>
                         <ul class="product">
-
-                            <li><a href="#">Tất cả <i class="fa fa-angle-right" style="padding-top:5px ;"></i>
+                            <li><a href="#">Tất cả <i class="fa fa-angle-right" style="padding-top:5px;"></i>
                             </a></li>
-                            <li><a href="#">TEXT <i class="fa fa-angle-right" style="padding-top:5px ;"></i>
+                            <li><a href="#">TEXT <i class="fa fa-angle-right" style="padding-top:5px;"></i>
                             </a></li>
                         </ul>
                     </div>
-
-
                     <div class="widget widget_top_rated_product">
                         <h4>Các SẢN PHẨM ĐỨNG TOP</h4>
                         <c:forEach items="${t.top5}" var="o">
