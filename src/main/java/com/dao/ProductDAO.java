@@ -368,82 +368,7 @@ public class ProductDAO {
         return result;
     }
 
-    //Load danh muc
-    public ArrayList<ProductDTO> getListCategory() {
-        Connection con = null;
-        ResultSet rs = null;
 
-        PreparedStatement ps = null;
-        ArrayList<ProductDTO> listCategory = new ArrayList<>();
-        try {
-            con = DBUtils.makeConnection();
-
-            String sql = "SELECT DISTINCT loai from product";
-            ps = con.prepareStatement(sql);
-            rs = ps.executeQuery();
-            rs.beforeFirst();
-            while (rs.next()) {
-                ProductDTO pd = new ProductDTO();
-                pd.setLoai(rs.getString(1));
-
-
-                listCategory.add(pd);
-            }
-            Collection<ProductDTO> values = listCategory;
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } finally {
-            try {
-                if (rs != null) rs.close();
-
-                if (ps != null) ps.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return listCategory;
-    }
-
-    //fillter theo Category_name
-    public ArrayList<ProductDTO> getProductByCategoryName(String CName) {
-        ArrayList<ProductDTO> result = new ArrayList<>();
-        Connection con;
-        PreparedStatement preparedStatement = null;
-        ResultSet rs = null;
-        String sql = "Select * from product where loai like ?";
-        try {
-            con = DBUtils.makeConnection();
-            preparedStatement = con.prepareStatement(sql);
-            preparedStatement.setString(1, CName);
-
-            rs = preparedStatement.executeQuery();
-            rs.beforeFirst();
-            while (rs.next()) {
-                ProductDTO product = new ProductDTO();
-                product.setIdProduct(rs.getString(1));
-                product.setTenProduct(rs.getString(2));
-                product.setLoai(rs.getString(3));
-                product.setChatLieu(rs.getString(4));
-                product.setGiaTien(rs.getInt(5));
-                product.setSoLuongTrongKho((rs.getInt(6)));
-                product.setDanhGia(rs.getInt(7));
-                product.setTinhTrang(rs.getString(8));
-                getImagesByProduct(product);
-                result.add(product);
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                if (preparedStatement != null) preparedStatement.close();
-                if (rs != null) rs.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-        }
-        return result;
-    }
     public boolean deleteProduct(String id) {
         Connection con  = null;
         PreparedStatement ps = null;
@@ -463,16 +388,5 @@ public class ProductDAO {
         }
         return false;
     }
-    public static void main(String[] args) {
-
-        ProductDAO dao = new ProductDAO();
-        List<ProductDTO> listPrByCategory = dao.getProductByCategoryName("Tủ kệ");
-
-        for (ProductDTO l : listPrByCategory) {
-            System.out.println(l.toString());
-        }
-    }
-
-
 
 }

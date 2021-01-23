@@ -115,14 +115,10 @@
                         <h4>DANH MỤC SẢN PHẨM</h4>
                         <ul class="product">
 
-                            <li><a href="<c:url value="/Products?index=1"/>">Tất cả <i class="fa fa-angle-right"
-                                                                                       style="padding-top:5px ;"></i>
+                            <li><a href="#">Tất cả <i class="fa fa-angle-right" style="padding-top:5px ;"></i>
                             </a></li>
-                            <c:forEach items="${listC}" var="d">
-                                <li><a href="Category?category_name=${d.loai}">${d.loai} <i class="fa fa-angle-right"
-                                                                                            style="padding-top:5px ;"></i>
-                                </a></li>
-                            </c:forEach>
+                            <li><a href="#">TEXT <i class="fa fa-angle-right" style="padding-top:5px ;"></i>
+                            </a></li>
                         </ul>
                     </div>
 
@@ -132,9 +128,9 @@
                         <c:forEach items="${t.top5}" var="o">
                             <ul class="test">
                                 <li>
-                                    <a class="font_new" href="ProductDetailController?id=${o.getIdProduct()}">
+                                    <a class="font_new" href="ProductDetailController?id=${o.idProduct}">
                                         <div>
-                                            <img src="images/products/${o.getImages().get(0)}" alt="">
+                                            <img src="images/products/${o.images.get(0)}" alt="">
                                         </div>
                                         <div class="text">
                                             <div class="name">${o.tenProduct}</div>
@@ -159,11 +155,11 @@
                                 <div class="col-md-3 col-sm-6 ">
                                     <div class="product-grid ">
                                         <div class="product-image ">
-                                            <a href="ProductDetailController?id=${d.getIdProduct()}">
+                                            <a href="ProductDetailController?id=${d.idProduct}">
                                                 <img class="pic-1 "
-                                                     src="${pageContext.request.contextPath}/images/products/${d.getImages().get(0)}">
+                                                     src="${pageContext.request.contextPath}/images/products/${d.images.get(0)}">
                                                 <img class="pic-2 "
-                                                     src="${pageContext.request.contextPath}/images/products/${d.getImages().get(1)}">
+                                                     src="${pageContext.request.contextPath}/images/products/${d.images.get(1)}">
                                             </a>
                                             <!-- <span class="product-trend-label ">Mới</span> -->
 
@@ -171,23 +167,23 @@
                                                 <li>
                                                         <%--                                                    <a href="${servlet}index=${i}">${i}</a>--%>
 
-                                                    <a href="cart?id=${d.getIdProduct()}" data-tip="Thêm vào giỏ hàng "><i
+                                                    <a href="cart?id=${d.idProduct}" data-tip="Thêm vào giỏ hàng "><i
                                                             class="fa fa-shopping-cart "></i></a>
                                                 </li>
                                                     <%--                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>--%>
                                                     <%--                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>--%>
                                                 <li>
-                                                    <a href="ProductDetailController?id=${d.getIdProduct()}"
+                                                    <a href="ProductDetailController?id=${d.idProduct}"
                                                        data-tip="Xem thêm"><i class="fa fa-search "></i></a></li>
                                             </ul>
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title ">
                                                 <a style="font-size: 11px"
-                                                   href="ProductDetailController?id=${d.getIdProduct()}">${d.tenProduct}</a>
+                                                   href="ProductDetailController?id=${d.idProduct}">${d.tenProduct}</a>
 
                                             </h3>
-                                            <div class="price  ">${d.giaTien}</div>
+                                            <div class="price">${d.giaTien}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -205,7 +201,7 @@
                             <ul class="pagination">
 
                                 <c:forEach begin="1" end="${endPage}" var="i">
-                                    <a href="${servlet}index=${i}">${i}</a>
+                                    <button><a href="${servlet}index=${i}">${i}</a></button>
                                 </c:forEach>
 
                             </ul>
@@ -269,14 +265,17 @@
                                         <ul class="social ">
                                             <li><a href="cart?id=${o.idProduct}" data-tip="Thêm vào giỏ hàng"><i
                                                     class="fa fa-shopping-cart "></i></a></li>
-<%--                                            <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>--%>
-<%--                                            <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>--%>
-                                            <li><a href="<c:url value="ProductDetailController?id=${o.idProduct}"/>" data-tip="Xem thêm "><i
+                                                <%--                                            <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>--%>
+                                                <%--                                            <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>--%>
+                                            <li><a href="<c:url value="ProductDetailController?id=${o.idProduct}"/>"
+                                                   data-tip="Xem thêm "><i
                                                     class="fa fa-search "></i></a></li>
                                         </ul>
                                     </div>
                                     <div class="product-content ">
-                                        <h3 class="title "><a href="<c:url value="ProductDetailController?id=${o.idProduct}"/> ">${o.tenProduct}</a></h3>
+                                        <h3 class="title "><a
+                                                href="<c:url value="ProductDetailController?id=${o.idProduct}"/> ">${o.tenProduct}</a>
+                                        </h3>
                                         <div class="price ">${o.giaTien}</div>
                                     </div>
                                 </div>
