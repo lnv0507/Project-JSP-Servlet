@@ -32,27 +32,32 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="right-action text-right">
-                                <div class="btn-groups">
-                                    <button type="button" class="btn btn-primary" style="background-color: #8B8B8B;"
-                                            onclick="cms_deactivate_product_bydetail(119)"><i class="fa fa-pause"></i>
-                                        Ngừng kinh doanh
-                                    </button>
-                                    <a href="SanPhamRepair.jsp">
-                                        <button type="button" class="btn btn-primary " onclick="cms_edit_product(119)">
-                                            <i class="fa fa-pencil-square-o"></i> Sửa thông tin
+                            <c:forEach items="${product}" var="p">
+                                <div class="right-action text-right">
+                                    <div class="btn-groups">
+                                        <button type="button" class="btn btn-primary" style="background-color: #8B8B8B;"
+                                                onclick="cms_deactivate_product_bydetail(119)"><i
+                                                class="fa fa-pause"></i>
+                                            Ngừng kinh doanh
                                         </button>
-                                    </a>
+                                        <a href="SanPhamRepair.jsp">
+                                            <button type="button" class="btn btn-primary "
+                                                    onclick="cms_edit_product(119)">
+                                                <i class="fa fa-pencil-square-o"></i> Sửa thông tin
+                                            </button>
+                                        </a>
 
-                                    <button type="button" class="btn btn-danger"
-                                            onclick="cms_delete_product_bydetail(119)"><i class="fa fa-trash-o"></i> Xóa
-                                    </button>
-                                    <button type="button" class="btn btn-default"
-                                            onclick="cms_javascript_redirect( cms_javascrip_fullURL() )"><i
-                                            class="fa fa-arrow-left"></i> Trở về
-                                    </button>
+                                        <button type="button" class="btn btn-danger"
+                                                onclick="cms_delete_product_bydetail('${p.idProduct}')"><i class="fa fa-trash-o"></i>
+                                            Xóa
+                                        </button>
+                                        <button type="button" class="btn btn-default"
+                                                onclick="cms_javascript_redirect( cms_javascrip_fullURL() )"><i
+                                                class="fa fa-arrow-left"></i> Trở về
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
+                            </c:forEach>
                         </div>
                     </div>
                 </div>
@@ -127,12 +132,14 @@
                                         <div class="row">
                                             <div class="col-md-6 padd-20">
                                                 <h3 style="color:white;">Hình ảnh sản phẩm</h3>
-                                                <img src="../images/products/${p.getImages().get(0)}" style="width: 300px ; height: 300px;" alt="">
+                                                <img src="../images/products/${p.getImages().get(0)}"
+                                                     style="width: 300px ; height: 300px;" alt="">
                                             </div>
                                             <div class="col-md-6 padd-20">
                                                 <h3 style="color:white;">Mô tả</h3>
                                                 <div id="ckeditor">
-                                                <textarea id="ck_editor" id="prd_description" style="width: 500px; height: 300px;"></textarea>
+                                                    <textarea id="ck_editor" id="prd_description"
+                                                              style="width: 500px; height: 300px;"></textarea>
                                                 </div>
                                             </div>
                                         </div>

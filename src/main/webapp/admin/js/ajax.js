@@ -1679,14 +1679,15 @@ function cms_delete_product($id, $page) {
     if (conf) {
         var $param = {
             'type': 'POST',
-            'url': 'product/cms_delete_product/' + $id,
-            'data': null,
+            'url': 'deleteProduct',
+            'data': {'id':$id},
             'callback': function (data) {
-                if (data == '1') {
-                    $('.ajax-success-ct').html('Xóa sản phẩm thành công.').parent().fadeIn().delay(1000).fadeOut('slow');
-                    cms_paging_product($page);
-                } else if (data == '0') {
-                    $('.ajax-error-ct').html('Oops! This system is errors! please try again.').parent().fadeIn().delay(1000).fadeOut('slow');
+                if (data == '0') {
+                    $('.ajax-error-ct').html('Lỗi! không thể xóa Sản Phẩm').parent().fadeIn().delay(1000).fadeOut('slow');
+                } else {
+                    $('.ajax-success-ct').html('Bạn đã xóa sản Phẩm thành công!').parent().fadeIn().delay(1000).fadeOut('slow');
+                    window.location.href = "/webshop/admin/product  ";
+                    // cms_paging_listcustomer($page);
                 }
             }
         };
@@ -1699,16 +1700,15 @@ function cms_delete_product_bydetail($id) {
     if (conf) {
         var $param = {
             'type': 'POST',
-            'url': 'product/cms_delete_product/' + $id,
-            'data': null,
+            'url': 'deleteProduct',
+            'data': {'id':$id},
             'callback': function (data) {
-                if (data == '1') {
-                    $('.ajax-success-ct').html('Xóa sản phẩm thành công.').parent().fadeIn().delay(1000).fadeOut('slow');
-                    setTimeout(function () {
-                        cms_javascript_redirect(cms_javascrip_fullURL());
-                    }, 2000);
-                } else if (data == '0') {
-                    $('.ajax-error-ct').html('Oops! This system is errors! please try again.').parent().fadeIn().delay(1000).fadeOut('slow');
+                if (data == '0') {
+                    $('.ajax-error-ct').html('Lỗi! không thể xóa Sản Phẩm').parent().fadeIn().delay(1000).fadeOut('slow');
+                } else {
+                    $('.ajax-success-ct').html('Bạn đã xóa sản Phẩm thành công!').parent().fadeIn().delay(1000).fadeOut('slow');
+                    window.location.href = "/webshop/admin/product  ";
+                    // cms_paging_listcustomer($page);
                 }
             }
         };

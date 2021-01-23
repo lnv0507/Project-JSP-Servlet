@@ -257,7 +257,7 @@
                     <h4 style="text-align: center; font-weight: bolder; ">SẢN PHẨM BÁN CHẠY NHẤT TRONG DANH MỤC NÀY</h4>
                     <div class="owl-carousel ">
                         <c:forEach items="${t.top5}" var="o">
-                            <div class="item ">
+                            <div class="item">
                                 <div class="product-grid ">
                                     <div class="product-image ">
                                         <a href="<c:url value="ProductDetailController?id=${o.idProduct}"/>">

@@ -178,7 +178,7 @@
 
                                 </a>
                                 <i title="Ngừng kinh doanh" class="fa fa-pause" onclick="cms_deactivate_product(119,1);" style="margin-right: 5px; color: #C6699F; cursor: pointer;"></i>
-                                <i class="fa fa-trash-o" style="color: darkred;" title="Xóa" onclick="cms_delete_product(119,1)"></i>
+                                <i class="fa fa-trash-o" style="color: darkred;" title="Xóa" onclick="cms_delete_product('${d.idProduct}',1)"></i>
                             </td>
                         </tr>
                         </c:forEach>

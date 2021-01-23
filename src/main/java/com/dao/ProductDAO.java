@@ -444,7 +444,25 @@ public class ProductDAO {
         }
         return result;
     }
+    public boolean deleteProduct(String id) {
+        Connection con  = null;
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        try {
+            con = DBUtils.makeConnection();
+            ps = con.prepareStatement("DELETE from product where idproduct = ?");
+            ps.setString(1, id);
+            if(ps.executeUpdate() > 0){
+                ps = con.prepareStatement("SELECT  * from product");
+                ps.executeQuery();
+                return true;
+            }
 
+        }catch (Exception e){
+
+        }
+        return false;
+    }
     public static void main(String[] args) {
 
         ProductDAO dao = new ProductDAO();
@@ -454,6 +472,7 @@ public class ProductDAO {
             System.out.println(l.toString());
         }
     }
+
 
 
 }

@@ -4,6 +4,7 @@ import com.dtos.AccountDTO;
 import com.dtos.ProductDTO;
 import com.utils.DBUtils;
 
+import java.security.MessageDigest;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -20,11 +21,10 @@ public class AccountDAO {
                 String sql = "select *\n" + "from account \n" + "where IDACCOUNT=? AND PASSWORD=?";
                 pst = cn.prepareStatement(sql);
                 pst.setString(1, userId);
-                pst.setString(2, passWord);
+                pst.setString(2, md5(passWord));
                 rs = pst.executeQuery();
                 if (rs.next()) {
                     String fullName = rs.getString("TENACCOUNT");
-                    System.out.println(fullName);
                     String soDienThoai = rs.getString("SODIENTHOAI");
                     String diaChi = rs.getString("DIACHI");
                     String email = rs.getString("EMAIL");
@@ -63,7 +63,7 @@ public class AccountDAO {
                 pst.setString(4, account.getDiaChi());
                 pst.setString(5, account.getEmail());
                 pst.setString(6, account.getChucVu());
-                pst.setString(7, account.getPassWord());
+                pst.setString(7, md5(account.getPassWord()));
                 pst.executeUpdate();
             }
         } catch (Exception e) {
@@ -93,7 +93,7 @@ public class AccountDAO {
                 ad.setDiaChi(rs.getString(4));
                 ad.setEmail(rs.getString(5));
                 ad.setChucVu(rs.getString(6));
-                ad.setPassWord(rs.getString(7));
+                ad.setPassWord(md5(rs.getString(7)));
                 listAc.add(ad);
             }
         } catch (Exception e) {
@@ -122,7 +122,7 @@ public class AccountDAO {
                 ad.setDiaChi(rs.getString(4));
                 ad.setEmail(rs.getString(5));
                 ad.setChucVu(rs.getString(6));
-                ad.setPassWord(rs.getString(7));
+                ad.setPassWord(md5(rs.getString(7)));
                 listAc.add(ad);
             }
         } catch (Exception e) {
@@ -135,23 +135,40 @@ public class AccountDAO {
     }
 
     public boolean deleteAccount(String id) {
-        Connection con  = null;
+        Connection con = null;
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
             con = DBUtils.makeConnection();
             ps = con.prepareStatement("DELETE from account where idaccount = ?");
             ps.setString(1, id);
-          if(ps.executeUpdate() > 0){
-              ps = con.prepareStatement("SELECT  * from account");
-              ps.executeQuery();
-              return true;
-          }
+            if (ps.executeUpdate() > 0) {
+                ps = con.prepareStatement("SELECT  * from account");
+                ps.executeQuery();
+                return true;
+            }
 
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
         return false;
+    }
+
+    //    Mã Hóa Mật Khẩu
+    public static String md5(String msg) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            md.update(msg.getBytes());
+            byte byteData[] = md.digest();
+            //convert the byte to hex format method 1
+            StringBuffer sb = new StringBuffer();
+            for (int i = 0; i < byteData.length; i++) {
+                sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            return sb.toString();
+        } catch (Exception ex) {
+            return "";
+        }
     }
 
 }
