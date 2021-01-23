@@ -389,4 +389,11 @@ public class ProductDAO {
         return false;
     }
 
+    public static void main(String[] args) {
+        ProductDAO productDAO = new ProductDAO();
+        for(ProductDTO p :productDAO.getListByPage(1 , 16)){
+            System.out.println(p.getTenProduct());
+        }
+    }
+
 }

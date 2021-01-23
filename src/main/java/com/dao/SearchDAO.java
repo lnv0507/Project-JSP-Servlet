@@ -49,6 +49,28 @@ public class SearchDAO {
         }
         return listProduct;
     }
+    public ArrayList<String> getAllDirectory(){
+        ArrayList<String> listDirectory = new ArrayList<String>();
+        Connection con = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet rs = null;
+        ProductDAO productDAO = new ProductDAO();
+        try{
+            con = DBUtils.makeConnection();
+            String sql =  "SELECT DISTINCT loai FROM product;";
+            preparedStatement = con.prepareStatement(sql);
+            rs = preparedStatement.executeQuery();
+            rs.beforeFirst();
+            while(rs.next()){
+                listDirectory.add(rs.getString(1));
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return listDirectory;
+    }
+
+
 
     public static void main(String[] args) {
         SearchDAO s = new SearchDAO();
