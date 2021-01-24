@@ -391,10 +391,60 @@ public class ProductDAO {
         return false;
     }
 
+    public ArrayList<ProductDTO> getProductsByType(String type,int index, int size){
+        ResultSet rsProducts = null;
+        ResultSet rsImages = null;
+        PreparedStatement ps = null;
+        Connection con;
+        String sql = "with x as (select ROW_NUMBER() over (order by IDPRODUCT asc ) as r,product.*" +
+                "from product where loai like ?)" +
+                "select * from x where r between ?*?-?+1 and ?*?";
+        ArrayList<ProductDTO> lsProducts = new ArrayList<>();
+        try {
+//            rsProducts = DBUtils.connect().executeQuery(sql);
+            con = DBUtils.makeConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1,type);
+            ps.setInt(2, index);
+            ps.setInt(3, size);
+            ps.setInt(4, size);
+            ps.setInt(5, index);
+            ps.setInt(6, size);
+            rsProducts = ps.executeQuery();
+            rsProducts.beforeFirst();
+            while (rsProducts.next()) {
+                ProductDTO pd = new ProductDTO();
+                pd.setIdProduct(rsProducts.getString(2));
+                pd.setTenProduct(rsProducts.getString(3));
+                pd.setLoai(rsProducts.getString(4));
+                pd.setChatLieu(rsProducts.getString(5));
+                pd.setGiaTien(rsProducts.getInt(6));
+                pd.setSoLuongTrongKho(rsProducts.getInt(7));
+                pd.setDanhGia(rsProducts.getInt(8));
+                pd.setTinhTrang(rsProducts.getString(9));
+                getImagesByProduct(pd);
+                lsProducts.add(pd);
+            }
+            Collection<ProductDTO> values = lsProducts;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            try {
+                if (rsProducts != null) rsProducts.close();
+                if (rsImages != null) rsImages.close();
+                if (ps != null) ps.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return lsProducts;
+
+    }
+
     public static void main(String[] args) {
         ProductDAO productDAO = new ProductDAO();
         for(ProductDTO p :productDAO.getListByPage(1 , 16)){
-            System.out.println(p.getTenProduct());
+            System.out.println(p.getImages().get(0));
         }
     }
 

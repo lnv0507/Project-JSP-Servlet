@@ -110,10 +110,12 @@
                     <div class="widget widget_category">
                         <h4>DANH MỤC SẢN PHẨM</h4>
                         <ul class="product">
-                            <li><a href="#">Tất cả <i class="fa fa-angle-right" style="padding-top:5px;"></i>
+                            <li><a href="Products?index=1">Tất cả <i class="fa fa-angle-right" style="padding-top:5px;"></i>
                             </a></li>
-                            <li><a href="#">TEXT <i class="fa fa-angle-right" style="padding-top:5px;"></i>
+                            <c:forEach items="${directories}" var="directory">
+                            <li><a href="Directory?type=${directory}&index=1">${directory} <i class="fa fa-angle-right" style="padding-top:5px;"></i>
                             </a></li>
+                                </c:forEach>
                         </ul>
                     </div>
                     <div class="widget widget_top_rated_product">

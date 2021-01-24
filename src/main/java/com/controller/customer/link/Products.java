@@ -1,6 +1,7 @@
 package com.controller.customer.link;
 
 import com.dao.ProductDAO;
+import com.dao.SearchDAO;
 import com.dtos.ProductDTO;
 import com.utils.DBUtils;
 
@@ -23,7 +24,9 @@ public class Products extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
            ProductDAO productDAO = new ProductDAO();
-            ArrayList<ProductDTO> allProducts = productDAO.getList();
+        SearchDAO searchDAO = new SearchDAO();
+
+            ArrayList<ProductDTO> allProducts = productDAO.getList(); //Lay toan bo san pham
             String indexString = request.getParameter("index");
             int index = Integer.parseInt(indexString);
             int pageSize = 16;
@@ -32,7 +35,9 @@ public class Products extends HttpServlet {
             if(allProducts.size() % pageSize != 0){
                 endPage++;
             }
-            ArrayList<ProductDTO> listProductsByPage = productDAO.getListByPage(index, pageSize);
+            ArrayList<ProductDTO> listProductsByPage = productDAO.getListByPage(index, pageSize); //Lay san pham theo trang
+        ArrayList<String> directories = searchDAO.getAllDirectory();
+            request.setAttribute("directories", directories);
             request.setAttribute("endPage",endPage);
             request.setAttribute("data",listProductsByPage);
             request.setAttribute("servlet","Products?");

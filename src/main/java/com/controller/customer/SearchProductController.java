@@ -34,6 +34,8 @@ public class SearchProductController extends HttpServlet {
             endPage++;
         }
         listProduct =  searchDAO.searchProduct(txt,index,pageSize);
+        ArrayList<String> directories = searchDAO.getAllDirectory();
+        request.setAttribute("directories", directories);
         request.setAttribute("endPage",endPage);
         request.setAttribute("data",listProduct);
         request.setAttribute("servlet","SearchProduct?search="+txt+"&");
