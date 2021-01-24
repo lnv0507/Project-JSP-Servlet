@@ -88,7 +88,7 @@
 
                 <!-- Checkout Inner Start -->
                 <div class="checkout-inner">
-                    <form action="thanhtoan" method="POST">
+                    <form action="order" method="POST">
                         <div class="checkout-form-steps">
                             <h4 style="    color: #ff9800;">Chi tiết Cá nhân</h4>
                             <input type="text" class="textfield" placeholder="Tên của bạn" required="" name="txtName"
@@ -125,7 +125,7 @@
 
 
                 <!-- Order List Start-->
-                <form action="" method="post">
+                <form action="order" method="post">
                     <div class="orderlist">
                         <c:forEach items="${list}" var="o">
                         <h3>${o.tenProduct}</h3>

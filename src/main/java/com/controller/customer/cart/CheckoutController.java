@@ -28,7 +28,7 @@ public class CheckoutController extends HttpServlet {
         while(listHoaDon.contains(maHoaDon)) {
             maHoaDon = "MS" + count++;
         }
-        vanChuyenDAO.insertVanChuyen(maHoaDon, name, email, soDienTHoai, address, donvivanchuyen, Double.parseDouble(tongtien));
+//        vanChuyenDAO.insertVanChuyen(maHoaDon, name, email, soDienTHoai, address, donvivanchuyen, Integer.parseInt(tongtien));
         request.getRequestDispatcher("checkout.jsp").forward(request,response);
     }
 

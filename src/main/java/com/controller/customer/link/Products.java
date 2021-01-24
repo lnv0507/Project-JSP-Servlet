@@ -28,7 +28,7 @@ public class Products extends HttpServlet {
 
             ArrayList<ProductDTO> allProducts = productDAO.getList(); //Lay toan bo san pham
             String indexString = request.getParameter("index");
-            int index = Integer.parseInt(indexString);
+            int index = Integer.parseInt(indexString.trim());
             int pageSize = 16;
             int endPage = 0;
             endPage = allProducts.size() / pageSize;
@@ -44,9 +44,4 @@ public class Products extends HttpServlet {
             request.getRequestDispatcher("products.jsp").forward(request,response);
 
     }
-
-
-
-    
-
 }

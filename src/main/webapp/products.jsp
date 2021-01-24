@@ -138,51 +138,40 @@
                             </ul>
                         </c:forEach>
                     </div>
-
                 </div>
-
                 <div class="col-md-9">
                     <div class="row">
-
                         <div class="row " style="padding-left: 30px;">
                             <%--                                        product--%>
                             <c:forEach items="${data}" var="d">
                                 <div class="col-md-3 col-sm-6 ">
                                     <div class="product-grid ">
-                                        <div class="product-image ">
-                                            <a href="ProductDetailController?id=${d.idProduct}">
-                                                <img class="pic-1 "
-                                                     src="${pageContext.request.contextPath}/images/products/${d.images.get(0)}">
-                                                <img class="pic-2 "
-                                                     src="${pageContext.request.contextPath}/images/products/${d.images.get(1)}">
+                                        <div class="product-image">
+                                            <a href="<c:url value="ProductDetailController?id=${d.getIdProduct()}"/> ">
+                                                <img class="pic-1" src="<c:url value="images/products/${d.getImages().get(0)}"/>">
+                                                <img class="pic-2" src="<c:url value="images/products/${d.getImages().get(0)}"/>">
                                             </a>
-                                            <!-- <span class="product-trend-label ">Mới</span> -->
-
                                             <ul class="social ">
                                                 <li>
-                                                        <%--                                                    <a href="${servlet}index=${i}">${i}</a>--%>
-
-                                                    <a href="cart?id=${d.idProduct}" data-tip="Thêm vào giỏ hàng "><i
+                                                    <a href="cart?id=${d.getIdProduct()}" data-tip="Thêm vào giỏ hàng "><i
                                                             class="fa fa-shopping-cart "></i></a>
                                                 </li>
                                                     <%--                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>--%>
                                                     <%--                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>--%>
                                                 <li>
-                                                    <a href="ProductDetailController?id=${d.idProduct}"
-                                                       data-tip="Xem thêm"><i class="fa fa-search "></i></a></li>
+                                                    <a href="<c:url value="ProductDetailController?id=${d.getIdProduct()}"/>" data-tip="Xem thêm"><i class="fa fa-search "></i></a>
+                                                </li>
                                             </ul>
                                         </div>
                                         <div class="product-content ">
                                             <h3 class="title ">
                                                 <a style="font-size: 11px"
-                                                   href="ProductDetailController?id=${d.idProduct}">${d.tenProduct}</a>
-
+                                                   href="<c:url value="ProductDetailController?id=${d.getIdProduct()}"/> ">${d.getTenProduct()}</a>
                                             </h3>
-                                            <div class="price">${d.giaTien}</div>
+                                            <div class="price">${d.getGiaTien()}</div>
                                         </div>
                                     </div>
                                 </div>
-
                             </c:forEach>
 
                             <%--end product--%>
@@ -252,8 +241,8 @@
                                 <div class="product-grid ">
                                     <div class="product-image ">
                                         <a href="<c:url value="ProductDetailController?id=${o.idProduct}"/>">
-                                            <img class="pic-1 " src="images/products/${o.images.get(0)}">
-                                            <img class="pic-2 " src="images/products/${o.images.get(1)}">
+                                            <img class="pic-1" src="images/products/${o.images.get(0)}">
+                                            <img class="pic-2" src="images/products/${o.images.get(1)}">
                                         </a>
                                         <span class="product-trend-label ">${o.tinhTrang}</span>
 

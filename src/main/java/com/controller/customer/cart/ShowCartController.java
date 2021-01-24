@@ -41,8 +41,8 @@ public class ShowCartController extends HttpServlet {
                 }
             }
         }
-        double total = 0;
-        double tinhtien = 0;
+        int total = 0;
+        int tinhtien = 0;
         for (ProductDTO o : list) {
             total = total + o.getAmount() * o.getGiaTien();
             tinhtien = o.getAmount() * o.getGiaTien();
