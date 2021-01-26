@@ -3,6 +3,7 @@ package com.controller.customer;
 import com.dao.DesignDAO;
 import com.dao.ProductDAO;
 import com.dtos.DesignDTO;
+import com.dtos.DetailDesignDTO;
 import com.dtos.ProductDTO;
 
 import javax.servlet.*;
@@ -10,6 +11,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 @WebServlet(name = "DetailDesignController", urlPatterns = "/DetailDesignController")
 public class DetailDesignController extends HttpServlet {
@@ -19,22 +21,22 @@ public class DetailDesignController extends HttpServlet {
         String id = request.getParameter("id");
         ArrayList<DesignDTO> lsDesign = new ArrayList<>();
         ArrayList<String> lsType = new ArrayList<>();
-        ArrayList<ProductDTO> listProduct = new ArrayList<>();
-        ProductDAO productDAO = new ProductDAO();
         DesignDAO designDAO = new DesignDAO();
         DesignDTO designDTO = new DesignDTO();
+        ArrayList<String> images = new ArrayList<>();
         try {
-
             designDTO = designDAO.getDesById(id);
             String typeId = designDTO.getType();
             String type = designDAO.getTypeById(typeId);
             lsType.add(type);
             lsDesign.add(designDTO);
-            for(String str : designDTO.getListProducts()){
-                listProduct.add(productDAO.getProductById(str));
-            }
+            images = designDTO.getImagesDes();
+            ArrayList<DetailDesignDTO> list = designDAO.findById(designDTO.getIdDes());
+
+
             HttpSession session = request.getSession();
-            session.setAttribute("product",listProduct);
+            session.setAttribute("images",images);
+            session.setAttribute("products",list);
             session.setAttribute("type",lsType);
             session.setAttribute("design", lsDesign);
             request.getRequestDispatcher("project-details.jsp").forward(request,response);

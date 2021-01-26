@@ -22,7 +22,7 @@ public class HomeController extends HttpServlet {
         ArrayList<DirectoryTypeDTO> listDesDirec = new ArrayList<>();
         DesignDAO designDAO = new DesignDAO();
         listDesDirec = designDAO.getDirectories();
-        listDes = designDAO.getDesigns(1,10);
+        listDes = designDAO.getDesigns(1,Integer.MAX_VALUE);
         HttpSession session = req.getSession();
         session.setAttribute("des",listDes);
         session.setAttribute("direc",listDesDirec);

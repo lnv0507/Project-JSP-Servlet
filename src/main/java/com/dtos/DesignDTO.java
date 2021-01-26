@@ -1,5 +1,8 @@
 package com.dtos;
 
+import com.dao.ProductDAO;
+
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -7,6 +10,7 @@ public class DesignDTO {
     String idDes;
     String nameDes;
     String type;
+    String mota;
     ArrayList<String> imagesDes;
     ArrayList<String> listProducts;
     HashMap<String,Integer> hashProducts;
@@ -16,13 +20,22 @@ public class DesignDTO {
         listProducts = new ArrayList<>();
     }
 
-    public DesignDTO(String idDes, String nameDes,String type) {
+    public DesignDTO(String idDes, String nameDes,String type,String mota) {
         this.type = type;
         this.idDes = idDes;
         this.nameDes = nameDes;
+        this.mota = mota;
         this.imagesDes = new ArrayList<>();
         hashProducts = new HashMap<>();
         listProducts = new ArrayList<>();
+    }
+
+    public String getMota() {
+        return mota;
+    }
+
+    public void setMota(String mota) {
+        this.mota = mota;
     }
 
     public void setType(String type) {
@@ -36,13 +49,10 @@ public class DesignDTO {
     public HashMap<String, Integer> getHashProducts() {
         return hashProducts;
     }
-    public int getCountByIdProduct(){
-        return hashProducts.get(idDes);
+    public int getCountByIdProduct(String id){
+        return hashProducts.get(id);
     }
 
-    public ArrayList<String> getNamesProducts(){
-        return null;
-    }
 
     public String getIdDes() {
         return idDes;

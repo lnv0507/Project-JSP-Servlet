@@ -708,15 +708,45 @@ VALUES('LS625002R9','vani-1.png'),
 ('STSAMCOLTAB01.0005','Bàn-coffee-vuông-Minimal-noi-that-moho02-2-scaled.jpg'),
 ('STSAMCOLTAB01.0005','Bàn-coffee-vuông-Minimal-noi-that-moho03-2-scaled.jpg'),
 
-('D1','KS1-1.jpg'),
-('D1','KS1-2.jpg'),
-('D1','KS1-3.jpg'),
-('D2','KS2-1.jpeg'),
-('D2','KS2-2.jpgg'),
-('D2','KS2-3.jpg'),
-('D3','O2-1.jpg'),
-('D3','pf (6).jpg'),
-('D3','R1-1.jpg')
+('D1','p1.jpg'),
+('D1','p2.jpg'),
+('D1','p3.jpg'),
+
+('D2','p4.jpeg'),
+('D2','p5.jpg'),
+('D2','p6.jpg'),
+
+('D3','p7.jpg'),
+('D3','p8.jpg'),
+('D3','p9.jpg'),
+
+('D4','p10.jpg'),
+('D4','p11.jpg'),
+('D4','p12.jpg'),
+
+('D5','p13.jpg'),
+('D5','p14.jpg'),
+('D6','p15.jpg'),
+
+('D7','p16.jpg'),
+('D7','p17.jpg'),
+('D7','p18.jpg'),
+
+('D8','p19.jpg'),
+('D8','p20.jpg'),
+('D8','p21.jpg'),
+
+('D9','p22.jpg'),
+('D9','p23.jpg'),
+('D9','p24.png'),
+
+('D10','p25.jpg'),
+('D10','p26.jpg'),
+('D10','p27.jpg'),
+
+('D11','p28.jpg'),
+('D11','p29.jpg'),
+('D11','p30.jpg'),
 
 
 INSERT INTO CHITIETTHIETKE(MATHIETKE,MASANPHAM,SOLUONG)
@@ -740,4 +770,89 @@ VALUES
 ('D3','STSAMCOLCHE01.0003',7),
 ('D3','SETMDFDTCA701.B16.01',4),
 ('D3','MFWRCA505.W05',2),
-('D3','MFWRCA507.M05',4)
+('D3','MFWRCA507.M05',4),
+
+('D4','LS625002R9',5),
+('D4','MFWRCA509.M10',6),
+('D4','MFDBCA501.W11',6),
+('D4','SET2TUQUANAO(01)-1-2',5),
+('D4','MFSTCA604.N09',2),
+('D4','SETMDFDTCA701.B16.07',3),
+
+('D5','STSAMCOLTAB01.0005',5),
+('D5','SETMFDTCA601.W15.01',6),
+('D5','SETMDFDTCA701.B16.04',6),
+('D5','MFDTCA702.N16',5),
+('D5','MFTCCA901.B16',2),
+('D5','MFSTCA803.N06',3),
+
+('D6','MFSTCA201.G10',5),
+('D6','MFBSCA602.N16',6),
+('D6','MFDBCA501.W11',6),
+('D6','MFSHCA602.G07.N16',5),
+('D6','MFSTCA604.N09',2),
+('D6','MFWRCA507.M05',3),
+
+('D7','LS625002R9',5),
+('D7','MFBSCA602.N16',3),
+('D7','MFDBCA501.W11',3),
+('D7','MFDTCA702.N16',7),
+('D7','MFSTCA604.N09',5),
+('D7','MFWRCA507.M05',3),
+
+('D8','MFDTCA601.W15',6),
+('D8','MFBSCA602.N16',3),
+('D8','MFDCCAD06.N05',2),
+('D8','MFDTCA702.N16',6),
+('D8','MFDTCA601.W15',5),
+('D8','MFWRCA507.M05',3),
+
+('D9','LS625002R9',5),
+('D9','MFBSCA602.N16',10),
+('D9','MFDBCA501.W11',9),
+('D9','MFDTCA702.N16',1),
+('D9','MFSTCA604.N09',2),
+('D9','MFWRCA507.M05',3),
+
+('D10','MFCDCA501.N08',2),
+('D10','MFBSCA602.N16',5),
+('D10','MFDBCA501.W11',7),
+('D10','MFBNCA804.N16',2),
+('D10','MFSTCA604.N09',2),
+('D10','MFCDCA501.N08',3),
+
+('D11','LS625002R9',5),
+('D11','MFBSCA602.N16',6),
+('D11','MFDBCA501.W11',6),
+('D11','MFDTCA702.N16',5),
+('D11','MFSTCA604.N09',2),
+('D11','MFWRCA507.M05',3)
+
+INSERT INTO DANHMUCTHIETKE(ID,LOAITHIETKE)
+VALUES
+('DT1','Nhà ở'),
+('DT2','Khách sạn'),
+('DT3','Nhà hàng'),
+('DT4','Văn phòng')
+
+INSERT INTO THIETKE(MATHIETKE,TENTHIETKE,LOAITHIETKE,MOTA)
+VALUES
+('D1','Green House','DT1','Bản thiết kế nhà đẹp là một công trình nhà ở mang những kiến trúc và những đặc trưng trong xây dựng sao cho thật vừa vặn với diện tích đất không nhiều trên phố, đảm bảo cuộc sống tiện ích cho gia đình gia chủ mà không kém phần thời thượng. Bản thiết kế nhà đẹp NP08 với những đường nét tuyệt vời đã tôn vinh được vẻ đẹp của phong cách nhà ở này.'),
+('D2','Eco House','DT1',' Thiết kế nhà đẹp giản dị trong từng đường nét mang  phong thái nhẹ nhàng không kém phần hiện đại. Những mẫu thiết kế nhà đẹp mới nhất 2016 được các kiến trúc sư 902 Studio cho ra mắt mang lại không gian sống tiện nghi nhất cho gia chủ.'),
+('D3','HollySaint','DT3','Thiết kế bàn ghế đơn giản nhưng vẫn rất thu hút, gần gũi. Màu sắc cùng hệ thống đèn treo, đèn chìm dày đặc khiến công trình như phát sáng lung linh thu hút thực khách.'),
+('D4','Khách Sạn 01','DT2','Khách sạn như một biệt thự cổ điển còn gây sự chú ý cho người nhìn với điểm nhấn riêng biệt về màu sắc ở dưới tầng trệt với sắc màu vàng đất sang trọng. Đây được xem là nút thắt hoang hảo tôn lên sự hoàn mỹ của toàn bộ kiến trúc công trình, cũng thể hiện tài năng của các kiến trúc sư.'),
+('D5','Khách Sạn 02','DT2','Là không gian nghỉ ngơi, thư giãn vì thế đòi hỏi bố trí công năng khách sạn phải đảm bảo sự công năng hiệu quả nhằm mang đến sự thư giãn thoải mái cho các khách hàng cũng như sự yên tĩnh riêng biệt đáp ứng được tiêu chuẩn thiết kế khách sạn 3 sao. Thấu hiểu điều này, các kiến trúc sư đã sáng tạo và tối ưu nhất công năng có thể.'),
+('D6','OF1','DT4','Tông màu chính mà Trung Chính lựa chọn cho văn phòng làm việc của mình chính là các màu nhạt chiếm chủ đạo. Bên cạnh gạch ốp trần và gạch lát sàn nhà màu ngà voi nhàn nhạt, Trung Chính chọn màu sắc của các loại bàn làm việc là màu vàng nhạt. 
+
+Còn những bức tường là sự kết hợp giữa màu xám và màu trắng. Như vậy sẽ tạo nên cảm giác lịch sự, sang trọng và ấm áp, dễ chịu. 
+
+Và để tạo điểm nhấn, hơn nữa cũng là để không gây ảnh hưởng đến đôi mắt thì Trung Chính sử dụng các bộ ghế có màu đen. Nhờ vậy tạo thành cảm giác sang trọng và hiện đại. Ngoài ra, trên những bức tường sẽ là các tấm poster có màu sắc rực rỡ và hết sức nổi bật, ví dụ như màu xanh, màu vàng rực, màu đỏ hay màu cam năng động. '),
+('D7','OF2','DT4','Ghế văn phòng theo kiểu chân quỳ hiện đại và tiện lợi. Các bộ ghế có kết cấu vững chắc, cùng phần dựa lưng tạo cảm giác dễ chịu khi ngồi. Những bộ ghế này mang đến cảm giác của sự chuyên nghiệp cho văn phòng hơn. 
+Bàn làm việc là loại bàn gỗ công nghiệp màu trắng ngà, dễ dàng kết hợp với những đồ nội thất khác, tạo nên sự cân bằng nhưng không gây nhàm chán cho căn phòng. 
+Tủ đựng đồ làm từ gỗ công nghiệp, được sắp xếp khéo léo. Nhờ vậy tạo cảm giác rộng rãi cho căn phòng hơn. '),
+('D8','OF3','DT4','Các loại cây xanh và cỏ nhân tạo được sắp xếp rải rác trong văn phòng. Nhờ vậy tăng thêm sức sống cũng như sự thoải mái nhờ bầu không khí trong lành cho văn phòng làm việc. 
+Những tấm poster mang tính sáng tạo và được thiết kế độc đáo, thể hiện sự cá tính, phong cách thời thượng như tính chất công việc của công ty. 
+Các bức tường được thiết kế mô phỏng theo kiểu tường gạch vừa hoài cổ vừa hiện đại, trở thành những điểm nhấn cho văn phòng làm việc. '),
+('D9','OF4','DT4','Nhìn tổng thể, thiết kế nội thất văn phòng của công ty LQH đã tạo được sự ấn tượng cho những vị khách ghé thăm. Trung Chính chỉ sử dụng những yếu tố đơn giản nhất, nhưng nhờ sự kết hợp hoàn hảo và khéo léo đã tạo nên một không gian mới mẻ, hết sức sáng tạo. Ngoài ra, còn đảm bảo tạo dựng môi trường làm việc dễ chịu, thoải mái cho các nhân viên trong công ty. '),
+('D10','H1','DT1','Phòng khách với phong cách hiện đại có bố trí một bộ sofa màu kem thanh lịch, một chiếc bàn trà bằng kính đen đơn giản, nổi bật giữa căn phòng là chiếc ghế sofa đơn màu vàng, đây là yếu tố làm điểm nhấn, giúp căn phòng bớt nhàm chán và đơn điệu. Kệ tivi cũng được thiết kế đơn giản, bên cạnh đó sử dụng kệ với nhiều ô khác nhau, dù	ng để trang trí, bày biện những món đồ mà chủ nhà ưa thích. Các kiến trúc sư còn sử dụng quạt trần để làm mát đồng thời có thể sử dụng để trang trí, giúp căn phòng thêm đẹp và hiện đại hơn.'),
+('D11','H2','DT1','Vẫn là phong cách thiết kế nội thất hiện đại quen thuộc, thế nhưng nội thất trong căn hộ của anh Huy không hề nhàm chán, tẻ nhạt một chút nào. Nhờ óc sáng tạo của các kiến trúc sư mà toàn bộ không gian đều được bố trí một cách hợp lý, đủ tiện nghi và đảm bảo tính thẩm mỹ cho căn hộ.')

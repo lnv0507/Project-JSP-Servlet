@@ -307,7 +307,7 @@
 
                 <!-- gallery item -->
                 <c:forEach items="${des}" var="des">
-                    <div class="item residential">
+                    <div class="item ${des.type}">
                         <div class="picframe">
                             <a class="simple-ajax-popup-align-top"
                                href="<c:url value="/DetailDesignController?id=${des.idDes}"/>">
@@ -317,7 +317,7 @@
                                 </span>
                                 </span>
                             </a>
-                            <img src="images/design/${des.getImagesDes().get(0)}" alt=""/> <!-- Nhap hinh anh -->
+                            <img src="<c:url value="images/design/${des.getImagesDes().get(0)}"/>" alt=""/> <!-- Nhap hinh anh -->
                         </div>
                     </div>
                 </c:forEach>

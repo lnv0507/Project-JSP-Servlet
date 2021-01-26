@@ -2,8 +2,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <div class="row">
     <div class="col-md-8 project-images">
-        <img src="images/portfolio/NO1.jpg" alt="" class="img-responsive"/>
-        <img src="images/portfolio/NO1-2.jpg" alt="" class="img-responsive"/>
+        <c:forEach items="${images}" var="image">
+        <img src="images/design/${image}" alt="" class="img-responsive" />
+        </c:forEach>
     </div>
     <div class="col-md-4">
         <div class="project-info">
@@ -28,16 +29,13 @@
                 <p></p>
                 <p>
                 <h4>Mô tả</h4>
-                Với lối thiết kế trung thành với tone chủ đạo vẫn là màu trắng kết hợp với màu hồng nhạt được xem là sự
-                kết hợp kinh điển trong thiết kế nội thất. Sắc hồng là màu sắc tạo sự nhẹ nhàng và màu trắng là màu
-                trung gian, căn phòng sẽ trở nên đầy tính nghệ thuật và êm ái nhưng không kém phần quyến rũ tác động
-                mạnh mẽ vào thị giác, tạo nên dự hấp dẫn riêng cho căn hộ.
+                ${des.getMota()}
                 </p>
                 <h4>Các sản phẩm :</h4>
                 <ul class="products-design">
-                    <c:forEach items="${product}" var="key">
-                    <li><a href="ProductDetailController?id=${key.getIdProduct()}">${key.getTenProduct()}</a></li>
-                    Số lượng :
+                    <c:forEach items="${products}" var="key">
+                    <li><a href="ProductDetailController?id=${key.getProductDTO().getIdProduct()}">${key.getProductDTO().getTenProduct()}</a></li>
+                    Số lượng : ${key.getNum()}
                     </c:forEach>
                 </ul>
                 </p>

@@ -1,5 +1,6 @@
 package com.dao;
 
+import com.dtos.DetailDesignDTO;
 import com.dtos.DirectoryTypeDTO;
 import com.dtos.ProductDTO;
 import com.dtos.DesignDTO;
@@ -72,6 +73,7 @@ public class DesignDAO {
                     designDTO.setIdDes(rsDes.getString(2));
                     designDTO.setNameDes(rsDes.getString(3));
                     designDTO.setType(rsDes.getString(4));
+                    designDTO.setMota(rsDes.getString(5));
                     setImagesDes(designDTO);
                     setProductsDes(designDTO);
                     listDes.add(designDTO);
@@ -101,6 +103,7 @@ public class DesignDAO {
                 designDTO.setIdDes(rs.getString(1));
                 designDTO.setNameDes(rs.getString(2));
                 designDTO.setType(rs.getString(3));
+                designDTO.setMota(rs.getString(4));
                 setImagesDes(designDTO);
                 setProductsDes(designDTO);
             }
@@ -160,9 +163,36 @@ public class DesignDAO {
         }
         return listDirectories;
     }
+    public ArrayList<DetailDesignDTO> findById(String id){
+        ArrayList<DetailDesignDTO> list = new ArrayList<>();
+        String sql="Select * from chitietthietke where MATHIETKE =?";
+        ResultSet rs = null;
+        ResultSet rsImages = null;
+        PreparedStatement ps = null;
+        Connection con;
+        ProductDAO productDAO =  new ProductDAO();
+        try{
+            con = DBUtils.makeConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1,id);
+            rs = ps.executeQuery();
+            while(rs.next()){
+                DetailDesignDTO ddd = new DetailDesignDTO();
+                ProductDTO productDTO = new ProductDTO();
+                productDTO = productDAO.getProductById(rs.getString(2));
+                int num = rs.getInt(3);
+                ddd.setProductDTO(productDTO);
+                ddd.setNum(num);
+                list.add(ddd);
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return list;
+    }
 
     public static void main(String[] args) {
         DesignDAO designDAO = new DesignDAO();
-        System.out.println(designDAO.getTypeById("DT1"));
+        System.out.println(designDAO.getDesigns(1,16).get(1).getImagesDes().get(0));
     }
 }
