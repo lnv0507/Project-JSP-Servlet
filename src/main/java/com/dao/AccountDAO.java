@@ -5,9 +5,14 @@ import com.dtos.ProductDTO;
 import com.mapper.AccountMapper;
 import com.utils.DBUtils;
 
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import java.security.MessageDigest;
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Properties;
+import java.util.Random;
 
 public class AccountDAO {
     public AccountDTO checkLogin(String userId, String passWord) throws SQLException {
@@ -155,6 +160,69 @@ public class AccountDAO {
         return false;
     }
 
+    public static String ramdomPassword() {
+        String pass = "";
+        Random rd = new Random();
+        for (int i = 0; i < 5; i++) {
+            int number = rd.nextInt(9);
+            pass += number;
+        }
+        return pass;
+    }
+
+        public static boolean sendPassword(String email1) {
+            String pass=ramdomPassword();
+            Connection cn = null;
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+        try    {
+            cn = DBUtils.makeConnection();
+            ps = cn.prepareStatement("update account set PASSWORD = ? where  EMAIL=?");
+            ps.setString(1, pass);
+            ps.setString(2,email1);
+
+            if(ps.executeUpdate()>0 ){
+                ps = cn.prepareStatement("SELECT * from account");
+                ps.executeQuery();
+                sendMail(email1,"PassNe",pass);
+                return true;
+            }
+        }
+        catch (Exception e) {
+
+            e.printStackTrace();
+        }
+        return false;
+    }
+    // gửi mail
+    public static boolean sendMail(String to, String subject, String text) {
+        Properties props = new Properties();
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.port", "587");
+        Session session = Session.getInstance(props, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication("qui24112000@gmail.com", "dinhthihang0354116356");
+            }
+        });
+        try {
+            Message message = new MimeMessage(session);
+            message.setHeader("Content-Type", "text/plain; charset=UTF-8");
+            message.setFrom(new InternetAddress("dangthien0973@gmail.com"));
+            message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
+            message.setSubject(subject);
+            message.setText(text);
+            Transport.send(message);
+            return true;
+
+        } catch (MessagingException e) {
+            return false;
+        }
+//        return true;
+    }
+
     //    Mã Hóa Mật Khẩu
     public static String md5(String msg) {
         try {
@@ -172,6 +240,7 @@ public class AccountDAO {
         }
     }
 
+<<<<<<< Updated upstream
     //    doimatkhau
     public static boolean doiMatKhau(String matKhau, String id) {
         Connection con = null;
@@ -260,5 +329,10 @@ public class AccountDAO {
     public static void main(String[] args) {
         AccountDAO accountDAO =new AccountDAO();
         System.out.println(accountDAO.findByUserName("123"));
+=======
+    public static void main(String[] args) {
+        AccountDAO p =new AccountDAO();
+        System.out.println(p.sendPassword("dangthien0973@gmail.com"));
+>>>>>>> Stashed changes
     }
 }

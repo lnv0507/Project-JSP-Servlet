@@ -746,7 +746,7 @@ VALUES('LS625002R9','vani-1.png'),
 
 ('D11','p28.jpg'),
 ('D11','p29.jpg'),
-('D11','p30.jpg'),
+('D11','p30.jpg')
 
 
 INSERT INTO CHITIETTHIETKE(MATHIETKE,MASANPHAM,SOLUONG)
