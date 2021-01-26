@@ -3,6 +3,50 @@
 <!-- Mirrored from www.themenesia.com/themeforest/archi-light/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:03:59 GMT -->
 
 <head>
+    <style>
+        .checked {
+            color: orange;
+        }
+
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 45%;
+        }
+
+        /* The Close Button */
+        .closes {
+            color: #aaaaaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .closes:hover,
+        .closes:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
     <meta charset="utf-8">
     <title>Shop Furniture</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -91,7 +135,7 @@
                                 <li class="account-item">Hồ Sơ</li>
                                 <li class="account-item">Ngân Hàng</li>
                                 <li class="account-item">Địa Chỉ</li>
-                                <li class="account-item">Đổi Mật Khẩu</li>
+                                <li class="account-item" ><a class="click_doimk" style="cursor: pointer">Đổi Mật Khẩu</a></li>
                             </ul>
                         </li>
                         <li class="account-user">
@@ -119,7 +163,8 @@
                             </tr>
                             <tr class="infor">
                                 <td>Email</td>
-                                <td><a href=""> <%=ac.getEmail()%></a></td>
+                                <td><a href=""><%=ac.getEmail()%>
+                                </a></td>
                             </tr>
                             <tr class="infor">
                                 <td>Số Điện Thoại</td>
@@ -156,8 +201,13 @@
                 </div>
             </div>
         </div>
-
-
+        <div id="myModal2" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="closes">&times;</span>
+                <div id="popupp"></div>
+            </div>
+        </div>
         <%@include file="footer.jsp" %>
         <!-- footer close -->
 

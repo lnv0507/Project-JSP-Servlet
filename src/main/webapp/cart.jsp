@@ -178,9 +178,10 @@
                         <th style="width:10%">Số lượng</th>
                         <th style="width:22%" class="text-center">Thành tiền</th>
                         <th style="width:10%">Phí Ship</th>
-                        <th style="width:10%">VAT</th>
+                        <th style="width:10%"></th>
                         <th style="width:10%">Action</th>
                     </tr>
+
                     </thead>
                     <tbody>
                     <c:forEach items="${list}" var="o">
@@ -196,6 +197,7 @@
                                     </div>
                                 </div>
                             </td>
+                            <input type="hidden" value="${o.idProduct}" name="idPro">
                             <td data-th="Price">${o.giaTien}</td>
                             <td class="actions" data-th="">
                                 <a href="sub?id=${o.idProduct}"><button class="btnSub">-</button></a>
@@ -204,7 +206,7 @@
                             </td>
                             <td data-th="Subtotal" class="text-center">${tinhtien}</td>
                             <td data-th="Subtotal" class="text-center">Freeship</td>
-                            <td data-th="Subtotal" class="text-center">${vat}</td>
+                            <td data-th="Subtotal" class="text-center"></td>
                             <td class="align-middle"><a href="remove?id=${o.idProduct}" class="text-dark">
                                 <button type="button" class="btn btn-danger">Delete</button>
                             </a>
@@ -228,7 +230,7 @@
                         <td></td>
 
                         <td>
-                            <a href="<c:url value="/order"/> " class="btn btn-success btn-block">
+                            <a href="<c:url value="/checkout.jsp"/> " class="btn btn-success btn-block">
                                 <span>Thanh toán </span><i class="fa fa-angle-right"></i></a>
                         </td>
                     </tr>

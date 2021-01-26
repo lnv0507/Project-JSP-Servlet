@@ -107,16 +107,32 @@
                         </form>
                         <div class="clearfix"></div>
                     </div>
+
                     <div class="widget widget_category">
                         <h4>DANH MỤC SẢN PHẨM</h4>
                         <ul class="product">
-                            <li><a href="Products?index=1">Tất cả <i class="fa fa-angle-right" style="padding-top:5px;"></i>
+                            <li><a href="Products?index=1">Tất cả <i class="fa fa-angle-right"
+                                                                     style="padding-top:5px;"></i>
                             </a></li>
                             <c:forEach items="${directories}" var="directory">
-                            <li><a href="Directory?type=${directory}&index=1">${directory} <i class="fa fa-angle-right" style="padding-top:5px;"></i>
-                            </a></li>
-                                </c:forEach>
+                                <li><a href="Directory?type=${directory}&index=1">${directory} <i
+                                        class="fa fa-angle-right" style="padding-top:5px;"></i>
+                                </a></li>
+                            </c:forEach>
                         </ul>
+                    </div>
+                    <div class="widget">
+                        <form action="" method="GET">
+                            <div>
+                                <h5>Lọc Theo Giá</h5>
+                                <input type="text" style="width: 100px" placeholder="TỪ"> -
+                                <input type="text" style="width: 100px" placeholder="ĐẾN">
+                            </div>
+                            <br>
+                            <div>
+                                <button type="submit" style="width: 210px">Lọc</button>
+                            </div>
+                        </form>
                     </div>
                     <div class="widget widget_top_rated_product">
                         <h4>Các SẢN PHẨM ĐỨNG TOP</h4>
@@ -130,8 +146,14 @@
                                         <div class="text">
                                             <div class="name">${o.tenProduct}</div>
                                             <div class="price"> ${o.giaTien }</div>
-                                            <a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i
+                                            <c:if test="${not empty user}">
+                                            <a href="<c:url value="/print"/>" data-tip="Thêm vào giỏ hàng "><i
                                                     style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
+                                            </c:if>
+                                            <c:if test="${empty user}">
+                                                <a href="<c:url value="/Signin?message=you_need_to_login&alert=danger"/>" data-tip="Thêm vào giỏ hàng "><i
+                                                        style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
+                                            </c:if>
                                         </div>
                                     </a>
                                 </li>
@@ -148,18 +170,28 @@
                                     <div class="product-grid ">
                                         <div class="product-image">
                                             <a href="<c:url value="ProductDetailController?id=${d.getIdProduct()}"/> ">
-                                                <img class="pic-1" src="<c:url value="images/products/${d.getImages().get(0)}"/>">
-                                                <img class="pic-2" src="<c:url value="images/products/${d.getImages().get(0)}"/>">
+                                                <img class="pic-1"
+                                                     src="<c:url value="images/products/${d.getImages().get(0)}"/>">
+                                                <img class="pic-2"
+                                                     src="<c:url value="images/products/${d.getImages().get(0)}"/>">
                                             </a>
                                             <ul class="social ">
                                                 <li>
-                                                    <a href="cart?id=${d.getIdProduct()}" data-tip="Thêm vào giỏ hàng "><i
-                                                            class="fa fa-shopping-cart "></i></a>
+                                                    <c:if test="${not empty user}">
+                                                        <a href="<c:url value="/cart?id=${d.getIdProduct()}"/>" data-tip="Thêm vào giỏ hàng "><i
+                                                                style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
+                                                    </c:if>
+                                                    <c:if test="${empty user}">
+                                                        <a href="<c:url value="/Signin?message=you_need_to_login&alert=danger"/>" data-tip="Thêm vào giỏ hàng "><i
+                                                                style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
+                                                    </c:if>
+
                                                 </li>
                                                     <%--                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>--%>
                                                     <%--                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>--%>
                                                 <li>
-                                                    <a href="<c:url value="ProductDetailController?id=${d.getIdProduct()}"/>" data-tip="Xem thêm"><i class="fa fa-search "></i></a>
+                                                    <a href="<c:url value="ProductDetailController?id=${d.getIdProduct()}"/>"
+                                                       data-tip="Xem thêm"><i class="fa fa-search "></i></a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -189,33 +221,6 @@
                                 </c:forEach>
 
                             </ul>
-                            <%--                            <div class="otherInfoBody ">--%>
-                            <%--                                <div class="col-md-3 col-sm-6 ">--%>
-                            <%--                                    <div class="product-grid ">--%>
-                            <%--                                        <div class="product-image ">--%>
-                            <%--                                            <a href="giuong.jsp ">--%>
-                            <%--                                                <img class="pic-1 " src="images/shop/bankhach15.jpg ">--%>
-                            <%--                                                <img class="pic-2 " src="images/shop/bankhach15.jpg ">--%>
-                            <%--                                            </a>--%>
-                            <%--                                            <span class="product-trend-label ">Mới</span>--%>
-
-                            <%--                                            <ul class="social ">--%>
-                            <%--                                                <li><a href="cart.jsp " data-tip="Thêm vào giỏ hàng "><i--%>
-                            <%--                                                        class="fa fa-shopping-cart "></i></a></li>--%>
-                            <%--                                                <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>--%>
-                            <%--                                                <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a>--%>
-                            <%--                                                </li>--%>
-                            <%--                                                <li><a href="product-details.jsp " data-tip="Xem thêm "><i--%>
-                            <%--                                                        class="fa fa-search "></i></a></li>--%>
-                            <%--                                            </ul>--%>
-                            <%--                                        </div>--%>
-                            <%--                                        <div class="product-content ">--%>
-                            <%--                                            <h3 class="title "><a href="pkhach-ban.jsp">Kệ Tivi MFC Màu Xám </a></h3>--%>
-                            <%--                                            <div class="price ">1.890.000 đ</div>--%>
-                            <%--                                        </div>--%>
-                            <%--                                    </div>--%>
-                            <%--                                </div>--%>
-                            <%--                            </div>--%>
 
                         </div>
 
@@ -247,8 +252,16 @@
                                         <span class="product-trend-label ">${o.tinhTrang}</span>
 
                                         <ul class="social ">
-                                            <li><a href="cart?id=${o.idProduct}" data-tip="Thêm vào giỏ hàng"><i
-                                                    class="fa fa-shopping-cart "></i></a></li>
+                                            <li>
+                                                <c:if test="${not empty user}">
+                                                    <a href="<c:url value="/cart?id=${o.idProduct}"/>" data-tip="Thêm vào giỏ hàng "><i
+                                                            style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
+                                                </c:if>
+                                                <c:if test="${empty user}">
+                                                    <a href="<c:url value="/Signin?message=you_need_to_login&alert=danger"/>" data-tip="Thêm vào giỏ hàng "><i
+                                                            style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
+                                                </c:if>
+
                                                 <%--                                            <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>--%>
                                                 <%--                                            <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>--%>
                                             <li><a href="<c:url value="ProductDetailController?id=${o.idProduct}"/>"

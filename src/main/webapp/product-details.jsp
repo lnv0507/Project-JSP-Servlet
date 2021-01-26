@@ -158,7 +158,14 @@
 
 
                     <h5><b>Trạng thái: </b>${p.getTinhTrang()}</h5>
-                    <a href="#" class="addtocart"><i class="fas fa-heart"></i> Thêm vào giỏ hàng</a>
+                    <c:if test="${not empty user}">
+                        <a href="<c:url value="/print"/>" data-tip="Thêm vào giỏ hàng "><i
+                                style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
+                    </c:if>
+                    <c:if test="${empty user}">
+                        <a href="<c:url value="/Signin?message=you_need_to_login&alert=danger"/>" data-tip="Thêm vào giỏ hàng "><i
+                                style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
+                    </c:if>
                     <h5><b> Nhận xét </b></h5>
                     <div class="star_mark">
                     <span onmouseover="starmark(this)" onclick="starmark(this)" id="1one"
@@ -295,13 +302,11 @@
 
     </div>
     <div id="myModal" class="modal">
-
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
             <div id="popup"></div>
         </div>
-
     </div>
     <!-- footer close -->
     <%@include file="footer.jsp" %>

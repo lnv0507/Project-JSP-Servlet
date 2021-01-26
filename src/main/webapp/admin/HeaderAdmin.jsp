@@ -53,7 +53,7 @@
                                 class="fa fa-gg-circle"></i><b >Trang Chủ</b></a></li>
                         <li id="orders"><a href="DonHang.jsp" name="btnAction"><i class="fa fa-shopping-cart"></i><b>Đơn hàng</b></a>
                         </li>
-                        <li id="product"><a href="<c:url value="/admin/product"/>" name="btnAction"><i class="fa fa-product-hunt"></i><b>Sản phẩm</b></a>
+                        <li id="product"><a href="<c:url value="/admin/product?index=1"/>" name="btnAction"><i class="fa fa-product-hunt"></i><b>Sản phẩm</b></a>
                         </li>
                         <li id="customer"><a href="<c:url value="/admin/createAcount"/>" name="btnAction"><i class="fa fa-users"></i><b>Khách hàng</b></a></li>
                         <li id="inventory"><a href="TonKho.jsp" name="btnAction"><i class="fa fa-list-alt"></i><b>Tồn kho</b></a></li>

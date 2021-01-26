@@ -237,6 +237,17 @@
                                 </div>
                                 <div class="pull-right">
                                 </div>
+                                <div class="otherInfo ">
+
+                                    <ul class="pagination">
+
+                                        <c:forEach begin="1" end="${endPage}" var="i">
+                                            <button><a href="${servlet}index=${i}">${i}</a></button>
+                                        </c:forEach>
+
+                                    </ul>
+
+                                </div>
                             </div>
                         </div>
                     </div>

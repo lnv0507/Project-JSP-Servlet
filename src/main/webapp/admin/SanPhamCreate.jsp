@@ -185,8 +185,12 @@
                                                     <h3 style="color: black;">Upload hình ảnh sản phẩm</h3>
 
                                                     <p>
-                                                        <input type="file"
-
+                                                        <input type="file">
+                                                        <input type="file">
+                                                        <input type="file">
+                                                        <input type="file">
+                                                        <input type="file">
+                                                        <input type="file">
                                                     </p>
                                                 </div>
                                             </div>

@@ -1,5 +1,7 @@
 package com.controller.customer;
 
+import com.utils.SessionUtil;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,8 +17,7 @@ public class LogOutController extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        session.invalidate();
+        SessionUtil.getInstance().removeValue(request,"user");
         response.sendRedirect("index-2.jsp");
     }
 }

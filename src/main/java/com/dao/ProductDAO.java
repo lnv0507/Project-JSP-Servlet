@@ -441,6 +441,7 @@ public class ProductDAO {
 
     }
 
+
     public ArrayList<ProductDTO> getRandomProductByType(String type){
         ResultSet rsProducts = null;
         ResultSet rsImages = null;
@@ -473,8 +474,26 @@ public class ProductDAO {
         return lsProducts;
     }
 
-    public static void main(String[] args) {
-        ProductDAO productDAO = new ProductDAO();
+
+//    Ngừng Kinh DOanh Product
+    public boolean ngungKinhDoanh(String id){
+        Connection con = null;
+        PreparedStatement pre = null;
+        try {
+            con = DBUtils.makeConnection();
+            if(con!=null){
+                pre = con.prepareStatement("UPDATE product SET TINHTRANG = 'Ngừng Kinh Doanh' , SOLUONGTRONGKHO = 0 where IDPRODUCT = ?");
+                pre.setString(1,id);
+                if(pre.executeUpdate()>0){
+                    pre = con.prepareStatement("SELECT  * from product");
+                    pre.executeQuery();
+                    return true;
+                }
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return false;
     }
 
 }

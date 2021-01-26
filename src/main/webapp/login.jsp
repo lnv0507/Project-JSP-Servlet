@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8"%>
 <html lang="en">
 <!-- Mirrored from www.themenesia.com/themeforest/archi-light/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:03:59 GMT -->
 
@@ -73,15 +73,19 @@
 
                             <form action="Signin" method="post">
                                 <div class="sign-in-htm">
-                                        <p class="text-danger">${message}</p>
+                                    <c:if test="${not empty message}">
+                                    <div class="alert alert-${alert}" role="alert">
+                                       ${message}
+                                    </div>
+                                    </c:if>
                                     <div class="group">
                                         <label for="user" class="label">Tài Khoản</label>
-                                        <input id="user" type="text" class="input" name="txtIDACCOUNT">
+                                        <input id="user" type="text" class="input" name="username" id="username">
                                     </div>
                                     <div class="group">
                                         <label for="pass" class="label">Mật Khẩu</label>
                                         <input id="pass" type="password" class="input" data-type="password"
-                                               name="txtPASSWORD">
+                                               name="password" id="password">
                                     </div>
                                     <div class="group">
                                         <input id="check" type="checkbox" class="check">
@@ -104,7 +108,30 @@
             <!-- footer begin -->
            <%@include file="footer.jsp"%>
         <!-- footer close -->
+            <script>
+                window.onload =function(){
+                    document.getElementById("username").onchange=validateLogin;
+                    document.getElementById("password").onchange=validateLogin;
+                }
+                function validateLogin(){
+                    var u =document.getElementById("username").value;
+                    var p =document.getElementById("password").value;
+                    if(u==''){
+                        document.getElementById("username").setCustomValidity('Bạn phải nhập tên đăng nhập');
+                    }else{
+                        document.getElementById("username").setCustomValidity('');
 
+                    }
+                    if(p==null){
+                        document.getElementById("password").setCustomValidity('Bạn phải nhập mật khẩu');
+                    }else{
+                        document.getElementById("password").setCustomValidity('');
+
+                    }
+                }
+
+
+            </script>
 </body>
 
 <!-- Mirrored from www.themenesia.com/themeforest/archi-light/contact.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:09:50 GMT -->

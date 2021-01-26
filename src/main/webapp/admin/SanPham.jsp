@@ -177,7 +177,7 @@
                                     <i class="fa fa-eye" style="margin-right: 5px; color: #307ECC;" aria-hidden="true"></i>
 
                                 </a>
-                                <i title="Ngừng kinh doanh" class="fa fa-pause" onclick="cms_deactivate_product(119,1);" style="margin-right: 5px; color: #C6699F; cursor: pointer;"></i>
+                                <i title="Ngừng kinh doanh" class="fa fa-pause" onclick="cms_deactivate_product('${d.idProduct}',1)" style="margin-right: 5px; color: #C6699F; cursor: pointer;"></i>
                                 <i class="fa fa-trash-o" style="color: darkred;" title="Xóa" onclick="cms_delete_product('${d.idProduct}',1)"></i>
                             </td>
                         </tr>
@@ -189,6 +189,9 @@
                             <span>6            /36</span></div>
                         <div class="pull-right ajax-pagination">
                         </div>
+                        <c:forEach begin="1" end="${endPage}" var="i">
+                            <button><a href="${servlet}index=${i}">${i}</a></button>
+                        </c:forEach>
                     </div>
                 </div>
             </div>

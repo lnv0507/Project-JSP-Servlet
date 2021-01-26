@@ -219,6 +219,26 @@ $(document).ready(function () {
         }
     };
 
+
+    var modall = document.getElementById("myModal2");
+
+// Get the <span> element that closes the modal
+    var spann = document.getElementsByClassName("closes")[0];
+
+
+    $('.click_doimk').click(function () {
+        modall.style.display = "block";
+        $('#popupp').load("/ChangePassController");
+    });
+    spann.onclick = function () {
+        modall.style.display = "none";
+    };
+    window.onclick = function (event) {
+        if (event.target == modall) {
+            modall.style.display = "none";
+        }
+    };
+
     //search
     // $('btn-search').click(function () {
     //     var search = document.getElementById("search");

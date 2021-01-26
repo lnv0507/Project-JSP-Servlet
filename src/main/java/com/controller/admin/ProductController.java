@@ -66,11 +66,20 @@ public class ProductController extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        doPost(request, response);
-
-
         ProductDAO pd = new ProductDAO();
-        ArrayList<ProductDTO> listPro = pd.getList();
+        ArrayList<ProductDTO> listPro = pd.getListByPage(1,Integer.MAX_VALUE);
+    int index = Integer.parseInt(request.getParameter("index"));
+    int size = 16;
+    int endPage = 0;
+    endPage = listPro.size()/size;
+    if(listPro.size()%size >0){
+        endPage++;
+    }
+    listPro = pd.getListByPage(index,size);
+
+    request.setAttribute("endPage",endPage);
       request.setAttribute("data", listPro);
+      request.setAttribute("servlet","product?");
         request.getRequestDispatcher("/admin/SanPham.jsp").forward(request, response);
 
     }

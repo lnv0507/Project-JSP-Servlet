@@ -36,7 +36,7 @@
                                 <div class="right-action text-right">
                                     <div class="btn-groups">
                                         <button type="button" class="btn btn-primary" style="background-color: #8B8B8B;"
-                                                onclick="cms_deactivate_product_bydetail(119)"><i
+                                                onclick="cms_deactivate_product_bydetail('${p.idProduct}')"><i
                                                 class="fa fa-pause"></i>
                                             Ngừng kinh doanh
                                         </button>

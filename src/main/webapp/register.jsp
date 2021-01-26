@@ -68,40 +68,40 @@
                     <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab"><a
                         href="<c:url value="/Signin"/> ">Đăng Nhập</a></label>
                     <div class="login-form">
-                        <form action="signup" method="POST">
+                        <form action="<c:url value="/signup"/>" method="post">
                             <div class="sign-in-htm">
                                 <p class="text-danger">${message} </p>
                                 <div class="group">
                                     <label for="user" class="label">Họ Và Tên</label>
-                                    <input id="name" type="text" class="input" name="txtName">
+                                    <input id="name" type="text" class="input" name="tenAccount">
                                 </div>
                                 <div class="group">
                                     <label for="user" class="label">Tài Khoản</label>
-                                    <input id="user" type="text" class="input" name="txtID">
+                                    <input id="user" type="text" class="input" name="idAccount">
                                 </div>
                                 <div class="group">
                                     <label for="pass" class="label">Mật Khẩu</label>
-                                    <input id="pass" type="password" class="input" data-type="password" name="password">
+                                    <input id="pass" type="password" class="input" data-type="password" name="passWord" onchange="validatePassword()">
                                 </div>
                                 <div class="group">
                                     <label for="pass" class="label">Nhập Lại Mật Khẩu</label>
                                     <input id="passRepeat" type="password" class="input" data-type="password"
-                                           name="repass">
+                                           name="repass" onchange="validatePassword()">
                                 </div>
                                 <div class="group">
                                     <label for="user" class="label">Số Điện Thoại</label>
-                                    <input id="numner" type="text" class="input" name="txtNumber">
+                                    <input id="numner" type="text" class="input" name="soDienThoai">
                                 </div>
                                 <div class="group">
                                     <label for="user" class="label">Địa Chỉ</label>
-                                    <input id="address" type="text" class="input" name="txtAddr">
+                                    <input id="address" type="text" class="input" name="diaChi">
                                 </div>
                                 <div class="group">
                                     <label for="pass" class="label">Email</label>
                                     <input id="email" name="email" type="text" class="input">
                                 </div>
                                 <div class="group">
-                                    <input type="submit" class="button" onclick="signIn()" value="Sign Up">
+                                    <input type="submit" class="button"  value="Sign Up">
                                 </div>
                                 <div class="hr"></div>
                                 <div class="foot-lnk">
@@ -118,7 +118,24 @@
         <%@include file="footer.jsp" %>
         <!-- footer close -->
 
+        <script>
+            window.onload=function (){
+                document.getElementById("pass").onchange = validatePassword;
+                document.getElementById("passRepeat").onchange = validatePassword;
+            }
+            function validatePassword(){
+                var pass=  document.getElementById("pass").value;
+                var pass2=  document.getElementById("passRepeat").value;
+                if(pass!=pass2){
+                    document.getElementById("passRepeat").setCustomValidity("Mật khẩu không trùng nhau");
+                }else{
+                    document.getElementById("passRepeat").setCustomValidity('');
+                }
+            }
 
+
+
+        </script>
 </body>
 
 <!-- Mirrored from www.themenesia.com/themeforest/archi-light/contact.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:09:50 GMT -->

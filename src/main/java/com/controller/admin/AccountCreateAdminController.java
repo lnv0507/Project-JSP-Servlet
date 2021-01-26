@@ -58,7 +58,6 @@ public class AccountCreateAdminController extends HttpServlet {
         } finally {
             req.getRequestDispatcher(url).forward(req, resp);
         }
-
     }
 
     @Override

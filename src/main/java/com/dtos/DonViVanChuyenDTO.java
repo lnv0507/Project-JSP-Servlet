@@ -1,40 +1,39 @@
 package com.dtos;
 
 public class DonViVanChuyenDTO {
-    private String nameDonVi;
-    private String idDonVi;
-    private String phiShip;
+    private String maDonViVanChuyen;
+    private String tenDonViVanChuyen;
 
     public DonViVanChuyenDTO() {
     }
 
-    public DonViVanChuyenDTO(String nameDonVi, String idDonVi, String phiShip) {
-        this.nameDonVi = nameDonVi;
-        this.idDonVi = idDonVi;
-        this.phiShip = phiShip;
+    public DonViVanChuyenDTO(String maDonViVanChuyen, String tenDonViVanChuyen) {
+        this.maDonViVanChuyen = maDonViVanChuyen;
+        this.tenDonViVanChuyen = tenDonViVanChuyen;
     }
 
-    public String getNameDonVi() {
-        return nameDonVi;
+    public String getMaDonViVanChuyen() {
+        return maDonViVanChuyen;
     }
 
-    public void setNameDonVi(String nameDonVi) {
-        this.nameDonVi = nameDonVi;
+    public void setMaDonViVanChuyen(String maDonViVanChuyen) {
+        this.maDonViVanChuyen = maDonViVanChuyen;
     }
 
-    public String getIdDonVi() {
-        return idDonVi;
+    public String getTenDonViVanChuyen() {
+        return tenDonViVanChuyen;
     }
 
-    public void setIdDonVi(String idDonVi) {
-        this.idDonVi = idDonVi;
+
+    public void setTenDonViVanChuyen(String tenDonViVanChuyen) {
+        this.tenDonViVanChuyen = tenDonViVanChuyen;
     }
 
-    public String getPhiShip() {
-        return phiShip;
-    }
-
-    public void setPhiShip(String phiShip) {
-        this.phiShip = phiShip;
+    @Override
+    public String toString() {
+        return "DonViVanChuyenDTO{" +
+                "maDonViVanChuyen='" + maDonViVanChuyen + '\'' +
+                ", tenDonViVanChuyen='" + tenDonViVanChuyen + '\'' +
+                '}';
     }
 }

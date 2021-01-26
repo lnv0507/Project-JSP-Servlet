@@ -7,7 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page import="com.dtos.AccountDTO" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="utf-8"%>
 
 <!-- Mirrored from w ww.themenesia.com/themeforest/archi-light/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:03:59 GMT -->
 <head>
@@ -30,45 +30,33 @@
         </div>
     </div>
     <div class="header-banner-item">
-        <%
-            String username = (String) session.getAttribute("tendangnhap");
-            AccountDTO ac = (AccountDTO) session.getAttribute("account");
 
-            if (username != null) {
-        %>
         <div class="info-mation">
 
+            <c:if test="${not empty user}">
             <h5 id="helloUser" style="color: white" onclick="myFunction()">
-                <div id="name"> Xin Chào: <%=username%>
+                <div id="name"> Xin Chào: ${user.getTenAccount()}
                 </div>
                 <ul id="itemUserr">
                     <li><a href=" <c:url value="/profile"/> ">Thông Tin Cá Nhân</a></li>
                     <li><a href="<c:url value="/print"/> "> Giỏ Hàng</a></li>
-                    <li>Thông Báo</li>
+                    <li><a href="<c:url value="/theodoidonhang.jsp"/> "> Tình Trạng Đơn Hàng</a></li>
                 </ul>
             </h5>
-
             <h5><a href="<c:url value="/logout"/>">Đăng Xuất</a></h5>
             <br>
-            <%
-                String chucVu = (String) session.getAttribute("chucvu");
-                if (chucVu.equalsIgnoreCase("ADMIN")) {
+                <c:if test="${user.getChucVu() eq 'ADMIN'}">
+                <h5><a href="<c:url value="admin/product?index=1"/> "> ADMIN </a></h5>
+                </c:if>
+            </c:if>
 
-            %>
-            <h5><a href="<c:url value="admin/addproduct"/> "> ADMIN </a></h5>
-            <%
-                }
-            %>
         </div>
 
-        <%
-        } else {
-        %>
+
         <ul>
             <h5><a href="<c:url value="/Signin" />"><i class="fa fa-user"></i></a></h5>
         </ul>
-        <% }
-        %>
+
 
 
     </div>
@@ -112,10 +100,24 @@
                             <li>
 
                                 <p class="cart">
-                                    <a href="print">
+                                    <c:if test="${empty user}">
+
+                                    <a href="<c:url value="/Signin?message=you_need_to_login&alert=danger"/> ">
+
+
                                         <i class="fa fa-shopping-cart">
                                         </i>
                                     </a>
+                            </c:if>
+                                    <c:if test="${ not empty user}">
+
+                                        <a href="<c:url value="/print"/>">
+
+
+                                            <i class="fa fa-shopping-cart">
+                                            </i>
+                                        </a>
+                                    </c:if>
                                 </p>
 
                             </li>

@@ -2,6 +2,7 @@ package com.dao;
 
 import com.dtos.AccountDTO;
 import com.dtos.ProductDTO;
+import com.mapper.AccountMapper;
 import com.utils.DBUtils;
 
 import java.security.MessageDigest;
@@ -30,6 +31,7 @@ public class AccountDAO {
                     String chucVu = rs.getString("CHUCVU");
                     acDTO = new AccountDTO(userId, fullName, soDienThoai, diaChi, email, chucVu, passWord);
                 }
+                return acDTO;
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -41,8 +43,8 @@ public class AccountDAO {
                 pst.close();
             }
 
-        }
-        return acDTO;
+        } return null;
+
     }
 
     public void signUp(AccountDTO account) throws SQLException {
@@ -170,4 +172,93 @@ public class AccountDAO {
         }
     }
 
+    //    doimatkhau
+    public static boolean doiMatKhau(String matKhau, String id) {
+        Connection con = null;
+        PreparedStatement pre = null;
+        try {
+            con = DBUtils.makeConnection();
+            pre = con.prepareStatement("UPDATE account set password = ? where id = ?");
+            if(pre.executeUpdate() >0) {
+                pre = con.prepareStatement("SELECT  * from account");
+                pre.executeQuery();
+                return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+    public AccountDTO findByUserName(String idaccount) {
+        Connection cn = null;
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        String sql = "SELECT  * FROM account where IDACCOUNT=?";
+        try {
+            cn = DBUtils.makeConnection();
+            pst = cn.prepareStatement(sql);
+            pst.setString(1, idaccount);
+            rs = pst.executeQuery();
+
+            return new AccountMapper().mapRow(rs);
+        } catch (Exception throwables) {
+            return null;
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+
+    }
+    public AccountDTO findByEmail(String email) {
+        AccountDTO accountDTO;
+        Connection cn = null;
+        PreparedStatement pst = null;
+        ResultSet rs = null;
+        String sql = "SELECT  * FROM account where email=?";
+        try {
+            cn = DBUtils.makeConnection();
+            pst = cn.prepareStatement(sql);
+            pst.setString(1, email);
+            rs = pst.executeQuery();
+            accountDTO=new AccountMapper().mapRow(rs);
+            return accountDTO;
+        } catch (Exception throwables) {
+            return null;
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (pst != null) {
+                    pst.close();
+                }
+
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+    }
+    public String checkRes(AccountDTO accountDTO){
+        if(findByUserName(accountDTO.getIdAccount()).getIdAccount()!=null){
+            return "user_is_exist";
+        }
+        if(findByEmail(accountDTO.getEmail()).getEmail()!=null){
+            return "email_is_exist";
+        }
+        return "1";
+    }
+
+    public static void main(String[] args) {
+        AccountDAO accountDAO =new AccountDAO();
+        System.out.println(accountDAO.findByUserName("123"));
+    }
 }

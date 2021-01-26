@@ -1805,14 +1805,14 @@ function cms_deactivate_product($id, $page) {
     if (conf) {
         var $param = {
             'type': 'POST',
-            'url': 'product/cms_deactivate_product/' + $id,
-            'data': null,
+            'url': 'NgungKinhDoanhController',
+            'data': {'id':$id},
             'callback': function (data) {
                 if (data == '1') {
-                    $('.ajax-success-ct').html('Ngừng kinh doanh sản phẩm thành công.').parent().fadeIn().delay(1000).fadeOut('slow');
-                    cms_paging_product($page);
-                } else if (data == '0') {
-                    $('.ajax-error-ct').html('Oops! This system is errors! please try again.').parent().fadeIn().delay(1000).fadeOut('slow');
+                    $('.ajax-error-ct').html('Lỗi! không thể Ngừng Kinh Doanh').parent().fadeIn().delay(1000).fadeOut('slow');
+                } else {
+                    $('.ajax-success-ct').html('Bạn đã Ngừng Kinh Doanh Sản Phẩm Này!').parent().fadeIn().delay(1000).fadeOut('slow');
+                    window.location.href = "/webshop/admin/product";
                 }
             }
         };
@@ -1823,19 +1823,16 @@ function cms_deactivate_product($id, $page) {
 function cms_deactivate_product_bydetail($id) {
     var conf = confirm('Bạn có thực sự muốn ngừng kinh doanh sản phẩm này không?');
     if (conf) {
-        var $name = $('td.prd_name').text();
         var $param = {
             'type': 'POST',
-            'url': 'product/cms_deactivate_product/' + $id,
-            'data': null,
+            'url': 'NgungKinhDoanhController',
+            'data': {'id':$id},
             'callback': function (data) {
                 if (data == '1') {
-                    $('.ajax-success-ct').html('Ngừng kinh doanh sản phẩm thành công.').parent().fadeIn().delay(1000).fadeOut('slow');
-                    setTimeout(function () {
-                        cms_javascript_redirect(cms_javascrip_fullURL());
-                    }, 2000);
-                } else if (data == '0') {
-                    $('.ajax-error-ct').html('Oops! This system is errors! please try again.').parent().fadeIn().delay(1000).fadeOut('slow');
+                    $('.ajax-error-ct').html('Lỗi! không thể Ngừng Kinh Doanh').parent().fadeIn().delay(1000).fadeOut('slow');
+                } else {
+                    $('.ajax-success-ct').html('Bạn đã Ngừng Kinh Doanh Sản Phẩm Này!').parent().fadeIn().delay(1000).fadeOut('slow');
+                    window.location.href = "/webshop/admin/product";
                 }
             }
         };
