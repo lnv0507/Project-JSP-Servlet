@@ -292,10 +292,9 @@
                     <div class="col-md-12 text-center">
                         <ul id="filters" class="wow fadeInUp" data-wow-delay="0s">
                             <li><a href="#" data-filter="*" class="selected">Tất cả thiết kế</a></li>
-                            <li><a href="#" data-filter=".residential">Nhà ở</a></li>
-                            <li><a href="#" data-filter=".hospitaly">Khách sạn</a></li>
-                            <li><a href="#" data-filter=".office">Văn phòng</a></li>
-                            <li><a href="#" data-filter=".commercial">Thương mại</a></li>
+                            <c:forEach items="${direc}" var="direc">
+                            <li><a href="#" data-filter=".${direc.getId()}">${direc.getType()}</a></li>
+                            </c:forEach>
                         </ul>
 
                     </div>
@@ -307,18 +306,21 @@
             <div id="gallery" class="gallery full-gallery de-gallery pf_full_width wow fadeInUp" data-wow-delay=".3s">
 
                 <!-- gallery item -->
-                <div class="item residential">
-                    <div class="picframe">
-                        <a class="simple-ajax-popup-align-top" href="project-details-1.jsp">
+                <c:forEach items="${des}" var="des">
+                    <div class="item residential">
+                        <div class="picframe">
+                            <a class="simple-ajax-popup-align-top"
+                               href="<c:url value="/DetailDesignController?id=${des.idDes}"/>">
                                 <span class="overlay">
                                     <span class="pf_text">
-                                        <span class="project-name">Id design</span> <!-- Nhap id thiet ke -->
+                                        <span class="project-name">${des.getNameDes()}</span> <!-- Nhap id thiet ke -->
                                 </span>
                                 </span>
-                        </a>
-                        <img src="images/image-here.jpg" alt=""/> <!-- Nhap hinh anh -->
+                            </a>
+                            <img src="images/design/${des.getImagesDes().get(0)}" alt=""/> <!-- Nhap hinh anh -->
+                        </div>
                     </div>
-                </div>
+                </c:forEach>
                 <!-- close gallery item -->
 
 

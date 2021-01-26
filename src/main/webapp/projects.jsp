@@ -11,9 +11,6 @@
     <meta name="author" content="">
 
 
-
-
-
     <!-- CSS Files
     ================================================== -->
     <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
@@ -46,86 +43,89 @@
 
 <body id="homepage">
 
-    <div id="wrapper">
-        <%@include file="header.jsp"%>
-        <!-- header close -->
+<div id="wrapper">
+    <%@include file="header.jsp" %>
+    <!-- header close -->
 
-        <!-- subheader -->
-        <section id="subheader" data-speed="8" data-type="background">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1>Thiết kế</h1>
-                        <ul class="crumb">
-                            <li><a href="index-2.jsp">Trang chủ</a></li>
-                            <li class="sep">/</li>
-                            <li>Thiết Kế</li>
-                        </ul>
-                    </div>
+    <!-- subheader -->
+    <section id="subheader" data-speed="8" data-type="background">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Thiết kế</h1>
+                    <ul class="crumb">
+                        <li><a href="index-2.jsp">Trang chủ</a></li>
+                        <li class="sep">/</li>
+                        <li>Thiết Kế</li>
+                    </ul>
                 </div>
             </div>
-        </section>
-        <!-- subheader close -->
+        </div>
+    </section>
+    <!-- subheader close -->
 
-        <!-- content begin -->
-        <div id="content" class="no-top no-bottom">
-            <!-- section begin -->
-            <section id="section-portfolio" class="no-top no-bottom">
-                <div class="container">
+    <!-- content begin -->
+    <div id="content" class="no-top no-bottom">
+        <!-- section begin -->
+        <section id="section-portfolio" class="no-top no-bottom">
+            <div class="container">
 
-                    <div class="spacer-single"></div>
+                <div class="spacer-single"></div>
 
-                    <!-- portfolio filter begin -->
-                    <div class="row">
-                        <div class="col-md-12 text-center">
-                            <ul id="filters" class="wow fadeInUp" data-wow-delay="0s">
-                                <li><a href="#" data-filter="*" class="selected">Xem tất cả</a></li>
-                                <li><a href="#" data-filter=".residential">Nhà ở</a></li>
-                                <li><a href="#" data-filter=".hospitaly">Khách sạn</a></li>
-                                <li><a href="#" data-filter=".office">Văn phòng</a></li>
-                                <li><a href="#" data-filter=".commercial">Nhà hàng</a></li>
-                            </ul>
+                <!-- portfolio filter begin -->
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <ul id="filters" class="wow fadeInUp" data-wow-delay="0s">
+                            <li><a href="#" data-filter="*" class="selected">Xem tất cả</a></li>
+                            <li><a href="#" data-filter=".residential">Nhà ở</a></li>
+                            <li><a href="#" data-filter=".hospitaly">Khách sạn</a></li>
+                            <li><a href="#" data-filter=".office">Văn phòng</a></li>
+                            <li><a href="#" data-filter=".commercial">Nhà hàng</a></li>
+                        </ul>
 
-                        </div>
                     </div>
-                    <!-- portfolio filter close -->
-
                 </div>
+                <!-- portfolio filter close -->
 
-                <div id="gallery" class="gallery full-gallery de-gallery pf_full_width wow fadeInUp" data-wow-delay=".3s">
+            </div>
 
-                    <!-- gallery item -->
+            <div id="gallery" class="gallery full-gallery de-gallery pf_full_width wow fadeInUp" data-wow-delay=".3s">
+
+                <!-- gallery item -->
+                <c:forEach items="${des}" var="des">
                     <div class="item residential">
                         <div class="picframe">
-                            <a class="simple-ajax-popup-align-top" href="project-details.jsp">
+                            <a class="simple-ajax-popup-align-top"
+                               href="<c:url value="/DetailDesignController?id=${des.idDes}"/>">
                                 <span class="overlay">
                                     <span class="pf_text">
-                                        <span class="project-name">Id design</span> <!-- Nhap id thiet ke -->
+                                        <span class="project-name">${des.getNameDes()}</span> <!-- Nhap id thiet ke -->
                                 </span>
                                 </span>
                             </a>
-                            <img src="images/image-here.jpg" alt="" /> <!-- Nhap hinh anh -->
+                            <img src="images/image-here.jpg" alt=""/> <!-- Nhap hinh anh -->
                         </div>
                     </div>
-                    <!-- close gallery item -->
-                </div>
+                </c:forEach>
+                <!-- close gallery item -->
+            </div>
 
-            </section>
-            <!-- section close -->
-
-
-            <!-- section begin -->
-            <section id="call-to-action" class="call-to-action bg-color dark text-center" data-speed="5" data-type="background">
-                <a href="contact.jsp" class="btn btn-line-black btn-big">Nhận Làm Các Hạng Mục</a>
-            </section>
-            <!-- logo carousel section close -->
+        </section>
+        <!-- section close -->
 
 
+        <!-- section begin -->
+        <section id="call-to-action" class="call-to-action bg-color dark text-center" data-speed="5"
+                 data-type="background">
+            <a href="contact.jsp" class="btn btn-line-black btn-big">Nhận Làm Các Hạng Mục</a>
+        </section>
+        <!-- logo carousel section close -->
 
-        </div>
 
-        <!-- footer begin -->
-     <%@include file="footer.jsp"%>
+    </div>
+
+    <!-- footer begin -->
+    <%@include file="footer.jsp" %>
 
 
 </body>

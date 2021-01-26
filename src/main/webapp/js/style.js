@@ -26,8 +26,6 @@ function signIn() {
 }
 
 
-
-
 function submit() {
     var fullname = document.getElementById("fullname");
     var email = document.getElementById("email");
