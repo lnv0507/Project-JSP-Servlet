@@ -1,3 +1,4 @@
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html lang="en">
 <!-- Mirrored from www.themenesia.com/themeforest/archi-light/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:03:59 GMT -->
@@ -60,8 +61,9 @@
         <!-- subheader close -->
 
         <!-- content begin -->
-        <div id="content" class="no-bottom no-top">
+        <div class="no-bottom no-top">
             <section class="background-login">
+                <form action="ResetPassWord" method="post">
                 <div class="login-wrap">
                     <div class="login-jsp">
                         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"
@@ -72,24 +74,27 @@
                         <div class="login-form">
                             <div class="sign-in-htm">
                                 <div class="group">
-                                    <label for="user" class="label">Email</label>
-                                    <input id="user" type="text" class="input">
+                                    <label for="email" class="label">Email</label>
+                                    <input id="email" type="text" class="input" name="email">
                                 </div>
-                                <div class="group">
-                                    <label for="pass" class="label">Tài Khoản</label>
-                                    <input id="pass" type="password" class="input" data-type="password">
-                                </div>
+<%--                                <div class="group">--%>
+<%--                                    <label for="pass" class="label">Tài Khoản</label>--%>
+<%--                                    <input id="pass" type="password" class="input" data-type="password">--%>
+<%--                                </div>--%>
 
                                 <div class="group">
-                                    <input type="submit" class="button" value="Đổi Lại Mật Khẩu" onclick="signIn()">
+                                    <input type="submit" class="button" value="Gửi qua email"
+                                    >
                                 </div>
                                 <div class="hr"></div>
 
                             </div>
 
+
                         </div>
                     </div>
                 </div>
+                </form>
             </section>
             <!-- footer begin -->
             <%@include file="footer.jsp" %>
@@ -97,7 +102,6 @@
 
 
 </body>
-
 <!-- Mirrored from www.themenesia.com/themeforest/archi-light/contact.jsp by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Jul 2015 14:09:50 GMT -->
 
 </html>

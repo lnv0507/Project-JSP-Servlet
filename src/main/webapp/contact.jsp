@@ -91,8 +91,12 @@
             <br/>
         </div>
         <div>
+            <%
+                String message = (String) request.getAttribute("message");
+            %>
             <div class="headder">
                 <h1>Hòm Thư Hỗ Trợ</h1>
+                <form action="<%=request.getContextPath()%>/reg" method="post">
                 <div class="header_bg " id="fullname">
                     <div class="headder_1">
                         <h4>Họ Và Tên* </h4>
@@ -115,7 +119,6 @@
                             <h4>Số Điện Thoại </h4>
                         </div>
                         <div class=" headder_5 ">
-                            <input type="text " placeholder="Enter Your Number Phone " id="phoneInput">
                         </div>
                     </div>
                 </div>
@@ -124,15 +127,17 @@
                         <h4>Dịch Vụ*</h4>
                     </div>
                     <div class="headder_2 ">
-                        <select class="headder_2 ">
-                            <optgroup label="Hỗ Trợ " value="chau_a ">
-                                <option name="chau_luc[] " value="1 " hidden>Xem Thêm</option>
-                                <option value="2 ">Thiết Kế</option>
-                                <option value="3 ">Sản Phẩm Lỗi</option>
-                                <option value="">Hỗ Trợ Liên Hệ Tôi</option>
-                            </optgroup>
+                        <input type="text " placeholder="Enter Your Number Phone " id="phoneInput">
 
-                        </select>
+                    <%--                        <select class="headder_2 ">--%>
+<%--                            <optgroup label="Hỗ Trợ " value="chau_a ">--%>
+<%--                                <option name="chau_luc[] " value="1 " hidden>Xem Thêm</option>--%>
+<%--                                <option value="2 ">Thiết Kế</option>--%>
+<%--                                <option value="3 ">Sản Phẩm Lỗi</option>--%>
+<%--                                <option value="">Hỗ Trợ Liên Hệ Tôi</option>--%>
+<%--                            </optgroup>--%>
+
+<%--                        </select>--%>
                     </div>
                 </div>
                 <div class="header_bg ">
@@ -147,6 +152,15 @@
 
                 </div>
                 <button id="submit" onclick="submit()">Gửi</button>
+
+                <%
+                    if (message != null) {
+                %>
+                <span style="color: red;margin-left: 15px;">Gửi phản hồi thành công, cảm ơn bạn đã luôn đồng hành cùng chúng tôi</span>
+                <%
+                    }
+                %>
+                </form>
             </div>
         </div>
         <!-- footer begin -->
