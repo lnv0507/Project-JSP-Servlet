@@ -169,5 +169,20 @@ public class ProductDTO implements Serializable {
         this.firstImage = firstImage;
     }
 
-
+    @Override
+    public String toString() {
+        return "ProductDTO{" +
+                "idProduct='" + idProduct + '\'' +
+                ", tenProduct='" + tenProduct + '\'' +
+                ", loai='" + loai + '\'' +
+                ", chatLieu='" + chatLieu + '\'' +
+                ", giaTien=" + giaTien +
+                ", soLuongTrongKho=" + soLuongTrongKho +
+                ", danhGia=" + danhGia +
+                ", amount=" + amount +
+                ", tinhTrang='" + tinhTrang + '\'' +
+                ", images=" + images +
+                ", firstImage='" + firstImage + '\'' +
+                '}';
+    }
 }

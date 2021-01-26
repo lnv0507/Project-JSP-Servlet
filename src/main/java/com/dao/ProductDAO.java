@@ -441,11 +441,40 @@ public class ProductDAO {
 
     }
 
+    public ArrayList<ProductDTO> getRandomProductByType(String type){
+        ResultSet rsProducts = null;
+        ResultSet rsImages = null;
+        PreparedStatement ps = null;
+        Connection con;
+        String sql = "SELECT  * FROM product where loai like ? ORDER BY RAND() LIMIT 5";
+        ArrayList<ProductDTO> lsProducts = new ArrayList<>();
+        try {
+            con = DBUtils.makeConnection();
+            ps = con.prepareStatement(sql);
+            ps.setString(1,type);
+            rsProducts = ps.executeQuery();
+            while(rsProducts.next()){
+                ProductDTO productDTO = new ProductDTO();
+                productDTO.setIdProduct(rsProducts.getString(1));
+                productDTO.setTenProduct(rsProducts.getString(2));
+                productDTO.setLoai(rsProducts.getString(3));
+                productDTO.setChatLieu(rsProducts.getString(4));
+                productDTO.setGiaTien(rsProducts.getInt(5));
+                productDTO.setSoLuongTrongKho(rsProducts.getInt(6));
+                productDTO.setDanhGia(rsProducts.getInt(7));
+                productDTO.setTinhTrang(rsProducts.getString(8));
+                getImagesByProduct(productDTO);
+                lsProducts.add(productDTO);
+            }
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+        return lsProducts;
+    }
+
     public static void main(String[] args) {
         ProductDAO productDAO = new ProductDAO();
-        for(ProductDTO p :productDAO.getListByPage(1 , 16)){
-            System.out.println(p.getImages().get(0));
-        }
     }
 
 }

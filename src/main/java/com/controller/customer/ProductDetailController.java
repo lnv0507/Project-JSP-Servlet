@@ -16,7 +16,7 @@ import java.util.ArrayList;
 @WebServlet(name = "ProductDetailController", urlPatterns = "/ProductDetailController")
 public class ProductDetailController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,13 +25,16 @@ public class ProductDetailController extends HttpServlet {
         ArrayList<String> lsImages = new ArrayList<>();
         ProductDAO productDAO = new ProductDAO();
         ProductDTO productDTO = new ProductDTO();
+        ArrayList<ProductDTO> otherProducts = new ArrayList<>();
         try {
             productDTO = productDAO.getProductById(id);
             lsProducts.add(productDTO);
             lsImages = productDTO.getImages();
+            otherProducts = productDAO.getRandomProductByType(productDTO.getLoai());
 //            request.setAttribute("product",lsProducts);
 //            request.setAttribute("images",lsImages);
             HttpSession session = request.getSession();
+            session.setAttribute("otherProduct",otherProducts);
             session.setAttribute("product", lsProducts);
             session.setAttribute("images", lsImages);
             request.getRequestDispatcher("product-details.jsp").forward(request, response);

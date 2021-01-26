@@ -110,13 +110,7 @@
 
                         <ul id="menu-bar">
                             <li>
-                                <form action="Search" method="get">
-                                    <p id="search">
-                                        <a href="Search.jsp">
-                                            <i class="fa fa-search"></i>
-                                        </a>
-                                    </p>
-                                </form>
+
                                 <p class="cart">
                                     <a href="print">
                                         <i class="fa fa-shopping-cart">

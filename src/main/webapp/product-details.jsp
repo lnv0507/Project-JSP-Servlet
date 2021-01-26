@@ -256,17 +256,11 @@
         <!-- Greatest Offer News Start -->
         <div class="news " style="background-color: white;">
             <div class="container ">
-                <h3>Những sản phẩm liên quan </h3>
+                <h3>Các sản phẩm liên quan </h3>
                 <div class="owl-carousel ">
-                    <div class="item "><img src="images/shop/tqa16.jpg "></div>
-                    <div class="item "><img src="images/shop/tqa5.jpg  "></div>
-                    <div class="item "><img src="images/shop/tqa2.jpg "></div>
-                    <div class="item "><img src="images/shop/tqa3.jpg "></div>
-                    <div class="item "><img src="images/shop/tqa4.jpg "></div>
-                    <div class="item "><img src="images/shop/tqa6.jpg "></div>
-                    <div class="item "><img src="images/shop/tqa7.jpg "></div>
-                    <div class="item "><img src="images/shop/tqa8.jpg "></div>
-                    <div class="item "><img src="images/shop/tqa9.jpg "></div>
+                    <c:forEach items="${otherProduct}" var="o">
+                    <div class="item "><a href="<c:url value="/ProductDetailController?id=${o.getIdProduct()}"/> "><img src="images/products/${o.getImages().get(0)} "></a></div>
+                    </c:forEach>
 
                 </div>
             </div>
