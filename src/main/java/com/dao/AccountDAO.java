@@ -240,7 +240,6 @@ public class AccountDAO {
         }
     }
 
-<<<<<<< Updated upstream
     //    doimatkhau
     public static boolean doiMatKhau(String matKhau, String id) {
         Connection con = null;
@@ -326,13 +325,4 @@ public class AccountDAO {
         return "1";
     }
 
-    public static void main(String[] args) {
-        AccountDAO accountDAO =new AccountDAO();
-        System.out.println(accountDAO.findByUserName("123"));
-=======
-    public static void main(String[] args) {
-        AccountDAO p =new AccountDAO();
-        System.out.println(p.sendPassword("dangthien0973@gmail.com"));
->>>>>>> Stashed changes
-    }
 }

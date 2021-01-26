@@ -154,18 +154,5 @@ public class VanChuyenDAO {
     }
 
 
-    public static void main(String[] args) {
-<<<<<<< Updated upstream
-//        System.out.println(getHoaDon());
-//        System.out.println(insertVanChuyen("helu", "helu", "helu", "helu", "helu", "helu", 3000));
 
-        VanChuyenDAO vc = new VanChuyenDAO();
-        for (DonViVanChuyenDTO v : vc.getLayDSVanChuyen()) {
-            System.out.println(v);
-        }
-=======
-        System.out.println(getHoaDon());
-//      System.out.println(insertVanChuyen("helu","helu","helu","helu","helu","helu"));
->>>>>>> Stashed changes
-    }
 }
