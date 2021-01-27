@@ -61,84 +61,23 @@
             <div class="main-space orders-space"></div>
 
             <div class="products-content">
+                <form name="find" action="FindProduct" method="get">
                 <div class="product-sear panel-sear">
                     <div action="" class="">
                         <div class="form-group col-md-5 padd-0">
-                            <input type="text" class="form-control" placeholder="Nhập mã sản phẩm hoặc tên sản phẩm"
-                                   id="product-search">
+                            <input type="text" class="form-control" placeholder="Nhập tên sản phẩm"
+                                   id="product-search" name="text">
                         </div>
                         <div class="form-group col-md-7 ">
-                            <div class="col-md-3 padd-0" style="margin-right: 10px;">
-                                <select class="form-control" id="search-option-1">
-                                    <option value="0">Đang kinh doanh</option>
-                                    <option value="1">Đã ngừng kinh doanh</option>
-                                    <option value="2">Đã xóa</option>
-                                </select>
-                            </div>
-                            <div class="col-md-3 padd-0" style="margin-right: 10px;">
-                                <select class="form-control search-option-2" id="prd_group_id">
-                                    <option value="-1" selected="selected">--Danh mục--</option>
-                                    <optgroup label="Chọn danh mục">
-                                        <option value="36">Áo</option>
-                                        <option value="101">|---Áo Blazer</option>
-                                        <option value="102">|---Áo Bóng Chày</option>
-                                        <option value="103">|---Áo Denim</option>
-                                        <option value="104">|---Áo Len</option>
-                                        <option value="105">|---Áo Sơmi</option>
-                                        <option value="106">|---Áo Sweater</option>
-                                        <option value="107">|---Áo Thun</option>
-                                        <option value="35">Quần</option>
-                                        <option value="92">|---Quần Cargo</option>
-                                        <option value="93">|---Quần Jean</option>
-                                        <option value="94">|---Quần Kaki</option>
-                                        <option value="95">|---Quần Nhung</option>
-                                        <option value="96">|---Quần Short</option>
-                                        <option value="34">Phụ kiện</option>
-                                        <option value="82">|---Thắt lưng</option>
-                                        <option value="83">|---Mắt Kính</option>
-                                        <option value="84">|---Xách tay</option>
-                                        <option value="85">|---Mũ</option>
-                                        <option value="86">|---Móc khóa</option>
-                                        <option value="87">|--- Khăn choàng</option>
-                                        <option value="88">|---Vớ</option>
-                                        <option value="89">|---Sticker</option>
-
-                                    </optgroup>
-                                    <optgroup label="------------------------">
-                                        <option value="product_group" data-toggle="modal" data-target="#list-prd-group">
-                                            Tạo mới danh mục
-                                        </option>
-                                    </optgroup>
-                                </select>
-                            </div>
-                            <div class="col-md-3 padd-0" style="margin-right: 10px;">
-                                <select class="form-control search-option-3" id="prd_manufacture_id">
-                                    <option value="-1" selected="selected">Nhà cung cấp</option>
-                                    <optgroup label="Chọn nhà cung cấp">
-                                        <option>
-                                            HieuSecondHand
-                                        </option>
-                                        <option>
-                                            3Bich
-                                        </option>
-                                        <option>
-                                            The Nineteen 2Hand
-                                        </option>
-                                    </optgroup>
-                                    <optgroup label="------------------------">
-                                        <option value="product_manufacture" data-toggle="modal"
-                                                data-target="#list-prd-manufacture">Tạo mới 1nhà cung câp
-                                        </option>
-                                    </optgroup>
-                                </select>
-                            </div>
-                            <button type="button" class="btn btn-primary btn-large btn-ssup"
+                            <input type="hidden" name="index" value="1">
+                            <button type="submit" class="btn btn-primary btn-large btn-ssup"
                                     onclick="cms_paging_product(1)"><i
                                     class="fa fa-search"></i> Tìm kiếm
                             </button>
                         </div>
                     </div>
                 </div>
+            </form>
 
 
                 <div class="product-main-body">
