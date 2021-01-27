@@ -173,26 +173,25 @@
                 </ul>
                 <div class="tab-content">
                     <div id="cus" class="tab-pane active">
+                        <form action="FindAccount" method="get">
                         <div class="cus-sear panel-sear">
+
                             <div action="" class="">
                                 <div class="form-group col-md-6 padd-0">
-                                    <input type="text" class="form-control txt-scustomer"
-                                           placeholder="Nhập tên, mã hoặc SDT khách hàng">
+                                    <input type="text" name="text" class="form-control txt-scustomer"
+                                           placeholder="Nhập mã khách hàng">
                                 </div>
                                 <div class="form-group col-md-6 ">
-                                    <div class="col-md-4 padd-0" style="margin-right: 10px;">
-                                        <select id="cus-option" class="form-control">
-                                            <option value="0">Tất cả</option>
-                                            <option value="1">KH từng mua hàng</option>
-                                        </select>
-                                    </div>
-                                    <button type="button" onclick="cms_paging_listcustomer(1)"
+                                    <input type="hidden" name="index" value="1">
+                                    <button type="submit" onclick="cms_paging_listcustomer(1)"
                                             class="btn btn-primary btn-large btn-sCustomer"><i
                                             class="fa fa-search"></i> Tìm kiếm
                                     </button>
                                 </div>
                             </div>
+
                         </div>
+                        </form>
                         <div class="cus-body">
                             <table class="table table-bordered table-striped">
                                 <thead>
@@ -231,10 +230,6 @@
                                 </tbody>
                             </table>
                             <div class="alert alert-info summany-info clearfix" role="alert">
-                                <div class="ajax-loadlist-total sm-info pull-left padd-0">Số khách hàng:
-                                    <span><b>6</b></span>
-                                    | Tổng tiền hàng: <span><b>22,000,000</b> đ</span>
-                                </div>
                                 <div class="pull-right">
                                 </div>
                                 <div class="otherInfo ">
