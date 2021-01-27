@@ -93,7 +93,7 @@
                                     </div>
                                     <input type="hidden" name="action" value="login">
                                     <div class="group">
-                                        <input type="submit" class="button" value="Sign In" onclick="signIn()">
+                                        <input type="submit" class="button" value="Đăng nhập" onclick="signIn()">
                                     </div>
                                     <div class="hr"></div>
                                     <div class="foot-lnk">

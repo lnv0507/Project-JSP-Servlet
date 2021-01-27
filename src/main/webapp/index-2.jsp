@@ -137,7 +137,7 @@
                 <!-- Greatest Offer News Start -->
                 <div class="news " style="background-color: white; ">
                     <div class="container ">
-                        <h1>Sản phẩm nổi bật</h1>
+                        <h1>Sản phẩm mới nhất</h1>
                         <div class="separator"><span><i class="fa fa-circle"></i></span></div>
                         <div class="owl-carousel ">
                             <c:forEach items="${t.top5}" var="o">
@@ -177,7 +177,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3 text-center wow fadeInUp">
-                        <h1>Công việc của chúng tôi</h1>
+                        <h1>Công việc thiết kế của chúng tôi</h1>
                         <div class="separator"><span><i class="fa fa-circle"></i></span></div>
                         <div class="spacer-single"></div>
                     </div>

@@ -101,7 +101,7 @@
                                     <input id="email" name="email" type="text" class="input">
                                 </div>
                                 <div class="group">
-                                    <input type="submit" class="button"  value="Sign Up">
+                                    <input type="submit" class="button"  value="Đăng ký">
                                 </div>
                                 <div class="hr"></div>
                                 <div class="foot-lnk">
