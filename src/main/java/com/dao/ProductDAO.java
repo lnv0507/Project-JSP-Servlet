@@ -391,7 +391,7 @@ public class ProductDAO {
         return false;
     }
 
-    public ArrayList<ProductDTO> getProductsByType(String type,int index, int size){
+    public ArrayList<ProductDTO> getProductsByType(String type, int index, int size) {
         ResultSet rsProducts = null;
         ResultSet rsImages = null;
         PreparedStatement ps = null;
@@ -404,7 +404,7 @@ public class ProductDAO {
 //            rsProducts = DBUtils.connect().executeQuery(sql);
             con = DBUtils.makeConnection();
             ps = con.prepareStatement(sql);
-            ps.setString(1,type);
+            ps.setString(1, type);
             ps.setInt(2, index);
             ps.setInt(3, size);
             ps.setInt(4, size);
@@ -442,7 +442,7 @@ public class ProductDAO {
     }
 
 
-    public ArrayList<ProductDTO> getRandomProductByType(String type){
+    public ArrayList<ProductDTO> getRandomProductByType(String type) {
         ResultSet rsProducts = null;
         ResultSet rsImages = null;
         PreparedStatement ps = null;
@@ -452,9 +452,9 @@ public class ProductDAO {
         try {
             con = DBUtils.makeConnection();
             ps = con.prepareStatement(sql);
-            ps.setString(1,type);
+            ps.setString(1, type);
             rsProducts = ps.executeQuery();
-            while(rsProducts.next()){
+            while (rsProducts.next()) {
                 ProductDTO productDTO = new ProductDTO();
                 productDTO.setIdProduct(rsProducts.getString(1));
                 productDTO.setTenProduct(rsProducts.getString(2));
@@ -468,33 +468,34 @@ public class ProductDAO {
                 lsProducts.add(productDTO);
             }
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return lsProducts;
     }
 
 
-//    Ngừng Kinh DOanh Product
-    public boolean ngungKinhDoanh(String id){
+    //    Ngừng Kinh DOanh Product
+    public boolean ngungKinhDoanh(String id) {
         Connection con = null;
         PreparedStatement pre = null;
         try {
             con = DBUtils.makeConnection();
-            if(con!=null){
+            if (con != null) {
                 pre = con.prepareStatement("UPDATE product SET TINHTRANG = 'Ngừng Kinh Doanh' , SOLUONGTRONGKHO = 0 where IDPRODUCT = ?");
-                pre.setString(1,id);
-                if(pre.executeUpdate()>0){
+                pre.setString(1, id);
+                if (pre.executeUpdate() > 0) {
                     pre = con.prepareStatement("SELECT  * from product");
                     pre.executeQuery();
                     return true;
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return false;
     }
+
     public static List<String> getMaSanPham() {
         List<String> arr = new ArrayList<>();
         Connection con = null;
@@ -513,6 +514,30 @@ public class ProductDAO {
             e.printStackTrace();
         }
         return arr;
+
+
+    }
+
+    public  List<ProductDTO> getSoLuong() {
+        List<ProductDTO> arr = new ArrayList<>();
+        Connection con = null;
+        PreparedStatement pre = null;
+        ResultSet rs = null;
+        ProductDTO pro = null;
+        try {
+            con = DBUtils.makeConnection();
+            pre = con.prepareStatement("SELECT  * from product where soluongtrongkho >0");
+            rs = pre.executeQuery();
+            while (rs.next()) {
+                pro = new ProductDTO(rs.getString("IDPRODUCT"), rs.getString("TENPRODUCT"), rs.getInt("SOLUONGTRONGKHO"), rs.getInt("GIATIEN"));
+                arr.add(pro);
+            }
+            return arr;
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
 
 
     }

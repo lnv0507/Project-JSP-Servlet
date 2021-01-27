@@ -218,8 +218,9 @@
                                         <td class="text-center">${d.soDienThoai}</td>
                                         <td class="text-center">${d.diaChi}</td>
                                         <td class="text-center">${d.email}</td>
+
                                         <td class="text-right" style="font-weight: bold; ">${d.chucVu}</td>
-                                        <td class="text-right"> 999999</td>
+                                        <td class="text-right"> ${sum}</td>
                                         <td class="text-center"><i class="fa fa-trash-o"
                                                                    style="cursor:pointer;"
                                                                    onclick="cms_delCustomer('${d.idAccount}',1)"></i>

@@ -58,7 +58,7 @@
                         <li id="customer"><a href="<c:url value="/admin/createAcount"/>" name="btnAction"><i class="fa fa-users"></i><b>Khách hàng</b></a></li>
                         <li id="inventory"><a href="TonKho.jsp" name="btnAction"><i class="fa fa-list-alt"></i><b>Tồn kho</b></a></li>
                         <li id="contact"><a href="LienHe.jsp" name="btnAction"><i class="fa fa-user"></i><b>Liên Hệ</b></a></li>
-                        <li id="config"><a href="<c:url value="/admin/admincreate"/> " name="btnAction"><i class="fa fa-empire"></i><b>Thiết lập</b></a></li>
+                        <li id="config"><a href="<c:url value="ThietLap.jsp"/> " name="btnAction"><i class="fa fa-empire"></i><b>Thiết Kế</b></a></li>
                         <img id="dend" style="width: 150px; height: 100px; margin-left: 10px" src="images/logodend.png"
                              alt=" ">
                     </ul>

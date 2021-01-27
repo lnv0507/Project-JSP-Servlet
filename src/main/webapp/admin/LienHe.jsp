@@ -146,24 +146,7 @@
                     </div>
                     <div id="orderCheck" class="tab-pane">
 
-                        <div class="product-sear panel-sear">
-                            <div class="form-group col-md-3 padd-0">
-                                <input type="text" class="form-control" id="order-search"
-                                       placeholder="Nhập mã liên hệ để tìm kiếm">
-                            </div>
-                            <div class="form-group col-md-9 padd-0" style="padding-left: 5px;">
-                                <div class="col-md-9 padd-0">
 
-                                    <div class="col-md-3 padd-0" style="padding-left: 5px;">
-                                        <button style="box-shadow: none;" type="button"
-                                                class="btn btn-primary btn-large"
-                                                onclick="cms_paging_order(1)"><i class="fa fa-search"></i> Tìm kiếm
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
                         <div class="cus-body">
                             <table class="table table-bordered table-striped">
                                 <thead>
@@ -231,12 +214,7 @@
                                 </c:forEach>
                                 </tbody>
                             </table>
-                            <div class="alert alert-info summany-info clearfix" role="alert">
-                                <div class="sm-info pull-left padd-0">
-                                    Tổng số liên hệ: <span>1</span>
-                                </div>
 
-                            </div>
 
                         </div>
 

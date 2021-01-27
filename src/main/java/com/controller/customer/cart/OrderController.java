@@ -10,6 +10,7 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -42,8 +43,8 @@ public class OrderController extends HttpServlet {
             maHoaDon = "HD00" + count++;
             maDonHang = "DH00" + countDonHang++;
         }
-
-        vanChuyenDAO.insertVanChuyen(maHoaDon, name, email, soDienTHoai, address, donvivanchuyen, tongtien);
+        Timestamp tp = new Timestamp(System.currentTimeMillis());
+        vanChuyenDAO.insertVanChuyen(maHoaDon, name, email, soDienTHoai, address, donvivanchuyen, tongtien, tp, "Chưa Xử Lý");
         vanChuyenDAO.insertDonHang(maHoaDon, id, tongtien);
         vanChuyenDAO.insertHoaDon(maHoaDon, maDonViVanChuyen, maDonHang, tongtien, id);
         vanChuyenDAO.insertChiTiet(maDonHang, id, soluong);

@@ -151,8 +151,14 @@
                                             <span class="product-trend-label ">${o.tinhTrang}</span>
 
                                             <ul class="social ">
-                                                <li><a href="cart?id=${o.idProduct}" data-tip="Thêm vào giỏ hàng"><i
-                                                        class="fa fa-shopping-cart "></i></a></li>
+                                                <c:if test="${not empty user}">
+                                                    <a href="<c:url value="/print"/>" data-tip="Thêm vào giỏ hàng "><i
+                                                            style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
+                                                </c:if>
+                                                <c:if test="${empty user}">
+                                                    <a href="<c:url value="/Signin?message=you_need_to_login&alert=danger"/>" data-tip="Thêm vào giỏ hàng "><i
+                                                            style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
+                                                </c:if>
                                                     <%--                                            <li><a href="# " data-tip="Thích "><i class="fa fa-heart "></i></a></li>--%>
                                                     <%--                                            <li><a href="# " data-tip="So sánh "><i class="fa fa-random "></i></a></li>--%>
                                                 <li><a href="<c:url value="ProductDetailController?id=${o.idProduct}"/>" data-tip="Xem thêm "><i

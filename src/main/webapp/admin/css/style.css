@@ -6,7 +6,7 @@ body {
     font-family: "Segoe UI", Helvetica, Arial, sans-serif !important;
     color: #393939;
     line-height: 1.5;
-    background-image: url(../images/bg6.jpg);
+    background-color: #4c4c4c;
     background-size: cover;
 }
 
@@ -213,7 +213,7 @@ span.yes {
 }
 
 #navbar-container {
-    background: rgb(123, 152, 132);
+    background-color: #2c5976;
     max-height: 50px;
 }
 
@@ -513,7 +513,7 @@ section.main div.main-content .widget {
 }
 
 section.main div.main-content .widget .widget-header {
-    color: #fff;
+    color: #0B87C9;
     min-height: 30px;
     padding: 10px 20px;
 }
@@ -705,7 +705,7 @@ section.main div.main-content .panel-sear select option {
 }
 
 section.main div.main-content .sm-info {
-    color: #444444;
+    color: black;
 }
 
 section.main div.main-content .sm-info span {

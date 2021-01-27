@@ -1,11 +1,13 @@
 package com.dao;
 
 import com.dtos.DonViVanChuyenDTO;
+import com.dtos.VanChuyenDTO;
 import com.utils.DBUtils;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,13 +34,13 @@ public class VanChuyenDAO {
 
     }
 
-    public boolean insertVanChuyen(String maHoaDon, String name, String email, String soDienThoai, String addRess, String donvivanchuyen, int tongtien) {
+    public boolean insertVanChuyen(String maHoaDon, String name, String email, String soDienThoai, String addRess, String donvivanchuyen, int tongtien, Timestamp ngayGiao, String trangthai) {
         Connection con = null;
         PreparedStatement pre = null;
         try {
             con = DBUtils.makeConnection();
             if (con != null) {
-                pre = con.prepareStatement("Insert into vanchuyen(mahoadon,tenkhachhang,email, sodienthoai, address, donvivanchuyen, tongtien) values(?,?,?,?,?,?,?)");
+                pre = con.prepareStatement("Insert into vanchuyen(mahoadon,tenkhachhang,email, sodienthoai, address, donvivanchuyen, tongtien, ngaygiao, trangthai) values(?,?,?,?,?,?,?,?,?)");
                 pre.setString(1, maHoaDon);
                 pre.setString(2, name);
                 pre.setString(3, email);
@@ -46,6 +48,8 @@ public class VanChuyenDAO {
                 pre.setString(5, addRess);
                 pre.setString(6, donvivanchuyen);
                 pre.setInt(7, tongtien);
+                pre.setTimestamp(8, ngayGiao);
+                pre.setString(9, trangthai);
                 if (pre.executeUpdate() > 0) {
                     pre = con.prepareStatement("SELECT *from vanchuyen");
                     pre.executeQuery();
@@ -176,4 +180,23 @@ public class VanChuyenDAO {
         return false;
     }
 
+    public List<VanChuyenDTO> getList() {
+        List<VanChuyenDTO> arr = new ArrayList<>();
+        Connection con = null;
+        PreparedStatement pre = null;
+        ResultSet rs = null;
+        try {
+            con = DBUtils.makeConnection();
+            pre = con.prepareStatement("SELECT  * from vanchuyen");
+            rs = pre.executeQuery();
+            while (rs.next()) {
+                VanChuyenDTO vc = new VanChuyenDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(5), rs.getString(6), rs.getString(6), rs.getInt(7), rs.getTimestamp(8), rs.getString(9));
+                arr.add(vc);
+            }
+            return arr;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }

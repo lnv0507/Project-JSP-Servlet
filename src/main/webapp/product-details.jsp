@@ -160,10 +160,10 @@
                     <h5><b>Trạng thái: </b>${p.getTinhTrang()}</h5>
                     <c:if test="${not empty user}">
                         <a href="<c:url value="/print"/>" data-tip="Thêm vào giỏ hàng "><i
-                                style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
+                                style="color:  #FAB702; font-size: 30px" class="fa fa-shopping-cart "></i></a>
                     </c:if>
                     <c:if test="${empty user}">
-                        <a href="<c:url value="/Signin?message=you_need_to_login&alert=danger"/>" data-tip="Thêm vào giỏ hàng "><i
+                        <a style="font-size: 30px;" href="<c:url value="/Signin?message=you_need_to_login&alert=danger"/>" data-tip="Thêm vào giỏ hàng "><i
                                 style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
                     </c:if>
                     <h5><b> Nhận xét </b></h5>
@@ -179,7 +179,14 @@
                         <span onmouseover="starmark(this)" onclick="starmark(this)" id="5one"
                               style="font-size:40px;cursor:pointer;" class="fa fa-star"></span>
                     </div>
-                    <a href="cart.jsp" class="buynow"><i class="fas fa-shopping-cart"></i> MUA NGAY</a>
+                    <c:if  test="${not empty user}">
+                        <a style="font-size: 20px;" href="<c:url value="/print"/>" data-tip="Thêm vào giỏ hàng "><i
+                                style="color:  #FAB702;" class="fa fa-shopping-cart "></i></a>
+                    </c:if>
+                    <c:if test="${empty user}">
+                        <a style="font-size: 20px" href="<c:url value="/Signin?message=you_need_to_login&alert=danger"/>" data-tip="Thêm vào giỏ hàng "><button style="background-color: black"><i
+                                style="color:  #FAB702;" class="fa fa-shopping-cart "></i>MUA NGAY</button></a>
+                    </c:if>
                 </div>
                     <%--                <div class="product-detail-feature">--%>
                     <%--                    <h3>Thông số kỹ thuật</h3>--%>

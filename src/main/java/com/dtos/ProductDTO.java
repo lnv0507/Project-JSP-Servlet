@@ -81,11 +81,11 @@ public class ProductDTO implements Serializable {
         this.amount = amount;
     }
 
-    public ProductDTO(String idProduct, String tenProduct,int giaTien,int amount) {
+    public ProductDTO(String idProduct, String tenProduct,int soLuongTrongKho ,int giaTien) {
         this.idProduct = idProduct;
         this.tenProduct = tenProduct;
+        this.soLuongTrongKho = soLuongTrongKho;
         this.giaTien = giaTien;
-        this.amount = amount;
     }
 
     public String getIdProduct() {

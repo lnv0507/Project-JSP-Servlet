@@ -1,5 +1,6 @@
 package com.dtos;
 
+import java.sql.Timestamp;
 import java.util.ResourceBundle;
 
 public class VanChuyenDTO {
@@ -9,17 +10,47 @@ public class VanChuyenDTO {
     private String soDienThoai;
     private String address;
     private String donViVanChuyen;
+    private int tongTien;
+    private Timestamp ngaygiao;
+    private String trangThai;
 
-    public VanChuyenDTO(String maHoaDon, String tenKhachHang, String email, String soDienThoai, String address, String donViVanChuyen) {
+    public VanChuyenDTO(String maHoaDon, String tenKhachHang, String email, String soDienThoai, String address, String donViVanChuyen, int tongTien, Timestamp ngaygiao, String trangThai) {
         this.maHoaDon = maHoaDon;
         this.tenKhachHang = tenKhachHang;
         this.email = email;
         this.soDienThoai = soDienThoai;
         this.address = address;
         this.donViVanChuyen = donViVanChuyen;
+        this.ngaygiao = ngaygiao;
+        this.trangThai = trangThai;
+        this.tongTien = tongTien;
     }
 
     public VanChuyenDTO() {
+    }
+
+    public int getTongTien() {
+        return tongTien;
+    }
+
+    public void setTongTien(int tongTien) {
+        this.tongTien = tongTien;
+    }
+
+    public Timestamp getNgaygiao() {
+        return ngaygiao;
+    }
+
+    public void setNgaygiao(Timestamp ngaygiao) {
+        this.ngaygiao = ngaygiao;
+    }
+
+    public String getTrangThai() {
+        return trangThai;
+    }
+
+    public void setTrangThai(String trangThai) {
+        this.trangThai = trangThai;
     }
 
     public String getMaHoaDon() {

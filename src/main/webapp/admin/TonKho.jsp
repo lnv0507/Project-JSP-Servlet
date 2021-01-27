@@ -1,6 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html><html lang="en">
 <head>
+    <jsp:useBean id="e" class="com.dao.VanChuyenDAO" scope="request"/>
+    <jsp:useBean id="t" class="com.dao.ProductDAO" scope="request"/>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,60 +37,48 @@
             </div>
             <div class="main-space inventory-space"></div>
             <div class="inventory-content">
-                <div class="product-sear panel-sear">
-                    <div>
-                        <div class="form-group col-md-4 padd-0">
-                            <input type="text" class="form-control txt-sinventory"
-                                   placeholder="Nhập tên hoặc mã sản phẩm để tìm kiếm">
-                        </div>
-                        <div class="form-group col-md-8 padd-0" style="padding-left: 5px;">
-                            <div class="col-md-12 padd-0">
-                                <div class="col-md-9 padd-0">
-                                    <div class="col-md-4 padd-0">
-                                        <select class="form-control" id="prd_group_id">
-                                            <option value="-1" selected='selected'>Chọn danh mục</option>
-                                            <optgroup label="Chọn danh mục">
+<%--                <div class="product-sear panel-sear">--%>
+<%--                    <div>--%>
+<%--                        <div class="form-group col-md-4 padd-0">--%>
+<%--                            <input type="text" class="form-control txt-sinventory"--%>
+<%--                                   placeholder="Nhập tên hoặc mã sản phẩm để tìm kiếm">--%>
+<%--                        </div>--%>
+<%--                        <div class="form-group col-md-8 padd-0" style="padding-left: 5px;">--%>
+<%--                            <div class="col-md-12 padd-0">--%>
+<%--                                <div class="col-md-9 padd-0">--%>
+<%--                                    <div class="col-md-4 padd-0">--%>
+<%--                                        <select class="form-control" id="prd_group_id">--%>
+<%--                                            <option value="-1" selected='selected'>Chọn danh mục</option>--%>
+<%--                                            <optgroup label="Chọn danh mục">--%>
 
-                                            </optgroup>
+<%--                                            </optgroup>--%>
 
-                                        </select>
-                                    </div>
+<%--                                        </select>--%>
+<%--                                    </div>--%>
 
-                                    <div class="col-md-4 padd-0">
-                                        <select class="form-control" id="option_inventory">
-                                            <option value="0">Tất cả</option>
-                                            <option value="1" selected="selected">Chỉ lấy hàng tồn</option>
-                                            <option value="2">Hết Hàng</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="col-md-3 padd-0" style="padding-left: 5px;">
-                                    <button style="box-shadow: none;" type="button" class="btn btn-primary btn-large"
-                                    ><i class="fa fa-search"></i> Xem
-                                    </button>
+<%--                                    <div class="col-md-4 padd-0">--%>
+<%--                                        <select class="form-control" id="option_inventory">--%>
+<%--                                            <option value="0">Tất cả</option>--%>
+<%--                                            <option value="1" selected="selected">Chỉ lấy hàng tồn</option>--%>
+<%--                                            <option value="2">Hết Hàng</option>--%>
+<%--                                        </select>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                                <div class="col-md-3 padd-0" style="padding-left: 5px;">--%>
+<%--                                    <button style="box-shadow: none;" type="button" class="btn btn-primary btn-large"--%>
+<%--                                    ><i class="fa fa-search"></i> Xem--%>
+<%--                                    </button>--%>
 
-                                </div>
-                            </div>
-                            <div class="col-md-1 padd-0" style="padding-left: 1px;">
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="col-md-1 padd-0" style="padding-left: 1px;">--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
                 <div class="inventory-main-body">
                     <div class="quick-info report row" style="margin-bottom: 15px;">
                         <div class="col-md-12 padd-0">
-                            <div class="col-md-3 padd-right-0">
-                                <div class="report-box" style="border: 2px solid #ddd; border-radius: 0">
-                                    <div class="infobox-icon">
-                                        <i class="fa fa-clock-o cgreen" style="font-size: 45px;" aria-hidden="true"></i>
-                                    </div>
-                                    <div class="infobox-data">
-                                        <h3 class="infobox-title cgreen" style="font-size: 25px;">26/11/2020</h3>
-                                        <span class="infobox-data-number text-center"
-                                              style="font-size: 20px; color: while;">Ngày lập</span>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="col-md-3 padd-right-0">
                                 <div class="report-box" style="border: 2px solid #ddd; border-radius: 0">
                                     <div class="infobox-icon">
@@ -135,53 +125,20 @@
                             <th class="text-center">Mã hàng</th>
                             <th class="text-center">Tên sản phẩm</th>
                             <th class="text-center">SL</th>
-                            <th class="text-center">Vốn tồn kho</th>
+                            <th class="text-center">Giá Trị Sản Phẩm</th>
                             <th class="text-center">Giá trị tồn</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>SP000001</td>
-                            <td class="text-left">Áo Đầu Lâu Bốc Cháy</td>
-                            <td class="text-center">5</td>
-                            <td class="text-right">150,000</td>
-                            <td class="text-right">250,000</td>
-                        </tr>
-                        <tr>
-                            <td>SP000002</td>
-                            <td class="text-left">Áo Denim The Devil</td>
-                            <td class="text-center">6</td>
-                            <td class="text-right">120,000</td>
-                            <td class="text-right">300,000</td>
-                        </tr>
-                        <tr>
-                            <td>SP000003</td>
-                            <td class="text-left">Quần Jeans Robin Hood</td>
-                            <td class="text-center">10</td>
-                            <td class="text-right">300,000</td>
-                            <td class="text-right">500,000</td>
-                        </tr>
-                        <tr>
-                            <td>SP000004</td>
-                            <td class="text-left">Quần Short Champion</td>
-                            <td class="text-center">12</td>
-                            <td class="text-right">360,000</td>
-                            <td class="text-right">600,000</td>
-                        </tr>
-                        <tr>
-                            <td>SP000005</td>
-                            <td class="text-left">Quần Short White Navy</td>
-                            <td class="text-center">8</td>
-                            <td class="text-right">240,000</td>
-                            <td class="text-right">400,000</td>
-                        </tr>
-                        <tr>
-                            <td>SP000006</td>
-                            <td class="text-left">Mắt Kính 02</td>
-                            <td class="text-center">10</td>
-                            <td class="text-right">300,000</td>
-                            <td class="text-right">500,000</td>
-                        </tr>
+                        <c:forEach items="${t.soLuong}" var="e">
+                            <tr>
+                                <td>${e.idProduct}</td>
+                                <td class="text-left">${e.tenProduct}</td>
+                                <td class="text-center">${e.soLuongTrongKho}</td>
+                                <td class="text-right">${e.giaTien}</td>
+                                <td class="text-right">${e.soLuongTrongKho * e.giaTien}</td>
+                            </tr>
+                        </c:forEach>
 
                         </tbody>
                     </table>

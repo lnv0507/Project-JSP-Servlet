@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html><html lang="en">
 <head>
+    <jsp:useBean id="t" class="com.dao.DesignDAO" scope="request"/>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -131,7 +132,7 @@
             <ul class="nav nav-tabs tab-setting" role="tablist">
                 <li role="presentation" class="active"><a href="#user" aria-controls="home" role="tab"
                                                           data-toggle="tab"><i
-                        class="fa fa-user"></i> Nhân viên</a></li>
+                        class="fa fa-user"></i> Thiết Kế</a></li>
 
                 </li>
             </ul>
@@ -139,11 +140,11 @@
                 <div role="tabpanel" class="tab-pane active" id="user">
                     <div class="panel panel-primary" style="margin-top: 20px">
                         <div class="panel-heading">
-                            <i class="fa fa-user"></i> Nhân viên
+                            <i class="fa fa-user"></i> Thiết Kế
                             <div class="action pull-right">
                                 <button class="btn btn-default btn-sm create-nv btn-in-panel blue" data-toggle="modal"
                                         data-target="#create-nv" style="background-color: #337ab7; color: white;"><i
-                                        class="fa fa-pencil blue" style="color: white;"></i> Tạo nhân viên
+                                        class="fa fa-pencil blue" style="color: white;"></i> Tạo Thiết Kế
                                 </button>
                             </div>
 
@@ -152,28 +153,33 @@
                             <div class="table-responsive ">
                                 <table class="table table-hover table-user table-striped">
                                     <thead>
-                                    <th class="text-center">STT</th>
-                                    <th>Mã nhân viên</th>
-                                    <th>Tên nhân viên</th>
-                                    <th>Email</th>
-                                    <th>Nhóm người sử dụng</th>
-                                    <th></th>
+                                    <th style="width: 20%">Mã Thiết Kế</th>
+                                    <th style="width: 20%">Tên Thiết Kế</th>
+                                    <th style="width: 20%">Loại Thiết Kế</th>
+                                    <th style="width: 35%">Mô Tả</th>
+                                    <th style="width: 5%"></th>
                                     </thead>
                                     <tbody>
-                                    <c:forEach items="${listADMIN}" var="d">
+
+                                    <c:forEach items="${t.thietKe}" var="d">
                                         <tr class="tr-item-24">
-                                            <td class="text-center">18</td>
-                                            <td>${d.idAccount}</td>
-                                            <td>${d.tenAccount}</td>
-                                            <td>${d.email}</td>
-                                            <td><span class="user_group"><i class="fa fa-male"></i>${d.chucVu}</span>
+                                            <td>${d.idDes}</td>
+                                            <td>${d.nameDes}</td>
+                                            <c:forEach items="${t.directories}" var="e">
+                                                <c:set var="id" scope="session" value="${d.type}"/>
+                                                <c:set var="id2" scope="session" value="${e.id}"/>
+                                                <c:if test="${id.equalsIgnoreCase(id2)}">
+                                                    <td><c:out value="${e.type}"/></td>
+                                                </c:if>
+                                            </c:forEach>
+                                            <td><span class="user_group"><i class="fa fa-male"></i>${d.mota}</span>
                                             </td>
-                                            <td class="text-center"><i class="fa fa-pencil-square-o edit-item"
-                                                                       title="Sửa"
-                                                                       onclick="cms_edit_usitem(24)"
-                                                                       style="margin-right: 10px; cursor: pointer;"></i><i
-                                                    onclick="cms_del_usitem('${d.idAccount}')" title="Xóa"
-                                                    class="fa fa-trash-o delete-item" style="cursor: pointer;"></i></td>
+                                                <%--                                            <td class="text-center"><i class="fa fa-pencil-square-o edit-item"--%>
+                                                <%--                                                                       title="Sửa"--%>
+                                                <%--                                                                       onclick="cms_edit_usitem(24)"--%>
+                                                <%--                                                                       style="margin-right: 10px; cursor: pointer;"></i><i--%>
+                                                <%--                                                    onclick="cms_del_usitem('${d.idAccount}')" title="Xóa"--%>
+                                                <%--                                                    class="fa fa-trash-o delete-item" style="cursor: pointer;"></i></td>--%>
                                         </tr>
                                         <tr class="edit-tr-item-24" style="display: none;">
                                             <td class="text-center">18</td>
@@ -199,8 +205,10 @@
                                                                        style="color: #EC971F; cursor: pointer; margin-right: 10px;"></i><i
                                                     onclick="cms_undo_item( 24 )" title="Hủy"
                                                     class="fa fa-undo"
-                                                    style="color: green; cursor: pointer; margin-right: 5px;"></i></td>
+                                                    style="color: green; cursor: pointer; margin-right: 5px;"></i>
+                                            </td>
                                         </tr>
+
                                     </c:forEach>
                                     </tbody>
                                 </table>
