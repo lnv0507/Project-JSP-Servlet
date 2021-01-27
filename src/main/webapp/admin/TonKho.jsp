@@ -77,48 +77,6 @@
 <%--                    </div>--%>
 <%--                </div>--%>
                 <div class="inventory-main-body">
-                    <div class="quick-info report row" style="margin-bottom: 15px;">
-                        <div class="col-md-12 padd-0">
-                            <div class="col-md-3 padd-right-0">
-                                <div class="report-box" style="border: 2px solid #ddd; border-radius: 0">
-                                    <div class="infobox-icon">
-                                        <i class="fa fa-tag blue" style="font-size: 45px; color: #307ECC;"
-                                           aria-hidden="true"></i>
-                                    </div>
-                                    <div class="infobox-data">
-                                        <h3 class="infobox-title blue" style="font-size: 25px;">51</h3>
-                                        <span class="infobox-data-number text-center"
-                                              style="font-size: 20px; color: while;">SL tồn kho</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 padd-right-0">
-                                <div class="report-box " style="border: 2px solid #ddd; border-radius: 0">
-                                    <div class="infobox-icon">
-                                        <i class="fa fa-refresh orange" style="font-size: 45px;"></i>
-                                    </div>
-                                    <div class="infobox-data">
-                                        <h3 class="infobox-title orange" style="font-size: 25px;">1,470,000 VND</h3>
-                                        <span class="infobox-data-number text-center"
-                                              style="font-size: 20px; color: while;">Tổng vốn tồn kho</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3 padd-right-0">
-                                <div class="report-box" style="border: 2px solid #ddd; border-radius: 0">
-                                    <div class="infobox-icon">
-                                        <i class="fa fa-shopping-cart cred" style="font-size: 45px;"></i>
-                                    </div>
-                                    <div class="infobox-data">
-                                        <h3 class="infobox-title cred" style="font-size: 25px;">2,550,000 VND</h3>
-                                        <span class="infobox-data-number text-center"
-                                              style="font-size: 20px; color: while;">Tổng giá trị tồn kho</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     <table class="table table-bordered table-striped">
                         <thead>
                         <tr>

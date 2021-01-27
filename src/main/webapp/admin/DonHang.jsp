@@ -56,42 +56,6 @@
                 </ul>
                 <div class="tab-content">
                     <div id="orderNotCheck" class="tab-pane active">
-                        <div class="product-sear panel-sear">
-                            <div class="form-group col-md-3 padd-0">
-                                <input type="text" class="form-control" id="order-search"
-                                       placeholder="Nhập mã đơn hàng để tìm kiếm">
-                            </div>
-                            <div class="form-group col-md-9 padd-0" style="padding-left: 5px;">
-                                <div class="col-md-9 padd-0">
-                                    <div class="col-md-4 padd-0">
-                                        <select id="search-option-1" class="form-control">
-                                            <option value="0">Đơn hàng</option>
-                                            <option value="1">Đơn hàng đã xóa</option>
-                                            <option value="2">Đơn hàng còn nợ</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-md-5 padd-0" style="padding-left: 5px;">
-                                        <div class="input-daterange input-group" id="datepicker">
-                                            <input type="text" class="input-sm form-control"
-                                                   id="search-date-from" placeholder="Từ ngày"
-                                                   name="start"/>
-                                            <span class="input-group-addon">đến</span>
-                                            <input type="text" class="input-sm form-control"
-                                                   id="search-date-to" placeholder="Đến ngày"
-                                                   name="end"/>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-3 padd-0" style="padding-left: 5px;">
-                                        <button style="box-shadow: none;" type="button"
-                                                class="btn btn-primary btn-large"
-                                                onclick="cms_paging_order(1)"><i class="fa fa-search"></i>
-                                            Tìm kiếm
-                                        </button>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
                         <div class="cus-body">
                             <table class="table table-bordered table-striped">
                                 <thead>
