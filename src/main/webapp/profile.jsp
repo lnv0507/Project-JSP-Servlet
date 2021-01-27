@@ -125,6 +125,7 @@
         <div class="profile">
             <div class="profile-account">
                 <div>
+                    <%AccountDTO ac = (AccountDTO) session.getAttribute("user");%>
                     <i class="fa fa-user"></i>
                     <span><%=ac.getIdAccount()%></span>
                 </div>

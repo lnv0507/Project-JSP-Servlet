@@ -24,23 +24,20 @@ public class LienHeController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html;charset=UTF-8");
-        Random rd=new Random();
-        int count=1;
-        List<String> listLienhe= ContactDAO.getLienHe();
-        String tenAccount=req.getParameter("txtName");
-        String email=req.getParameter("txtemail");
-        String soDT=req.getParameter("txtSDT");
-        String muccanLienHe=req.getParameter("txtDichVu");
-        String noiDung=req.getParameter("txtnoidung");
-        String maLienhe="LH"+count;
-        ContactDAO contactDAO=new ContactDAO();
-        while ((listLienhe.contains(maLienhe))){
-            maLienhe="LH"+count++;
+        Random rd = new Random();
+        int count = 1;
+        List<String> listLienhe = ContactDAO.getLienHe();
+        String tenAccount = req.getParameter("txtName");
+        String email = req.getParameter("txtemail");
+        String soDT = req.getParameter("txtSDT");
+        String noiDung = req.getParameter("txtnoidung");
+        String maLienhe = "LH" + count;
+        ContactDAO contactDAO = new ContactDAO();
+        while ((listLienhe.contains(maLienhe))) {
+            maLienhe = "LH" + count++;
         }
-
-
-        ContactDAO.insertContactintoDatabase(maLienhe,tenAccount,email,soDT,muccanLienHe,noiDung);
-        req.getRequestDispatcher("contact.jsp").forward(req,resp);
+        ContactDAO.insertContactintoDatabase(maLienhe, email, soDT, noiDung, tenAccount,"Chưa Xử Lý");
+        req.getRequestDispatcher("contact.jsp").forward(req, resp);
 
     }
 }

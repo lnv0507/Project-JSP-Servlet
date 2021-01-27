@@ -97,7 +97,7 @@
                                     </div>
                                     <div class="hr"></div>
                                     <div class="foot-lnk">
-                                        <a href="<c:url value="/ResetPassWord"/> ">Quên Mật Khẩu?</a>
+                                        <a href="<c:url value="forgot.jsp"/> ">Quên Mật Khẩu?</a>
                                     </div>
                                 </div>
                             </form>

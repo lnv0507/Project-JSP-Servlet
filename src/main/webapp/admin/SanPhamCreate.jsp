@@ -63,148 +63,155 @@
                 <!-- Tạo sản phẩm -->
                 <div class="products-content" style="margin-bottom: 25px;">
                     <form action="addproduct" method="post" enctype="multipart/form-data>
-                        <div class="basic-info">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="col-md-4 padd-0">
-                                        <h3>Thông tin cơ bản</h3>
-                                        <small>Nhập tên và các thông tin cơ bản của sản phẩm</small>
+                        <div class=" basic-info
+                    ">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-4 padd-0">
+                                <h3>Thông tin cơ bản</h3>
+                                <small>Nhập tên và các thông tin cơ bản của sản phẩm</small>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="row">
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-6 padd-left-0">
+                                            <label>Tên sản phẩm</label>
+                                            <input type="text" id="prd_name" value=""
+                                                   class="form-control"
+                                                   placeholder="Nhập tên sản phẩm"
+                                                   name="txtName">
+                                        </div>
+                                        <div class="col-md-6 padd-right-0">
+                                            <label>Mã sản phẩm</label>
+                                            <input type="text" id="prd_code" class="form-control "
+                                                   placeholder="Nếu không nhập, hệ thống sẽ tự sinh."
+                                                   name="txtIDName">
+                                        </div>
                                     </div>
-                                    <div class="col-md-8">
-                                        <div class="row">
-                                            <div class="form-group clearfix">
-                                                <div class="col-md-6 padd-left-0">
-                                                    <label>Tên sản phẩm</label>
-                                                    <input type="text" id="prd_name" value=""
-                                                           class="form-control"
-                                                           placeholder="Nhập tên sản phẩm"
-                                                           name="txtName">
-                                                </div>
-                                                <div class="col-md-6 padd-right-0">
-                                                    <label>Mã sản phẩm</label>
-                                                    <input type="text" id="prd_code" class="form-control "
-                                                           placeholder="Nếu không nhập, hệ thống sẽ tự sinh."
-                                                           name="txtIDName">
-                                                </div>
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-6 padd-left-0">
+                                            <label>Số lượng</label>
+                                            <input type="text" id="prd_sls" value="" placeholder="0"
+                                                   class="form-control text-right txtNumber"
+                                                   name="txtNumber">
+                                        </div>
+                                        <div class="col-md-6 padd-right-0">
+                                            <label>Giá bán</label>
+                                            <input name="txtGia" type="text" id="prd_sell_price"
+                                                   value=""
+                                                   class="form-control txtMoney text-right"
+                                                   placeholder="0">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group clearfix">
+                                        <div class="col-md-6 padd-left-0">
+                                            <label>Danh mục</label>
+                                            <div class="col-md-11 padd-0">
+                                                <select name="txtChatLieu" style="width: 100%">
+                                                    <option>Gỗ</option>
+                                                    <option>Nhựa</option>
+                                                    <option>Sắt</option>
+                                                </select>
                                             </div>
-                                            <div class="form-group clearfix">
-                                                <div class="col-md-6 padd-left-0">
-                                                    <label>Số lượng</label>
-                                                    <input type="text" id="prd_sls" value="" placeholder="0"
-                                                           class="form-control text-right txtNumber"
-                                                           name="txtNumber">
-                                                </div>
-                                                <div class="col-md-6 padd-right-0">
-                                                    <label>Giá bán</label>
-                                                    <input name="txtGia" type="text" id="prd_sell_price"
-                                                           value=""
-                                                           class="form-control txtMoney text-right"
-                                                           placeholder="0">
-                                                </div>
-                                            </div>
-
-
-                                            <div class="form-group clearfix">
-                                                <div class="col-md-6 padd-left-0">
-                                                    <label>Danh mục</label>
-                                                    <div class="col-md-11 padd-0">
-                                                        <select name="txtChatLieu" style="width: 100%">
-                                                            <option>Gỗ</option>
-                                                            <option>Nhựa</option>
-                                                            <option>Sắt</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-1 padd-0">
-                                                        <button type="button" class="btn btn-primary"
-                                                                data-toggle="modal"
-                                                                data-target="#list-prd-group"
-                                                                style="border-radius: 0 3px 3px 0; box-shadow: none;">
-                                                            ...
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 padd-right-0">
-                                                    <label>Tình Trạng</label>
-                                                    <div class="col-md-11 padd-0">
-                                                        <select class="form-control" id="prd_manufacture_id"
-                                                                name="txtTinhTrang">
-                                                            <optgroup label="Chọn Tình Trạng">
-                                                                <option>
-                                                                    Đang Về Hàng
-                                                                </option>
-                                                                <option>
-                                                                    Có Hàng
-                                                                </option>
-
-                                                            </optgroup>
-
-                                                        </select>
-                                                    </div>
-                                                    <div class="col-md-1 padd-0">
-                                                        <button type="button" class="btn btn-primary"
-                                                                data-toggle="modal"
-                                                                data-target="#list-prd-manufacture"
-                                                                style="border-radius: 0 3px 3px 0; box-shadow: none;">
-                                                            ...
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6 padd-right-0">
-                                                    <input type="file" name="photos1" id="1" multiple>
-                                                </div>
-                                            </div>
-                                            <div class="form-group clearfix">
-                                                <input type="submit" value="Tạo" name="txtSubmit">
+                                            <div class="col-md-1 padd-0">
+                                                <button type="button" class="btn btn-primary"
+                                                        data-toggle="modal"
+                                                        data-target="#list-prd-group"
+                                                        style="border-radius: 0 3px 3px 0; box-shadow: none;">
+                                                    ...
+                                                </button>
                                             </div>
                                         </div>
+                                        <div class="col-md-6 padd-right-0">
+                                            <label>Tình Trạng</label>
+                                            <div class="col-md-11 padd-0">
+                                                <select class="form-control" id="prd_manufacture_id"
+                                                        name="txtTinhTrang">
+                                                    <optgroup label="Chọn Tình Trạng">
+                                                        <option>
+                                                            Đang Về Hàng
+                                                        </option>
+                                                        <option>
+                                                            Có Hàng
+                                                        </option>
+
+                                                    </optgroup>
+
+                                                </select>
+                                            </div>
+
+                                            <div class="col-md-1 padd-0">
+                                                <button type="button" class="btn btn-primary"
+                                                        data-toggle="modal"
+                                                        data-target="#list-prd-manufacture"
+                                                        style="border-radius: 0 3px 3px 0; box-shadow: none;">
+                                                    ...
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 padd-right-0">
+                                            <label> Loại</label>
+                                            <br>
+                                            <input type="text" name="txtLoai" value="" placeholder="Loại Sản Phẩm">
+                                        </div>
+                                        <div class="col-md-6 padd-right-0">
+                                            <input type="file" name="photos1" id="1" multiple>
+                                        </div>
+                                    </div>
+                                    <div class="form-group clearfix">
+                                        <input type="submit" value="Tạo" name="txtSubmit">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </form>
-                    <div class="expand-info">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <h4 style="border-bottom: 1px solid white; padding-bottom: 10px;"><i
-                                        class="fa fa-th-large blue"></i> <a
-                                        style="color:white; text-decoration: none;" data-toggle="collapse"
-                                        href="#collapseproductinfo" aria-expanded="false"
-                                        aria-controls="collapseExample">Thông tin mở rộng(
-                                    <small> Nhấn để thêm các thông tin cho thuộc tính web</small>
-                                    )</a></h4>
-                            </div>
-                            <div class="col-md-12">
-                                <div style="margin-top: 5px;"></div>
-                                <div class="collapse" id="collapseproductinfo">
+                    </div>
+                </div>
+                </form>
+                <div class="expand-info">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 style="border-bottom: 1px solid white; padding-bottom: 10px;"><i
+                                    class="fa fa-th-large blue"></i> <a
+                                    style="color:white; text-decoration: none;" data-toggle="collapse"
+                                    href="#collapseproductinfo" aria-expanded="false"
+                                    aria-controls="collapseExample">Thông tin mở rộng(
+                                <small> Nhấn để thêm các thông tin cho thuộc tính web</small>
+                                )</a></h4>
+                        </div>
+                        <div class="col-md-12">
+                            <div style="margin-top: 5px;"></div>
+                            <div class="collapse" id="collapseproductinfo">
 
-                                    <div class="col-md-12">
-                                        <div class="row">
-                                            <div class="col-md-12 padd-20">
-                                                <div class="jumbotron text-center" id="img_upload"
-                                                     style="border-radius: 0; margin-bottom: 10px; padding: 15px 20px;">
-                                                    <h3 style="color: black;">Upload hình ảnh sản phẩm</h3>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-12 padd-20">
+                                            <div class="jumbotron text-center" id="img_upload"
+                                                 style="border-radius: 0; margin-bottom: 10px; padding: 15px 20px;">
+                                                <h3 style="color: black;">Upload hình ảnh sản phẩm</h3>
 
-                                                    <p>
-                                                        <input type="file">
-                                                        <input type="file">
-                                                        <input type="file">
-                                                        <input type="file">
-                                                        <input type="file">
-                                                        <input type="file">
-                                                    </p>
-                                                </div>
+                                                <p>
+                                                    <input type="file">
+                                                    <input type="file">
+                                                    <input type="file">
+                                                    <input type="file">
+                                                    <input type="file">
+                                                    <input type="file">
+                                                </p>
                                             </div>
-
                                         </div>
+
                                     </div>
-                                    <div class="col-md-12 padd-20">
-                                        <h4 style="margin-top: 0;">Mô tả
-                                            <small style="font-style: italic;">(Nhập thông tin mô tả chi
-                                                tiết hơn để khách hàng hiểu sản phẩm của bạn)
-                                            </small>
-                                        </h4>
-                                        <textarea id="ck_editor" id="prd_description"
-                                                  style="width: 1070px; height: 500px;"></textarea>
+                                </div>
+                                <div class="col-md-12 padd-20">
+                                    <h4 style="margin-top: 0;">Mô tả
+                                        <small style="font-style: italic;">(Nhập thông tin mô tả chi
+                                            tiết hơn để khách hàng hiểu sản phẩm của bạn)
+                                        </small>
+                                    </h4>
+                                    <textarea id="ck_editor" id="prd_description"
+                                              style="width: 1070px; height: 500px;"></textarea>
 
                                     <div class="col-md-12">
 

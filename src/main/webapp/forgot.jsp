@@ -63,7 +63,7 @@
         <!-- content begin -->
         <div class="no-bottom no-top">
             <section class="background-login">
-                <form action="ResetPassWord" method="post">
+                <form action="ResetPassWord" method="get">
                 <div class="login-wrap">
                     <div class="login-jsp">
                         <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1"

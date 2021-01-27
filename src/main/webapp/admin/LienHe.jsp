@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html><html lang="en">
 <head>
+    <jsp:useBean id="t" class="com.dao.ContactDAO" scope="request"/>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -74,62 +75,64 @@
                                     <th class="text-center">Mã liên hệ</th>
                                     <th class="text-center">Tên người dùng</th>
                                     <th class="text-center">Email</th>
-                                    <th class="text-center">Tiêu đề</th>
-                                    <th class="text-center">Ngày gửi</th>
+                                    <th class="text-center">Số Điện Thoại</th>
                                     <th class="text-center"> Check</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td style="text-align: center;">
-                                        <i style="color: #478fca!important;" title="Chi tiết đơn hàng"
-                                           onclick="cms_show_detail_order(248)"
-                                           class="fa fa-plus-circle i-detail-order-248">
+                                <c:forEach items="${t.selectContact}" var="i">
+                                    <tr>
 
-                                        </i>
-                                        <i style="color: #478fca!important;" title="Chi tiết đơn hàng"
-                                           onclick="cms_show_detail_order(248)"
-                                           class="fa fa-minus-circle i-hide i-detail-order-248">
+                                        <td style="text-align: center;">
+                                            <i style="color: #478fca!important;" title="Chi tiết đơn hàng"
+                                               onclick="cms_show_detail_order('${i.maLienHe}')"
+                                               class="fa fa-plus-circle i-detail-order-${i.maLienHe}">
+                                            </i>
+                                            <i style="color: #478fca!important;" title="Chi tiết đơn hàng"
+                                               onclick="cms_show_detail_order('${i.maLienHe}')"
+                                               class="fa fa-minus-circle i-hide i-detail-order-${i.maLienHe}">
 
-                                        </i>
-                                    </td>
-                                    <td class="text-center" onclick="cms_detail_order(248)">LH0000001</td>
-                                    <td class="text-center">Nguyễn Công Dự</td>
-                                    <td class="text-center">congdu@gmail.com</td>
-                                    <td class="text-center">Kí kết hợp tác</td>
-                                    <td class="text-center">22:41 24/11/2020</td>
-                                    <td>
-                                        <div class="col-md-3 padd-0" style="padding-left: 15px;">
-                                            <button style="box-shadow: none; left: 10px;" type="button"
-                                                    class="btn btn-primary btn-large"
-                                                    onclick="cms_paging_order(1)"><i class="fa fa-user"></i> Xác Nhận
-                                            </button>
-                                        </div>
-                                    </td>
+                                            </i>
+                                        </td>
+
+                                        <td class="text-center" onclick="cms_detail_order(248)">${i.maLienHe}</td>
+                                        <td class="text-center">${i.tenAccount}</td>
+                                        <td class="text-center">${i.email}</td>
+                                        <td class="text-center">${i.soDienThoai}</td>
+                                        <td>
+                                            <div class="col-md-3 padd-0" style="padding-left: 15px;">
+                                                <button style="box-shadow: none; left: 10px;" type="button"
+                                                        class="btn btn-primary btn-large"
+                                                        onclick="cms_paging_order('${i.maLienHe}')"><i
+                                                        class="fa fa-user"></i> Xác
+                                                    Nhận
+                                                </button>
+                                            </div>
+                                        </td>
 
 
-                                </tr>
-                                <tr class="tr-hide" id="tr-detail-order-248">
-                                    <td colspan="15">
-                                        <div class="tabbable">
-                                            <ul class="nav nav-tabs">
-                                                <li class="active">
-                                                    <a data-toggle="tab">
-                                                        <i class="green icon-reorder bigger-110"></i>
-                                                        Nội dung liên hệ
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <div class="tab-content">
-                                                <div class="tab-pane active">
-                                                    <textarea style="width: 1100px; height: 100px;"
-                                                              placeholder="Nội dung" name="message"
-                                                              required=""></textarea>
+                                    </tr>
+                                    <tr class="tr-hide" id="tr-detail-order-${i.maLienHe}">
+                                        <td colspan="15">
+                                            <div class="tabbable">
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active">
+                                                        <a data-toggle="tab">
+                                                            <i class="green icon-reorder bigger-110"></i>
+                                                            Nội dung liên hệ
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    <div class="tab-pane active">
+                                                        <textarea style="width: 1100px; height: 100px;" name="message"
+                                                                  required="" disabled>${i.noiDung}</textarea>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                             <div class="alert alert-info summany-info clearfix" role="alert">
@@ -169,53 +172,63 @@
                                     <th class="text-center">Mã liên hệ</th>
                                     <th class="text-center">Tên người dùng</th>
                                     <th class="text-center">Email</th>
-                                    <th class="text-center">Tiêu đề</th>
-                                    <th class="text-center">Ngày xác nhận</th>
+                                    <th class="text-center">Số Điện Thoại</th>
+                                    <th class="text-center">Trạng Thái</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td style="text-align: center;">
-                                        <i style="color: #478fca!important;" title="Chi tiết đơn hàng"
-                                           onclick="cms_show_detail_order(249)"
-                                           class="fa fa-plus-circle i-detail-order-249">
+                                <c:forEach items="${t.trangThai}" var="i">
+                                    <tr>
 
-                                        </i>
-                                        <i style="color: #478fca!important;" title="Chi tiết đơn hàng"
-                                           onclick="cms_show_detail_order(249)"
-                                           class="fa fa-minus-circle i-hide i-detail-order-249">
+                                        <td style="text-align: center;">
+                                            <i style="color: #478fca!important;" title="Chi tiết đơn hàng"
+                                               onclick="cms_show_detail_order('${i.maLienHe}')"
+                                               class="fa fa-plus-circle i-detail-order-${i.maLienHe}">
+                                            </i>
+                                            <i style="color: #478fca!important;" title="Chi tiết đơn hàng"
+                                               onclick="cms_show_detail_order('${i.maLienHe}')"
+                                               class="fa fa-minus-circle i-hide i-detail-order-${i.maLienHe}">
 
-                                        </i>
-                                    </td>
-                                    <td class="text-center" onclick="cms_detail_order(248)">LH0000001</td>
-                                    <td class="text-center">Nguyễn Công Dự</td>
-                                    <td class="text-center">congdu@gmail.com</td>
-                                    <td class="text-center">Kí kết hợp tác</td>
-                                    <td class="text-center">22:41 24/11/2020</td>
+                                            </i>
+                                        </td>
+
+                                        <td class="text-center" onclick="cms_detail_order(248)">${i.maLienHe}</td>
+                                        <td class="text-center">${i.tenAccount}</td>
+                                        <td class="text-center">${i.email}</td>
+                                        <td class="text-center">${i.soDienThoai}</td>
+                                        <td>
+                                            <div class="col-md-3 padd-0" style="padding-left: 15px;">
+                                                <button style="box-shadow: none; left: 10px;" type="button"
+                                                        class="btn btn-primary btn-large"
+                                                        onclick="cms_paging_order('${i.maLienHe}')"><i
+                                                        class="fa fa-user"></i> Đã Xác Nhận
+                                                </button>
+                                            </div>
+                                        </td>
 
 
-                                </tr>
-                                <tr class="tr-hide" id="tr-detail-order-249">
-                                    <td colspan="15">
-                                        <div class="tabbable">
-                                            <ul class="nav nav-tabs">
-                                                <li class="active">
-                                                    <a data-toggle="tab">
-                                                        <i class="green icon-reorder bigger-110"></i>
-                                                        Nội dung liên hệ
-                                                    </a>
-                                                </li>
-                                            </ul>
-                                            <div class="tab-content">
-                                                <div class="tab-pane active">
-                                                    <textarea style="width: 1100px; height: 100px;"
-                                                              placeholder="Nội dung" name="message"
-                                                              required=""></textarea>
+                                    </tr>
+                                    <tr class="tr-hide" id="tr-detail-order-${i.maLienHe}">
+                                        <td colspan="15">
+                                            <div class="tabbable">
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active">
+                                                        <a data-toggle="tab">
+                                                            <i class="green icon-reorder bigger-110"></i>
+                                                            Nội dung liên hệ
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    <div class="tab-pane active">
+                                                        <textarea style="width: 1100px; height: 100px;" name="message"
+                                                                  required="" disabled>${i.noiDung}</textarea>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
+                                        </td>
+                                    </tr>
+                                </c:forEach>
                                 </tbody>
                             </table>
                             <div class="alert alert-info summany-info clearfix" role="alert">

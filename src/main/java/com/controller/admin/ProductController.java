@@ -18,13 +18,16 @@ import java.util.List;
 @WebServlet(name = "ProductController", urlPatterns = {"/admin/addproduct", "/admin/product"})
 public class ProductController extends HttpServlet {
     final static String ERROR = "SanPhamCreate.jsp";
-    final static String SUCCESS = "SanPhamInfo.jsp";
+    final static String SUCCESS = "DetailProduct?id=";
     private static final String UPLOAD_DIR = "images/products";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String url = ERROR;
         ArrayList<String> images = new ArrayList<>();
+        ProductDAO proDAO = new ProductDAO();
         try {
+            int count = 1;
+            List<String> listIdProduct = proDAO.getMaSanPham();
             String idProduct = request.getParameter("txtIDName");
             String nameProduct = request.getParameter("txtName");
             String loai = request.getParameter("txtLoai");
@@ -37,8 +40,14 @@ public class ProductController extends HttpServlet {
             ArrayList<String> list = new ArrayList<String>();
             list.add(imagee1);
 //            list.add(imagee2);
-            ProductDAO proDAO = new ProductDAO();
+
             boolean check = true;
+            if (idProduct.isEmpty() || idProduct.equals("")) {
+                idProduct = "MSPRO00" + count;
+                while (listIdProduct.contains(idProduct)) {
+                    idProduct = "MSPRO00" + count++;
+                }
+            }
             if (check) {
                 ProductDTO proDTO = new ProductDTO();
                 proDTO.setIdProduct(idProduct);
@@ -53,9 +62,9 @@ public class ProductController extends HttpServlet {
                     proDAO.uploadImage(idProduct, listImage);
                 }
                 HttpSession session = request.getSession();
-                session.setAttribute("products" ,proDAO );
+                session.setAttribute("product", proDAO);
                 proDAO.upload(proDTO);
-                url = SUCCESS;
+                url = SUCCESS + idProduct.trim();
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -67,19 +76,19 @@ public class ProductController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 //        doPost(request, response);
         ProductDAO pd = new ProductDAO();
-        ArrayList<ProductDTO> listPro = pd.getListByPage(1,Integer.MAX_VALUE);
-    int index = Integer.parseInt(request.getParameter("index"));
-    int size = 16;
-    int endPage = 0;
-    endPage = listPro.size()/size;
-    if(listPro.size()%size >0){
-        endPage++;
-    }
-    listPro = pd.getListByPage(index,size);
+        ArrayList<ProductDTO> listPro = pd.getListByPage(1, Integer.MAX_VALUE);
+        int index = Integer.parseInt(request.getParameter("index"));
+        int size = 16;
+        int endPage = 0;
+        endPage = listPro.size() / size;
+        if (listPro.size() % size > 0) {
+            endPage++;
+        }
+        listPro = pd.getListByPage(index, size);
 
-    request.setAttribute("endPage",endPage);
-      request.setAttribute("data", listPro);
-      request.setAttribute("servlet","product?");
+        request.setAttribute("endPage", endPage);
+        request.setAttribute("data", listPro);
+        request.setAttribute("servlet", "product?");
         request.getRequestDispatcher("/admin/SanPham.jsp").forward(request, response);
 
     }

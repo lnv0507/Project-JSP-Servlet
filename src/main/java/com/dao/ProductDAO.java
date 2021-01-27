@@ -495,5 +495,26 @@ public class ProductDAO {
         }
         return false;
     }
+    public static List<String> getMaSanPham() {
+        List<String> arr = new ArrayList<>();
+        Connection con = null;
+        PreparedStatement pre = null;
+        ResultSet rs = null;
+        try {
+            con = DBUtils.makeConnection();
+            pre = con.prepareStatement("SELECT  * from product");
+            rs = pre.executeQuery();
+            while (rs.next()) {
+                String maDonHang = rs.getString("idproduct");
+                arr.add(maDonHang);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return arr;
+
+
+    }
 
 }

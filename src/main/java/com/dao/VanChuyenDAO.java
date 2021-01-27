@@ -153,6 +153,27 @@ public class VanChuyenDAO {
         return false;
     }
 
+    public boolean insertChiTiet(String maDonHang, String idProDuct, int soLuong) {
+        Connection con = null;
+        PreparedStatement pre = null;
+        try {
+            con = DBUtils.makeConnection();
+            if (con != null) {
+                pre = con.prepareStatement("Insert into chitietdonhang(maDonHang, idProDuct,soLuong) values(?,?,?)");
+                pre.setString(1, maDonHang);
+                pre.setString(2, idProDuct);
+                pre.setInt(3, soLuong);
+                if (pre.executeUpdate() > 0) {
+                    pre = con.prepareStatement("SELECT *from chitietdonhang");
+                    pre.executeQuery();
+                    return true;
+                }
 
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
 
 }

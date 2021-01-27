@@ -13,15 +13,14 @@ import java.io.IOException;
 @WebServlet(name = "ResetPassWord", urlPatterns = "/ResetPassWord")
 public class ForgotPassword extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String email1=request.getParameter("email");
-        if(new AccountDAO().sendPassword(email1)){
-            response.sendRedirect("dangnhap.jsp");
-        }
-        else {
+        String email1 = request.getParameter("email");
+        if (new AccountDAO().sendPassword(email1)) {
+            response.sendRedirect("forgot.jsp");
+        } else {
             System.out.println("fail");
         }
     }

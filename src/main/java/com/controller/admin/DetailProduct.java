@@ -16,7 +16,7 @@ import java.util.ArrayList;
 @WebServlet(name = "DetailProduct", urlPatterns = "/admin/DetailProduct")
 public class DetailProduct extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+        doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
