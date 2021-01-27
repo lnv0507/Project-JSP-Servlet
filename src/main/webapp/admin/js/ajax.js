@@ -1715,6 +1715,26 @@ function cms_paging_order($id) {
         cms_adapter_ajax($param);
     }
 }
+function cms_paging_order2($id) {
+    var conf = confirm('Bạn đã gọi Check Đơn Hàng Rồi Chứ');
+    if (conf) {
+        var $param = {
+            'type': 'POST',
+            'url': 'updateDonHang',
+            'data': {'id':$id},
+            'callback': function (data) {
+                if (data == '0') {
+                    $('.ajax-error-ct').html('Lỗi! không thể Xử Lý').parent().fadeIn().delay(1000).fadeOut('slow');
+                } else {
+                    $('.ajax-success-ct').html('Bạn đã xác Nhận Thành Công').parent().fadeIn().delay(1000).fadeOut('slow');
+                    window.location.href = "/webshop/admin/DonHang.jsp";
+                    // cms_paging_listcustomer($page);
+                }
+            }
+        };
+        cms_adapter_ajax($param);
+    }
+}
 
 function cms_delete_product_bydetail($id) {
     var conf = confirm('Bạn chắc chắn muốn xóa sản phẩm này?');

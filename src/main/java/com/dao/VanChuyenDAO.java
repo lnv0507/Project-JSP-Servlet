@@ -1,5 +1,6 @@
 package com.dao;
 
+import com.dtos.ContactDTO;
 import com.dtos.DonViVanChuyenDTO;
 import com.dtos.VanChuyenDTO;
 import com.utils.DBUtils;
@@ -194,6 +195,51 @@ public class VanChuyenDAO {
                 arr.add(vc);
             }
             return arr;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public boolean updateDonHang(String id) {
+        Connection con = null;
+        PreparedStatement pre = null;
+        try {
+            con = DBUtils.makeConnection();
+            if (con != null) {
+                pre = con.prepareStatement("UPDATE vanchuyen SET TRANGTHAI = 'Đã Xử Lý' where MAHOADON = ?");
+                pre.setString(1, id);
+                if (pre.executeUpdate() > 0) {
+                    pre = con.prepareStatement("SELECT  * from vanchuyen");
+                    pre.executeQuery();
+                    return true;
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return false;
+    }
+
+    public ArrayList<VanChuyenDTO> getTrangThai() {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        ArrayList<VanChuyenDTO> giaiQuyet = new ArrayList<>();
+        VanChuyenDTO vc = null;
+        ResultSet rs = null;
+        try {
+            conn = DBUtils.makeConnection();
+            if (conn != null) {
+                ps = conn.prepareStatement("SELECT * from vanchuyen where trangthai = 'Đã Xử Lý'");
+                rs = ps.executeQuery();
+                while (rs.next()) {
+                    vc = new VanChuyenDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(5), rs.getString(6), rs.getString(6), rs.getInt(7), rs.getTimestamp(8), rs.getString(9));
+                    giaiQuyet.add(vc);
+                }
+                return giaiQuyet;
+            }
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }

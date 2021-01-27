@@ -36,7 +36,7 @@ public class ProductController extends HttpServlet {
             String soLuong = request.getParameter("txtNumber");
             String tinhTrang = request.getParameter("txtTinhTrang");
             String imagee1 = request.getParameter("photos1");
-//            String imagee2 = request.getParameter("photos2");
+            String imagee2 = request.getParameter("photos2");
             ArrayList<String> list = new ArrayList<String>();
             list.add(imagee1);
 //            list.add(imagee2);
