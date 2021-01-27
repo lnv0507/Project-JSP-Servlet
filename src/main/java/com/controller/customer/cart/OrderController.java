@@ -34,6 +34,8 @@ public class OrderController extends HttpServlet {
         String maHoaDon = "MS00" + count;
         String maDonHang = "MSDH00" + countDonHang;
         String maDonViVanChuyen = request.getParameter("iddonvivanchuyen");
+        String amount = request.getParameter("soluong");
+        int soluong = Integer.parseInt(amount);
         int tongtien = Integer.parseInt(request.getParameter("tongtien").trim());
         VanChuyenDAO vanChuyenDAO = new VanChuyenDAO();
         while (listHoaDon.contains(maHoaDon) && listDonHang.contains(maDonHang)) {
@@ -44,7 +46,7 @@ public class OrderController extends HttpServlet {
         vanChuyenDAO.insertVanChuyen(maHoaDon, name, email, soDienTHoai, address, donvivanchuyen, tongtien);
         vanChuyenDAO.insertDonHang(maHoaDon, id, tongtien);
         vanChuyenDAO.insertHoaDon(maHoaDon, maDonViVanChuyen, maDonHang, tongtien, id);
-
+        vanChuyenDAO.insertChiTiet(maDonHang, id, soluong);
 // cookie giỏ hàng
 
         Cookie arr[] = request.getCookies();
@@ -75,7 +77,7 @@ public class OrderController extends HttpServlet {
         }
 
 
-        request.getRequestDispatcher("theodoidonhang.jsp").forward(request,response);
+        request.getRequestDispatcher("theodoidonhang.jsp").forward(request, response);
     }
 
     @Override

@@ -83,6 +83,7 @@
         <!-- Checkout Start -->
         <div class="checkout" style="background-color: #fff;">
             <form action="thanhtoan" method="POST">
+                <input type="hidden" value="${user.getIdAccount()}" name="id"/>
                 <div class="container">
                     <h2>ĐƠN HÀNG CỦA BẠN</h2>
 
@@ -109,8 +110,9 @@
                             <h4 style="color: #ff9800;">Đơn Vị Vận Chuyển</h4>
                             <c:forEach items="${t.layDSVanChuyen}" var="o">
                                 <label for="radio1">
-                                    <input type="radio" name="shippingoptions" id="radio1" value="${o.getTenDonViVanChuyen()}"
-                                           > ${o.getTenDonViVanChuyen()}
+                                    <input type="radio" name="shippingoptions" id="radio1"
+                                           value="${o.getTenDonViVanChuyen()}"
+                                    > ${o.getTenDonViVanChuyen()}
                                     <input type="hidden" name="iddonvivanchuyen" value="${o.getMaDonViVanChuyen()}"/>
                                 </label>
                             </c:forEach>
@@ -121,17 +123,17 @@
                     <!-- Checkout Inner End -->
                     <!-- Order List Start-->
                     <div class="orderlist">
-                                <c:forEach items="${list}" var="o">
-
-                                    <span>
+                        <c:forEach items="${list}" var="o">
+                            <input type="hidden" name="soluong" value="${o.amount}">
+                            <span>
 
                                         <a href="<c:url value="/ProductDetailController?id=${o.idProduct}"/> ">
 
                                         <h3>${o.tenProduct} <span> x ${o.amount}</span></h3></a>
                                    </span>
-                                    <p>Giá bán : <span>${o.giaTien}</span></p>
+                            <p>Giá bán : <span>${o.giaTien}</span></p>
 
-                                </c:forEach>
+                        </c:forEach>
                         <input type="hidden" name="tongtien" value="${sum}">
                         <p>Tổng đơn đặt hàng: <span> ${sum}</span></p>
                     </div>

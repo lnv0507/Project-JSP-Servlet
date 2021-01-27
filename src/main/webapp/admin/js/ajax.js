@@ -1686,7 +1686,28 @@ function cms_delete_product($id, $page) {
                     $('.ajax-error-ct').html('Lỗi! không thể xóa Sản Phẩm').parent().fadeIn().delay(1000).fadeOut('slow');
                 } else {
                     $('.ajax-success-ct').html('Bạn đã xóa sản Phẩm thành công!').parent().fadeIn().delay(1000).fadeOut('slow');
-                    window.location.href = "/webshop/admin/product  ";
+                    window.location.href = "/webshop/admin/product?index=1";
+                    // cms_paging_listcustomer($page);
+                }
+            }
+        };
+        cms_adapter_ajax($param);
+    }
+}
+
+function cms_paging_order($id) {
+    var conf = confirm('Bạn đã gọi điện xử lý liên hệ rồi chứ');
+    if (conf) {
+        var $param = {
+            'type': 'POST',
+            'url': 'updateContact',
+            'data': {'id':$id},
+            'callback': function (data) {
+                if (data == '0') {
+                    $('.ajax-error-ct').html('Lỗi! không thể Xử Lý').parent().fadeIn().delay(1000).fadeOut('slow');
+                } else {
+                    $('.ajax-success-ct').html('Bạn đã xử lý thành công').parent().fadeIn().delay(1000).fadeOut('slow');
+                    window.location.href = "/webshop/admin/LienHe.jsp";
                     // cms_paging_listcustomer($page);
                 }
             }
@@ -1707,7 +1728,7 @@ function cms_delete_product_bydetail($id) {
                     $('.ajax-error-ct').html('Lỗi! không thể xóa Sản Phẩm').parent().fadeIn().delay(1000).fadeOut('slow');
                 } else {
                     $('.ajax-success-ct').html('Bạn đã xóa sản Phẩm thành công!').parent().fadeIn().delay(1000).fadeOut('slow');
-                    window.location.href = "/webshop/admin/product  ";
+                    window.location.href = "/webshop/admin/product?index=1";
                     // cms_paging_listcustomer($page);
                 }
             }
@@ -1812,7 +1833,7 @@ function cms_deactivate_product($id, $page) {
                     $('.ajax-error-ct').html('Lỗi! không thể Ngừng Kinh Doanh').parent().fadeIn().delay(1000).fadeOut('slow');
                 } else {
                     $('.ajax-success-ct').html('Bạn đã Ngừng Kinh Doanh Sản Phẩm Này!').parent().fadeIn().delay(1000).fadeOut('slow');
-                    window.location.href = "/webshop/admin/product";
+                    window.location.href = "/webshop/admin/product?index=1";
                 }
             }
         };
@@ -1832,7 +1853,7 @@ function cms_deactivate_product_bydetail($id) {
                     $('.ajax-error-ct').html('Lỗi! không thể Ngừng Kinh Doanh').parent().fadeIn().delay(1000).fadeOut('slow');
                 } else {
                     $('.ajax-success-ct').html('Bạn đã Ngừng Kinh Doanh Sản Phẩm Này!').parent().fadeIn().delay(1000).fadeOut('slow');
-                    window.location.href = "/webshop/admin/product";
+                    window.location.href = "/webshop/admin/product?index=1";
                 }
             }
         };
@@ -2629,35 +2650,35 @@ function cms_paging_product($page) {
     cms_adapter_ajax($param);
 }
 
-function cms_paging_order($page) {
-    $keyword = $('#order-search').val();
-    $option1 = $('#search-option-1').val();
-    $customer_id = -1;
-
-    if ($('#customer-id').val() != null)
-        $customer_id = $('#customer-id').val();
-
-    $date_from = $('#search-date-from').val();
-    $date_to = $('#search-date-to').val();
-    $data = {
-        'data': {
-            'option1': $option1,
-            'keyword': $keyword,
-            'date_from': $date_from,
-            'date_to': $date_to,
-            'customer_id': $customer_id
-        }
-    };
-    var $param = {
-        'type': 'POST',
-        'url': 'orders/cms_paging_order/' + $page,
-        'data': $data,
-        'callback': function (data) {
-            $('.orders-main-body').html(data);
-        }
-    };
-    cms_adapter_ajax($param);
-}
+// function cms_paging_order($id) {
+//     $keyword = $('#order-search').val();
+//     $option1 = $('#search-option-1').val();
+//     $customer_id = -1;
+//
+//     if ($('#customer-id').val() != null)
+//         $customer_id = $('#customer-id').val();
+//
+//     $date_from = $('#search-date-from').val();
+//     $date_to = $('#search-date-to').val();
+//     $data = {
+//         'data': {
+//             'option1': $option1,
+//             'keyword': $keyword,
+//             'date_from': $date_from,
+//             'date_to': $date_to,
+//             'customer_id': $customer_id
+//         }
+//     };
+//     var $param = {
+//         'type': 'POST',
+//         'url': 'orders/cms_paging_order/' + $page,
+//         'data': $data,
+//         'callback': function (data) {
+//             $('.orders-main-body').html(data);
+//         }
+//     };
+//     cms_adapter_ajax($param);
+// }
 
 function cms_paging_revenue($page) {
     $type = $('[name=revenue]:checked').val();
