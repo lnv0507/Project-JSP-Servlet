@@ -125,8 +125,9 @@
                         <form action="" method="GET">
                             <div>
                                 <h5>Lọc Theo Giá</h5>
-                                <input type="text" style="width: 100px" placeholder="TỪ"> -
-                                <input type="text" style="width: 100px" placeholder="ĐẾN">
+                                <input type="text" name="priceLow" style="width: 100px" placeholder="TỪ"> -
+                                <input type="text" name="priceHigh" style="width: 100px" placeholder="ĐẾN">
+                                <input type="hidden" name="index" value="1">
                             </div>
                             <br>
                             <div>

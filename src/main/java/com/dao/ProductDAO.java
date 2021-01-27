@@ -331,45 +331,45 @@ public class ProductDAO {
     }
 
     //filter theo gia san pham
-    public ArrayList<ProductDTO> getProductByPrice(int priceLow, int priceHigh) {
+    public ArrayList<ProductDTO> getProductByPrice(int priceLow, int priceHigh, int index, int size) {
         ArrayList<ProductDTO> result = new ArrayList<>();
         Connection con = null;
         PreparedStatement preparedStatement = null;
         ResultSet rs = null;
-        String sql = "Select * from product where giatien between ? and ?";
+        String sql = "with x as (select ROW_NUMBER() over (order by IDPRODUCT asc ) as r,product.*" +
+                "from product where giatien between ? and ?)" +
+                "select * from x where r between ?*?-?+1 and ?*?";
         try {
             con = DBUtils.makeConnection();
             preparedStatement = con.prepareStatement(sql);
             preparedStatement.setInt(1, priceLow);
             preparedStatement.setInt(2, priceHigh);
+            preparedStatement.setInt(3, index);
+            preparedStatement.setInt(4, size);
+            preparedStatement.setInt(5, size);
+            preparedStatement.setInt(6, index);
+            preparedStatement.setInt(7, size);
             rs = preparedStatement.executeQuery();
             rs.beforeFirst();
             while (rs.next()) {
                 ProductDTO product = new ProductDTO();
-                product.setIdProduct(rs.getString(1));
-                product.setTenProduct(rs.getString(2));
-                product.setLoai(rs.getString(3));
-                product.setChatLieu(rs.getString(4));
-                product.setGiaTien(rs.getInt(5));
-                product.setSoLuongTrongKho((rs.getInt(6)));
-                product.setDanhGia(rs.getInt(7));
-                product.setTinhTrang(rs.getString(8));
+                product.setIdProduct(rs.getString(2));
+                product.setTenProduct(rs.getString(3));
+                product.setLoai(rs.getString(4));
+                product.setChatLieu(rs.getString(5));
+                product.setGiaTien(rs.getInt(6));
+                product.setSoLuongTrongKho((rs.getInt(7)));
+                product.setDanhGia(rs.getInt(8));
+                product.setTinhTrang(rs.getString(9));
                 getImagesByProduct(product);
                 result.add(product);
             }
-
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            try {
-                if (preparedStatement != null) preparedStatement.close();
-                if (rs != null) rs.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
         }
         return result;
     }
+
 
 
     public boolean deleteProduct(String id) {
