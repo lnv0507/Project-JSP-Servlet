@@ -1,0 +1,116 @@
+.container_1 {
+    margin: 0px auto;
+    width: 100%;
+    height: 100px;
+    color: black;
+    padding: 10px;
+}
+
+.container_1 a {
+    text-decoration: none;
+    color: black;
+}
+
+.container_1 .menu ul {
+    list-style: none;
+    background-color: #ffffff;
+    color: black;
+}
+
+.container_1 .menu ul li {
+    z-index: 99999;
+    display: inline-block;
+    text-align: center;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-transform: uppercase;
+    cursor: pointer;
+    position: relative;
+}
+
+.container_1 {
+    display: flex;
+    flex-direction: column;
+}
+
+.container_1 .menu ul li:hover {
+    border: 1px solid #FAB702;
+    background-color: #FAB702;
+    color: white;
+}
+
+.sub_menu {
+    display: none;
+    box-sizing: border-box;
+    text-align: left #FAB702;
+    position: absolute;
+    padding: 0px;
+    width: 250px;
+    background-color: #ffffff;
+}
+
+.container_1 .menu ul li:hover .sub_menu {
+    display: block;
+    color: black;
+    position: absolute;
+    box-sizing: border-box;
+    border-bottom: 2px #FAB702;
+    width: 100px;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+.container_1 .menu .sub_menu li {
+    width: 200px;
+}
+
+.sub_menu ul :hover {
+    width: 200px;
+    border: 1px solid #FAB702;
+    background-color: #FAB702;
+    position: absolute;
+    text-align: left;
+}
+
+.sub_menu li:hover {
+    width: 200px;
+    border: 1px solid #FAB702;
+    background-color: #FAB702;
+    position: absolute;
+    text-align: left;
+}
+
+.banner-left img {
+    width: 100%;
+    transition: all 0.3s ease-out;
+    transform: scale(1);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+img {
+    border: 0;
+    vertical-align: top;
+}
+
+img {
+    vertical-align: middle;
+}
+
+img {
+    border: 0;
+}
+
+.sub_menu li {
+    width: 250px;
+    text-align: left;
+    font-size: 10px;
+    text-transform: lowercase;
+    border-bottom: 0px solid;
+    position: absolute;
+    background-color: #ffffff;
+}
